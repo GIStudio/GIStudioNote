@@ -9,6 +9,17 @@ Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility 
 
 [Join the Discord Community](https://discord.gg/cRFFHYye7t)
 
+## quick start
+
+```bash
+
+git remote set-url origin git@github.com:GIStudio/GIStudioNote.git
+
+```
+### [上传](https://quartz.jzhao.xyz/setting-up-your-GitHub-repository)
+```bash
+npx quartz sync --no-pull 
+```
 ## Sponsors
 
 <p align="center">
