@@ -6,4 +6,4 @@ tags:
 ---
 ### Math
 推荐一本不错的数学书：
-- [@oreganMathematicalFoundationsSoftware2023]
+- 这个很喜欢[@oreganMathematicalFoundationsSoftware2023]

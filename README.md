@@ -94,7 +94,11 @@ cd content
 **加粗文本** 和 *斜体文本*。
 
 ```
+## 本地运行
 
+```bash
+npx quartz build --serve
+```
   
 
 ## 同步到 GitHub
