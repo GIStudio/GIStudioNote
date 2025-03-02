@@ -10,6 +10,7 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       GitHub: "https://github.com/GIStudio/GIStudioNote",
       // "Discord Community": "https://discord.gg/cRFFHYye7t",
+      RSS: "https://notes.gistudio.xyz/index.xml",
     },
   }),
 }
