@@ -15,7 +15,7 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible",
     },
-    locale: "en-US",
+    locale: "zh-CN",
     baseUrl: "notes.gistudio.xyz",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
