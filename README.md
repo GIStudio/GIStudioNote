@@ -1,4 +1,4 @@
-# GIStudio Notes
+# [GIStudio Notes](https://notes.gistudio.xyz/)
 
 开源，共建的GIS/图/强化学习/深度学习知识库
 > “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
