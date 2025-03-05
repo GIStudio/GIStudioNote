@@ -1,5 +1,9 @@
 ---
 title: 命名实体识别
+draft: 
+tags:
+  - "#NLP"
+  - "#NER"
 ---
 
 
