@@ -16,4 +16,4 @@ tags:
 
 
 ## 文章修改提示词
-- 学术文章请见[文章修改提示词](../tools/LLM-Prompts.md/)
+- 学术文章请见[文章修改提示词](../tools/LLM-Prompts.md)
