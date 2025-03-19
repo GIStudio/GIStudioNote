@@ -127,4 +127,109 @@ which node
 
 ---
 
-通过以上步骤，您可以轻松检查、安装和切换 Node.js 版本。如果仍有疑问，请随时补充问题！
+通过以上步骤，您可以轻松检查、安装和切换 Node.js 版本。
+
+在 macOS 中使用 `nvm`（Node Version Manager）时，默认的 Node.js 和 npm 版本可能会因为配置不当而每次打开终端时重置。为了让 `nvm` 默认使用特定版本的 Node.js（例如 v22），并确保 npm 的版本也固定，您可以按照以下步骤进行配置。
+
+---
+
+### 已知信息
+1. 您希望让 `nvm` 默认使用 Node.js v22。
+2. 您正在使用 macOS，并且终端是基于 `zsh` 的。
+3. 每次打开终端时，`nvm` 的默认版本似乎没有正确加载。
+
+---
+
+### 解决步骤
+
+#### 1. 确认已安装 Node.js v22
+首先，确保您已经通过 `nvm` 安装了 Node.js v22：
+```bash
+nvm install 22
+```
+如果已经安装，可以通过以下命令确认：
+```bash
+nvm list
+```
+输出中会显示所有已安装的 Node.js 版本，当前使用的版本会带有 `->` 标记。
+
+---
+
+#### 2. 设置默认 Node.js 版本
+使用以下命令将 Node.js v22 设置为默认版本：
+```bash
+nvm alias default 22
+```
+这会在 `~/.nvm/alias/default` 文件中记录默认版本，确保每次打开终端时自动加载 Node.js v22。
+
+验证默认版本是否设置成功：
+```bash
+nvm current
+```
+输出应该是 `v22.x.x`（具体版本号可能略有不同）。
+
+---
+
+#### 3. 确保 `nvm` 在 `.zshrc` 中正确加载
+为了让 `nvm` 在每次打开终端时自动加载，请检查您的 `~/.zshrc` 文件中是否包含以下内容：
+
+编辑 `~/.zshrc` 文件：
+```bash
+nano ~/.zshrc
+```
+
+添加或确保以下代码存在：
+```bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # 加载 nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # 加载 bash_completion（可选）
+```
+
+保存文件后，重新加载配置：
+```bash
+source ~/.zshrc
+```
+
+---
+
+#### 4. 验证 npm 版本
+Node.js 自带 npm，因此设置默认 Node.js 版本后，npm 的版本也会随之确定。验证 npm 版本：
+```bash
+npm -v
+```
+如果需要更新 npm 到最新版本，可以运行：
+```bash
+npm install -g npm@latest
+```
+
+---
+
+#### 5. 测试默认版本是否生效
+关闭终端并重新打开，运行以下命令验证默认版本是否生效：
+```bash
+node -v
+npm -v
+```
+输出应该分别是 Node.js v22 和对应的 npm 版本。
+
+---
+
+### 常见问题与解决方法
+
+#### 问题 1：`nvm` 未正确加载
+如果 `nvm` 在终端中无法使用，可能是 `~/.zshrc` 文件未正确配置。请确保上述步骤中的 `nvm` 加载代码已正确添加。
+
+#### 问题 2：默认版本未生效
+如果设置了 `nvm alias default 22` 后仍然未生效，可能是 `default` 别名未正确保存。可以手动检查 `~/.nvm/alias/default` 文件内容，确保其值为 `22`。
+
+#### 问题 3：多个 Shell 配置文件冲突
+如果您同时使用了 `.bashrc`、`.zshrc` 或其他 Shell 配置文件，请确保它们之间没有冲突。通常只需配置 `.zshrc` 即可。
+
+---
+
+### 总结
+通过以上步骤，您可以确保 `nvm` 默认使用 Node.js v22，并在每次打开终端时自动加载正确的版本。如果仍有问题，请提供以下信息以便进一步排查：
+1. `nvm list` 的输出。
+2. `~/.zshrc` 文件中与 `nvm` 相关的配置内容。
+3. 是否有其他工具（如 `brew` 或 `fnm`）可能干扰了 `nvm` 的行为。
+
