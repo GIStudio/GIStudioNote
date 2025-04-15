@@ -16,6 +16,8 @@ title: " 快速科研工具"
  - 
  - https://app.txyz.ai/
 	 - 可以根据文章片段推断是否有对应的文献支撑
+ - https://chatpaper.com/chatpaper/zh-CN
+	 - 论文检索
 - LLM 服务
 	- 通义: https://chat.qwen.ai/
 	- Grok: https://grok.com/
