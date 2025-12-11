@@ -1,6 +1,6 @@
 ---
 title: 命名实体识别
-draft: 
+draft: false
 tags:
   - "#NLP"
   - "#NER"
