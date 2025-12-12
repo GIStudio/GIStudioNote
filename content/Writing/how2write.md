@@ -84,6 +84,4 @@ draft: false
 [4] 飞书文档. (n.d.). AI科普文章写作 [Online]. Available at: <https://www.feishu.cn/docx/E0fWdaL3GoxM0vxH1syc2wBEnzc>\
 [5] 搜狐. (2021). 82岁院士汪品先玩转B站，我们能学到什么？ [Online]. Available at: <https://www.sohu.com/a/497931327_121117474>\
 [6] 光明网. (2023). 虚拟数字人能否成为新一代“科普使者”？ [Online]. Available at: <https://baijiahao.baidu.com/s?id=1766627581134268685>\
-[7] PMC. (2014). Using narratives and storytelling to communicate science with nonexpert audiences [Online]. Available at: <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4128598/>这是我们的模板，obsidian的模板是先创建文件，然后赋予内容。
-通过obsidian进行书写，但是通过Quartz实现同步以及发布。
-默认是draft。
+[7] PMC. (2014). Using narratives and storytelling to communicate science with nonexpert audiences [Online]. Available at: <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4128598/>
