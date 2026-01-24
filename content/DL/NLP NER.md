@@ -4,8 +4,9 @@ draft: false
 tags:
   - "#NLP"
   - "#NER"
+aliases:
+  - DL/test
 ---
-
 
 ### 1. **命名实体识别简介**
 

@@ -4,4 +4,5 @@ tags:
   - 模板
   - template
 draft: true
+aliases:
 ---
