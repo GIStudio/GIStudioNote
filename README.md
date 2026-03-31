@@ -101,6 +101,8 @@ npx quartz sync --no-pull
 npx quartz update
 ```
 
+## 写作
+如果需要引用，用绝对路径从 content 根目录写起。
 ## 配置 Quartz
 
 1. 访问 Quartz 配置指南：
