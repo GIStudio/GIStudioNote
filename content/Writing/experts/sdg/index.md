@@ -15,23 +15,23 @@ draft: false
 
 | 编号 | 名称 | 英文名 |
 | ---- | ---- | ------ |
-| 1 | 无贫穷 | No Poverty |
-| 2 | 零饥饿 | Zero Hunger |
-| 3 | 良好健康与福祉 | Good Health and Well-being |
-| 4 | 优质教育 | Quality Education |
-| 5 | 性别平等 | Gender Equality |
-| 6 | 清洁饮水与卫生设施 | Clean Water and Sanitation |
-| 7 | 经济适用的清洁能源 | Affordable and Clean Energy |
-| 8 | 体面工作和经济增长 | Decent Work and Economic Growth |
-| 9 | 产业、创新和基础设施 | Industry, Innovation and Infrastructure |
-| 10 | 减少不平等 | Reduced Inequalities |
-| 11 | 可持续城市和社区 | Sustainable Cities and Communities |
-| 12 | 负责任消费和生产 | Responsible Consumption and Production |
-| 13 | 气候行动 | Climate Action |
-| 14 | 水下生物 | Life Below Water |
-| 15 | 陆地生物 | Life on Land |
-| 16 | 和平、正义与强大机构 | Peace, Justice and Strong Institutions |
-| 17 | 促进目标实现的伙伴关系 | Partnerships for the Goals |
+| 1 | [[SDG 1 - 无贫穷 (No Poverty)]] | No Poverty |
+| 2 | [[SDG 2 - 零饥饿 (Zero Hunger)]] | Zero Hunger |
+| 3 | [[SDG 3 - 良好健康与福祉 (Good Health and Well-being)]] | Good Health and Well-being |
+| 4 | [[SDG 4 - 优质教育 (Quality Education)]] | Quality Education |
+| 5 | [[SDG 5 - 性别平等 (Gender Equality)]] | Gender Equality |
+| 6 | [[SDG 6 - 清洁饮水与卫生设施 (Clean Water and Sanitation)]] | Clean Water and Sanitation |
+| 7 | [[SDG 7 - 经济适用的清洁能源 (Affordable and Clean Energy)]] | Affordable and Clean Energy |
+| 8 | [[SDG 8 - 体面工作和经济增长 (Decent Work and Economic Growth)]] | Decent Work and Economic Growth |
+| 9 | [[SDG 9 - 产业、创新和基础设施 (Industry, Innovation and Infrastructure)]] | Industry, Innovation and Infrastructure |
+| 10 | [[SDG 10 - 减少不平等 (Reduced Inequalities)]] | Reduced Inequalities |
+| 11 | [[SDG 11 - 可持续城市和社区 (Sustainable Cities and Communities)]] | Sustainable Cities and Communities |
+| 12 | [[SDG 12 - 负责任消费和生产 (Responsible Consumption and Production)]] | Responsible Consumption and Production |
+| 13 | [[SDG 13 - 气候行动 (Climate Action)]] | Climate Action |
+| 14 | [[SDG 14 - 水下生物 (Life Below Water)]] | Life Below Water |
+| 15 | [[SDG 15 - 陆地生物 (Life on Land)]] | Life on Land |
+| 16 | [[SDG 16 - 和平、正义与强大机构 (Peace, Justice and Strong Institutions)]] | Peace, Justice and Strong Institutions |
+| 17 | [[SDG 17 - 促进目标实现的伙伴关系 (Partnerships for the Goals)]] | Partnerships for the Goals |
 
 ## 相关链接
 
