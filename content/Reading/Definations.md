@@ -1,10 +1,14 @@
 ---
 title: 定义
 tags:
-  - "#联合国"
-  - "#发展中国家"
-  - "#发达国家"
+  - 联合国
+  - 发展中国家
+  - 发达国家
   - 联合国贸易和发展会议
+  - 经济分类
+  - UNCTAD
+  - LDC
+  - 区域划分
 ---
 #### Developing and developed regions
 > https://unctadstat.unctad.org/EN/Classifications.html

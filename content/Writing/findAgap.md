@@ -1,9 +1,14 @@
 ---
 title: " 什么是一个研究问题？What is a research GAP？"
 tags:
-  - "#写作参考"
-  - "#模式化"
+  - 写作参考
+  - 模式化
   - 教程
+  - 研究方法
+  - research-gap
+  - 文献阅读
+  - 论文分析
+  - 学术写作
 ---
 我将论文理解为一个研究系统，而不是一个孤立方法。  
 一个研究系统由六个要素组成：前提 $\mathcal{A}$、输入 $\mathcal{X}$、处理 $\mathcal{P}$、输出 $\mathcal{Y}$、评价 $\mathcal{E}$、结论边界 $\mathcal{C}$。  

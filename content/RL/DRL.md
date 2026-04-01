@@ -1,8 +1,10 @@
 ---
 title: Deep Reinforcement Learning
 tags:
-  - "#ML"
+  - ML
   - RL
+  - DRL
+  - deep-reinforcement-learning
 ---
 DRL is the combination of [[Deep Learning]] and [[Reinforcement Learning]].
 > [!info] About

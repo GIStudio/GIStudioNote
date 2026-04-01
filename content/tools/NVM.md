@@ -1,8 +1,12 @@
 ---
 title: NVM 教程
 tags:
-  - "#DevOps"
-  - "#NVM"
+  - DevOps
+  - NVM
+  - Node.js
+  - 版本管理
+  - macOS
+  - 教程
 ---
 
 `nvm`（Node Version Manager）是一个非常强大的工具，用于管理多个 Node.js 版本。以下是检查当前安装的 Node.js 版本并切换版本的具体操作步骤：

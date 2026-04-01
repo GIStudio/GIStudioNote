@@ -4,6 +4,12 @@ tags:
   - LLM
   - AI
   - Prompts
+  - 论文修改
+  - 学术写作
+  - 英文润色
+  - Prompt工程
+  - GIS
+  - 地理信息
 ---
 
 >[!warning]

@@ -1,8 +1,14 @@
 ---
 title: patch-package 使用指南：安全修复第三方 npm 包的临时方案
 tags:
-  - 模板
-  - template
+  - npm
+  - patch-package
+  - node-modules
+  - front-end
+  - dependency
+  - version-control
+  - workflow
+  - postinstall
 draft: true
 aliases:
 ---

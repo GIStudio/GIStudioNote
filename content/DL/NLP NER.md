@@ -2,8 +2,17 @@
 title: 命名实体识别
 draft: false
 tags:
-  - "#NLP"
-  - "#NER"
+  - NLP
+  - NER
+  - named-entity-recognition
+  - BERT
+  - SpaCy
+  - Flair
+  - BiLSTM-CRF
+  - multilingual
+  - information-extraction
+  - deep-learning
+  - Chinese-NLP
 aliases:
   - DL/test
 ---

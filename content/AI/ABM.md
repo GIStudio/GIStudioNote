@@ -1,9 +1,14 @@
 ---
 title: ABM
 tags:
-  - "#AI"
-  - "#ABM"
-  - "#Agent"
+  - AI
+  - ABM
+  - Agent
+  - Agent-Based Modeling
+  - LLM
+  - 模拟
+  - 多智能体
+  - AgentSociety
 ---
 不错的项目：
 

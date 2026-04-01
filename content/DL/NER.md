@@ -4,6 +4,10 @@ tags:
   - NLP
   - NER
   - LLM
+  - named-entity-recognition
+  - knowledge-distillation
+  - model-finetuning
+  - BERT
 draft: true
 ---
 命名实体识别（Named Entity Recognition, NER）是自然语言处理（NLP）的核心任务之一。

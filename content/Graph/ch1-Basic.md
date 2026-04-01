@@ -1,5 +1,16 @@
 ---
 title: 图论基础
+tags:
+  - graph-theory
+  - adjacency-matrix
+  - node-classification
+  - link-prediction
+  - graph-learning
+  - 图分类
+  - 邻接列表
+  - 有向图
+  - 加权图
+  - 教程
 ---
 >[!attention] 推荐阅读
 > 图论基础：学习节点、边、邻接矩阵等概念，可参考[GeeksforGeeks Graph Theory](https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/)

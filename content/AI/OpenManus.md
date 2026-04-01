@@ -1,9 +1,16 @@
 ---
 title: 开源的智能工具！OpenManus
 tags:
-  - "#GIStudy"
-  - "#微信公众号推文"
-  - "#AI"
+  - AI
+  - OpenManus
+  - Agent
+  - 开源
+  - 浏览器自动化
+  - Playwright
+  - LLM
+  - 工具
+  - GIStudy
+  - 微信公众号推文
 ---
 下面开始介绍OpenManus的安装以及测试。
 网站在：

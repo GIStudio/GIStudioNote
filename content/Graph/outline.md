@@ -1,5 +1,16 @@
 ---
 title: 图学习
+tags:
+  - graph-learning
+  - GNN
+  - urban-computing
+  - GIS
+  - tutorial
+  - 图神经网络
+  - 节点嵌入
+  - 时空图神经网络
+  - 交通预测
+  - 城市感知计算
 ---
 ## 关键要点
 

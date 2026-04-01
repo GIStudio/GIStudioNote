@@ -1,9 +1,22 @@
 ---
 title: 生成式AI
 tags:
-  - "#GIStudio"
   - 生成式AI
   - GenAI
+  - AI
+  - 文生图
+  - 文生视频
+  - Sora
+  - 三维场景生成
+  - World Labs
+  - 扩散模型
+  - Transformer
+  - GAN
+  - VAE
+  - 声音生成
+  - 多模态
+  - 深度学习
+  - GIStudio
 ---
  ## 生成式AI的"狭义"生成技术：从文生图到三维场景的进化与挑战
 

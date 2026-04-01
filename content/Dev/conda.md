@@ -2,6 +2,13 @@
 title: conda 使用速查
 tags:
   - Python
+  - conda
+  - Anaconda
+  - Miniconda
+  - virtual-environment
+  - package-management
+  - cheat-sheet
+  - environment-management
 ---
 以下是一个关于 `conda` 的快速使用速查指南，涵盖了安装、创建环境、激活环境以及设置终端默认激活等内容。内容以清晰的步骤和说明为主，便于快速上手。
 

@@ -1,8 +1,18 @@
 ---
 title: 强化学习总纲
 tags:
-  - "#强化学习"
-  - "#AI/RL"
+  - 强化学习
+  - AI/RL
+  - RL
+  - MDP
+  - Q-learning
+  - DQN
+  - PPO
+  - policy-gradient
+  - Bellman-equation
+  - deep-reinforcement-learning
+  - multi-agent
+  - MARL
 aliases:
   - 强化学习
 ---

@@ -2,8 +2,13 @@
 title: 腾讯云Cloud Studio介绍
 draft: false
 tags:
-  - "#DevOps"
-  - "#CloudServer"
+  - DevOps
+  - CloudServer
+  - 云开发
+  - VS-Code
+  - 腾讯云
+  - SSH
+  - 在线IDE
 ---
 https://cloudstudio.net/courses （CS）是非常有用的Web平台，你可以理解为一个只有ide的图形化的ubuntu系统的服务器。
 

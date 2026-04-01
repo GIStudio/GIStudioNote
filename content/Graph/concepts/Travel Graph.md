@@ -1,5 +1,16 @@
 ---
 title: Travel Graph
+tags:
+  - graph
+  - human-mobility
+  - GNN
+  - spatiotemporal
+  - travel-graph
+  - 人类移动
+  - 图论
+  - GCRN
+  - XGBoost
+  - 时空建模
 ---
 
 **travel graph** 是一种用于表示人类移动模式（human mobility）的抽象数据结构。为了更好地理解其含义和作用，我们可以从上下文和相关概念入手进行分析。

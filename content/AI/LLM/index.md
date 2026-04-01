@@ -3,6 +3,10 @@ title: LLM
 tags:
   - LLM
   - AI
+  - 大语言模型
+  - 深度学习
+  - NLP
+  - 预训练模型
 draft: false
 aliases:
 ---
