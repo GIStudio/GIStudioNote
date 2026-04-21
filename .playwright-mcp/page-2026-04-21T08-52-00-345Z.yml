@@ -1,0 +1,204 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "跳至主要内容" [ref=e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "開放數據平台" [ref=e7] [cursor=pointer]:
+          - /url: /tc/
+          - img "開放數據平台" [ref=e8]
+        - generic [ref=e9]:
+          - list [ref=e10]:
+            - listitem [ref=e11]:
+              - link " 下載列" [ref=e12] [cursor=pointer]:
+                - /url: /tc/download-queue
+                - generic [ref=e13]: 
+                - text: 下載列
+            - text: 
+            - listitem [ref=e14]:
+              - link " 書籤" [ref=e15] [cursor=pointer]:
+                - /url: /tc/bookmarks
+                - generic [ref=e16]: 
+                - text: 書籤
+            - listitem [ref=e17]:
+              - link "字型大小" [ref=e18] [cursor=pointer]:
+                - /url: /tc/text-size
+            - text: 
+            - listitem [ref=e19]:
+              - link "Eng" [ref=e20] [cursor=pointer]:
+                - /url: /en-data/dataset/hk-censtatd-census_geo-2021-population-census-by-dcd
+              - link "简" [ref=e21] [cursor=pointer]:
+                - /url: /sc-data/dataset/hk-censtatd-census_geo-2021-population-census-by-dcd
+            - listitem [ref=e22]:
+              - button "打開搜尋器" [ref=e23] [cursor=pointer]:
+                - generic [ref=e24]: 打開搜尋器
+                - generic [ref=e25]: 
+              - text:   
+            - listitem [ref=e26]:
+              - button "分享至" [ref=e27] [cursor=pointer]:
+                - generic [ref=e28]: 分享至
+                - generic [ref=e29]: 
+          - text: 
+          - navigation "選項單" [ref=e31]:
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - link "數據集" [ref=e34] [cursor=pointer]:
+                  - /url: /tc-datasets
+              - listitem [ref=e35]:
+                - link "數據提供機構" [ref=e36] [cursor=pointer]:
+                  - /url: /tc/providers
+              - listitem [ref=e37]:
+                - link "幫助" [ref=e38] [cursor=pointer]:
+                  - /url: /tc/help
+              - listitem [ref=e39]:
+                - link "開發者中心" [ref=e40] [cursor=pointer]:
+                  - /url: /tc/dev-center
+              - listitem [ref=e41]:
+                - link "社區" [ref=e42] [cursor=pointer]:
+                  - /url: /tc/community
+    - main [ref=e43]:
+      - generic [ref=e45]:
+        - navigation "導航" [ref=e46]:
+          - list [ref=e47]:
+            - listitem [ref=e48]:
+              - link " 主頁" [ref=e49] [cursor=pointer]:
+                - /url: /tc
+                - generic [ref=e50]: 
+                - text: 主頁
+              - text: 
+            - listitem [ref=e51]:
+              - link "數據集" [ref=e52] [cursor=pointer]:
+                - /url: /tc-datasets
+              - text: 
+            - listitem [ref=e53]:
+              - link "人口" [ref=e54] [cursor=pointer]:
+                - /url: https://data.gov.hk/tc-datasets/category/population
+              - text: 
+        - generic [ref=e55]:
+          - heading "2021 年人口普查（區議會分區統計數字及分界）" [level=1] [ref=e57]
+          - button " 加入書籤" [ref=e58] [cursor=pointer]:
+            - generic [ref=e59]: 
+            - generic [ref=e60]: 加入書籤
+      - generic [ref=e61]:
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - generic [ref=e66]: 
+            - generic [ref=e67]:
+              - generic [ref=e68]: 數據提供機構
+              - link "政府統計處" [ref=e70] [cursor=pointer]:
+                - /url: /tc-datasets/provider/hk-censtatd
+          - generic [ref=e71]:
+            - generic [ref=e73]: 
+            - generic [ref=e74]:
+              - generic [ref=e75]: 數據分類
+              - link "人口" [ref=e77] [cursor=pointer]:
+                - /url: https://data.gov.hk/tc-datasets/category/population
+                - generic [ref=e78]: 人口
+          - generic [ref=e79]:
+            - generic [ref=e81]: 
+            - generic [ref=e82]:
+              - generic [ref=e83]: 更新頻率
+              - generic [ref=e84]: 一次性
+        - generic [ref=e86]:
+          - generic [ref=e87]:
+            - heading "說明" [level=2] [ref=e88]
+            - paragraph [ref=e90]: 此2021年人口普查數據集包含在2021年居於18個區議會分區的香港人口有關人口、住戶、教育、經濟、房屋及內部遷移特徵的統計數字。此數據集亦包含各區議會分區的分界。自1961年起，香港每10年進行一次人口普查，並在兩次人口普查之間進行一次中期人口統計。2021年人口普查於2021年6月至8月期間進行，提供了香港人口的社會和經濟特徵的基準統計數字。這些數字對政府在規劃和制定政策尤為重要。這個數據集將被納入人口分布框架空間數據主題集。
+            - generic [ref=e91]: 數據字典
+            - link "https://www.census2021.gov.hk/doc/2021-statistics-classification-idds-tc.pdf" [ref=e93] [cursor=pointer]:
+              - /url: https://www.census2021.gov.hk/doc/2021-statistics-classification-idds-tc.pdf
+            - separator [ref=e94]
+            - generic [ref=e95]:
+              - generic [ref=e96]: 1個API
+              - generic [ref=e97]: 1個CSV 檔案
+              - generic [ref=e98]: 1個XLSX 檔案
+          - generic [ref=e99]:
+            - img "loading" [ref=e101]
+            - generic [ref=e102]: 讀取中...
+          - text:                     
+          - generic [ref=e103]:
+            - heading "其他資訊" [level=2] [ref=e104]
+            - generic [ref=e105]:
+              - generic [ref=e106]: 維護者
+              - generic [ref=e107]:
+                - generic [ref=e108]: 統計數據查詢 - 2021年人口普查
+                - generic [ref=e109]:
+                  - generic [ref=e110]:
+                    - generic [ref=e111]:
+                      - generic [ref=e112]: 
+                      - text: 電話
+                    - link "(852) 3863 2645" [ref=e114] [cursor=pointer]:
+                      - /url: tel:+(852) 3863 2645
+                  - generic [ref=e115]:
+                    - generic [ref=e116]:
+                      - generic [ref=e117]: 
+                      - text: 電子郵件
+                    - link "census@censtatd.gov.hk" [ref=e119] [cursor=pointer]:
+                      - /url: mailto:census@censtatd.gov.hk
+    - contentinfo [ref=e120]:
+      - generic [ref=e121]:
+        - generic [ref=e122]:
+          - generic [ref=e123]:
+            - text:     
+            - link " 書籤" [ref=e124] [cursor=pointer]:
+              - /url: /tc/bookmarks
+              - generic [ref=e125]: 
+              - generic [ref=e126]: 書籤
+            - link " 下載列" [ref=e127] [cursor=pointer]:
+              - /url: /tc/download-queue
+              - generic [ref=e128]: 
+              - generic [ref=e129]: 下載列
+            - link " 提出意見" [ref=e130] [cursor=pointer]:
+              - /url: /tc/feedback?&provider=hk-censtatd&dataset=2021 年人口普查（區議會分區統計數字及分界）&url=https://data.gov.hk/tc-data/dataset/hk-censtatd-census_geo-2021-population-census-by-dcd
+              - generic [ref=e131]: 
+              - generic [ref=e132]: 提出意見
+            - button " 回到頂部" [ref=e133] [cursor=pointer]:
+              - generic [ref=e134]: 
+              - generic [ref=e135]: 回到頂部
+            - text: 
+          - button " 顯示 / 隱藏側邊欄" [ref=e136] [cursor=pointer]:
+            - generic [ref=e137]: 
+            - generic [ref=e138]: 顯示 / 隱藏側邊欄
+        - generic [ref=e139]:
+          - button " RSS摘要 " [ref=e141] [cursor=pointer]:
+            - generic [ref=e142]: 
+            - generic [ref=e143]: RSS摘要
+            - generic [ref=e144]: 
+          - text: 
+        - generic [ref=e145]:
+          - list [ref=e147]:
+            - listitem [ref=e148]:
+              - link "網頁指南" [ref=e149] [cursor=pointer]:
+                - /url: /tc/site-map
+              - text: "|"
+            - listitem [ref=e150]:
+              - link "私隱政策" [ref=e151] [cursor=pointer]:
+                - /url: /tc/privacy-policy
+              - text: "|"
+            - listitem [ref=e152]:
+              - link "使用條款及條件" [ref=e153] [cursor=pointer]:
+                - /url: /tc/terms-and-conditions
+              - text: "|"
+            - listitem [ref=e154]:
+              - link "無障礙聲明" [ref=e155] [cursor=pointer]:
+                - /url: /tc/web-accessibility
+          - generic [ref=e157]:
+            - link "符合萬維網聯盟有關無障礙網頁設計指引2.1中2A級別的要求" [ref=e158] [cursor=pointer]:
+              - /url: https://www.w3.org/WAI/WCAG2AA-Conformance
+              - img "符合萬維網聯盟有關無障礙網頁設計指引2.1中2A級別的要求" [ref=e159]
+            - link "香港品牌" [ref=e160] [cursor=pointer]:
+              - /url: https://www.brandhk.gov.hk/
+              - img "香港品牌" [ref=e161]
+        - generic [ref=e162]:
+          - generic [ref=e163]:
+            - paragraph [ref=e164]: 由數字政策辦公室開發及支援
+            - generic [ref=e165]:
+              - paragraph [ref=e166]: 聯絡我們
+              - link "電郵 enquiry@1835500.gov.hk" [ref=e167] [cursor=pointer]:
+                - /url: mailto:enquiry@1835500.gov.hk
+                - generic "電郵" [ref=e168]: 
+                - generic [ref=e169]: enquiry@1835500.gov.hk
+              - generic [ref=e170]:
+                - generic "電話" [ref=e171]: 
+                - generic [ref=e172]: 183 5500
+          - paragraph [ref=e174]: 版權所有 © 2023 開放數據平台
+  - text:           

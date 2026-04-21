@@ -1,0 +1,370 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "跳至主要内容" [ref=e3] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "開放數據平台" [ref=e7] [cursor=pointer]:
+          - /url: /tc/
+          - img "開放數據平台" [ref=e8]
+        - generic [ref=e9]:
+          - list [ref=e10]:
+            - listitem [ref=e11]:
+              - link " 下載列" [ref=e12] [cursor=pointer]:
+                - /url: /tc/download-queue
+                - generic [ref=e13]: 
+                - text: 下載列
+            - text: 
+            - listitem [ref=e14]:
+              - link " 書籤" [ref=e15] [cursor=pointer]:
+                - /url: /tc/bookmarks
+                - generic [ref=e16]: 
+                - text: 書籤
+            - listitem [ref=e17]:
+              - link "字型大小" [ref=e18] [cursor=pointer]:
+                - /url: /tc/text-size
+            - text: 
+            - listitem [ref=e19]:
+              - link "Eng" [ref=e20] [cursor=pointer]:
+                - /url: /en-datasets?page=2&category=population
+              - link "简" [ref=e21] [cursor=pointer]:
+                - /url: /sc-datasets?page=2&category=population
+            - listitem [ref=e22]:
+              - button "打開搜尋器" [ref=e23] [cursor=pointer]:
+                - generic [ref=e24]: 打開搜尋器
+                - generic [ref=e25]: 
+              - text:   
+            - listitem [ref=e26]:
+              - button "分享至" [ref=e27] [cursor=pointer]:
+                - generic [ref=e28]: 分享至
+                - generic [ref=e29]: 
+          - text: 
+          - navigation "選項單" [ref=e31]:
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - link "數據集" [ref=e34] [cursor=pointer]:
+                  - /url: /tc-datasets
+              - listitem [ref=e35]:
+                - link "數據提供機構" [ref=e36] [cursor=pointer]:
+                  - /url: /tc/providers
+              - listitem [ref=e37]:
+                - link "幫助" [ref=e38] [cursor=pointer]:
+                  - /url: /tc/help
+              - listitem [ref=e39]:
+                - link "開發者中心" [ref=e40] [cursor=pointer]:
+                  - /url: /tc/dev-center
+              - listitem [ref=e41]:
+                - link "社區" [ref=e42] [cursor=pointer]:
+                  - /url: /tc/community
+    - main [ref=e43]:
+      - generic [ref=e45]:
+        - navigation "導航" [ref=e46]:
+          - list [ref=e47]:
+            - listitem [ref=e48]:
+              - link " 主頁" [ref=e49] [cursor=pointer]:
+                - /url: /tc/
+                - generic [ref=e50]: 
+                - text: 主頁
+              - text: 
+        - heading "數據集" [level=1] [ref=e51]
+      - generic [ref=e54]:
+        - form "搜尋":
+          - generic [ref=e55]:
+            - generic [ref=e56]:
+              - generic [ref=e57]: 篩選：
+              - generic [ref=e59]:
+                - option "人口" [selected]
+                - option "工商業"
+                - option "社區及社會福利"
+                - option "法律及保安"
+                - option "房屋"
+                - option "城市管理及公共設施"
+                - option "科技及廣播"
+                - option "食物"
+                - option "氣象"
+                - option "財經"
+                - option "旅遊"
+                - option "教育"
+                - option "康樂、體育及文化"
+                - option "就業及勞工"
+                - option "發展、地理及土地資訊"
+                - option "運輸"
+                - option "選舉及立法機關"
+                - option "衞生"
+                - option "環境"
+                - option "其他"
+                - generic [ref=e60]:
+                  - button "數據分類：1 個已選擇 " [ref=e61] [cursor=pointer]:
+                    - generic [ref=e62]: 數據分類：1 個已選擇
+                    - text: 
+                  - text:   
+              - generic [ref=e64]:
+                - option "入境事務處 (88)"
+                - option "大學教育資助委員會秘書處 (27)"
+                - option "工業貿易署 (2)"
+                - option "土木工程拓展署 (30)"
+                - option "土地註冊處 (11)"
+                - option "中原地產代理有限公司 (1)"
+                - option "中華電力有限公司 (1)"
+                - option "天星小輪有限公司 (1)"
+                - option "文化體育及旅遊局 (41)"
+                - option "公司註冊處 (20)"
+                - option "公務及司法人員薪俸及服務條件諮詢委員會聯合秘書處 (9)"
+                - option "公務員事務局 (24)"
+                - option "公務員敍用委員會 (1)"
+                - option "水務署 (72)"
+                - option "市區重建局 (2)"
+                - option "民政及青年事務局 (22)"
+                - option "民政事務總署 (37)"
+                - option "民航處 (10)"
+                - option "民眾安全服務隊 (5)"
+                - option "立法會 (6)"
+                - option "在職家庭及學生資助事務處 (20)"
+                - option "地政總署 (119)"
+                - option "全記渡有限公司 (2)"
+                - option "行政長官辦公室 (24)"
+                - option "西九文化區管理局 (1)"
+                - option "投資推廣署 (6)"
+                - option "社會福利署 (167)"
+                - option "法律援助署 (2)"
+                - option "知識產權署 (34)"
+                - option "建築署 (25)"
+                - option "房屋局 (1)"
+                - option "坪洲街渡有限公司 (2)"
+                - option "保安局 (12)"
+                - option "保險業監管局 (245)"
+                - option "城巴有限公司 (1)"
+                - option "城市規劃委員會 (7)"
+                - option "差餉物業估價署 (4)"
+                - option "政制及內地事務局 (3)"
+                - option "政府化驗所 (4)"
+                - option "政府物流服務署 (24)"
+                - option "政府飛行服務隊 (1)"
+                - option "政府產業署 (19)"
+                - option "政府統計處 (882)"
+                - option "政府新聞處 (5)"
+                - option "政務司司長辦公室 (4)"
+                - option "政務司司長辦公室轄下行政署 (12)"
+                - option "律政司 (7)"
+                - option "香港中華煤氣有限公司 (1)"
+                - option "香港天文台 (52)"
+                - option "香港互聯網註冊管理有限公司 (1)"
+                - option "香港生產力促進局 (7)"
+                - option "香港考試及評核局 (18)"
+                - option "香港金融管理局 (180)"
+                - option "香港房屋協會 (4)"
+                - option "香港房屋委員會 (21)"
+                - option "香港科技園公司 (14)"
+                - option "香港海關 (13)"
+                - option "香港消防處 (29)"
+                - option "香港郵政 (12)"
+                - option "香港復康會 (1)"
+                - option "香港貿易發展局 (3)"
+                - option "香港電台 (3)"
+                - option "香港電車有限公司 (2)"
+                - option "香港電燈有限公司 (12)"
+                - option "香港網絡安全事故協調中心 (2)"
+                - option "香港數碼港管理有限公司 (16)"
+                - option "香港學術及職業資歷評審局 (2)"
+                - option "香港機場管理局 (1)"
+                - option "香港警務處 (33)"
+                - option "香港懲教署 (35)"
+                - option "香港鐵路有限公司 (4)"
+                - option "屋宇署 (37)"
+                - option "食物安全中心 (6)"
+                - option "食物環境衞生署 (22)"
+                - option "家庭與學校合作事宜委員會 (2)"
+                - option "海事處 (28)"
+                - option "特首政策組 (57)"
+                - option "破產管理署 (9)"
+                - option "通訊事務管理局辦公室 (40)"
+                - option "消費者委員會 (3)"
+                - option "酒牌局 (1)"
+                - option "庫務署 (14)"
+                - option "財政司司長辦公室 (3)"
+                - option "財經事務及庫務局 (4)"
+                - option "區議會 (4)"
+                - option "強制性公積金計劃管理局 (7)"
+                - option "教育局 (71)"
+                - option "商務及經濟發展局 (16)"
+                - option "康樂及文化事務署 (122)"
+                - option "規劃署 (17)"
+                - option "渠務署 (22)"
+                - option "發展局 (20)"
+                - option "運輸及物流局 (3)"
+                - option "運輸署 (60)"
+                - option "創新科技及工業局 (3)"
+                - option "創新科技署 (41)"
+                - option "勞工及福利局 (4)"
+                - option "勞工處 (40)"
+                - option "富裕小輪有限公司 (4)"
+                - option "港九小輪有限公司 (1)"
+                - option "稅務局 (41)"
+                - option "新大嶼山巴士 (1973) 有限公司 (2)"
+                - option "新渡轮服务有限公司 (3)"
+                - option "電影、報刊及物品管理辦事處 (2)"
+                - option "路政署 (33)"
+                - option "廉政公署 (31)"
+                - option "截取通訊及監察事務專員秘書處 (8)"
+                - option "漁農自然護理署 (53)"
+                - option "翠華船務(香港)有限公司 (2)"
+                - option "數字政策辦公室 (68)"
+                - option "選舉事務處 (33)"
+                - option "選舉管理委員會 (11)"
+                - option "審計署 (5)"
+                - option "機電工程署 (95)"
+                - option "衞生署 (81)"
+                - option "環境保護署 (58)"
+                - option "醫院管理局 (14)"
+                - option "醫務衞生局 (11)"
+                - option "醫療輔助隊 (1)"
+                - option "競爭事務委員會 (1)"
+                - option "28地產資訊有限公司 (1)"
+                - generic [ref=e65]:
+                  - button "數據提供機構：全部 " [ref=e66] [cursor=pointer]:
+                    - generic [ref=e67]: 數據提供機構：全部
+                    - text: 
+                  - text:  
+              - generic [ref=e69]:
+                - option "3DS"
+                - option "API"
+                - option "ASC"
+                - option "ASCII"
+                - option "CESIUM3DTILES"
+                - option "CSV"
+                - option "DAE"
+                - option "DGN"
+                - option "DWG"
+                - option "FBX"
+                - option "FGDB"
+                - option "GEOPACKAGE"
+                - option "GEOTIFF"
+                - option "GFS"
+                - option "GLTF"
+                - option "GML"
+                - option "GTFS"
+                - option "GeoJSON"
+                - option "ICS"
+                - option "JPEG"
+                - option "JSON"
+                - option "KML"
+                - option "KMZ"
+                - option "MAX"
+                - option "MDB"
+                - option "OBJ"
+                - option "OSGB"
+                - option "PNG"
+                - option "RINEX"
+                - option "RSS"
+                - option "RTCM"
+                - option "SHP"
+                - option "VRML"
+                - option "XLS"
+                - option "XLSM"
+                - option "XLSX"
+                - option "XML"
+                - option "ZIP"
+                - generic [ref=e70]:
+                  - button "格式：全部 " [ref=e71] [cursor=pointer]:
+                    - generic [ref=e72]: 格式：全部
+                    - text: 
+                  - text:  
+              - generic [ref=e73]:
+                - checkbox "提供應用程式介面" [ref=e74]
+                - generic [ref=e75]: 提供應用程式介面
+            - generic [ref=e76]:
+              - generic [ref=e77]: 篩選
+              - generic [ref=e78]:
+                - generic [ref=e79]: 
+                - searchbox "篩選" [ref=e80]
+              - button " 清除全部" [ref=e81] [cursor=pointer]:
+                - generic [ref=e82]: 
+                - generic [ref=e83]: 清除全部
+              - button " 搜尋" [disabled] [ref=e84]
+            - generic [ref=e85]:
+              - generic [ref=e86]:
+                - radio "搜尋數據集標題及說明" [checked] [ref=e87]
+                - generic [ref=e88]: 搜尋數據集標題及說明
+              - generic [ref=e89]:
+                - radio "搜尋數據集標題、說明及內容" [ref=e90]
+                - generic [ref=e91]: 搜尋數據集標題、說明及內容
+            - text:  
+        - generic [ref=e92]:
+          - generic [ref=e93]: 已選擇的篩選：
+          - generic [ref=e95]:
+            - generic [ref=e96]: 人口
+            - button "Remove filter" [disabled] [ref=e97]:
+              - generic: 
+        - region [ref=e98]:
+          - generic:
+            - generic:
+              - img "loading"
+            - generic: 讀取中...
+    - contentinfo [ref=e99]:
+      - generic [ref=e100]:
+        - generic [ref=e101]:
+          - generic [ref=e102]:
+            - text:     
+            - link " 書籤" [ref=e103] [cursor=pointer]:
+              - /url: /tc/bookmarks
+              - generic [ref=e104]: 
+              - generic [ref=e105]: 書籤
+            - link " 下載列" [ref=e106] [cursor=pointer]:
+              - /url: /tc/download-queue
+              - generic [ref=e107]: 
+              - generic [ref=e108]: 下載列
+            - link " 提出意見" [ref=e109] [cursor=pointer]:
+              - /url: /tc/feedback?&type=exist
+              - generic [ref=e110]: 
+              - generic [ref=e111]: 提出意見
+            - button " 回到頂部" [ref=e112] [cursor=pointer]:
+              - generic [ref=e113]: 
+              - generic [ref=e114]: 回到頂部
+            - text: 
+          - button " 顯示 / 隱藏側邊欄" [ref=e115] [cursor=pointer]:
+            - generic [ref=e116]: 
+            - generic [ref=e117]: 顯示 / 隱藏側邊欄
+        - generic [ref=e118]:
+          - button " RSS摘要 " [ref=e120] [cursor=pointer]:
+            - generic [ref=e121]: 
+            - generic [ref=e122]: RSS摘要
+            - generic [ref=e123]: 
+          - text: 
+        - generic [ref=e124]:
+          - list [ref=e126]:
+            - listitem [ref=e127]:
+              - link "網頁指南" [ref=e128] [cursor=pointer]:
+                - /url: /tc/site-map
+              - text: "|"
+            - listitem [ref=e129]:
+              - link "私隱政策" [ref=e130] [cursor=pointer]:
+                - /url: /tc/privacy-policy
+              - text: "|"
+            - listitem [ref=e131]:
+              - link "使用條款及條件" [ref=e132] [cursor=pointer]:
+                - /url: /tc/terms-and-conditions
+              - text: "|"
+            - listitem [ref=e133]:
+              - link "無障礙聲明" [ref=e134] [cursor=pointer]:
+                - /url: /tc/web-accessibility
+          - generic [ref=e136]:
+            - link "符合萬維網聯盟有關無障礙網頁設計指引2.1中2A級別的要求" [ref=e137] [cursor=pointer]:
+              - /url: https://www.w3.org/WAI/WCAG2AA-Conformance
+              - img "符合萬維網聯盟有關無障礙網頁設計指引2.1中2A級別的要求" [ref=e138]
+            - link "香港品牌" [ref=e139] [cursor=pointer]:
+              - /url: https://www.brandhk.gov.hk/zh-hk
+              - img "香港品牌" [ref=e140]
+        - generic [ref=e141]:
+          - generic [ref=e142]:
+            - paragraph [ref=e143]: 由數字政策辦公室開發及支援
+            - generic [ref=e144]:
+              - paragraph [ref=e145]: 聯絡我們
+              - link "電郵 enquiry@1835500.gov.hk" [ref=e146] [cursor=pointer]:
+                - /url: mailto:enquiry@1835500.gov.hk
+                - generic "電郵" [ref=e147]: 
+                - generic [ref=e148]: enquiry@1835500.gov.hk
+              - generic [ref=e149]:
+                - generic "電話" [ref=e150]: 
+                - generic [ref=e151]: 183 5500
+          - paragraph [ref=e153]: 版權所有 © 2023 開放數據平台
+  - text:           
