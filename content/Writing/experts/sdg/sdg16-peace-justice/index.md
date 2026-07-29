@@ -1,5 +1,6 @@
 ---
 title: SDG 16 - 和平、正义与强大机构 (Peace, Justice and Strong Institutions)
+description: 介绍SDG 16 - 和平、正义与强大机构 (Peace, Justice and Strong Institutions)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG16
@@ -7,7 +8,6 @@ tags:
   - 正义
   - 法治
   - 治理
-draft: false
 ---
 
 ## 目标概述

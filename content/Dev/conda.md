@@ -1,5 +1,6 @@
 ---
 title: conda 使用速查
+description: conda 使用速查的环境配置、操作步骤与常见问题指南。
 tags:
   - Python
   - conda

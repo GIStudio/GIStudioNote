@@ -1,6 +1,6 @@
 ---
-title: "学习资源：书籍与课程"
-description: "GeoAI、GIS 编程、AI4Science 的书籍、课程、视频与大学项目。"
+title: 学习资源：书籍与课程
+description: GeoAI、GIS 编程、AI4Science 的书籍、课程、视频与大学项目。
 tags:
   - GeoAI
   - Autonomous-GeoAI

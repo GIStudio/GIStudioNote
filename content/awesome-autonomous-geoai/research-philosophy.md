@@ -1,6 +1,6 @@
 ---
-title: "Research Philosophy：Autonomous GeoAI 科研哲学"
-description: "上游项目的研究愿景、博士定位、GeoAI 框架与科研写作原则原文。"
+title: Research Philosophy：Autonomous GeoAI 科研哲学
+description: 上游项目的研究愿景、博士定位、GeoAI 框架与科研写作原则原文。
 tags:
   - GeoAI
   - Autonomous-GeoAI

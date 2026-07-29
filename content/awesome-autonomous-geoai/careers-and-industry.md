@@ -1,6 +1,6 @@
 ---
-title: "职业发展与产业地图"
-description: "博士与学术职业资源、实习机会、GeoAI 与 Physical AI 公司。"
+title: 职业发展与产业地图
+description: 博士与学术职业资源、实习机会、GeoAI 与 Physical AI 公司。
 tags:
   - GeoAI
   - Autonomous-GeoAI

@@ -1,5 +1,6 @@
 ---
 title: Knowledge Discovery in Databases (KDD) - 数据库知识发现
+description: Knowledge Discovery in Databases (KDD) - 数据库知识发现的核心概念、方法、项目与相关研究笔记。
 tags:
   - KDD
   - Data Mining
@@ -9,8 +10,6 @@ tags:
   - 机器学习
   - 模式识别
   - 数据预处理
-  - Fayyad
-  - 1996
 ---
 
 # Knowledge Discovery in Databases (KDD) - 数据库知识发现

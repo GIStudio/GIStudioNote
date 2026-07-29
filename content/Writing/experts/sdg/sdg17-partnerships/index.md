@@ -1,12 +1,12 @@
 ---
 title: SDG 17 - 促进目标实现的伙伴关系 (Partnerships for the Goals)
+description: 介绍SDG 17 - 促进目标实现的伙伴关系 (Partnerships for the Goals)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG17
   - 伙伴关系
   - 国际合作
   - 多边主义
-draft: false
 ---
 
 ## 目标概述

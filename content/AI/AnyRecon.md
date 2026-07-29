@@ -1,5 +1,6 @@
 ---
 title: AnyRecon - 视频生成模型辅助大场景三维重建
+description: 分析 AnyRecon 如何利用视频扩散先验支持任意视角的大场景三维重建。
 tags:
   - 3D Reconstruction
   - Video Diffusion Model
@@ -9,7 +10,10 @@ tags:
   - NeRF
   - Multi-view
   - Large-scale Scene
-  - OpenImagingLab
+aliases:
+  - AI/anyrecon-wechat
+source: https://arxiv.org/abs/2604.19747
+verified_at: 2026-07-29
 ---
 
 # AnyRecon 项目分析
@@ -28,6 +32,11 @@ AnyRecon 是由 OpenImagingLab 团队开发的三维重建项目，其核心创�
 - **视频生成先验**：利用视频扩散模型的跨帧一致性作为几何约束
 
 ## 技术架构
+
+> [!note] 版本边界
+> 本页同时整理项目仓库与论文预印本。仓库实现和论文描述可能随版本变化；
+> 运行参数与权重状态应以 [AnyRecon 官方项目](https://yutian10.github.io/AnyRecon/)
+> 和 [arXiv:2604.19747](https://arxiv.org/abs/2604.19747) 为准。
 
 ### 核心思路
 
@@ -145,6 +154,20 @@ AnyRecon 巧妙地将这些能力迁移到三维重建：
 三维重建：视角₁ → 视角₂ → 视角₃ → ... （空间序列）
 ```
 
+### 论文版本补充：记忆、检索与快速扩散
+
+论文版本强调的不只是把多视角图像排成序列，还包括三项关键设计：
+
+1. **显式与隐式双重记忆**：以三维点云保存显式几何信息，同时用参考帧
+   的 KV cache 保存跨视角上下文，使长轨迹生成持续受已有观测约束。
+2. **几何贡献度检索**：检索目标不是一般图像相似度，而是选择对当前重建
+   片段最有几何贡献的参考信息。
+3. **快速推理**：论文报告使用四步扩散蒸馏，并通过稀疏上下文策略控制长
+   轨迹推理成本。
+
+这些机制共同回答了一个核心问题：生成模型如何在补全未知视角时，不丢失
+已经建立的几何一致性。
+
 ### 与传统方法的对比
 
 | 维度 | 传统方法 (COLMAP+3DGS) | AnyRecon |
@@ -209,6 +232,8 @@ AnyRecon 值得尝试。
 ---
 
 **参考资源**：
+- [AnyRecon 论文（预印本）](https://arxiv.org/abs/2604.19747)
+- [AnyRecon 项目页](https://yutian10.github.io/AnyRecon/)
 - [AnyRecon GitHub 仓库](https://github.com/OpenImagingLab/AnyRecon)
 - [Wan2.1 视频生成模型](https://github.com/Wan-Video/Wan2.1)
 - [DiffSynth-Studio](https://github.com/modelscope/DiffSynth-Studio)

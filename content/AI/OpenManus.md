@@ -1,5 +1,6 @@
 ---
 title: 开源的智能工具！OpenManus
+description: 开源的智能工具！OpenManus的核心概念、方法、项目与相关研究笔记。
 tags:
   - AI
   - OpenManus
@@ -9,8 +10,6 @@ tags:
   - Playwright
   - LLM
   - 工具
-  - GIStudy
-  - 微信公众号推文
 ---
 下面开始介绍OpenManus的安装以及测试。
 网站在：

@@ -1,3 +1,13 @@
+---
+title: uv 配置指南
+description: uv 配置指南的环境配置、操作步骤与常见问题指南。
+tags:
+  - Dev
+  - Python
+  - uv
+  - 环境管理
+  - 教程
+---
 # uv 配置指南
 
 本文档介绍如何从零配置 uv（Python 包管理器），并配合 Git Bash 在项目中使用。

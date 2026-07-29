@@ -1,5 +1,6 @@
 ---
 title: 科普写作
+description: 科普写作的写作方法、实践建议与相关资源。
 tags:
   - 科普
   - 写作参考
@@ -9,8 +10,6 @@ tags:
   - IP形象
   - 科学传播
   - 交互设计
-  - AIGC
-draft: false
 ---
 ## 引言
 

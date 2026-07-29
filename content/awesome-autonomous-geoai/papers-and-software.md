@@ -1,6 +1,6 @@
 ---
-title: "研究资源：论文与软件"
-description: "Autonomous GeoAI 相关代表性论文，以及 Python、R 和 GIS 集成工具。"
+title: 研究资源：论文与软件
+description: Autonomous GeoAI 相关代表性论文，以及 Python、R 和 GIS 集成工具。
 tags:
   - GeoAI
   - Autonomous-GeoAI

@@ -1,13 +1,13 @@
 ---
-title: " 大语言模型 Prompts"
+title: 大语言模型 Prompts
+description: 大语言模型 Prompts的使用说明、资源链接与实践记录。
 tags:
   - LLM
   - AI
-  - Prompts
+  - 提示词工程
   - 论文修改
   - 学术写作
   - 英文润色
-  - Prompt工程
   - GIS
   - 地理信息
 ---

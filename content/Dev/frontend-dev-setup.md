@@ -1,71 +1,28 @@
+---
+title: 现代化前端项目配置指南
+description: 现代化前端项目配置指南的环境配置、操作步骤与常见问题指南。
+tags:
+  - Dev
+  - 前端开发
+  - Node.js
+  - NVM
+  - 教程
+---
 # 现代化前端项目配置指南
 
 本文档介绍如何从零配置前端开发环境，包括 Node.js 版本管理、npm 使用，以及常见前端测试方法。
 
 ## Node.js 版本管理 - nvm
 
-### 什么是 nvm
+nvm 用于在同一台机器上隔离不同项目需要的 Node.js 版本。安装、切换、默认
+版本与常见故障统一维护在 [[../tools/NVM|NVM 教程]]，本文只规定前端项目应：
 
-nvm（Node Version Manager）用于在同一系统中管理多个 Node.js 版本，解决不同项目需要不同 Node 版本的问题。
+1. 在 `.nvmrc` 或 `.node-version` 固定版本；
+2. 在 `package.json` 的 `engines.node` 声明兼容范围；
+3. 在本地和 CI 中使用同一主版本；
+4. 先切换 Node，再运行 `npm ci` 或 `npm install`。
 
-### 安装 nvm
-
-#### macOS / Linux
-
-```bash
-# 使用 curl 安装
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-
-# 或使用 wget
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-```
-
-安装完成后，重新加载 shell 配置：
-```bash
-source ~/.bashrc  # Bash
-source ~/.zshrc    # Zsh
-```
-
-#### Windows
-
-Windows 推荐使用 [nvm-windows](https://github.com/coreybutler/nvm-windows)：
-
-1. 下载最新安装包：[nvm-setup.exe](https://github.com/coreybutler/nvm-windows/releases)
-2. 运行安装程序
-3. 打开新的终端验证
-
-### nvm 常用命令
-
-```bash
-# 查看已安装的 Node 版本
-nvm ls
-
-# 查看可安装的 Node 版本
-nvm ls-remote
-
-# 安装特定版本
-nvm install 22
-
-# 安装 LTS 版本
-nvm install --lts
-
-# 使用特定版本
-nvm use 22
-
-# 设置默认版本
-nvm alias default 22
-
-# 卸载版本
-nvm uninstall 20
-```
-
-### Node.js 版本选择建议
-
-| 用途 | 推荐版本 |
-|------|----------|
-| 新项目 | Node 22 (最新偶数版本) |
-| 生产项目 | Node 20 LTS |
-| 旧项目维护 | 根据项目要求 |
+GIStudioNote 当前固定使用 Node `22.16.0`。
 
 ## npm 使用指南
 

@@ -1,11 +1,11 @@
 ---
 title: SDG 5 - 性别平等 (Gender Equality)
+description: 介绍SDG 5 - 性别平等 (Gender Equality)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG05
   - 性别平等
   - 妇女权益
-draft: false
 ---
 
 ## 目标概述

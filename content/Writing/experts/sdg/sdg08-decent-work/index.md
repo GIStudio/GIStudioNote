@@ -1,12 +1,12 @@
 ---
 title: SDG 8 - 体面工作和经济增长 (Decent Work and Economic Growth)
+description: 介绍SDG 8 - 体面工作和经济增长 (Decent Work and Economic Growth)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG08
   - 经济增长
   - 就业
   - 劳动
-draft: false
 ---
 
 ## 目标概述

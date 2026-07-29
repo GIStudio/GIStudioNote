@@ -1,13 +1,30 @@
 ---
+title: 个人品牌管理 Skill 设计
+description: 从对话上下文中提取专业能力和项目经验，自动更新CV，并同步刷新社交媒体资料以建立一致的个人品牌形象。支持多平台内容生成和定时任务管理。
+tags:
+  - Dev
+  - Skill
+  - 个人品牌
+  - 提示词
+  - 设计文档
 name: personal-brand-manager
 zh_cn_name: 个人品牌管理
-description: 从对话上下文中提取专业能力和项目经验，自动更新CV，并同步刷新社交媒体资料以建立一致的个人品牌形象。支持多平台内容生成和定时任务管理。
 license: MIT
 metadata:
   author: gap-finder
   version: 1.0.0
   category: writing
-  tags: [personal-brand, cv, social-media, linkedin, scholar, xiaohongshu, weibo, douyin, researchgate, scheduling]
+  tags:
+    - personal-brand
+    - cv
+    - social-media
+    - linkedin
+    - scholar
+    - xiaohongshu
+    - weibo
+    - douyin
+    - researchgate
+    - scheduling
   inputType: text-with-context
   outputFormat: markdown
   icon: UserOutlined

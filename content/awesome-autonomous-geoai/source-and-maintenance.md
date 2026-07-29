@@ -1,6 +1,6 @@
 ---
-title: "Awesome Autonomous GeoAI：来源、授权与更新方法"
-description: "记录 GIStudioNote 整理版的上游来源、快照版本、目录映射、同步方法与 MIT 授权。"
+title: Awesome Autonomous GeoAI：来源、授权与更新方法
+description: 记录 GIStudioNote 整理版的上游来源、快照版本、目录映射、同步方法与 MIT 授权。
 tags:
   - GeoAI
   - Autonomous-GeoAI

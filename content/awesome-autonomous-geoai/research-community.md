@@ -1,6 +1,6 @@
 ---
-title: "学术共同体：会议、团队与期刊"
-description: "相关会议、Workshop、研究团队、GIScience 奠基学者与期刊入口。"
+title: 学术共同体：会议、团队与期刊
+description: 相关会议、Workshop、研究团队、GIScience 奠基学者与期刊入口。
 tags:
   - GeoAI
   - Autonomous-GeoAI

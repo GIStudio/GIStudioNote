@@ -1,12 +1,12 @@
 ---
 title: SDG 13 - 气候行动 (Climate Action)
+description: 介绍SDG 13 - 气候行动 (Climate Action)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG13
   - 气候变化
   - 碳中和
   - 气候行动
-draft: false
 ---
 
 ## 目标概述

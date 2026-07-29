@@ -1,5 +1,6 @@
 ---
-title: " 什么是一个研究问题？What is a research GAP？"
+title: 什么是一个研究问题？What is a research GAP？
+description: 什么是一个研究问题？What is a research GAP？的写作方法、实践建议与相关资源。
 tags:
   - 写作参考
   - 模式化

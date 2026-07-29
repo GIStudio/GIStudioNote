@@ -1,5 +1,6 @@
 ---
-title: " 字体"
+title: 字体
+description: 字体的环境配置、操作步骤与常见问题指南。
 tags:
   - Python
   - matplotlib
@@ -9,8 +10,6 @@ tags:
   - rcParams
   - Linux
   - troubleshooting
-  - font-manager
-  - WenQuanYi
 ---
 上述错误表明 `matplotlib` 无法找到你指定的中文字体（如 `WenQuanYi Micro Hei`）。这通常是由于字体未正确安装、字体名称不匹配或 `matplotlib` 的字体缓存问题导致的。以下是详细的排查和解决方法：
 

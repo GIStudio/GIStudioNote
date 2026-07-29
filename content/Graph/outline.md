@@ -1,16 +1,15 @@
 ---
 title: 图学习
+description: 图学习的核心概念、方法、项目与相关研究笔记。
 tags:
   - graph-learning
   - GNN
   - urban-computing
   - GIS
-  - tutorial
+  - 教程
   - 图神经网络
   - 节点嵌入
   - 时空图神经网络
-  - 交通预测
-  - 城市感知计算
 ---
 ## 关键要点
 

@@ -1,10 +1,10 @@
 ---
 title: Deep Reinforcement Learning
+description: Deep Reinforcement Learning的核心概念、方法、项目与相关研究笔记。
 tags:
-  - ML
+  - 机器学习
   - RL
-  - DRL
-  - deep-reinforcement-learning
+  - 深度强化学习
 ---
 DRL is the combination of [[Deep Learning]] and [[Reinforcement Learning]].
 > [!info] About

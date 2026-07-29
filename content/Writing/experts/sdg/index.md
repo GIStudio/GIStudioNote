@@ -1,10 +1,10 @@
 ---
 title: 可持续发展目标 (Sustainable Development Goals)
+description: 介绍可持续发展目标 (Sustainable Development Goals)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - 可持续发展
   - 联合国
-draft: false
 ---
 
 可持续发展目标（Sustainable Development Goals，简称 SDGs）是联合国在 2015 年通过的 17 个全球发展目标，旨在到 2030 年消除贫困、保护地球并确保所有人享有和平与繁荣。

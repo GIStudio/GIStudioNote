@@ -1,12 +1,12 @@
 ---
 title: SDG 7 - 经济适用的清洁能源 (Affordable and Clean Energy)
+description: 介绍SDG 7 - 经济适用的清洁能源 (Affordable and Clean Energy)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG07
   - 清洁能源
   - 能源
   - 可再生能源
-draft: false
 ---
 
 ## 目标概述

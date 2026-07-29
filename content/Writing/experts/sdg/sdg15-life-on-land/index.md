@@ -1,12 +1,12 @@
 ---
 title: SDG 15 - 陆地生物 (Life on Land)
+description: 介绍SDG 15 - 陆地生物 (Life on Land)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG15
   - 陆地生态
   - 生物多样性
   - 森林
-draft: false
 ---
 
 ## 目标概述

@@ -1,5 +1,6 @@
 ---
 title: 图论基础
+description: 图论基础的核心概念、方法、项目与相关研究笔记。
 tags:
   - graph-theory
   - adjacency-matrix
@@ -9,8 +10,6 @@ tags:
   - 图分类
   - 邻接列表
   - 有向图
-  - 加权图
-  - 教程
 ---
 >[!attention] 推荐阅读
 > 图论基础：学习节点、边、邻接矩阵等概念，可参考[GeeksforGeeks Graph Theory](https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/)

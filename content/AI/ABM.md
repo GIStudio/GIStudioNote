@@ -1,5 +1,6 @@
 ---
 title: ABM
+description: 记录基于大语言模型的智能体社会模拟项目及其复杂度判断。
 tags:
   - AI
   - ABM

@@ -1,11 +1,11 @@
 ---
 title: SDG 2 - 零饥饿 (Zero Hunger)
+description: 介绍SDG 2 - 零饥饿 (Zero Hunger)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG02
   - 零饥饿
   - 粮食安全
-draft: false
 ---
 
 ## 目标概述

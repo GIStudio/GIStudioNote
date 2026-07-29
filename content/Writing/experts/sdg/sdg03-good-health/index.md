@@ -1,12 +1,12 @@
 ---
 title: SDG 3 - 良好健康与福祉 (Good Health and Well-being)
+description: 介绍SDG 3 - 良好健康与福祉 (Good Health and Well-being)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG03
   - 健康
   - 医疗
   - 公共卫生
-draft: false
 ---
 
 ## 目标概述

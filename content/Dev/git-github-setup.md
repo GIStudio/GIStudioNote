@@ -1,3 +1,13 @@
+---
+title: Git 与 GitHub 配置指南
+description: Git 与 GitHub 配置指南的环境配置、操作步骤与常见问题指南。
+tags:
+  - Dev
+  - Git
+  - GitHub
+  - 版本控制
+  - 教程
+---
 # Git 与 GitHub 配置指南
 
 本文档介绍如何从零开始配置 Git 和 GitHub。

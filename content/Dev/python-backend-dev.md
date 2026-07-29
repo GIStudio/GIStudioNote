@@ -1,3 +1,13 @@
+---
+title: Python 后端开发指南
+description: Python 后端开发指南的环境配置、操作步骤与常见问题指南。
+tags:
+  - Dev
+  - Python
+  - 后端开发
+  - API
+  - 教程
+---
 # Python 后端开发指南
 
 本文档介绍 Python 后端开发的常见模式，包括 API 开发、CLI 开发以及常用工具推荐。

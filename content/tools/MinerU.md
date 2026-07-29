@@ -1,5 +1,6 @@
 ---
 title: MinerU 开源的OCR工具
+description: MinerU 开源的OCR工具的使用说明、资源链接与实践记录。
 tags:
   - 工具
   - AI

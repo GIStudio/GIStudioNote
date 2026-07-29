@@ -1,5 +1,6 @@
 ---
 title: AI 如何走向三维世界：生成式世界模型、具身智能体与表征学习
+description: AI 如何走向三维世界：生成式世界模型、具身智能体与表征学习的核心概念、方法、项目与相关研究笔记。
 tags:
   - RTFM
   - SIMA
@@ -9,14 +10,6 @@ tags:
   - Energy-Based Model
   - EBM
   - 空间智能
-  - 具身智能
-  - World Labs
-  - Google DeepMind
-  - Yann LeCun
-  - 3D 生成
-  - 世界模型
-  - 表征学习
-  - Gemini
 ---
 
 # AI 如何走向三维世界：生成、行动与表征学习

@@ -1,12 +1,12 @@
 ---
 title: SDG 11 - 可持续城市和社区 (Sustainable Cities and Communities)
+description: 介绍SDG 11 - 可持续城市和社区 (Sustainable Cities and Communities)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG11
   - 城市规划
   - 可持续城市
   - 智慧城市
-draft: false
 ---
 
 ## 目标概述

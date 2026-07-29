@@ -1,6 +1,6 @@
 ---
-title: "生态、资助与参与方式"
-description: "其他资源、相关 Awesome Lists、科研资助以及上游贡献指南。"
+title: 生态、资助与参与方式
+description: 其他资源、相关 Awesome Lists、科研资助以及上游贡献指南。
 tags:
   - GeoAI
   - Autonomous-GeoAI

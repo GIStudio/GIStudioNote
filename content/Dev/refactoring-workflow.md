@@ -1,5 +1,6 @@
 ---
 title: 合适的重构流程
+description: 合适的重构流程的环境配置、操作步骤与常见问题指南。
 tags:
   - refactoring
   - git-workflow

@@ -1,11 +1,11 @@
 ---
 title: SDG 4 - 优质教育 (Quality Education)
+description: 介绍SDG 4 - 优质教育 (Quality Education)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG04
   - 教育
   - 终身学习
-draft: false
 ---
 
 ## 目标概述

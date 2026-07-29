@@ -1,3 +1,13 @@
+---
+title: Ubuntu kmod 漏洞缓解与重启判断
+description: Ubuntu kmod 漏洞缓解与重启判断的环境配置、操作步骤与常见问题指南。
+tags:
+  - Dev
+  - Ubuntu
+  - Linux
+  - 安全
+  - 运维
+---
 不一定。**仅针对 Ubuntu 这篇公告里的 `kmod` 临时缓解来说，不是绝对必须重启**；但 **如果你升级的是 kernel 包，要让真正的 kernel 修复生效，通常必须重启进新内核**。
 
 Ubuntu 这篇公告的关键句是：重启可以确保 mitigation 生效；如果不能重启，只要确认 `algif_aead` 模块没有加载，也可以不重启。公告还说，`kmod` 更新做的是禁用 `algif_aead` 模块，作为 kernel 修复发布前的 mitigation；真正的漏洞修复会通过 Linux kernel image packages 分发。([Ubuntu][1])

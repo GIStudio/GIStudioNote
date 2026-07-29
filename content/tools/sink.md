@@ -1,5 +1,6 @@
 ---
 title: short-link
+description: short-link的使用说明、资源链接与实践记录。
 tags:
   - 工具
   - 短链接

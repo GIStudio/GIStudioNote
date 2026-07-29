@@ -1,11 +1,11 @@
 ---
 title: SDG 1 - 无贫穷 (No Poverty)
+description: 介绍SDG 1 - 无贫穷 (No Poverty)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG01
   - 无贫穷
   - 贫困
-draft: false
 ---
 
 ## 目标概述

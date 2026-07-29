@@ -1,5 +1,6 @@
 ---
 title: NVM 教程
+description: NVM 教程的使用说明、资源链接与实践记录。
 tags:
   - DevOps
   - NVM

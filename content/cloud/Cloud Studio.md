@@ -1,6 +1,6 @@
 ---
 title: 腾讯云Cloud Studio介绍
-draft: false
+description: 腾讯云Cloud Studio介绍的云开发环境使用与配置笔记。
 tags:
   - DevOps
   - CloudServer

@@ -1,11 +1,11 @@
 ---
 title: SDG 10 - 减少不平等 (Reduced Inequalities)
+description: 介绍SDG 10 - 减少不平等 (Reduced Inequalities)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG10
   - 不平等
   - 社会公平
-draft: false
 ---
 
 ## 目标概述

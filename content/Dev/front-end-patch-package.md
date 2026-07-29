@@ -1,5 +1,6 @@
 ---
 title: patch-package 使用指南：安全修复第三方 npm 包的临时方案
+description: patch-package 使用指南：安全修复第三方 npm 包的临时方案的环境配置、操作步骤与常见问题指南。
 tags:
   - npm
   - patch-package
@@ -10,7 +11,6 @@ tags:
   - workflow
   - postinstall
 draft: true
-aliases:
 ---
 
 > 一句话核心价值：**将 node_modules 中的临时修改转化为可版本控制、团队共享的补丁文件，避免“改了就丢”的协作痛点。**

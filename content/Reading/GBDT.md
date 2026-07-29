@@ -1,5 +1,6 @@
 ---
 title: GBDT
+description: GBDT的阅读笔记、基础概念与延伸资料。
 tags:
   - 机器学习
   - GBDT
@@ -9,8 +10,6 @@ tags:
   - 特征工程
   - POI
   - 决策树
-  - 梯度提升
-  - 城市计算
 ---
 [@zengIdentifyingLocalizedAmenities2022]这个流程描述了一个使用机器学习方法（特别是梯度提升决策树，GBDT）来识别和分类城市社区是否发生绅士化（gentrification）的过程。以下是对该流程的详细分析：
 

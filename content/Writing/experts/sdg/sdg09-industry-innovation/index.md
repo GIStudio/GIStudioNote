@@ -1,12 +1,12 @@
 ---
 title: SDG 9 - 产业、创新和基础设施 (Industry, Innovation and Infrastructure)
+description: 介绍SDG 9 - 产业、创新和基础设施 (Industry, Innovation and Infrastructure)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG09
   - 产业
   - 创新
   - 基础设施
-draft: false
 ---
 
 ## 目标概述

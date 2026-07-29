@@ -1,12 +1,12 @@
 ---
 title: SDG 6 - 清洁饮水与卫生设施 (Clean Water and Sanitation)
+description: 介绍SDG 6 - 清洁饮水与卫生设施 (Clean Water and Sanitation)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG06
   - 饮水
   - 卫生
   - 水资源
-draft: false
 ---
 
 ## 目标概述

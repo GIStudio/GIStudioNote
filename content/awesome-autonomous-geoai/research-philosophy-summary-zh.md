@@ -1,6 +1,6 @@
 ---
-title: "Research Philosophy 中文整理"
-description: "研究哲学原文的中文提炼版，聚焦科研观、GeoAI 框架与论文定位。"
+title: Research Philosophy 中文整理
+description: 研究哲学原文的中文提炼版，聚焦科研观、GeoAI 框架与论文定位。
 tags:
   - GeoAI
   - Autonomous-GeoAI

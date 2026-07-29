@@ -1,12 +1,12 @@
 ---
 title: SDG 12 - 负责任消费和生产 (Responsible Consumption and Production)
+description: 介绍SDG 12 - 负责任消费和生产 (Responsible Consumption and Production)的核心议题、目标内涵与可持续发展相关资料。
 tags:
   - SDG
   - SDG12
   - 消费
   - 生产
   - 循环经济
-draft: false
 ---
 
 ## 目标概述

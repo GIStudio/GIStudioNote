@@ -1,5 +1,6 @@
 ---
 title: Stable Baseline 3 的使用
+description: Stable Baseline 3 的使用的核心概念、方法、项目与相关研究笔记。
 tags:
   - RL
   - PPO
