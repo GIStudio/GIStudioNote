@@ -2,7 +2,7 @@
 
 ## 当前状态
 
-- [doing] 全库治理（owner：GIStudio；检查点：元数据、链接和 Quartz 构建全部通过）
+- [done] 全库治理（证据：`npm run check:content` 通过；2026-07-29）
 - [done] Awesome Autonomous GeoAI 已拆分并发布（证据：commit `e2b185b`）
 - [plan] 定期复查时效性内容（触发：季度维护或上游更新；下一动作：运行内容审计并检查 `verified_at`）
 

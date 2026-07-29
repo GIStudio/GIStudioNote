@@ -1,6 +1,6 @@
 ---
-title: "Awesome Autonomous GeoAI 导航"
-description: "面向阅读与检索重新组织的 Autonomous GeoAI 与 AI4Science 资源导航。"
+title: Awesome Autonomous GeoAI 导航
+description: 面向阅读与检索重新组织的 Autonomous GeoAI 与 AI4Science 资源导航。
 tags:
   - GeoAI
   - Autonomous-GeoAI
@@ -35,6 +35,13 @@ order: 1
 
 - [[research-philosophy|Research Philosophy：Autonomous GeoAI 科研哲学]]
 - [[research-philosophy-summary-zh|Research Philosophy 中文整理]]
+
+## GIStudio 知识综合
+
+- [[../AI/GeoAI/index|GeoAI 与自主地理智能知识地图]]
+- [[../AI/GeoAI/autonomous-geoai|Autonomous GeoAI：概念与边界]]
+- [[../AI/GeoAI/geoai-agent-architecture|GeoAI Agent 架构]]
+- [[../AI/GeoAI/geospatial-agent-evaluation|地理空间智能体评测]]
 
 ## 阅读边界
 
