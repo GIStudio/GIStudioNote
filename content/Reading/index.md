@@ -9,5 +9,6 @@ tags:
 
 - [[Definations|基础定义]]
 - [[GBDT|梯度提升决策树]]
+- [[peters-2025-good-research-questions|Peters（2025）好研究问题结构化精读]]
 - [[../Reading Suggestions|阅读建议]]
 - [[../Anywriting/spatial-gen-1|《空间的生产》阅读笔记]]

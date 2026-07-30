@@ -10,6 +10,7 @@ tags:
 ## 学术写作
 
 - [[Guide|可复用写作套路]]
+- [[good-research-question-development|从好奇到可检验问题：四阶段研究问题形成方法]]
 - [[paper-knitting-guide|从选题到投稿的学术写作方法]]
 - [[findAgap|研究缺口识别]]
 - [[experts/cs/2026-publication-timeline|计算机科学投稿时间线]]
