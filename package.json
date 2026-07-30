@@ -14,6 +14,10 @@
   "scripts": {
     "quartz": "./quartz/bootstrap-cli.mjs",
     "docs": "npx quartz build --serve -d docs",
+    "notes": "npm run install-plugins && npx quartz build --serve -d content",
+    "start": "npm run notes",
+    "audit:content": "node scripts/audit_content.mjs",
+    "check:content": "npm run audit:content && tsc --noEmit && npx quartz build",
     "check": "tsc --noEmit && npx prettier . --check",
     "format": "npx prettier . --write",
     "test": "tsx --test",
@@ -23,7 +27,7 @@
   },
   "engines": {
     "npm": ">=10.9.2",
-    "node": ">=22"
+    "node": ">=22 <23"
   },
   "keywords": [
     "site generator",
@@ -54,7 +58,6 @@
     "@quartz-community/content-meta": "^0.1.0",
     "@quartz-community/content-page": "^0.1.0",
     "@quartz-community/crawl-links": "^0.1.0",
-    "@quartz-themes/core": "^1.0.0",
     "@quartz-community/created-modified-date": "^0.1.0",
     "@quartz-community/darkmode": "^0.1.0",
     "@quartz-community/description": "^0.1.0",
@@ -86,12 +89,14 @@
     "@quartz-community/tag-list": "^0.1.0",
     "@quartz-community/tag-page": "^0.1.0",
     "@quartz-community/unlisted-pages": "^0.1.0",
+    "@quartz-themes/core": "^1.0.0",
     "ansi-truncate": "^1.4.0",
     "async-mutex": "^0.5.0",
     "chokidar": "^5.0.0",
     "esbuild-sass-plugin": "^3.6.0",
     "github-slugger": "^2.0.0",
     "globby": "^16.1.0",
+    "gray-matter": "^4.0.3",
     "hast-util-from-html": "^2.0.0",
     "hast-util-to-jsx-runtime": "^2.3.6",
     "isomorphic-git": "^1.36.3",
