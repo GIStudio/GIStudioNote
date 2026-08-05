@@ -28,10 +28,12 @@ tags:
 | 写作与科研表达 | [[Writing/index]] |
 | 工具与工作流 | [[tools/index]] |
 | 阅读与基础概念 | [[Reading/index]] |
+| 哲学与城市科学 | [[Philosophy/index]] |
 
 ## 知识专题
 
 - [[AI/GeoAI/index|GeoAI 与自主地理智能]]
+- [[Philosophy/index|哲学与城市科学：20 个概念]]
 - [[awesome-autonomous-geoai/index|Awesome Autonomous GeoAI：资源导航与研究哲学]]
 - [[Writing/good-research-question-development|四阶段研究问题形成方法]]
 - [[Writing/experts/sdg/index|联合国可持续发展目标]]
