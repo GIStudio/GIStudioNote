@@ -15,6 +15,7 @@ tags:
 - [[findAgap|研究缺口识别]]
 - [[experts/cs/2026-publication-timeline|计算机科学投稿时间线]]
 - [[experts/cs/ccf-a-conferences|CCF-A 会议导航]]
+- [[top-computer-conference-font-and-template-requirements|计算机顶会字体与模板要求]]
 
 ## 面向公众
 
