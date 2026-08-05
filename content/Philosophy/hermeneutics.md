@@ -1,5 +1,5 @@
 ---
-title: 解释学：城市意义如何被理解
+title: 解释学怎样理解城市意义
 description: 从解释循环、历史处境和意义行动出发，理解城市文本、叙事与制度实践。
 tags:
   - 哲学
@@ -10,14 +10,14 @@ verified_at: 2026-08-05
 order: 13
 ---
 
-# 解释学：城市意义如何被理解
+# 解释学怎样理解城市意义
 
 > [!summary] 一句话总结
 > 解释学研究理解和解释如何发生，指出城市行动、文本与空间的意义必须在部分与整体、当下与历史、研究者与参与者之间反复校正。
 
 ## 概念定位
 
-解释学从文本解释发展为关于理解本身的哲学。其核心并非“任何人都有自己的解释”，而是理解总带着前见、语言与历史处境，并通过与材料和他者的对话被修正。
+解释学从文本解释发展为关于理解本身的哲学。理解总带着前见、语言与历史处境，也会在材料和他者的反驳中被修正。把它理解成“任何人都有自己的解释”，会漏掉这种约束。
 
 所谓解释学循环，是部分依赖整体、整体又通过部分被理解。例如一句规划口号的意义依赖整套政策语境，而我们又通过具体条款、地图和执行案例重建政策整体。
 
@@ -48,4 +48,4 @@ order: 13
 
 - Theodore George, [Hermeneutics](https://plato.stanford.edu/entries/hermeneutics/), *Stanford Encyclopedia of Philosophy*。
 - Hans-Georg Gadamer, [*Truth and Method*](https://www.bloomsbury.com/us/truth-and-method-9781472511569/), Bloomsbury edition。
-- Patsy Healey, [*Collaborative Planning: Shaping Places in Fragmented Societies*](https://link.springer.com/book/10.1007/978-1-349-25538-2), Red Globe Press / Springer Nature 书目页。
+- Patsy Healey, [*Collaborative Planning*](https://link.springer.com/book/10.1007/978-1-349-25538-2), Red Globe Press / Springer Nature 书目页。

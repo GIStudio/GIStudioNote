@@ -1,5 +1,5 @@
 ---
-title: 批判实在论：从事件追问生成机制
+title: 批判实在论怎样从事件追问机制
 description: 以分层现实、开放系统和可错性理解城市中的机制解释与结构条件。
 tags:
   - 哲学
@@ -10,22 +10,22 @@ verified_at: 2026-08-05
 order: 5
 ---
 
-# 批判实在论：从事件追问生成机制
+# 批判实在论怎样从事件追问机制
 
 > [!summary] 一句话总结
 > 批判实在论主张现实不依赖我们的描述而存在，但观察总是可错且受条件限制，所以研究应从事件规律进一步追问产生它们的结构与机制。
 
 ## 概念定位
 
-批判实在论主要与 Roy Bhaskar 的科学哲学相关。它同时反对朴素实在论和强建构主义：世界并不因为被测量才存在，但研究者只能通过概念、工具和社会实践接近它。
+批判实在论主要与 Roy Bhaskar 的科学哲学相关。它同时反对朴素实在论和强建构主义。世界并不因为被测量才存在，研究者却只能通过概念、工具和社会实践接近它。
 
-其常见区分是经验层（被体验或观察到的）、实际层（无论是否观察都发生的事件）和实在层（能够产生事件的结构与因果力量）。这不是三个地点，而是提醒我们“没有观察到”不等于“没有发生”，“事件相关”也不等于“已经找到机制”。
+其常见区分包括经验层、实际层和实在层。经验层指人们体验或观察到的内容，实际层容纳那些无论是否被观察都会发生的事件，实在层则指能够产生事件的结构与因果力量。这种区分提醒我们，没观察到的事情仍可能发生，事件相关也不等于机制已经找到。
 
 ## 详细解释
 
 城市是开放系统。房价、迁移或污染由多种机制同时作用，实验室式恒定规律很少出现。同一个住房补贴在不同城市产生不同结果，不一定说明机制不存在；土地制度、供给弹性和执行能力可能激活、阻断或抵消它。
 
-研究由此常采用溯因或逆推：从反复出现的模式和异常出发，提出“必须有什么结构或机制，才可能产生这些事件”，再用比较案例、过程证据和反事实检查这一解释。机制是真实性假设，不是见到结果后的故事。
+研究由此常采用溯因或逆推。研究者从反复出现的模式和异常出发，追问什么结构或机制才可能产生这些事件，再用比较案例、过程证据和反事实检查解释。机制首先是一项关于现实的假设，不能沦为见到结果以后补写的故事。
 
 ## 在城市科学中怎么用
 
@@ -34,7 +34,7 @@ order: 5
 - 同时研究物质基础设施、制度规则和行动者意义，避免单层解释。
 - 把模型失败区分为测量失败、机制遗漏和机制在当前情境未被激活。
 
-批判实在论为城市科学提供的不是一种固定算法，而是一种从“哪里相关”走向“什么力量在何种条件下产生结果”的解释方向。
+批判实在论没有给城市科学规定一套固定算法。它推动研究从“哪里相关”继续走向“什么力量在何种条件下产生结果”。
 
 ## 误用风险
 
@@ -50,4 +50,4 @@ order: 5
 
 - Roy Bhaskar, [*A Realist Theory of Science*](https://www.routledge.com/A-Realist-Theory-of-Science/Bhaskar/p/book/9780415454940), Routledge edition。
 - Andrew Sayer, [Critical Realism in Geography](https://research.lancaster-university.uk/en/publications/critical-realism-in-geography/), *International Encyclopedia of the Social & Behavioral Sciences*, 2015。
-- Andrew Sayer, [*Method in Social Science: A Realist Approach*](https://www.routledge.com/Method-in-Social-Science-A-Realist-Approach/Sayer/p/book/9780415582476), Routledge edition。
+- Andrew Sayer, [*Method in Social Science*](https://www.routledge.com/Method-in-Social-Science-A-Realist-Approach/Sayer/p/book/9780415582476), Routledge edition。

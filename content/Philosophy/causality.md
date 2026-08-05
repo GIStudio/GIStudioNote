@@ -1,5 +1,5 @@
 ---
-title: 因果性：城市变化为什么发生
+title: 因果性和城市变化为什么发生
 description: 区分相关、干预、反事实与机制，建立城市科学中的因果主张边界。
 tags:
   - 哲学
@@ -10,7 +10,7 @@ verified_at: 2026-08-05
 order: 6
 ---
 
-# 因果性：城市变化为什么发生
+# 因果性和城市变化为什么发生
 
 > [!summary] 一句话总结
 > 因果性关心一个因素是否以及如何改变另一个结果；城市科学必须区分相关模式、可干预效应、反事实差异与生成机制。
@@ -19,7 +19,7 @@ order: 6
 
 哲学没有唯一的因果理论。规律论关注稳定关联，反事实理论问“若原因未发生，结果是否不同”，干预论问主动改变原因能否改变结果，过程与机制理论则追踪影响如何传递。这些观点回答的重点不同，不应被一个“因果”标签遮蔽。
 
-城市中的因果尤其困难：行动者会选择居住地和交通方式，政策投放回应既有问题，空间邻近带来干扰，结果还随尺度和时间变化。相关性可以发现问题，却不足以独立回答政策“如果做了会怎样”。
+城市中的因果尤其难判断。行动者会选择居住地和交通方式，政策投放会回应既有问题，空间邻近会带来干扰，结果还随尺度和时间变化。相关性可以帮助发现问题，却不足以独立回答政策实施以后会怎样。
 
 ## 详细解释
 
@@ -34,7 +34,7 @@ order: 6
 - 对交通、住房、绿地或数字基础设施政策定义清楚的反事实与干扰范围。
 - 报告效应异质性和边界条件，而不是把一个城市的平均效应当作普遍规律。
 
-因果分析的城市意义在于支持负责的干预：不只预测风险落在哪里，也评估改变制度或基础设施是否会改善结果，以及代价由谁承担。
+因果分析让城市干预更负责任。它预测风险落在哪里，也评估改变制度或基础设施能否改善结果，还要追问代价由谁承担。
 
 ## 误用风险
 
@@ -49,5 +49,5 @@ order: 6
 ## 来源
 
 - [The Metaphysics of Causation](https://plato.stanford.edu/entries/causation-metaphysics/), *Stanford Encyclopedia of Philosophy*。
-- Miguel Hernán and James Robins, [*Causal Inference: What If*](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/), Chapman & Hall/CRC, 2020。
+- Miguel Hernán and James Robins, [*Causal Inference*](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/), Chapman & Hall/CRC, 2020。
 - Judea Pearl and Dana Mackenzie, [*The Book of Why*](https://www.basicbooks.com/titles/judea-pearl/the-book-of-why/9780465097616/), Basic Books, 2018。

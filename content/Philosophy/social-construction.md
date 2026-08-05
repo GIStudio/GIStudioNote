@@ -1,5 +1,5 @@
 ---
-title: 社会建构论：城市类别如何成为现实
+title: 社会建构论和城市类别如何成为现实
 description: 理解命名、制度和实践如何共同塑造社区、风险与非正规性等城市对象。
 tags:
   - 哲学
@@ -10,7 +10,7 @@ verified_at: 2026-08-05
 order: 15
 ---
 
-# 社会建构论：城市类别如何成为现实
+# 社会建构论和城市类别如何成为现实
 
 > [!summary] 一句话总结
 > 社会建构论研究某些类别、边界和问题如何通过语言、制度与集体实践形成并获得现实后果，而不是断言物质城市只是想象。
@@ -48,4 +48,4 @@ order: 15
 
 - Ron Mallon, [Naturalistic Approaches to Social Construction](https://plato.stanford.edu/entries/social-construction-naturalistic/), *Stanford Encyclopedia of Philosophy*。
 - Peter L. Berger and Thomas Luckmann, [*The Social Construction of Reality*](https://www.penguinrandomhouse.com/books/317021/the-social-construction-of-reality-by-peter-l-berger-and-thomas-luckmann/), Anchor Books edition。
-- Setha M. Low, [Spatializing Culture: The Social Production and Social Construction of Public Space in Costa Rica](https://doi.org/10.1525/ae.1996.23.4.02a00100), *American Ethnologist* 23(4), 1996。
+- Setha M. Low, [Spatializing Culture](https://doi.org/10.1525/ae.1996.23.4.02a00100), *American Ethnologist* 23(4), 1996。
