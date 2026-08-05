@@ -358,6 +358,7 @@ stop_or_pivot_rule:
 
 ## 关联阅读
 
+- [[research-problem-method-and-causal-orientation|研究问题、方法与因果方向]]
 - [[../Reading/peters-2025-good-research-questions|Peters（2025）原文结构化精读]]
 - [[findAgap|研究问题与 research gap]]
 
@@ -365,4 +366,3 @@ stop_or_pivot_rule:
 
 - Peters, M. A. K. (2025). *How to develop good research questions*. *Nature Human Behaviour*, 9, 1759–1761. [DOI](https://doi.org/10.1038/s41562-025-02292-5)
 - [Nature version of record](https://www.nature.com/articles/s41562-025-02292-5)
-
