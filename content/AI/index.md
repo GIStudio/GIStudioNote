@@ -13,6 +13,7 @@ tags:
 - [[GenAI/生成式AI|生成式 AI]]
 - [[LLM/index|大语言模型]]
 - [[AnyRecon|AnyRecon 三维重建]]
+- [[GenAI/generative-3d-asset-usability-stack|生成式 3D 资产可用性栈]]
 - [[OpenManus|OpenManus]]
 - [[ABM|智能体与社会模拟]]
 
