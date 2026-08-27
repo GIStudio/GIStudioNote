@@ -1,13 +1,13 @@
 ---
-title: 学术共同体：会议、团队与期刊
-description: 相关会议、Workshop、研究团队、GIScience 奠基学者与期刊入口。
+title: "学术共同体：会议、团队与期刊"
+description: "相关会议、Workshop、研究团队、GIScience 奠基学者与期刊入口。"
 tags:
   - GeoAI
   - Autonomous-GeoAI
   - AI4Science
   - awesome-list
 source: https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai
-source_commit: 2437033426f61cd557e645dfd8f73598d1332a6b
+source_commit: 37f10a9ffb4abb44710086a806899e1d7e397873
 order: 11
 ---
 
@@ -16,7 +16,7 @@ order: 11
 相关会议、Workshop、研究团队、GIScience 奠基学者与期刊入口。
 
 > [!info] 来源与版本
-> 本页整理自 [AutoGeoAI4Sci/awesome-autonomous-geoai](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai)，上游 commit [`2437033`](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai/commit/2437033426f61cd557e645dfd8f73598d1332a6b)（2026-07-26）。
+> 本页整理自 [AutoGeoAI4Sci/awesome-autonomous-geoai](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai)，上游 commit [`37f10a9`](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai/commit/37f10a9ffb4abb44710086a806899e1d7e397873)（2026-08-24）。
 > GIStudioNote 只调整文档结构与导航；资源描述和外部链接来自上游，时效性与准确性请以原项目及链接目标为准。
 
 ## Conferences
@@ -42,15 +42,19 @@ _Relevant conferences where the geospatial, GeoAI, and AI4Science communities (o
 
 - **ISPRS Congress** – ISPRS Congress of Photogrammetry and Remote Sensing  
   https://www.isprs.org/society/congress.aspx
+
 - **GIScience** – International Conference on Geographic Information Science  
   https://giscience2025.org/
+
 - **International Cartographic Conference (ICC)** — Conference of the International Cartographic Association  
   https://icaci.org/icc/
+
 - **EGU General Assembly** — European Geosciences Union General Assembly  
   https://www.egu.eu/
 
 - **CPGIS / Geoinformatics** — International Conference on Geoinformatics<br>
   https://www.cpgis.org/
+
 - **CaGIS** — The Cartography and Geographic Information Society (CaGIS)<br>
   https://cartogis.org/
 
@@ -61,8 +65,12 @@ _Relevant conferences where the geospatial, GeoAI, and AI4Science communities (o
 
 - **ACL** — Annual Meeting of the Association for Computational Linguistics  
   https://2026.aclweb.org/
+
 - **CHI** — ACM Conference on Human Factors in Computing Systems  
   https://chi2026.acm.org/
+
+- **CIKM** — ACM International Conference on Information and Knowledge Management<br>
+  http://www.cikmconference.org/
 
 - **CVPR** — IEEE/CVF Conference on Computer Vision and Pattern Recognition  
   https://cvpr.thecvf.com/
@@ -76,8 +84,14 @@ _Relevant conferences where the geospatial, GeoAI, and AI4Science communities (o
 - **ICCV** — IEEE/CVF International Conference on Computer Vision  
   https://iccv.thecvf.com/
 
+- **ICDM** — IEEE International Conference on Data Mining<br>
+  https://icdm.zhonghuapu.com/
+
 - **ICLR** — International Conference on Learning Representations  
   https://iclr.cc/
+
+- **ICML** — International Conference on Machine Learning<br>
+  https://icml.cc/
 
 - **KDD** — ACM SIGKDD Conference on Knowledge Discovery and Data Mining  
   https://kdd.org/
@@ -85,8 +99,20 @@ _Relevant conferences where the geospatial, GeoAI, and AI4Science communities (o
 - **NeurIPS** — Conference on Neural Information Processing Systems  
   https://neurips.cc/
 
+- **PAKDD** — Pacific-Asia Conference on Knowledge Discovery and Data Mining<br>
+  https://pakdd.org/
+
+- **SIGIR** — ACM SIGIR Conference on Research and Development in Information Retrieval<br>
+  https://sigir.org/
+
+- **TheWebConf (WWW)** — The ACM Web Conference<br>
+  https://thewebconf.org/
+
 - **WACV** — IEEE/CVF Winter Conference on Applications of Computer Vision  
   https://wacv2025.thecvf.com/
+
+- **WSDM** — ACM International Conference on Web Search and Data Mining<br>
+  https://www.wsdm-conference.org/
 
 ### Workshops and Related Events (2027)
 
@@ -105,8 +131,13 @@ _Relevant conferences where the geospatial, GeoAI, and AI4Science communities (o
   **Track B: Public Health & Spatial Equity** focuses on public-health intervention siting and resource allocation, such as emergency cooling centers, mobile vaccine clinics, and environmental monitoring stations. Key challenges include location-allocation and coverage optimization, network travel time analysis under changing traffic or transit conditions, and trade-off analysis between financial cost, geographic coverage, population density, and equity for historically underserved or isolated communities. HITL controls can let public-health decision-makers tune equity constraints and coverage priorities.<br>
   https://rsvp.withgoogle.com/events/oasis-2026
 
+- **2026 GeoAI Arctic Challenge (Cyber2A)** — An NSF-sponsored instance segmentation competition on detecting and delineating retrogressive thaw slumps (RTS) — ice-rich permafrost landforms collapsing under Arctic warming — from eight-band satellite image chips. Organized by Cyber2A, a collaboration of Arizona State University, Woodwell Climate Research Center, the Arctic Data Center, and NCSA. Automated RTS mapping supports permafrost degradation monitoring, where manual delineation is difficult because the landforms are small, visually subtle, and dynamically changing.<br>
+  **Important dates:** dataset released via Hugging Face on July 1, 2026; benchmark phase with submission portal and leaderboard opens August 15, 2026; final submission deadline January 31, 2027; winners announced March 1, 2027. Cash prizes for the top three teams plus potential publication collaboration.<br>
+  https://cyber2a.github.io/challenge/
+
 - **GeoAI Conference (2026)** — A conference dedicated to GeoAI, spatial intelligence, and AI for geographic data science; includes workshops, tutorials, and industry sessions.  
   https://geoaiconference.org/
+
 - **3rd Workshop on Computer Vision for Earth Observation (CV4EO) Applications (WACV 2026 Workshop)** — Computer vision + Earth observation research.  
   https://wacv.thecvf.com/Conferences/2026/Workshops
 
@@ -123,7 +154,7 @@ _Relevant conferences where the geospatial, GeoAI, and AI4Science communities (o
   https://ai-for-urban-planning.github.io/AAAI26-workshop/
 
 - **KDD – AI for Sciences Track (KDD 2026 Track)** — A new peer-reviewed track at KDD 2026 focusing on AI for scientific discovery, interdisciplinary AI applications (including climate, environmental science, and related data-driven research); accepted papers are included in the ACM Digital Library and indexed by Google Scholar.  
-   https://kdd2026.kdd.org/ai4sciences-track-call-for-papers/?utm_source=chatgpt.com
+  https://kdd2026.kdd.org/ai4sciences-track-call-for-papers/
 
 - **SensAI Hack** — An AI-focused hackathon bringing together developers, researchers, and builders to prototype applied AI projects; a venue for hands-on experimentation with autonomous and agentic systems.  
   https://sensaihack.com/
@@ -173,6 +204,7 @@ This list is **not exhaustive**, and community suggestions are welcome._
   (https://artsci.tamu.edu/geography/contact/profiles/heng-cai.html), Texas A&M University.  
   Research focuses on GIScience, geospatial analytics, spatial decision support, and resilience-oriented applications addressing natural hazards, climate change, and long-term environmental risks.  
   https://gis-resilience.info/
+
 - **GeoDSLab@UW-Madison** — Led by Dr. Song Gao<br>
   (https://geography.wisc.edu/staff/gao-song/), University of Wisconsin–Madison.  
   Research focuses on GIScience, GeoAI, geospatial data science, human mobility, social sensing, spatial networks, and urban informatics, with strong emphasis on large-scale spatial data analytics, multimodal data integration, and AI-driven understanding of human–environment systems.  
@@ -233,6 +265,7 @@ This list is **not exhaustive**, and community suggestions are welcome._
   (https://linyuehzzz.github.io/), University of Illinois Urbana–Champaign.  
   Research explores the intersection of geospatial artificial intelligence, spatial data science, and human values. The group investigates critical societal questions surrounding geospatial technologies, including algorithmic bias, location privacy, and the ethical design of GeoAI systems. Their work emphasizes responsible and human-centered geospatial computing, examining how spatial AI systems influence society, governance, and decision-making in data-driven environments.  
   https://linyuehzzz.github.io/
+
 - **Cyberinfrastructure and Spatial Decision Intelligence (CIDI) Research Group** — Led by Dr. Zhe (Sarina) Zhang<br>
   (https://artsci.tamu.edu/geography/contact/profiles/zhesarina-zhang.html), Texas A&M University.  
   Research focuses on GIScience, CyberGIS, geospatial artificial intelligence (GeoAI), participatory GIS, and spatial decision intelligence. The group develops cyberinfrastructure-enabled hybrid spatial decision support systems integrating high-performance computing, distributed systems, and AI to address disaster management, coastal resilience, critical infrastructure protection, and sustainable development challenges.  
@@ -295,6 +328,7 @@ This list is **not exhaustive**, and **community contributions and suggestions a
 
 - **Annals of the American Association of Geographers (Annals of AAG)** — Flagship journal of geography, covering GIScience, spatial theory, and methodological advances  
   https://www.tandfonline.com/toc/raag20/current
+
 - **International Journal of Geographical Information Science (IJGIS)** — Premier journal for GIScience theory, methods, and spatial analysis  
   https://www.tandfonline.com/toc/tgis20/current
 
@@ -315,6 +349,7 @@ This list is **not exhaustive**, and **community contributions and suggestions a
 
 - **International Journal of Digital Earth (IJDE)** — Focuses on digital earth technologies, including big earth data and AI-driven analysis.  
   https://www.tandfonline.com/journals/tjde20
+
 - **Transactions in GIS** — GIScience methods, spatial computation, and geospatial analytics  
   https://onlinelibrary.wiley.com/journal/14679671
 

@@ -1,13 +1,13 @@
 ---
-title: 学习资源：书籍与课程
-description: GeoAI、GIS 编程、AI4Science 的书籍、课程、视频与大学项目。
+title: "学习资源：书籍与课程"
+description: "GeoAI、GIS 编程、AI4Science 的书籍、课程、视频与大学项目。"
 tags:
   - GeoAI
   - Autonomous-GeoAI
   - AI4Science
   - awesome-list
 source: https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai
-source_commit: 2437033426f61cd557e645dfd8f73598d1332a6b
+source_commit: 37f10a9ffb4abb44710086a806899e1d7e397873
 order: 10
 ---
 
@@ -16,7 +16,7 @@ order: 10
 GeoAI、GIS 编程、AI4Science 的书籍、课程、视频与大学项目。
 
 > [!info] 来源与版本
-> 本页整理自 [AutoGeoAI4Sci/awesome-autonomous-geoai](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai)，上游 commit [`2437033`](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai/commit/2437033426f61cd557e645dfd8f73598d1332a6b)（2026-07-26）。
+> 本页整理自 [AutoGeoAI4Sci/awesome-autonomous-geoai](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai)，上游 commit [`37f10a9`](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai/commit/37f10a9ffb4abb44710086a806899e1d7e397873)（2026-08-24）。
 > GIStudioNote 只调整文档结构与导航；资源描述和外部链接来自上游，时效性与准确性请以原项目及链接目标为准。
 
 ## Books

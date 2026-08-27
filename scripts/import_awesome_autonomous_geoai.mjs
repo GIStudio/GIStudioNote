@@ -13,9 +13,24 @@ if (!sourceRoot) {
 
 const outputRoot = path.resolve("content/awesome-autonomous-geoai")
 const read = (name) => fs.readFileSync(path.join(sourceRoot, name), "utf8")
-const readme = read("README.md").replace(/\r\n/g, "\n")
+const readme = read("README.md")
+  .replace(/\r\n/g, "\n")
+  .replace(/\?utm_source=chatgpt\.com/g, "")
 const commit = process.env.UPSTREAM_COMMIT ?? "unknown"
 const commitDate = process.env.UPSTREAM_COMMIT_DATE ?? "unknown"
+const dateParts = Object.fromEntries(
+  new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  })
+    .formatToParts(new Date())
+    .filter((part) => part.type !== "literal")
+    .map((part) => [part.type, part.value]),
+)
+const importDate =
+  process.env.IMPORT_DATE ?? `${dateParts.year}-${dateParts.month}-${dateParts.day}`
 
 const h2Pattern = /^## ([^\n]+)$/gm
 const sections = new Map()
@@ -51,8 +66,8 @@ const groups = [
   {
     file: "careers-and-industry.md",
     title: "职业发展与产业地图",
-    description: "博士与学术职业资源、实习机会、GeoAI 与 Physical AI 公司。",
-    sections: ["Internship and Company"],
+    description: "博士与学术职业资源、博士后机会、实习机会、GeoAI 与 Physical AI 公司。",
+    sections: ["Internship and Company", "Postdoc Opportunities"],
   },
   {
     file: "ecosystem-and-contributing.md",
@@ -75,6 +90,19 @@ const unexpectedSections = [...sections.keys()].filter(
 )
 if (unexpectedSections.length > 0) {
   throw new Error(`Unmapped README sections: ${unexpectedSections.join(", ")}`)
+}
+
+const normalizeImportedSection = (section, body) => {
+  if (section === "Postdoc Opportunities") {
+    return body.replace(/ {2,}$/gm, "<br>")
+  }
+  if (section === "Conferences") {
+    return body.replace(
+      /^(- \*\*(?:CIKM|ICDM|ICML|PAKDD|SIGIR|TheWebConf \(WWW\)|WSDM)\*\*[^\n]*?) {2}$/gm,
+      "$1<br>",
+    )
+  }
+  return body
 }
 
 const provenance = [
@@ -100,7 +128,9 @@ order: ${order}
 fs.mkdirSync(outputRoot, { recursive: true })
 
 for (const [index, group] of groups.entries()) {
-  const body = group.sections.map((section) => sections.get(section)).join("\n\n---\n\n")
+  const body = group.sections
+    .map((section) => normalizeImportedSection(section, sections.get(section)))
+    .join("\n\n---\n\n")
   const output = `${frontmatter(group.title, group.description, index + 10)}
 # ${group.title}
 
@@ -113,7 +143,7 @@ ${body}
   fs.writeFileSync(path.join(outputRoot, group.file), output)
 }
 
-const prepareCoreDocument = (filename, title, description, order) => {
+const prepareCoreDocument = (filename, title, description, order, introduction = "") => {
   const body = read(filename)
     .replace(/\r\n/g, "\n")
     .replace(/^# [^\n]+\n+/, "")
@@ -123,7 +153,7 @@ const prepareCoreDocument = (filename, title, description, order) => {
 
 ${provenance}
 
-${body.trim()}
+${introduction ? `${introduction}\n\n` : ""}${body.trim()}
 `
 }
 
@@ -141,9 +171,10 @@ fs.writeFileSync(
   path.join(outputRoot, "research-philosophy-summary-zh.md"),
   prepareCoreDocument(
     "RESEARCH_PHILOSOPHY_SUMMARY_ZH.md",
-    "Research Philosophy 中文整理",
-    "研究哲学原文的中文提炼版，聚焦科研观、GeoAI 框架与论文定位。",
+    "Research Philosophy 中文综合与延伸解读",
+    "对研究哲学原文的中文结构化综合，并整理与其科研观、GeoAI 框架和长期研究选择相关的延伸材料。",
     21,
+    "这份页面以 [RESEARCH_PHILOSOPHY.md](research-philosophy.md) 为主线。前半部分综合原文中的研究宣言、博士定位和 GeoAI 框架，后半部分整理后来加入原文的阅读材料与研究选择思考。需要逐段核对上游内容时，应返回原文页和对应来源。",
   ),
 )
 
@@ -164,16 +195,23 @@ ${provenance}
 
 | 你的目的 | 文档入口 |
 |---|---|
-| 系统学习 GeoAI、GIS 编程或寻找课程 | [[learning-resources\|学习资源：书籍与课程]] |
-| 找会议、Workshop、研究团队、学者或期刊 | [[research-community\|学术共同体：会议、团队与期刊]] |
-| 找代表性论文、Python/R 包或 GIS 工具 | [[papers-and-software\|研究资源：论文与软件]] |
-| 了解博士资源、实习和 GeoAI/Physical AI 公司 | [[careers-and-industry\|职业发展与产业地图]] |
-| 找相关列表、资助信息或参与上游维护 | [[ecosystem-and-contributing\|生态、资助与参与方式]] |
+| 系统学习 GeoAI、GIS 编程或寻找课程 | [学习资源与课程](learning-resources) |
+| 找会议、Workshop、研究团队、学者或期刊 | [学术共同体、会议与期刊](research-community) |
+| 找代表性论文、Python/R 包或 GIS 工具 | [论文与软件资源](papers-and-software) |
+| 了解博士资源、博士后机会、实习和 GeoAI/Physical AI 公司 | [职业发展与产业地图](careers-and-industry) |
+| 找相关列表、资助信息或参与上游维护 | [生态、资助与参与方式](ecosystem-and-contributing) |
 
 ## 核心研究文档
 
-- [[research-philosophy|Research Philosophy：Autonomous GeoAI 科研哲学]]
-- [[research-philosophy-summary-zh|Research Philosophy 中文整理]]
+- [[research-philosophy|Autonomous GeoAI 科研哲学]]
+- [[research-philosophy-summary-zh|Research Philosophy 中文综合与延伸解读]]
+
+## GIStudio 知识综合
+
+- [[../AI/GeoAI/index|GeoAI 与自主地理智能知识地图]]
+- [[../AI/GeoAI/autonomous-geoai|Autonomous GeoAI 概念与边界]]
+- [[../AI/GeoAI/geoai-agent-architecture|GeoAI Agent 架构]]
+- [[../AI/GeoAI/geospatial-agent-evaluation|地理空间智能体评测]]
 
 ## 阅读边界
 
@@ -202,7 +240,7 @@ const maintenance = `${frontmatter(
 - 默认分支：\`main\`
 - 本次快照：[\`${commit}\`](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai/commit/${commit})
 - 上游提交时间：\`${commitDate}\`
-- 整理日期：\`2026-07-29\`
+- 整理日期：\`${importDate}\`
 
 ## 本地整理原则
 
@@ -219,7 +257,7 @@ const maintenance = `${frontmatter(
 | Books；Education | [[learning-resources]] |
 | Conferences；Research Groups；Journals | [[research-community]] |
 | Selected Papers；Software | [[papers-and-software]] |
-| Internship and Company | [[careers-and-industry]] |
+| Internship and Company；Postdoc Opportunities | [[careers-and-industry]] |
 | Miscellaneous；Relevant Awesome Lists；Funding and Grants；Contributing | [[ecosystem-and-contributing]] |
 | RESEARCH_PHILOSOPHY.md | [[research-philosophy]] |
 | RESEARCH_PHILOSOPHY_SUMMARY_ZH.md | [[research-philosophy-summary-zh]] |
@@ -231,7 +269,7 @@ git clone --depth 1 https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai.gi
 UPSTREAM_COMMIT="$(git -C /tmp/awesome-autonomous-geoai rev-parse HEAD)" \\
 UPSTREAM_COMMIT_DATE="$(git -C /tmp/awesome-autonomous-geoai log -1 --format=%cs)" \\
 node scripts/import_awesome_autonomous_geoai.mjs /tmp/awesome-autonomous-geoai
-npm run check
+npm run check:content
 \`\`\`
 
 运行后应审阅差异，特别检查带日期的活动、职位、资助信息，以及上游内部链接。

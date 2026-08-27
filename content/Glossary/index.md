@@ -92,6 +92,10 @@ API 是 Application Programming Interface 的简称，中文为应用程序编�
 
 DOI 是 Digital Object Identifier 的简称，中文为数字对象标识符。它为论文、数据集和其他对象提供持久标识，并可通过 `https://doi.org/` 解析到当前登记位置。DOI 指向的位置可以更新，标识本身保持稳定。详细说明见 [DOI Foundation](https://www.doi.org/the-identifier/what-is-a-doi)。
 
+### NSF
+
+NSF 是 National Science Foundation 的简称，中文通常译为美国国家科学基金会。它是美国联邦政府支持科学与工程研究和教育的独立机构。资源页面写到 NSF 资助或支持时，表示相关项目获得了该机构的经费或项目支持，不能单独证明项目结论已经得到 NSF 认可。机构职责见 [NSF 官方介绍](https://www.nsf.gov/about)。
+
 ### KDD
 
 KDD 是 Knowledge Discovery in Databases 的简称，中文为数据库知识发现。它涵盖问题理解、数据选择、清洗、转换、数据挖掘、模式评价和知识表达等环节。数据挖掘是其中一个步骤。站内解释见[[../AI/KDD|数据库知识发现]]。

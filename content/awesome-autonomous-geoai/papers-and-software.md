@@ -1,13 +1,13 @@
 ---
-title: 研究资源：论文与软件
-description: Autonomous GeoAI 相关代表性论文，以及 Python、R 和 GIS 集成工具。
+title: "研究资源：论文与软件"
+description: "Autonomous GeoAI 相关代表性论文，以及 Python、R 和 GIS 集成工具。"
 tags:
   - GeoAI
   - Autonomous-GeoAI
   - AI4Science
   - awesome-list
 source: https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai
-source_commit: 2437033426f61cd557e645dfd8f73598d1332a6b
+source_commit: 37f10a9ffb4abb44710086a806899e1d7e397873
 order: 12
 ---
 
@@ -16,7 +16,7 @@ order: 12
 Autonomous GeoAI 相关代表性论文，以及 Python、R 和 GIS 集成工具。
 
 > [!info] 来源与版本
-> 本页整理自 [AutoGeoAI4Sci/awesome-autonomous-geoai](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai)，上游 commit [`2437033`](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai/commit/2437033426f61cd557e645dfd8f73598d1332a6b)（2026-07-26）。
+> 本页整理自 [AutoGeoAI4Sci/awesome-autonomous-geoai](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai)，上游 commit [`37f10a9`](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai/commit/37f10a9ffb4abb44710086a806899e1d7e397873)（2026-08-24）。
 > GIStudioNote 只调整文档结构与导航；资源描述和外部链接来自上游，时效性与准确性请以原项目及链接目标为准。
 
 ## Selected Papers
@@ -118,3 +118,17 @@ with an emphasis on **CVPR and top-tier computer vision workshops**.
 
 - **CesiumJS** — Open-source JavaScript library for 3D globes and maps; renders high-precision geospatial data and 3D tiles in the browser for visualization and digital-twin applications  
   https://cesium.com/platform/cesiumjs/
+
+### Generative Earth & World Models
+
+> Platforms where generative models are conditioned on real geospatial data
+> (terrain, imagery, camera pose) — and the emerging trust/provenance issues they raise.
+
+- **Google Earth × Nano Banana 2** — Geospatially grounded image generation inside
+  Google Earth (web): generation conditioned on the current viewport's satellite basemap,
+  3D terrain mesh, and camera parameters, with Gemini search grounding for landmark facts.
+  Notably **pulled within a day of launch** after photorealistic edits of real landmarks
+  raised misinformation concerns, then re-released with added safeguards — an early case
+  study in provenance and governance for geo-referenced generative imagery.<br>
+  🔗 https://blog.google/products-and-platforms/products/earth/nano-banana-google-earth-image-generation/<br>
+  📰 Hands-on: https://www.zdnet.com/article/google-earth-added-nano-banana-and-i-immediately-reimagined-philly-with-zombies-and-evil-clowns/

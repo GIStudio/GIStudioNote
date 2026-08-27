@@ -396,36 +396,40 @@ for (const page of pages) {
     acronymPages.set(acronym, values)
   }
 }
+const reviewedInlineTerms = new Set([
+  "AAAI",
+  "AAG",
+  "ACL",
+  "ACM",
+  "CASA",
+  "CEO",
+  "CI",
+  "CS",
+  "CVPR",
+  "DHS",
+  "ECCV",
+  "FAO",
+  "ICCV",
+  "ICLR",
+  "ICML",
+  "IEEE",
+  "IP",
+  "MIT",
+  "MM",
+  "NASA",
+  "README",
+  "SIGGRAPH",
+  "SIGSPATIAL",
+  "UCL",
+  "UN",
+  "URL",
+  "WWW",
+])
 const acronymCandidates = [...acronymPages.entries()]
-  .filter(([term, termPages]) => {
-    const reviewedInlineTerms = new Set([
-      "AAAI",
-      "ACL",
-      "ACM",
-      "CASA",
-      "CEO",
-      "CI",
-      "CS",
-      "CVPR",
-      "DHS",
-      "ECCV",
-      "FAO",
-      "ICCV",
-      "ICLR",
-      "ICML",
-      "IEEE",
-      "IP",
-      "MIT",
-      "MM",
-      "NASA",
-      "SIGGRAPH",
-      "SIGSPATIAL",
-      "UCL",
-      "UN",
-      "URL",
-    ])
-    return termPages.size >= 3 && !reviewedInlineTerms.has(term) && !hasCanonicalTerm(term)
-  })
+  .filter(
+    ([term, termPages]) =>
+      termPages.size >= 3 && !reviewedInlineTerms.has(term) && !hasCanonicalTerm(term),
+  )
   .sort((left, right) => right[1].size - left[1].size || left[0].localeCompare(right[0]))
 
 const byTopLevel = new Map()

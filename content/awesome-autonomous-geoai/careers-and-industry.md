@@ -1,22 +1,22 @@
 ---
-title: 职业发展与产业地图
-description: 博士与学术职业资源、实习机会、GeoAI 与 Physical AI 公司。
+title: "职业发展与产业地图"
+description: "博士与学术职业资源、博士后机会、实习机会、GeoAI 与 Physical AI 公司。"
 tags:
   - GeoAI
   - Autonomous-GeoAI
   - AI4Science
   - awesome-list
 source: https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai
-source_commit: 2437033426f61cd557e645dfd8f73598d1332a6b
+source_commit: 37f10a9ffb4abb44710086a806899e1d7e397873
 order: 13
 ---
 
 # 职业发展与产业地图
 
-博士与学术职业资源、实习机会、GeoAI 与 Physical AI 公司。
+博士与学术职业资源、博士后机会、实习机会、GeoAI 与 Physical AI 公司。
 
 > [!info] 来源与版本
-> 本页整理自 [AutoGeoAI4Sci/awesome-autonomous-geoai](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai)，上游 commit [`2437033`](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai/commit/2437033426f61cd557e645dfd8f73598d1332a6b)（2026-07-26）。
+> 本页整理自 [AutoGeoAI4Sci/awesome-autonomous-geoai](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai)，上游 commit [`37f10a9`](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai/commit/37f10a9ffb4abb44710086a806899e1d7e397873)（2026-08-24）。
 > GIStudioNote 只调整文档结构与导航；资源描述和外部链接来自上游，时效性与准确性请以原项目及链接目标为准。
 
 ## Internship and Company
@@ -200,6 +200,28 @@ _AI page:_ https://www.spexi.com/ai
 _Partnership:_ https://www.spexi.com/blog/niantic-spatial-and-spexi-partner-to-turn-drone-imagery-into-intelligence-for-physical-ai
 
 > **Note:** Spexi is especially valuable to watch if your interests include **real-world data acquisition for GeoAI**, rather than only downstream modeling. It represents the emerging layer where drone capture networks, geospatial APIs, and physical-AI training pipelines begin to merge.
+
+### **Varjo Teleport**
+
+_Focus:_ 3D Gaussian Splatting · Reality Capture · Digital Twins · Aerial / Drone 3D Reconstruction · Spatial Computing
+
+Varjo is a Helsinki-based spatial computing company best known for professional-grade XR headsets used in pilot training, defense simulation, and industrial design. **Teleport** is its cloud reality-capture platform: users capture a scene with a phone, drone, or professional camera, and the service reconstructs it into a **photorealistic 3D Gaussian Splatting (3DGS) model** that is lightweight enough to stream and view in real time, even on mobile devices.
+
+For autonomous GeoAI research, Teleport is notable as one of the first **production-grade, consumer-accessible 3DGS pipelines at geospatial scale**: it supports **multi-square-kilometre aerial scenes captured by any drone**, produces models ranging from roughly 1 million to 100 million splats while holding quality at neighborhood scale, and exposes a **developer API** for embedding reconstructions into third-party applications. Target markets include real estate, construction progress tracking, defense and training environments, and spatial application developers — effectively a turnkey path from raw capture to navigable digital twin.
+
+**Relevant technical themes include:**
+
+- 3D Gaussian Splatting as a cloud service (capture → reconstruction → real-time streaming)
+- Large-scale aerial / drone reconstruction and city- or neighborhood-scale digital twins
+- Lightweight, web- and mobile-renderable 3D scene representations
+- Developer APIs for integrating photorealistic reconstructions into spatial applications
+- Reality capture for simulation, training, and synthetic-environment generation
+
+_Location:_ Helsinki, Finland
+_Website:_ https://get.teleport.varjo.com/
+_Company:_ https://varjo.com/
+
+> **Positioning Insight:** Varjo Teleport shows radiance-field methods (3DGS) crossing from research demos into a **scalable commercial reconstruction service**. For GeoAI researchers it is a useful reference point for what production 3DGS pipelines deliver at aerial scale — and a potential source of photorealistic scene data for simulation, synthetic training data, and digital-twin work.
 
 ### **Texas A&M Institute for a Disaster Resilient Texas (IDRT)**
 
@@ -431,6 +453,29 @@ _International students:_ International applicants welcome; support for relevant
 _Website:_ [https://www.mosaic51.com/](https://www.mosaic51.com/)
 
 > **Note:** Mosaic internships are **hardware-software integrated** and research-driven. They are particularly well suited for students interested in **mobile mapping tools, 3D reconstruction, and GeoAI**, rather than purely theoretical or non-spatial software roles.
+
+### **DT360 / DebrisTech (Scalable Data Acquisition Solutions)**
+
+_Focus:_ Post-Disaster Field Data Acquisition · Mobile Mapping · Corridor LiDAR · Helicopter and All-Terrain Capture · FEMA-Auditable Documentation
+
+**DT360** is the data-acquisition brand operated alongside **DebrisTech, LLC** (founded 2010, headquartered in Picayune, Mississippi). The two businesses sit on either side of the same capability: DebrisTech performs **disaster debris monitoring** — the auditable documentation layer that lets government clients recover FEMA Category A reimbursement for storm debris removal — while DT360 productizes the **field data-collection fleet and sensing stack** that such work requires, and sells it into infrastructure, utility, and transportation markets.
+
+DebrisTech's **Electronic Debris Management System** replaces handwritten load tickets with real-time capture on ruggedized iPads: barcode scanning, timestamped photographs, GPS-tagged locations, and digital signatures, authenticated through a three-factor scheme (serialized physical ticket, registered device, captured signature). Records flow into a central information database whose interactive map exposes the **exact pickup and disposal location of every debris ticket in real time**, backed by mobile command and communications centers for field operation where connectivity is unreliable. Reported operational scale includes **50+ million cubic yards of debris monitored** across **118 counties and municipalities** in roughly **17 states and U.S. territories**.
+
+DT360 operates an **integrated aerial and ground fleet** designed around the premise that the hardest part of disaster and corridor data collection is reaching the scene at all. Road-going mobile mapping vehicles are paired with **off-road and amphibious all-terrain units** (including SHERP ATV/UTV platforms carrying [Mosaic](#mosaic-geospatial-imaging-leaders) 360-degree camera systems) and with **helicopter-based collection** over transmission lines, pipelines, and otherwise inaccessible terrain. Its mobile mapping team reports **250,000+ miles of roadway corridor captured**. Acquired corridor LiDAR is delivered through **Pathfinder**, a hosted platform where clients make their own measurements and flag areas requiring feature extraction; the **I-95 corridor** is published there across all **1,920 miles and 15 states**, aimed at state DOTs, utility providers, and broadband planners.
+
+**Relevant technical themes include:**
+
+- **Post-disaster reality capture** in degraded, flooded, and debris-obstructed environments where conventional survey vehicles cannot operate
+- **Multi-platform sensor fusion** across vehicle-mounted 360-degree imagery, amphibious ground units, and rotary-wing aerial LiDAR
+- **Corridor-scale LiDAR products** for roadway, transmission-line, pipeline, and broadband planning workflows
+- **Evidence-grade geospatial provenance** — geotagged, timestamped, signature-authenticated records built to survive federal audit
+- **Human-in-the-loop feature extraction**, where clients flag regions in delivered point clouds for downstream extraction work
+
+_Location:_ Picayune, Mississippi, USA (nationwide field deployment across U.S. states and territories)<br>
+_Website:_ [https://www.dt360.com/](https://www.dt360.com/) · DebrisTech: [https://debristech.com/](https://debristech.com/)
+
+> **Positioning Insight:** DT360 is a useful industry reference for **disaster-response GeoAI** specifically because it operationalizes the unglamorous half of the problem: getting calibrated ground-level and aerial data out of an environment immediately after an event, and attaching provenance strong enough for a reimbursement audit. Research directions it maps onto closely include **debris volume estimation, cross-view (ground/aerial/satellite) damage assessment, post-event change detection, and accountable geospatial pipelines** — areas where academic work is usually bottlenecked by exactly the field data this company is built to produce. Note that DT360 and DebrisTech share leadership and branding but present as separate web properties; confirm the current corporate relationship, and any hiring or internship pathways, directly with the company before relying on it.
 
 ### **Snap Inc.**
 
@@ -787,10 +832,16 @@ This company map collects firms and ecosystem organizations relevant to autonomo
 - **Mosaic (Geospatial Imaging Leaders)** - Robust 360-degree mobile mapping camera systems and services for street-level imagery, mapping, surveying, infrastructure inspection, 3D reconstruction, and digital twin workflows. See the detailed Mosaic entry above for internship-oriented notes.<br>
   https://www.mosaic51.com/
 
+- **DT360 / DebrisTech** - Scalable field data acquisition across an integrated aerial and ground fleet: road-going mobile mapping vehicles, amphibious all-terrain units carrying 360-degree camera systems, and helicopter-based LiDAR over transmission lines, pipelines, and inaccessible terrain. Reports 250,000+ miles of roadway corridor captured, delivers corridor LiDAR through its Pathfinder platform (including all 1,920 miles of I-95 across 15 states), and pairs this with FEMA-auditable disaster debris monitoring. See the detailed DT360 / DebrisTech entry above for GeoAI-oriented notes.<br>
+  https://www.dt360.com/
+
 - **3GON Slovakia, s.r.o.** - Slovak distributor and integrator for precise measurement, data capture, drones, 3D technologies, software, monitoring, and spatial data processing.<br>
   https://www.3gon.sk/
 
 #### 3D Scanning, Photogrammetry, and Gaussian Splatting
+
+- **Varjo Teleport** - Cloud reality-capture platform turning phone, drone, or camera captures into photorealistic, real-time-streamable 3D Gaussian Splatting models, with drone-based multi-square-kilometre aerial reconstruction and a developer API (see full profile above).<br>
+  https://get.teleport.varjo.com/
 
 - **XGRIDS** - SLAM-based handheld LiDAR scanning, real-time 3D reconstruction, Lixel scanners, and 3D Gaussian Splatting-oriented spatial computing tools.<br>
   https://www.xgrids.com/
@@ -847,3 +898,72 @@ This company map collects firms and ecosystem organizations relevant to autonomo
 
 - **Shiyan-tech / Shiyan Intelligent Technology (tentative)** - Possible match: Shiyan Intelligent Technology (Guangzhou), also presented as Roboeye, an AI 3D vision company for manufacturing. Confirm the exhibitor logo, official English name, or event profile before treating this as a verified entry.<br>
   https://www.roboeye.ai/about.asp
+
+---
+
+## Postdoc Opportunities
+
+_Curated top-tier postdoctoral opportunities for GeoAI researchers, organized into two
+tracks — **geo-focused** (GIScience, remote sensing, Earth systems) and **AI-focused**
+(computer science, machine learning) — plus discipline-open fellowships that fit either
+path. Each track lists institutions and programs first, then the job boards where new
+openings are posted._
+
+---
+
+### Geo-Focused (GIScience · Remote Sensing · Earth Systems)
+
+- **Cornell University, School of Civil & Environmental Engineering — Postdoctoral Associate** _(current opening)_ — One-year postdoctoral position, with possible renewal for a total of two years, developing computational models of escalating regional hurricane disaster risk, multi-stakeholder interactions, insurance markets, and public-policy interventions; applications are reviewed immediately until the position is filled
+  https://academicjobsonline.org/ajo/jobs/32321
+- **Yale Center for Geospatial Solutions** — Yale's hub for geospatial data, technology, and policy; hires postdoctoral associates applying geospatial analytics and AI to land, water, climate, and biodiversity challenges<br>
+  https://geospatial.yale.edu/
+- **USGS Mendenhall Research Fellowship Program** — The flagship U.S. Geological Survey postdoc; research opportunities regularly include geospatial science, remote sensing, natural hazards, and machine learning<br>
+  https://www.usgs.gov/centers/mendenhall-research-fellowship-program
+- **NASA Postdoctoral Program (NPP)** — Research fellowships across NASA centers (including JPL and Goddard) in Earth science, remote sensing, and data science<br>
+  https://npp.orau.org/
+- **NSF SBE Postdoctoral Research Fellowships (SPRF)** — NSF-funded postdoc for the social, behavioral, and economic sciences; geography and spatial sciences are eligible disciplines<br>
+  https://www.nsf.gov/funding/opportunities
+- **NCAR Advanced Study Program (ASP) Postdoctoral Fellowship** — Independent research fellowship at the National Center for Atmospheric Research; strong fit for AI-for-Earth-systems work<br>
+  https://asp.ucar.edu/
+- **NOAA Climate & Global Change Postdoctoral Fellowship** — UCAR-administered fellowship pairing fellows with host scientists across U.S. climate research institutions<br>
+  https://cpaess.ucar.edu/cgc
+- **Columbia Climate School Postdoctoral Research Program** — Earth Institute–lineage postdoc for climate, sustainability, and Earth-systems research; welcomes computational and data-driven approaches<br>
+  https://www.climate.columbia.edu/
+- **DOE National Laboratory Named Fellowships** — Prestigious lab-specific postdocs such as ORNL's Wigner Fellowship and PNNL's Linus Pauling Distinguished Postdoctoral Fellowship; ORNL in particular hosts a dedicated GeoAI research group, and the national labs increasingly hire in AI/ML for Earth, climate, and geospatial applications<br>
+  https://www.ornl.gov/careers · https://www.pnnl.gov/careers
+- **I-GUIDE (NSF Institute for Geospatial Understanding through an Integrative Discovery Environment)** — NSF institute whose partner universities regularly post geospatial data science postdoc openings<br>
+  https://iguide.illinois.edu/
+- **AAG Jobs & Careers** _(job board)_ — The American Association of Geographers job board; the main venue for geography and GIScience postdoc and faculty listings<br>
+  https://www.aag.org/jobs-careers/
+- **Earthworks** _(job board)_ — Long-running international job board for geoscience, remote sensing, and GIS positions<br>
+  https://www.earthworks-jobs.com/
+
+### AI-Focused (Computer Science · Machine Learning)
+
+- **CSPhD.org PhD / RA / Postdoc Board (博士栈机会看板)** — Live, filterable board of PhD, RA, and postdoc openings across CS and AI groups worldwide (hundreds of listings from 200+ schools, continuously updated); filter by the **Postdoc** type to surface AI/ML postdoc openings<br>
+  https://csphd.org/board.html
+- **CRA/NSF Computing Innovation Fellows (CIFellows)** — Computing-community postdoc program run by the Computing Research Association with NSF support<br>
+  https://cra.org/cifellows/
+- **Microsoft Research Postdoctoral Researcher Program** — One-to-two-year research positions across MSR labs; sustainability and AI-for-good teams work directly on geospatial and Earth data<br>
+  https://www.microsoft.com/en-us/research/careers/
+- **Allen Institute for AI (Ai2)** — Young Investigator (postdoc-equivalent) and research scientist roles; Ai2's climate modeling and open-model teams intersect with geospatial AI<br>
+  https://allenai.org/careers
+- **Harvard Data Science Initiative Postdoctoral Fellows** — Independent data-science research fellowship with freedom to collaborate across Harvard schools; spatial data science and urban analytics are represented themes<br>
+  https://datascience.harvard.edu/
+- **AcademicJobsOnline** _(postdoc and academic job board)_ — Application portal serving academic institutions worldwide, with postdoctoral openings across computer science, data science, Earth sciences, and related fields<br>
+  https://academicjobsonline.org/ajo
+
+### Open-Discipline Fellowships (Fit Either Track)
+
+- **Schmidt Science Fellows** — Highly selective interdisciplinary postdoctoral fellowship that asks fellows to pivot into a new discipline; a strong fit for GeoAI researchers moving toward AI4Science or Earth-system applications<br>
+  https://schmidtsciencefellows.org/
+- **Miller Research Fellowship (UC Berkeley)** — Three-year independent fellowship at the Miller Institute for Basic Research in Science; open to all sciences, including Earth and computational sciences<br>
+  https://miller.berkeley.edu/
+- **Branco Weiss Fellowship — Society in Science** — Up-to-five-year, globally portable fellowship for researchers pursuing unconventional ideas at the interface of science and society<br>
+  https://brancoweissfellowship.org/
+- **Marie Skłodowska-Curie Postdoctoral Fellowships (MSCA-PF)** — The EU's flagship postdoc scheme (European and Global tracks); host institutions across Europe include leading GIScience and Earth observation groups<br>
+  https://marie-sklodowska-curie-actions.ec.europa.eu/
+- **Alexander von Humboldt Research Fellowship** — Flexible 6–24 month fellowship for postdoctoral research at any institution in Germany<br>
+  https://www.humboldt-foundation.de/
+- **Royal Society Newton International Fellowships** — Two-year fellowship for early-career researchers moving to the UK in the natural sciences<br>
+  https://royalsociety.org/grants-schemes-awards/grants/newton-international/
