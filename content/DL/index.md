@@ -9,6 +9,7 @@ tags:
 
 - [[Deep Learning|深度学习概览]]
 - [[likelihood-nll-and-cross-entropy|似然、负对数似然与交叉熵]]
+- [[qwen3-8-flash-next-n-gram-embedding|Qwen3.8-Flash-Next 采用的 N-gram Embedding 是什么？]]
 - [[NER|命名实体识别（NER）]]
 
 本目录优先保存可复用的概念与方法；具体项目放入其应用主题目录。
