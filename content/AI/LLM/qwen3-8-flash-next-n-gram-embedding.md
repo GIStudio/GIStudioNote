@@ -17,6 +17,7 @@ aliases:
   - Qwen3.8 N-gram Embedding
   - Qwen3.8-Flash-Next 局部模式记忆
   - Qwen N-gram 查表
+  - dl/qwen3-8-flash-next-n-gram-embedding
 tags:
   - 深度学习
   - 大语言模型
