@@ -44,7 +44,7 @@ order: 6
 
 ## 相关概念
 
-[[mechanism|机制]] · [[critical-realism|批判实在论]] · [[falsifiability|可证伪性]] · [[complexity|复杂性]]
+[[mechanism|机制]] · [[critical-realism|批判实在论]] · [[falsifiability|可证伪性]] · [[complexity|复杂性]] · [[../Writing/research-problem-method-and-causal-orientation|研究问题、方法与因果方向]]
 
 ## 来源
 

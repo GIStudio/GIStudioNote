@@ -5,6 +5,8 @@ tags:
   - 工具
   - 工作流
   - 索引
+aliases:
+  - tools/Dev
 ---
 
 - [[NVM|NVM 教程]]
@@ -13,4 +15,5 @@ tags:
 - [[Design Better|设计资源]]
 - [[Quick Start|工具快速开始]]
 - [[sink|Sink 短链接]]
+- [Google Analytics](https://analytics.google.com/analytics/web/?hl=zh-cn#/)
 - [[experiences/习惯点点|习惯点点使用记录]]

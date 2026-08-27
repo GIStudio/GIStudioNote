@@ -42,7 +42,7 @@ order: 16
 
 ## 相关概念
 
-[[social-construction|社会建构论]] · [[dialectics|辩证法]] · [[spatial-justice|空间正义]] · [[right-to-the-city|城市权利]]
+[[social-construction|社会建构论]] · [[dialectics|辩证法]] · [[spatial-justice|空间正义]] · [[right-to-the-city|城市权利]] · [[../Anywriting/spatial-gen-1|《空间的生产》阅读札记]]
 
 ## 来源
 

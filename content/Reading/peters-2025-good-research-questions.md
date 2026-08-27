@@ -185,10 +185,10 @@ targeted question
 它把模糊的“培养问题意识”拆成可产生工件的阶段，对使用 Obsidian、LLM 和跨学科阅读的研究工作流具有直接实践价值。进一步操作化后的版本见：
 
 - [[../Writing/good-research-question-development|从好奇到可检验问题：四阶段研究问题形成方法]]
+- [[../Writing/research-problem-method-and-causal-orientation|研究问题、方法与因果方向]]
 
 ## 来源
 
 - [Nature version of record](https://www.nature.com/articles/s41562-025-02292-5)
 - [DOI](https://doi.org/10.1038/s41562-025-02292-5)
 - [作者分享的三页全文](https://93649922-4902-4777-bd09-da27e2d86e2f.filesusr.com/ugd/f9caf1_b5e232feb9d044d2aa9f2a342b1604e7.pdf)
-

@@ -22,7 +22,3 @@ tags:
 
 - [[how2write|AI 科普写作]]
 - [[../tools/LLM Prompts|写作提示词]]
-
-## 专题
-
-- [[experts/sdg/index|联合国可持续发展目标]]

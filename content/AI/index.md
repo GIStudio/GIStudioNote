@@ -10,12 +10,17 @@ tags:
 ## 主题入口
 
 - [[GeoAI/index|GeoAI 与自主地理智能]]
-- [[GenAI/生成式AI|生成式 AI]]
+- [[GenAI/index|生成式 AI、世界模型与三维生成]]
 - [[LLM/index|大语言模型]]
 - [[AnyRecon|AnyRecon 三维重建]]
-- [[GenAI/generative-3d-asset-usability-stack|生成式 3D 资产可用性栈]]
 - [[OpenManus|OpenManus]]
 - [[ABM|智能体与社会模拟]]
+
+## 基础与方法
+
+- [[Classification of AI|AI 的多种分类维度]]
+- [[KDD|数据库知识发现（KDD）]]
+- [[../tools/LLM Prompts|LLM 提示词实践]]
 
 ## 阅读方式
 

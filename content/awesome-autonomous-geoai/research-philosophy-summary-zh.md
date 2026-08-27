@@ -1,6 +1,6 @@
 ---
-title: Research Philosophy 中文整理
-description: 研究哲学原文的中文提炼版，聚焦科研观、GeoAI 框架与论文定位。
+title: Research Philosophy 中文综合与延伸解读
+description: 对研究哲学原文的中文结构化综合，并整理与其科研观、GeoAI 框架和长期研究选择相关的延伸材料。
 tags:
   - GeoAI
   - Autonomous-GeoAI
@@ -11,13 +11,13 @@ source_commit: 2437033426f61cd557e645dfd8f73598d1332a6b
 order: 21
 ---
 
-# Research Philosophy 中文整理
+# Research Philosophy 中文综合与延伸解读
 
 > [!info] 来源与版本
 > 本页整理自 [AutoGeoAI4Sci/awesome-autonomous-geoai](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai)，上游 commit [`2437033`](https://github.com/AutoGeoAI4Sci/awesome-autonomous-geoai/commit/2437033426f61cd557e645dfd8f73598d1332a6b)（2026-07-26）。
 > GIStudioNote 只调整文档结构与导航；资源描述和外部链接来自上游，时效性与准确性请以原项目及链接目标为准。
 
-这份整理稿提炼自 [RESEARCH_PHILOSOPHY.md](research-philosophy.md)。原文兼具研究宣言、博士定位说明、方法论框架与读书札记的性质。这里保留最值得反复回看的部分，方便快速复习、引用与继续扩写。
+这份页面以 [RESEARCH_PHILOSOPHY.md](research-philosophy.md) 为主线。前半部分综合原文中的研究宣言、博士定位和 GeoAI 框架，后半部分整理后来加入原文的阅读材料与研究选择思考。需要逐段核对上游内容时，应返回原文页和对应来源。
 
 ## 一、整份文档的核心信念
 

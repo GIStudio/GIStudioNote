@@ -10,6 +10,8 @@ tags:
   - 英文润色
   - GIS
   - 地理信息
+aliases:
+  - AI/prompts/提示词集锦
 ---
 
 >[!warning]

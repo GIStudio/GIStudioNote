@@ -34,7 +34,7 @@ order: 1
 ## 核心研究文档
 
 - [[research-philosophy|Research Philosophy：Autonomous GeoAI 科研哲学]]
-- [[research-philosophy-summary-zh|Research Philosophy 中文整理]]
+- [[research-philosophy-summary-zh|Research Philosophy 中文综合与延伸解读]]
 
 ## GIStudio 知识综合
 

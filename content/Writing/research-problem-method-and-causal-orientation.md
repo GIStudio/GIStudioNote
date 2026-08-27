@@ -121,6 +121,8 @@ Research gap 的价值来自尚未解决的知识或行动困难。仅仅说明�
 
 这套框架用于暴露问题结构，无法替代领域文献、因果识别、数据可得性和伦理审查。科学取向与工程取向会交叉，目标、干预和解释也会在同一项目中轮换。正式研究仍需根据学科传统说明概念来源，并为每个关键主张提供可核验的证据。
 
+相关阅读：[[../Reading/peters-2025-good-research-questions|Peters（2025）研究问题形成方法精读]] · [[../Philosophy/causality|因果性与城市变化]]
+
 ## 来源
 
 - Peters, M. A. K. (2025). *How to develop good research questions*. *Nature Human Behaviour*, 9, 1759 to 1761. [DOI](https://doi.org/10.1038/s41562-025-02292-5)

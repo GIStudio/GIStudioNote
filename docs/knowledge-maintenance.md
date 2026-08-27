@@ -2,8 +2,9 @@
 
 ## 当前状态
 
-- [done] 全库治理（证据：`npm run check:content` 通过；2026-07-29）
+- [done] 元数据、内部链接与 Quartz 构建基线（证据：`npm run check:content` 通过；2026-07-29）
 - [done] Awesome Autonomous GeoAI 已拆分并发布（证据：commit `e2b185b`）
+- [done] 全站知识架构复核（证据：2026-08-27 审计覆盖 120 个公开页面，孤立页、导航缺口、重复候选和未连接关系候选均为 0；人工决策见 `docs/knowledge-architecture/review.md`）
 - [plan] 定期复查时效性内容（触发：季度维护或上游更新；下一动作：运行内容审计并检查 `verified_at`）
 
 ## 公开页面的最小元数据
@@ -44,11 +45,14 @@ tags:
 source ~/.nvm/nvm.sh
 nvm use
 npm run audit:content
+npm run audit:knowledge -- --write
 npm run check:content
 ```
 
 `audit:content` 检查元数据、标签、空正文、重复路径和内部链接。`check:content`
 在审计后运行 TypeScript 检查和 Quartz 全量构建。
+
+`audit:knowledge` 生成页面清单，并把孤立页、索引缺口、疑似重叠、未显式关联和词典候选写入 `docs/knowledge-architecture/`。这些结果用于人工复核，不能直接授权移动、合并或删除页面。
 
 ## 状态流转
 

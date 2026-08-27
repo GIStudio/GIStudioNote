@@ -70,6 +70,7 @@ SEP 的[引用说明](https://plato.stanford.edu/cite.html)建议优先引用固
 
 ## 官方入口
 
+- [[../Philosophy/index|GIStudio Notes：哲学与城市科学]]
 - [SEP 首页](https://plato.stanford.edu/)
 - [About the Stanford Encyclopedia of Philosophy](https://plato.stanford.edu/about.html)
 - [How to Cite the SEP](https://plato.stanford.edu/cite.html)

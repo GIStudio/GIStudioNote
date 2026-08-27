@@ -14,13 +14,18 @@ tags:
 - [[uv-setup|uv 配置]]
 - [[conda|conda 环境管理]]
 - [[git-github-setup|Git 与 GitHub]]
+- [[fonts|Matplotlib 中文字体排查]]
+- [[cloud-studio|Cloud Studio 在线开发环境]]
 
 ## 开发工作流
 
 - [[frontend-dev-setup|前端项目配置]]
 - [[python-backend-dev|Python 后端开发]]
 - [[refactoring-workflow|重构工作流]]
-- [[front-end-patch-package|前端 patch-package]]
+
+## Skill 与自动化设计
+
+- [[skills/context|个人品牌管理 Skill 设计]]
 
 ## 服务器
 

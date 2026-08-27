@@ -238,3 +238,5 @@ https://data.gov.hk/tc-data/dataset/hk-censtatd-census_geo-2021-population-censu
 ---
 
 *本报告基于香港政府开放数据平台公开信息整理，数据可能随平台更新而变化。*
+
+概览入口：[[hk_pop|香港人口数据概览]]。

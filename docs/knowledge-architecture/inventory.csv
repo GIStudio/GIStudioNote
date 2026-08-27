@@ -1,0 +1,125 @@
+path,slug,title,top_level,suggested_pattern,draft,tags,inbound_links,outbound_links,index_links,verified_at
+AI/ABM.md,ai/abm,ABM,AI,technical-mechanism-note,false,AI|ABM|Agent|Agent-Based Modeling|LLM|模拟|多智能体|AgentSociety,1,0,1,
+AI/AnyRecon.md,ai/anyrecon,AnyRecon - 视频生成模型辅助大场景三维重建,AI,technical-mechanism-note,false,3D Reconstruction|Video Diffusion Model|Wan2.1|LoRA|3DGS|NeRF|Multi-view|Large-scale Scene,3,0,3,Wed Jul 29 2026 08:00:00 GMT+0800 (China Standard Time)
+AI/Classification of AI.md,ai/classification of ai,AI 的分类,AI,technical-mechanism-note,false,AI|GenAI|通识|AI分类|机器学习|深度学习|NLP|计算机视觉,1,5,1,
+"AI/GenAI/How AI moves towards the three-dimensional world: generative world model, embodied agent and representation learning.md","ai/genai/how ai moves towards the three-dimensional world: generative world model, embodied agent and representation learning",AI 如何走向三维世界：生成式世界模型、具身智能体与表征学习,AI,technical-mechanism-note,false,RTFM|SIMA|SIMA 2|JEPA|I-JEPA|Energy-Based Model|EBM|空间智能,1,0,1,
+AI/GenAI/generative-3d-asset-usability-stack.md,ai/genai/generative-3d-asset-usability-stack,生成式 3D 资产可用性栈,AI,technical-mechanism-note,false,AI|生成式AI|3D|Mesh|计算机图形学,1,0,1,Fri Jul 31 2026 08:00:00 GMT+0800 (China Standard Time)
+AI/GenAI/index.md,ai/genai,生成式 AI、世界模型与三维生成,AI,project-resource-hub,false,AI|生成式AI|世界模型|三维生成|索引,2,5,1,
+AI/GenAI/生成式AI.md,ai/genai/生成式ai,生成式AI,AI,technical-mechanism-note,false,生成式AI|GenAI|AI|文生图|文生视频|Sora|三维场景生成|World Labs,1,0,1,
+AI/GeoAI/autonomous-geoai.md,ai/geoai/autonomous-geoai,Autonomous GeoAI：概念与边界,AI,technical-mechanism-note,false,GeoAI|Autonomous-GeoAI|GIS|Agent|空间智能,3,1,3,Wed Jul 29 2026 08:00:00 GMT+0800 (China Standard Time)
+AI/GeoAI/geoai-agent-architecture.md,ai/geoai/geoai-agent-architecture,GeoAI Agent 架构,AI,technical-mechanism-note,false,GeoAI|Agent|GIS|工具调用|工作流|Human-in-the-loop,4,2,3,Wed Jul 29 2026 08:00:00 GMT+0800 (China Standard Time)
+AI/GeoAI/geospatial-agent-evaluation.md,ai/geoai/geospatial-agent-evaluation,地理空间智能体评测,AI,technical-mechanism-note,false,GeoAI|Agent|Benchmark|GIS|评测|可靠性,3,1,2,Wed Jul 29 2026 08:00:00 GMT+0800 (China Standard Time)
+AI/GeoAI/index.md,ai/geoai,GeoAI 与自主地理智能,AI,project-resource-hub,false,GeoAI|GIS|Agent|空间智能|索引,4,8,4,Wed Jul 29 2026 08:00:00 GMT+0800 (China Standard Time)
+AI/KDD.md,ai/kdd,Knowledge Discovery in Databases (KDD) - 数据库知识发现,AI,technical-mechanism-note,false,KDD|Data Mining|数据挖掘|知识发现|数据库|机器学习|模式识别|数据预处理,3,1,2,
+AI/LLM/index.md,ai/llm,大语言模型,AI,project-resource-hub,false,LLM|AI|大语言模型|深度学习|NLP|预训练模型,4,1,3,
+AI/LLM/qwen3-8-flash-next-n-gram-embedding.md,ai/llm/qwen3-8-flash-next-n-gram-embedding,Qwen3.8-Flash-Next 采用的 N-gram Embedding 是什么？,AI,technical-mechanism-note,false,深度学习|大语言模型|Qwen|embedding|n-gram|模型架构,1,0,1,Thu Aug 27 2026 08:00:00 GMT+0800 (China Standard Time)
+AI/OpenManus.md,ai/openmanus,开源的智能工具！OpenManus,AI,technical-mechanism-note,false,AI|OpenManus|Agent|开源|浏览器自动化|Playwright|LLM|工具,1,0,1,
+AI/index.md,ai,人工智能与 GeoAI,AI,project-resource-hub,false,AI|GeoAI|索引,1,9,1,
+Anywriting/index.md,anywriting,随笔,Anywriting,project-resource-hub,false,首页|随笔|自由写作|笔记整理,1,0,1,
+Anywriting/spatial-gen-1.md,anywriting/spatial-gen-1,空间的生产（阅读笔记系列）,Anywriting,concept-explainer,false,阅读笔记|空间的生产|哲学|列斐伏尔|辩证法|现象学|马克思主义|空间理论,2,3,1,
+DL/Deep Learning.md,dl/deep learning,Deep Learning,DL,progressive-learning-note,false,深度学习|机器学习|neural-network,2,0,1,
+DL/NER.md,dl/ner,命名实体识别,DL,progressive-learning-note,false,NLP|NER|named-entity-recognition|BERT|SpaCy|Flair|BiLSTM-CRF|multilingual,3,0,2,
+DL/index.md,dl,深度学习,DL,project-resource-hub,false,深度学习|机器学习|索引,2,3,1,
+DL/likelihood-nll-and-cross-entropy.md,dl/likelihood-nll-and-cross-entropy,似然、负对数似然与交叉熵,DL,technical-mechanism-note,false,深度学习|机器学习|概率模型|likelihood|cross-entropy|pytorch,1,0,1,Wed Aug 26 2026 08:00:00 GMT+0800 (China Standard Time)
+Data/hk_pop.md,data/hk_pop,香港人口数据概览,Data,concept-explainer,false,数据分析|香港|人口数据|人口普查|分层抽样|Gini系数,2,1,1,
+Data/hk_population_data_analysis.md,data/hk_population_data_analysis,香港政府开放数据平台 - 人口数据集分析报告,Data,concept-explainer,false,数据分析|香港|人口数据|政府开放数据|数据集,2,1,1,
+Data/index.md,data,数据与空间分析,Data,project-resource-hub,false,Data|GIS|数据分析|索引,1,3,1,
+Data/spatial_units_report.md,data/spatial_units_report,四种空间单元划分策略对比,Data,comparison-decision-note,false,GIS|空间单元|MAUP|城市分析|研究报告,3,0,2,
+Dev/SSH_Tunnel_Technical_Guide.md,dev/ssh_tunnel_technical_guide,SSH隧道技术文档：本地逻辑与远程智能体计算架构,Dev,practical-guide,false,SSH|隧道|Paramiko|分布式计算|网络安全|Python|智能体|远程计算,1,0,1,
+Dev/cloud-studio.md,dev/cloud-studio,腾讯 Cloud Studio 在线开发环境,Dev,comparison-decision-note,false,Dev|云开发|在线IDE|VS Code|SSH,1,0,1,
+Dev/conda.md,dev/conda,conda 使用速查,Dev,practical-guide,false,Python|conda|Anaconda|Miniconda|virtual-environment|package-management|cheat-sheet|environment-management,1,0,1,
+Dev/fonts.md,dev/fonts,字体,Dev,practical-guide,false,Python|matplotlib|字体|中文字体|font-cache|rcParams|Linux|troubleshooting,1,0,1,
+Dev/front-end-patch-package.md,dev/front-end-patch-package,patch-package 使用指南：安全修复第三方 npm 包的临时方案,Dev,practical-guide,true,npm|patch-package|node-modules|front-end|dependency|version-control|workflow|postinstall,0,0,0,
+Dev/frontend-dev-setup.md,dev/frontend-dev-setup,现代化前端项目配置指南,Dev,practical-guide,false,Dev|前端开发|Node.js|NVM|教程,1,1,1,
+Dev/git-github-setup.md,dev/git-github-setup,Git 与 GitHub 配置指南,Dev,practical-guide,false,Dev|Git|GitHub|版本控制|教程,1,0,1,
+Dev/index.md,dev,开发与工程实践,Dev,project-resource-hub,false,Dev|软件工程|教程|索引,1,12,1,
+Dev/python-backend-dev.md,dev/python-backend-dev,Python 后端开发指南,Dev,practical-guide,false,Dev|Python|后端开发|API|教程,1,0,1,
+Dev/refactoring-workflow.md,dev/refactoring-workflow,合适的重构流程,Dev,practical-guide,false,refactoring|git-workflow|code-quality|best-practices|large-file-splitting|incremental-development,1,0,1,
+Dev/server/fix.md,dev/server/fix,Ubuntu kmod 漏洞缓解与重启判断,Dev,practical-guide,false,Dev|Ubuntu|Linux|安全|运维,1,0,1,
+Dev/skills/context.md,dev/skills/context,个人品牌管理 Skill 设计,Dev,practical-guide,false,Dev|Skill|个人品牌|提示词|设计文档,1,0,1,
+Dev/templates/template.md,dev/templates/template,title,Dev,practical-guide,true,模板|GIStudio,0,0,0,
+Dev/uv-setup.md,dev/uv-setup,uv 配置指南,Dev,practical-guide,false,Dev|Python|uv|环境管理|教程,1,0,1,
+Glossary/development-status-classifications.md,glossary/development-status-classifications,联合国体系中的发达与发展中经济体分类,Glossary,concept-explainer,false,术语表|联合国|发展中经济体|发达经济体|UNCTAD|LDC|区域分类,2,1,2,
+Glossary/index.md,glossary,GIStudio Notes 术语表,Glossary,project-resource-hub,false,术语表|GIS|GeoAI|AI|研究方法|索引,2,10,2,
+Graph/ch1-Basic.md,graph/ch1-basic,图论基础,Graph,technical-mechanism-note,false,graph-theory|adjacency-matrix|node-classification|link-prediction|graph-learning|图分类|邻接列表|有向图,1,0,1,
+Graph/index.md,graph,图学习与城市计算,Graph,project-resource-hub,false,Graph|图学习|城市计算|索引,2,2,2,
+Graph/outline.md,graph/outline,图学习,Graph,practical-guide,false,graph-learning|GNN|urban-computing|GIS|教程|图神经网络|节点嵌入|时空图神经网络,1,0,1,
+Philosophy/causality.md,philosophy/causality,因果性和城市变化为什么发生,Philosophy,concept-explainer,false,哲学|因果性|城市科学|因果推断,7,5,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/complexity.md,philosophy/complexity,复杂性和适应性城市,Philosophy,concept-explainer,false,哲学|复杂性|城市系统|城市科学,6,5,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/critical-realism.md,philosophy/critical-realism,批判实在论怎样从事件追问机制,Philosophy,concept-explainer,false,哲学|批判实在论|城市科学|机制,3,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/dialectics.md,philosophy/dialectics,辩证法怎样理解城市矛盾,Philosophy,concept-explainer,false,哲学|辩证法|城市理论|城市科学,4,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/emergence.md,philosophy/emergence,涌现和城市整体的形成,Philosophy,concept-explainer,false,哲学|涌现|复杂系统|城市科学,5,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/epistemology.md,philosophy/epistemology,认识论和我们如何知道一座城市,Philosophy,concept-explainer,false,哲学|认识论|城市科学|证据,8,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/ethics-of-care.md,philosophy/ethics-of-care,关怀伦理如何从依赖与维护重想城市,Philosophy,concept-explainer,false,哲学|关怀伦理|城市伦理|城市科学,5,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/falsifiability.md,philosophy/falsifiability,可证伪性让城市理论有失败的可能,Philosophy,concept-explainer,false,哲学|可证伪性|科学哲学|城市科学,5,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/governmentality.md,philosophy/governmentality,治理术和城市怎样成为治理对象,Philosophy,concept-explainer,false,哲学|治理术|城市治理|城市科学,5,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/hermeneutics.md,philosophy/hermeneutics,解释学怎样理解城市意义,Philosophy,concept-explainer,false,哲学|解释学|城市研究|定性方法,5,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/index.md,philosophy,哲学与城市科学,Philosophy,project-resource-hub,false,哲学|城市科学|科学哲学|城市研究,2,20,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/mechanism.md,philosophy/mechanism,机制怎样打开城市模型的过程黑箱,Philosophy,concept-explainer,false,哲学|机制|科学解释|城市科学,6,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/ontology.md,philosophy/ontology,本体论和城市中什么算作存在,Philosophy,concept-explainer,false,哲学|本体论|城市科学|建模,6,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/phenomenology.md,philosophy/phenomenology,现象学怎样从生活世界经验城市,Philosophy,concept-explainer,false,哲学|现象学|城市体验|城市科学,5,5,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/positivism.md,philosophy/positivism,实证主义让城市主张接受观察检验,Philosophy,concept-explainer,false,哲学|实证主义|科学哲学|城市科学,3,6,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/pragmatism.md,philosophy/pragmatism,实用主义怎样在行动后果中检验知识,Philosophy,concept-explainer,false,哲学|实用主义|城市规划|城市科学,5,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/production-of-space.md,philosophy/production-of-space,空间生产和非中性的城市空间,Philosophy,concept-explainer,false,哲学|空间生产|城市理论|城市科学,9,5,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/reductionism.md,philosophy/reductionism,还原论及其拆解城市的限度,Philosophy,concept-explainer,false,哲学|还原论|城市系统|城市科学,4,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/right-to-the-city.md,philosophy/right-to-the-city,城市权利和共同决定城市化过程,Philosophy,concept-explainer,false,哲学|城市权利|城市政治|城市科学,5,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/social-construction.md,philosophy/social-construction,社会建构论和城市类别如何成为现实,Philosophy,concept-explainer,false,哲学|社会建构论|城市研究|分类,6,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Philosophy/spatial-justice.md,philosophy/spatial-justice,空间正义和公平的地理形态,Philosophy,concept-explainer,false,哲学|空间正义|城市公平|城市科学,6,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+RL/DRL.md,rl/drl,Deep Reinforcement Learning,RL,technical-mechanism-note,false,机器学习|RL|深度强化学习,1,2,1,
+RL/Reinforcement Learning.md,rl/reinforcement learning,强化学习总纲,RL,technical-mechanism-note,false,强化学习|RL|MDP|Q-learning|DQN|PPO|policy-gradient|Bellman-equation,3,1,1,
+RL/Stable Baseline 3.md,rl/stable baseline 3,Stable Baseline 3 的使用,RL,technical-mechanism-note,false,RL|PPO|VecEnv|Gym|OpenAI|Gymnasium|API|StableBaseline3,1,0,1,
+RL/concepts/MDP.md,rl/concepts/mdp,Markov Decision Process,RL,technical-mechanism-note,false,RL|MDP|Markov-Decision-Process|Bellman-equation|dynamic-programming,3,1,2,
+RL/index.md,rl,强化学习,RL,project-resource-hub,false,RL|强化学习|索引,4,4,3,
+Reading/GBDT.md,reading/gbdt,用 GBDT 识别城市绅士化的论文流程笔记,Reading,evidence-reading-note,false,机器学习|GBDT|城市规划|绅士化|分类模型|特征工程|POI|决策树,2,1,1,
+Reading/index.md,reading,阅读与基础概念,Reading,project-resource-hub,false,Reading|阅读笔记|索引,1,6,1,
+Reading/peters-2025-good-research-questions.md,reading/peters-2025-good-research-questions,Peters（2025）《How to develop good research questions》结构化精读,Reading,evidence-reading-note,false,Reading|研究问题|研究方法|文献精读|学术写作|LLM,3,2,1,Thu Jul 30 2026 08:00:00 GMT+0800 (China Standard Time)
+Reading/using-stanford-encyclopedia-of-philosophy.md,reading/using-stanford-encyclopedia-of-philosophy,如何把 Stanford Encyclopedia of Philosophy 用作研究工具,Reading,evidence-reading-note,false,Reading|研究方法|哲学|学术引用,1,1,1,Fri Jul 31 2026 08:00:00 GMT+0800 (China Standard Time)
+Sustainability/SDG/index.md,sustainability/sdg,可持续发展目标 (Sustainable Development Goals),Sustainability,project-resource-hub,false,SDG|可持续发展|联合国,3,17,3,
+Sustainability/SDG/sdg01-no-poverty/index.md,sustainability/sdg/sdg01-no-poverty,SDG 1 - 无贫穷 (No Poverty),Sustainability,project-resource-hub,false,SDG|SDG01|无贫穷|贫困,1,0,1,
+Sustainability/SDG/sdg02-zero-hunger/index.md,sustainability/sdg/sdg02-zero-hunger,SDG 2 - 零饥饿 (Zero Hunger),Sustainability,project-resource-hub,false,SDG|SDG02|零饥饿|粮食安全,1,0,1,
+Sustainability/SDG/sdg03-good-health/index.md,sustainability/sdg/sdg03-good-health,SDG 3 - 良好健康与福祉 (Good Health and Well-being),Sustainability,project-resource-hub,false,SDG|SDG03|健康|医疗|公共卫生,1,0,1,
+Sustainability/SDG/sdg04-quality-education/index.md,sustainability/sdg/sdg04-quality-education,SDG 4 - 优质教育 (Quality Education),Sustainability,project-resource-hub,false,SDG|SDG04|教育|终身学习,1,0,1,
+Sustainability/SDG/sdg05-gender-equality/index.md,sustainability/sdg/sdg05-gender-equality,SDG 5 - 性别平等 (Gender Equality),Sustainability,project-resource-hub,false,SDG|SDG05|性别平等|妇女权益,1,0,1,
+Sustainability/SDG/sdg06-clean-water/index.md,sustainability/sdg/sdg06-clean-water,SDG 6 - 清洁饮水与卫生设施 (Clean Water and Sanitation),Sustainability,project-resource-hub,false,SDG|SDG06|饮水|卫生|水资源,1,0,1,
+Sustainability/SDG/sdg07-clean-energy/index.md,sustainability/sdg/sdg07-clean-energy,SDG 7 - 经济适用的清洁能源 (Affordable and Clean Energy),Sustainability,project-resource-hub,false,SDG|SDG07|清洁能源|能源|可再生能源,1,0,1,
+Sustainability/SDG/sdg08-decent-work/index.md,sustainability/sdg/sdg08-decent-work,SDG 8 - 体面工作和经济增长 (Decent Work and Economic Growth),Sustainability,project-resource-hub,false,SDG|SDG08|经济增长|就业|劳动,1,0,1,
+Sustainability/SDG/sdg09-industry-innovation/index.md,sustainability/sdg/sdg09-industry-innovation,"SDG 9 - 产业、创新和基础设施 (Industry, Innovation and Infrastructure)",Sustainability,project-resource-hub,false,SDG|SDG09|产业|创新|基础设施,1,0,1,
+Sustainability/SDG/sdg10-reduced-inequalities/index.md,sustainability/sdg/sdg10-reduced-inequalities,SDG 10 - 减少不平等 (Reduced Inequalities),Sustainability,project-resource-hub,false,SDG|SDG10|不平等|社会公平,1,0,1,
+Sustainability/SDG/sdg11-sustainable-cities/index.md,sustainability/sdg/sdg11-sustainable-cities,SDG 11 - 可持续城市和社区 (Sustainable Cities and Communities),Sustainability,project-resource-hub,false,SDG|SDG11|城市规划|可持续城市|智慧城市,2,0,2,
+Sustainability/SDG/sdg12-responsible-consumption/index.md,sustainability/sdg/sdg12-responsible-consumption,SDG 12 - 负责任消费和生产 (Responsible Consumption and Production),Sustainability,project-resource-hub,false,SDG|SDG12|消费|生产|循环经济,1,0,1,
+Sustainability/SDG/sdg13-climate-action/index.md,sustainability/sdg/sdg13-climate-action,SDG 13 - 气候行动 (Climate Action),Sustainability,project-resource-hub,false,SDG|SDG13|气候变化|碳中和|气候行动,1,0,1,
+Sustainability/SDG/sdg14-life-below-water/index.md,sustainability/sdg/sdg14-life-below-water,SDG 14 - 水下生物 (Life Below Water),Sustainability,project-resource-hub,false,SDG|SDG14|海洋|海洋生态|海洋保护,1,0,1,
+Sustainability/SDG/sdg15-life-on-land/index.md,sustainability/sdg/sdg15-life-on-land,SDG 15 - 陆地生物 (Life on Land),Sustainability,project-resource-hub,false,SDG|SDG15|陆地生态|生物多样性|森林,1,0,1,
+Sustainability/SDG/sdg16-peace-justice/index.md,sustainability/sdg/sdg16-peace-justice,"SDG 16 - 和平、正义与强大机构 (Peace, Justice and Strong Institutions)",Sustainability,project-resource-hub,false,SDG|SDG16|和平|正义|法治|治理,1,0,1,
+Sustainability/SDG/sdg17-partnerships/index.md,sustainability/sdg/sdg17-partnerships,SDG 17 - 促进目标实现的伙伴关系 (Partnerships for the Goals),Sustainability,project-resource-hub,false,SDG|SDG17|伙伴关系|国际合作|多边主义,1,0,1,
+Sustainability/index.md,sustainability,可持续发展,Sustainability,project-resource-hub,false,可持续发展|SDG|城市研究|索引,1,2,1,
+Writing/Guide.md,writing/guide,有用的写作套路,Writing,comparison-decision-note,false,写作参考|模式化|教程|学术写作|论文结构|数据分析|文章修改|写作模板,1,1,1,
+Writing/experts/cs/2026-publication-timeline.md,writing/experts/cs/2026-publication-timeline,2026 学术论文发表时间表 — 5~6 篇目标规划,Writing,concept-explainer,false,论文写作|时间规划|投稿策略|CCF-A,1,0,1,
+Writing/experts/cs/ccf-a-conferences.md,writing/experts/cs/ccf-a-conferences,CCF A 类会议整理 - 图形学 / 计算机顶会 / 地理信息科学,Writing,concept-explainer,false,CCF|会议|计算机图形学|人工智能|地理信息科学,1,0,1,
+Writing/findAgap.md,writing/findagap,什么是一个研究问题？What is a research GAP？,Writing,evidence-reading-note,false,写作参考|模式化|教程|研究方法|research-gap|文献阅读|论文分析|学术写作,3,0,1,
+Writing/good-research-question-development.md,writing/good-research-question-development,从好奇到可检验问题：四阶段研究问题形成方法,Writing,concept-explainer,false,Writing|研究问题|研究方法|问题形成|学术写作|LLM,4,3,2,Thu Jul 30 2026 08:00:00 GMT+0800 (China Standard Time)
+Writing/how2write.md,writing/how2write,科普写作,Writing,concept-explainer,false,科普|写作参考|AI科普|叙事策略|虚拟数字人|IP形象|科学传播|交互设计,1,0,1,
+Writing/index.md,writing,写作与科研表达,Writing,project-resource-hub,false,Writing|学术写作|索引,1,10,1,
+Writing/paper-knitting-guide.md,writing/paper-knitting-guide,织毛衣指南 — 从选题到投稿的学术写作方法论,Writing,practical-guide,false,论文写作|学术投稿|方法论|选会选刊|论文结构|审稿应对|Rebuttal|写作策略,1,0,1,
+Writing/research-problem-method-and-causal-orientation.md,writing/research-problem-method-and-causal-orientation,研究问题、方法与因果方向,Writing,concept-explainer,false,Writing|研究问题|研究方法|因果推断|研究缺口,4,4,1,Wed Aug 05 2026 08:00:00 GMT+0800 (China Standard Time)
+Writing/top-computer-conference-font-and-template-requirements.md,writing/top-computer-conference-font-and-template-requirements,计算机顶会的字体与模板要求,Writing,concept-explainer,false,Writing|学术写作|投稿|字体|LaTeX,1,0,1,Thu Jul 30 2026 08:00:00 GMT+0800 (China Standard Time)
+awesome-autonomous-geoai/careers-and-industry.md,awesome-autonomous-geoai/careers-and-industry,职业发展与产业地图,awesome-autonomous-geoai,concept-explainer,false,GeoAI|Autonomous-GeoAI|AI4Science|awesome-list,2,0,1,
+awesome-autonomous-geoai/ecosystem-and-contributing.md,awesome-autonomous-geoai/ecosystem-and-contributing,生态、资助与参与方式,awesome-autonomous-geoai,practical-guide,false,GeoAI|Autonomous-GeoAI|AI4Science|awesome-list,2,0,1,
+awesome-autonomous-geoai/index.md,awesome-autonomous-geoai,Awesome Autonomous GeoAI 导航,awesome-autonomous-geoai,project-resource-hub,false,GeoAI|Autonomous-GeoAI|AI4Science|awesome-list,2,12,2,
+awesome-autonomous-geoai/learning-resources.md,awesome-autonomous-geoai/learning-resources,学习资源：书籍与课程,awesome-autonomous-geoai,progressive-learning-note,false,GeoAI|Autonomous-GeoAI|AI4Science|awesome-list,2,0,1,
+awesome-autonomous-geoai/papers-and-software.md,awesome-autonomous-geoai/papers-and-software,研究资源：论文与软件,awesome-autonomous-geoai,concept-explainer,false,GeoAI|Autonomous-GeoAI|AI4Science|awesome-list,2,0,1,
+awesome-autonomous-geoai/research-community.md,awesome-autonomous-geoai/research-community,学术共同体：会议、团队与期刊,awesome-autonomous-geoai,concept-explainer,false,GeoAI|Autonomous-GeoAI|AI4Science|awesome-list,2,0,1,
+awesome-autonomous-geoai/research-philosophy-summary-zh.md,awesome-autonomous-geoai/research-philosophy-summary-zh,Research Philosophy 中文综合与延伸解读,awesome-autonomous-geoai,comparison-decision-note,false,GeoAI|Autonomous-GeoAI|AI4Science|awesome-list,2,1,1,
+awesome-autonomous-geoai/research-philosophy.md,awesome-autonomous-geoai/research-philosophy,Research Philosophy：Autonomous GeoAI 科研哲学,awesome-autonomous-geoai,concept-explainer,false,GeoAI|Autonomous-GeoAI|AI4Science|awesome-list,3,0,1,
+awesome-autonomous-geoai/source-and-maintenance.md,awesome-autonomous-geoai/source-and-maintenance,Awesome Autonomous GeoAI：来源、授权与更新方法,awesome-autonomous-geoai,concept-explainer,false,GeoAI|Autonomous-GeoAI|AI4Science|awesome-list,1,7,1,
+index.md,index,GIStudio Notes,root,project-resource-hub,false,索引|GIStudio|笔记网站|Quartz,2,17,0,
+tools/Design Better.md,tools/design better,更好的设计,tools,practical-guide,false,工具|设计|图标|icon|配色|PPT|UI设计,1,0,1,
+tools/LLM Prompts.md,tools/llm prompts,大语言模型 Prompts,tools,practical-guide,false,LLM|AI|提示词工程|论文修改|学术写作|英文润色|GIS|地理信息,4,0,3,
+tools/MinerU.md,tools/mineru,MinerU 开源的OCR工具,tools,practical-guide,false,工具|AI|OCR|文档解析|开源|PDF,1,0,1,
+tools/NVM.md,tools/nvm,NVM 教程,tools,practical-guide,false,DevOps|NVM|Node.js|版本管理|macOS|教程,3,0,2,
+tools/Quick Start.md,tools/quick start,快速科研工具,tools,evidence-reading-note,false,工具|科研|论文写作|文献管理|文献检索|办公|LaTeX|Overleaf,1,0,1,
+tools/experiences/习惯点点.md,tools/experiences/习惯点点,习惯点点使用笔记,tools,practical-guide,false,工具|习惯|自律|使用笔记|效率|生活方式|时间管理,1,0,1,
+tools/index.md,tools,工具与工作流,tools,project-resource-hub,false,工具|工作流|索引,1,7,1,
+tools/obsidian模板/常规文档模板.md,tools/obsidian模板/常规文档模板,字体,tools,practical-guide,true,索引|GIStudio|Obsidian|模板|字体,0,0,0,
+tools/obsidian模板/测试.md,tools/obsidian模板/测试,字体,tools,practical-guide,true,测试|Obsidian|模板|字体|排版,0,0,0,
+tools/sink.md,tools/sink,short-link,tools,practical-guide,false,工具|短链接|部署|Cloudflare|开源|自建服务,1,0,1,

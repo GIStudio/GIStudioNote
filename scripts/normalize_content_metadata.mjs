@@ -83,7 +83,7 @@ const descriptionOverrides = {
 
 const generatedDescription = (relative, title) => {
   if (descriptionOverrides[relative]) return descriptionOverrides[relative]
-  if (relative.startsWith("Writing/experts/sdg/")) {
+  if (relative.startsWith("Sustainability/SDG/")) {
     return `介绍${title}的核心议题、目标内涵与可持续发展相关资料。`
   }
   if (relative.startsWith("Dev/")) return `${title}的环境配置、操作步骤与常见问题指南。`

@@ -17,6 +17,7 @@
     "notes": "npm run install-plugins && npx quartz build --serve -d content",
     "start": "npm run notes",
     "audit:content": "node scripts/audit_content.mjs",
+    "audit:knowledge": "node scripts/audit_knowledge_architecture.mjs",
     "build:site": "npx quartz build && node scripts/add_legacy_redirects.mjs",
     "check:content": "npm run audit:content && tsc --noEmit && npm run build:site",
     "check": "tsc --noEmit && npx prettier . --check",
