@@ -26,6 +26,11 @@ tags:
 - [[DRL|深度强化学习]]：从表格方法到函数近似的过渡
 - [[Stable Baseline 3|Stable Baselines3]]：工程实践中常用的高层封装库
 
+## 部署与迁移计划
+
+当前项目独立部署于 <https://www.gistudy.net/reinforceyourRL/>。后续计划将本项目整体迁移至本站（notes.gistudio.xyz）的强化学习分区，与总纲、MDP 等笔记统一维护，迁移完成后原地址保留跳转。
+
 ## 相关链接
 
 - 仓库：<https://github.com/wsqstar/reinforceyourRL>
+- 在线部署：<https://www.gistudy.net/reinforceyourRL/>
