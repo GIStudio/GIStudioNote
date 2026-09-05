@@ -1,0 +1,26 @@
+# RL 专题站（gistudy.net/reinforceyourRL/）的 MkDocs 构建配置。
+# 源文件与 Quartz 共用同一份 Markdown：docs_dir 指向 ../content/RL，
+# 因此这里不做内容维护，只负责用原主题渲染并部署到 reinforceyourRL 的 gh-pages。
+site_name: RL Study
+site_description: 强化你的强化学习——主流强化学习算法的代码、练习与解决方案
+site_url: https://www.gistudy.net/reinforceyourRL/
+docs_dir: ../content/RL
+site_dir: site
+
+theme:
+  name: material
+  language: zh
+  palette:
+    primary: indigo
+
+plugins:
+  - search
+  - roamlinks
+
+nav:
+  - 首页: index.md
+  - 强化学习总纲: Reinforcement Learning.md
+  - 马尔可夫决策过程: concepts/MDP.md
+  - 深度强化学习: DRL.md
+  - Stable Baselines3: Stable Baseline 3.md
+  - 项目笔记: reinforceyourRL.md

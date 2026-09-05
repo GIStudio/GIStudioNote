@@ -1,0 +1,44 @@
+name: Deploy RL subsite (gistudy.net)
+
+# RL 专题站与 Quartz 共用 content/RL 下的同一份 Markdown。
+# 只有 RL 相关文件变化时本 workflow 才触发（否则完全不运行，
+# Quartz 主站由 deploy.yml 照常更新）；触发时将 MkDocs 构建结果
+# 推送到 wsqstar/reinforceyourRL 的 gh-pages 分支，即 gistudy.net
+# 上的 https://www.gistudy.net/reinforceyourRL/ 。
+on:
+  push:
+    branches:
+      - v5
+    paths:
+      - 'content/RL/**'
+      - 'rl-site/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy-rl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install MkDocs
+        run: pip install mkdocs-material mkdocs-roamlinks-plugin
+
+      - name: Build RL subsite
+        run: mkdocs build -f rl-site/mkdocs.yml
+
+      - name: Push to wsqstar/reinforceyourRL gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.RL_DEPLOY_TOKEN }}
+          external_repository: wsqstar/reinforceyourRL
+          publish_branch: gh-pages
+          publish_dir: ./rl-site/site
+          commit_message: 'deploy: RL subsite from GIStudioNote content/RL'
