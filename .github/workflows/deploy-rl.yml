@@ -12,6 +12,7 @@ on:
     paths:
       - 'content/RL/**'
       - 'rl-site/**'
+      - '.github/workflows/deploy-rl.yml'
   workflow_dispatch:
 
 permissions:
