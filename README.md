@@ -48,6 +48,8 @@ git diff --check
 git push origin v5
 ```
 
+`content/RL/` 同时是强化学习专题站（[gistudy.net/reinforceyourRL](https://www.gistudy.net/reinforceyourRL/)）的内容源：RL 相关文件变化时额外触发 MkDocs 构建并部署到原站地址。双站点架构、Secret 与排查指南见 [`rl-site/HANDOFF.md`](rl-site/HANDOFF.md)。
+
 ## 更新 Quartz
 
 Quartz 5 的内核更新命令为：
