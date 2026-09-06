@@ -15,5 +15,6 @@ aliases:
 - [[Design Better|设计资源]]
 - [[Quick Start|工具快速开始]]
 - [[sink|Sink 短链接]]
+- [[GeoLibre vs SpatialHarness|GeoLibre 对比与 AI 辅助编辑]]
 - [Google Analytics](https://analytics.google.com/analytics/web/?hl=zh-cn#/)
 - [[experiences/习惯点点|习惯点点使用记录]]
