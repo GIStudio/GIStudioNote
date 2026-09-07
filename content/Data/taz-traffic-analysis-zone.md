@@ -29,7 +29,7 @@ tags:
 
 ### 英国：OA → LSOA → MSOA（统计区承担交通分析职能）
 - 英国没有专门的「交通分析区」，交通分析与通勤 OD 普遍借用普查统计区层级：OA → LSOA（约 1,500 人/650 户）→ MSOA（约 5,000–15,000 人，由 4–5 个 LSOA 组成）（[ONS Census 2021 geographies](https://www.ons.gov.uk/methodology/geography/ukgeographies/censusgeographies/census2021geographies)、[OCSI 入门指南](https://ocsi.uk/2019/03/18/lsoas-leps-and-lookups-a-beginner-guide-to-statistical-geographies/)）。
-- 苏格兰对应物是 **Data Zone / intermediate zone**，北爱尔兰用 SOA（[UK Data Service 指南 PDF](https://ukdataservice.ac.uk/app/uploads/censusgeography2022-10-18.pdf)）。普查「通勤出行」数据直接以 MSOA/LSOA 发布（[Census 2021 travel to work 示例](https://www.arcgis.com/home/item.html?id=4cfdf60f110b4d0e9b86d87331b6cb01)）。
+- 苏格兰对应物是 **Data Zone / intermediate zone**，北爱尔兰用 SOA（[UK Data Service 指南 PDF](https://ukdataservice.ac.uk/app/uploads/censusgeography2022-10-18.pdf)）。注意苏格兰 Data Zone 的设计人口是 **500–1,000 人**，比 LSOA（约 1,500 人）更细，intermediate zone 为 2,500–6,000 人（[苏格兰政府小面积统计页](https://www.gov.scot/collections/small-area-statistics/)）——说它是「LSOA 等价物」只对层级位置成立，粒度上其实低半级。普查「通勤出行」数据直接以 MSOA/LSOA 发布（[Census 2021 travel to work 示例](https://www.arcgis.com/home/item.html?id=4cfdf60f110b4d0e9b86d87331b6cb01)）。
 
 ### 德国：Verkehrszellen（交通小区）
 - 需求模型以 **Verkehrszellen**（交通小区）为 OD 计算单元；柏林官方划分为 323 个交通小区，并有更细的 **Teilverkehrszellen**（部分交通小区），由市统计部门发布、广泛用于出行报告（[地址级区内距离计算](https://www.researchgate.net/publication/354312525_Address-based_computation_of_intra-cell_distances_for_travel_demand_models)）。
@@ -55,8 +55,12 @@ tags:
 | 国家/地区 | 单元 | 单区人口（来源或估算方式） |
 |---|---|---|
 | 美国 | TAZ | 常见 < 3,000 人（模型软件综述，Wikipedia） |
+| 英国 | 单位邮编（unit postcode） | 约 15 户 / 30–50 人（ONS 邮编目录粒度，估算） |
+| 英国 | OA | 约 125 户 / 300 人（由单位邮编聚类而成，[ONS 统计地理说明](https://www.ons.gov.uk/methodology/geography/ukgeographies/statisticalgeographies)） |
 | 英国 | LSOA | 约 1,500 人 / 650 户（ONS） |
 | 英国 | MSOA | 5,000–15,000 人（ONS） |
+| 苏格兰 | Data Zone | 设计区间 500–1,000 人（下限 375、上限 1,125；2022 版共 7,392 个，[gov.scot](https://www.gov.scot/collections/small-area-statistics/)） |
+| 苏格兰 | Intermediate Zone | 2,500–6,000 人（gov.scot） |
 | 德国（柏林） | Verkehrszelle | 约 1.1 万人/区（按柏林约 360 万人 / 323 区折算，估算） |
 | 中国内地 | 交通小区 | 城市中心区 2 万–4 万人（面积 1–3 km²），边缘区约 3 万人（5–15 km²）（[长安大学学报](https://transport.chd.edu.cn/cn/article/pdf/preview/200701015.pdf)、[北京大学学报](https://xbna.pku.edu.cn/CN/article/downloadArticleFile.do?attachType=PDF&id=2952)引国外调查经验） |
 | 香港 | TPU | 约 2.5 万人/区（按 2021 普查约 741 万人 / 292 个 TPU 折算，估算） |
@@ -68,7 +72,24 @@ tags:
 - **规模-成本权衡**：分区数越多，OD 矩阵按分区数平方增长，标定与计算成本随之上升；中国内地按 2 万–4 万人/区划分，一个千万级人口都市圈通常落在数百到一两千个交通小区，与柏林 323 区、香港 292 个 TPU 的量级一致（此句为量级推断）。
 - **人口折算的局限**：表中德国与香港的数值是「总人口/分区数」的均值折算，未反映区内人口方差——中心区 TPU/交通小区的实际人口通常远低于均值，CBD 分区可能只有数千人甚至以岗位为主，因此跨体系比较时应视为量级而非精确值。
 
-## 4. 横向对比
+## 4. 邮编与 TAZ 的关系
+
+你的直觉在英国是对的——**英国的单位邮编是整个统计区金字塔的砖石**：普查以 households 为单位采集，地址带单位邮编（平均约 15 户），单位邮编聚类成 OA，OA 聚成 LSOA → MSOA。因此「邮编 → OA → LSOA → MSOA」构成严格的下级→上级链条，ONS 邮编目录（ONSPD）就是这份对照表（[ONSPD](https://geoportal.statistics.gov.uk/datasets/b54177d3d7264cd6ad89e74dd9c1391d)、[Nomis 邮编-统计区对照](https://www.nomisweb.co.uk/census/2011/postcode_headcounts_and_household_estimates)）。由于英国的「TAZ」角色由 MSOA/LSOA 承担，**英国邮编与 TAZ 是严格嵌套的父子关系**——给定一个邮编就能唯一确定它所属的 TAZ，这也是英国把邮编级商业/健康数据挂接到交通分析区的成本极低的原因。
+
+其他国家则基本没有这种整洁关系：
+
+| 国家/地区 | 邮编体系 | 与 TAZ 的关系 |
+|---|---|---|
+| 英国 | unit postcode（约 15 户） | **严格嵌套**：邮编 ⊂ OA ⊂ LSOA ⊂ MSOA，ONSPD 提供官方对照 |
+| 美国 | ZIP / ZCTA | **互不嵌套**：TAZ 由 census block 聚合，ZIP 是邮政投递路线，两者边界互相穿插，只能做面积加权叠合 |
+| 德国 | PLZ | 独立于 Verkehrszellen，无官方层级关系 |
+| 日本 | 郵便番号（7 位） | 独立体系；PT 分区以町丁目/街区为基础构建，与邮编不重合 |
+| 中国内地 | 邮编（6 位） | 粒度粗（到投递区/街道级），与交通小区无对应关系，规划中几乎不用邮编做分析单元 |
+| 香港 | 基本无公开邮编体系 | 不适用；地址以「区+街道+门牌」组织，统计单元靠 TPU |
+
+值得注意的英国例外之外，**美国 ZIP 与 ZCTA 的关系本身也是一个坑**：ZIP 是 USPS 的服务路线而非面单元，ZCTA（ZIP Code Tabulation Area）是普查局用 block 近似出来的面版本，即便在美国内部，ZIP ↔ ZCTA ↔ block ↔ TAZ 也只在 block 层面可严格对照。这解释了为什么「用邮编聚合出行数据」在英国是常规操作，而在美国/中国必须先经过地址地理编码落到 block 或网格。
+
+## 5. 横向对比
 
 | 国家/地区 | 单元名称 | 划定主体 | 与普查关系 | 层级 |
 |---|---|---|---|---|
