@@ -25,6 +25,7 @@ const stripExtension = (value) => value.replace(/\.md$/i, "")
 const stripIndex = (value) => value.replace(/\/index$/i, "")
 const normalizeTarget = (value) =>
   stripIndex(stripExtension(decodeURIComponent(value).replace(/^\/+/, "")))
+const normalizeArxivId = (value) => value.replace(/v\d+$/i, "")
 
 const noteTargets = new Map()
 const assetTargets = new Map()
@@ -124,6 +125,49 @@ for (const file of markdownFiles) {
     if (!target || /^(https?:|mailto:|tel:|ftp:|data:)/i.test(target)) continue
     const resolved = isImage ? resolvesAsset(target, file) : resolvesNote(target, file)
     if (!resolved) errors.push(`${relative}: unresolved Markdown link (${rawTarget})`)
+  }
+
+  const lines = parsed.content.split("\n")
+  for (const [index, line] of lines.entries()) {
+    const arxivLinks = [
+      ...line.matchAll(
+        /\[[^\]]+]\(https:\/\/arxiv\.org\/(abs|pdf|html)\/([A-Za-z0-9./-]+(?:v\d+)?)\)/g,
+      ),
+    ]
+    for (const match of arxivLinks) {
+      const [, surface, versionedId] = match
+      const arxivId = normalizeArxivId(versionedId)
+      if (surface !== "abs") {
+        errors.push(
+          `${relative}:${index + 1}: arXiv scientific link must use /abs/${versionedId}, not /${surface}/`,
+        )
+      }
+
+      const followingText = line.slice((match.index ?? 0) + match[0].length)
+      const trackbackUrl = `https://arxiv.org/trackback/${arxivId}`
+      if (!followingText.includes(`](${trackbackUrl})`)) {
+        errors.push(
+          `${relative}:${index + 1}: arXiv ${versionedId} must keep its scientific link and add a following Trackback link (${trackbackUrl})`,
+        )
+      }
+    }
+
+    for (const match of line.matchAll(
+      /\[[^\]]*Trackback[^\]]*]\(https:\/\/arxiv\.org\/trackback\/([A-Za-z0-9./-]+)\)/gi,
+    )) {
+      const beforeTrackback = line.slice(0, match.index ?? 0)
+      const arxivId = match[1]
+      const escapedId = arxivId.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+      const hasScientificLink = new RegExp(
+        `https://arxiv\\.org/abs/${escapedId}(?:v\\d+)?\\)`,
+        "i",
+      ).test(beforeTrackback)
+      if (!hasScientificLink) {
+        errors.push(
+          `${relative}:${index + 1}: Trackback ${arxivId} cannot replace the preceding arXiv scientific link`,
+        )
+      }
+    }
   }
 }
 

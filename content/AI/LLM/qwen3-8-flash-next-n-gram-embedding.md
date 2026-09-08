@@ -127,11 +127,11 @@ CPU 内存保存 N-gram 表
 
 N-gram 语言模型长期使用相邻词序列估计下一个词的概率。Transformer 普及后，研究者开始把 N-gram 重新作为神经网络内部的显式局部表示。
 
-2022 年的 N-Grammer 使用离散潜在表示构造 N-gram，并以稀疏操作增强 Transformer。它证明了局部 N-gram 表示可以作为扩大主干模型之外的一条路线。[N-Grammer 论文](https://arxiv.org/abs/2207.06366)
+2022 年的 N-Grammer 使用离散潜在表示构造 N-gram，并以稀疏操作增强 Transformer。它证明了局部 N-gram 表示可以作为扩大主干模型之外的一条路线。[N-Grammer 论文](https://arxiv.org/abs/2207.06366)（[Trackback](https://arxiv.org/trackback/2207.06366)）
 
-2025 年的 SCONE 进一步强调可扩展、上下文化和可卸载。它把常见 N-gram 的向量预先计算并保存在加速器外部，使输入 embedding 容量可以增加，而推理阶段的加速器 FLOPs 保持较低。[SCONE 论文](https://arxiv.org/abs/2502.01637)
+2025 年的 SCONE 进一步强调可扩展、上下文化和可卸载。它把常见 N-gram 的向量预先计算并保存在加速器外部，使输入 embedding 容量可以增加，而推理阶段的加速器 FLOPs 保持较低。[SCONE 论文](https://arxiv.org/abs/2502.01637)（[Trackback](https://arxiv.org/trackback/2502.01637)）
 
-2026 年的 Engram 把这类模块概括为条件记忆，并讨论它与 MoE 条件计算的互补关系。Qwen3.8-Flash-Next 随后把单层 N-gram Embedding、浅层放置和 Host Memory 预取整合进一个公开权重的大模型架构。[Engram 论文](https://arxiv.org/abs/2601.07372) [Qwen 官方发布说明](https://qwen.ai/blog?id=qwen3.8-flash-next)
+2026 年的 Engram 把这类模块概括为条件记忆，并讨论它与 MoE 条件计算的互补关系。Qwen3.8-Flash-Next 随后把单层 N-gram Embedding、浅层放置和 Host Memory 预取整合进一个公开权重的大模型架构。[Engram 论文](https://arxiv.org/abs/2601.07372)（[Trackback](https://arxiv.org/trackback/2601.07372)）；[Qwen 官方发布说明](https://qwen.ai/blog?id=qwen3.8-flash-next)
 
 ## 当前发展
 
@@ -200,8 +200,8 @@ N-gram Embedding 与 RAG 可以同时存在。前者属于模型权重，内容�
 - [Qwen3.8-Flash-Next 官方仓库](https://github.com/QwenLM/Qwen3.8-Flash-Next)
 - [Qwen3.8-Flash-Next 官方技术报告](https://github.com/QwenLM/Qwen3.8-Flash-Next/blob/main/tech_report.pdf)
 - [Qwen3.8-Flash-Next 官方模型卡](https://huggingface.co/Qwen/Qwen3.8-Flash-Next-FP8/blob/main/README.md)
-- [N-Grammer 论文](https://arxiv.org/abs/2207.06366)
-- [SCONE 论文](https://arxiv.org/abs/2502.01637)
-- [Engram 论文](https://arxiv.org/abs/2601.07372)
+- [N-Grammer 论文](https://arxiv.org/abs/2207.06366) · [Trackback](https://arxiv.org/trackback/2207.06366)
+- [SCONE 论文](https://arxiv.org/abs/2502.01637) · [Trackback](https://arxiv.org/trackback/2502.01637)
+- [Engram 论文](https://arxiv.org/abs/2601.07372) · [Trackback](https://arxiv.org/trackback/2601.07372)
 
 Qwen 架构、参数和消融结论来自官方发布资料与技术报告。机制对比同时参考 N-Grammer、SCONE 和 Engram 的公开论文。自然语言例子用于说明局部查表过程，不代表官方披露了对应表项。当前开发状态最后核验于 2026 年 8 月 27 日。

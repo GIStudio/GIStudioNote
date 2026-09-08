@@ -38,7 +38,7 @@ verified_at: 2026-07-29
 - 错误反馈是否改变下一步计划；
 - 地图视觉与空间数据是否一致。
 
-2026 年预印本 [GeoAgentBench](https://arxiv.org/abs/2604.13888) 提出动态 GIS
+2026 年预印本 [GeoAgentBench](https://arxiv.org/abs/2604.13888)（[Trackback](https://arxiv.org/trackback/2604.13888)）提出动态 GIS
 执行环境，覆盖 117 个原子工具、53 类任务和 6 个 GIS 领域，并分别检查参数
 执行与空间/制图产物。这些数字描述的是该预印本的 benchmark 设计，不应被
 解读为领域统一标准。
@@ -72,7 +72,7 @@ verified_at: 2026-07-29
 
 ## 人类生产力不是“完全无人”
 
-[GeoAI Agency Primitives](https://arxiv.org/abs/2604.01869) 把评测目标扩展到
+[GeoAI Agency Primitives](https://arxiv.org/abs/2604.01869)（[Trackback](https://arxiv.org/trackback/2604.01869)）把评测目标扩展到
 GIS 实践者的人机协作和产物生产。对真实工作而言，好的 agent 不一定减少
 所有人工步骤，而应减少重复操作，同时让关键空间判断更容易检查和修正。
 
@@ -91,8 +91,8 @@ GIS 实践者的人机协作和产物生产。对真实工作而言，好的 age
 
 ## 来源状态
 
-- [GeoAgentBench](https://arxiv.org/abs/2604.13888)：2026 年 arXiv 预印本。
-- [GeoAI Agency Primitives](https://arxiv.org/abs/2604.01869)：2026 年
+- [GeoAgentBench](https://arxiv.org/abs/2604.13888) · [Trackback](https://arxiv.org/trackback/2604.13888)：2026 年 arXiv 预印本。
+- [GeoAI Agency Primitives](https://arxiv.org/abs/2604.01869) · [Trackback](https://arxiv.org/trackback/2604.01869)：2026 年
   arXiv 预印本。
 - [Spatial-Agent](https://aclanthology.org/2026.acl-long.679/)：ACL 2026
   正式论文，可作为空间概念约束工作流的对照。

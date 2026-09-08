@@ -18,6 +18,7 @@
     "start": "npm run notes",
     "audit:content": "node scripts/audit_content.mjs",
     "audit:knowledge": "node scripts/audit_knowledge_architecture.mjs",
+    "trackback:arxiv": "node scripts/send_arxiv_trackbacks.mjs",
     "build:site": "npx quartz build && node scripts/add_legacy_redirects.mjs",
     "check:content": "npm run audit:content && tsc --noEmit && npm run build:site",
     "check": "tsc --noEmit && npx prettier . --check",

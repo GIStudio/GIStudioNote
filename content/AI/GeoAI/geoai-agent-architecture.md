@@ -84,7 +84,7 @@ verified_at: 2026-07-29
 
 ## 遥感 Agent 的一个分支
 
-[OpenEarthAgent](https://arxiv.org/abs/2602.17665) 是 2026 年预印本，重点是把
+[OpenEarthAgent](https://arxiv.org/abs/2602.17665)（[Trackback](https://arxiv.org/trackback/2602.17665)）是 2026 年预印本，重点是把
 卫星影像、自然语言问题、推理轨迹和 GIS/遥感指标工具组合起来。它说明同一
 总体架构可以针对遥感建立专门的数据与工具层，但其训练集和实验结论仍应按
 预印本状态理解。

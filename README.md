@@ -6,6 +6,10 @@
 
 本站使用 [Quartz 5](https://quartz.jzhao.xyz/) 将 `content/` 中的 Markdown 笔记发布为数字花园。
 
+## Start here / 项目交接
+
+继续维护项目前，先阅读 [`docs/knowledge-maintenance.md`](docs/knowledge-maintenance.md)。该文档记录公开内容边界、当前维护状态、引用规范和发布验收要求。
+
 ## 本地环境
 
 仓库固定使用 Node.js 22.16.0：
@@ -68,6 +72,7 @@ npm run check:content
 - 内部知识连接可使用 Obsidian Wikilink。
 - 长期维护或跨工具链接优先使用标准 Markdown 链接。
 - 引用使用 Pandoc citation key，例如 `[@citationKey]`；条目维护在 `bibliography.bib`。
+- arXiv 论文使用双链接：论文标题或编号链接到官方 `/abs/<id>` 摘要页，随后单独给出 `/trackback/<id>`。Trackback 只用于向 arXiv 通知本站讨论，不替代 DOI、正式出版页、citation key 或 arXiv 摘要页。
 - 不将私人内容放入公开 `content/`，并保留来源、状态和更新时间信息。
 
 ## 参考
