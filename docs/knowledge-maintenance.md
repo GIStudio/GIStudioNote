@@ -5,7 +5,7 @@
 - [done] 元数据、内部链接与 Quartz 构建基线（证据：`npm run check:content` 通过；2026-07-29）
 - [done] Awesome Autonomous GeoAI 已拆分并发布（证据：commit `e2b185b`）
 - [done] 全站知识架构复核（证据：2026-08-27 审计覆盖 120 个公开页面，孤立页、导航缺口、重复候选和未连接关系候选均为 0；人工决策见 `docs/knowledge-architecture/review.md`）
-- [doing] arXiv 科学链接与 Trackback 双链接规范（完成条件：全站审计、Pages 发布、线上链接抽查和 Trackback 提交均通过）
+- [done] arXiv 科学链接与 Trackback 双链接规范（证据：130 个 Markdown 文件审计和 Pages 发布通过；16 个页面—论文 Trackback 已于 2026-09-08 提交 arXiv 审核）
 - [plan] 定期复查时效性内容（触发：季度维护或上游更新；下一动作：运行内容审计并检查 `verified_at`）
 
 ## 公开页面的最小元数据
