@@ -62,7 +62,7 @@ verified_at: 2026-07-29
 2026 年 ACL 论文 [Spatial-Agent](https://aclanthology.org/2026.acl-long.679/)
 把地理分析组织成空间概念的可执行转换图，代表了“以 GIScience 概念约束
 agent workflow”的路线。2026 年预印本
-[GeoAI Agency Primitives](https://arxiv.org/abs/2604.01869)（[Trackback](https://arxiv.org/trackback/2604.01869)）则把关注点放在
+[GeoAI Agency Primitives](https://arxiv.org/abs/2604.01869)（[Trackback 记录](https://arxiv.org/tb/2604.01869)）则把关注点放在
 GIS 实践者真实生产的矢量、栅格和地图产物，以及人机迭代协作。
 
 ## 研究问题
@@ -81,5 +81,5 @@ GIS 实践者真实生产的矢量、栅格和地图产物，以及人机迭代�
   正式论文。
 - [SpatialWebAgent](https://aclanthology.org/2025.acl-demo.25/)：ACL 2025
   System Demonstration。
-- [GeoAI Agency Primitives](https://arxiv.org/abs/2604.01869) · [Trackback](https://arxiv.org/trackback/2604.01869)：2026 年
+- [GeoAI Agency Primitives](https://arxiv.org/abs/2604.01869) · [Trackback 记录](https://arxiv.org/tb/2604.01869)：2026 年
   arXiv 预印本，提供概念框架，尚不等同于领域共识。

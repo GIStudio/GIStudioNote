@@ -22,7 +22,7 @@ tags:
 - **粒度与层级**：可四叉树式聚合（4 合一），但无统一全球编码标准，跨研究难以复现；不同投影下像元面积不一致（高纬度畸变）。
 - **语义边界对齐**：低。边界任意切割地块、道路与社区，是典型的「强加边界」（imposed boundary）。
 - **数据挂接**：最容易。重采样/面积加权即可接入遥感、人口栅格（WorldPop 类）、POI 计数；与 CNN/ViT 等图像式模型输入天然匹配。
-- **边界效应与 MAUP**：中心到各邻居距离不一致（边邻居 vs 角邻居），各向异性邻域定义会引入方向性偏差；六边形网格在邻域距离均匀性上更优（见 [OSTI DGGS 对比](https://www.osti.gov/servlets/purl/2572460)、[Bousquin 2021, PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC8958999/)）。MAUP 的尺度效应显著：200 m 与 1 km 聚合结果可明显不同（[arXiv:1910.05125](https://arxiv.org/abs/1910.05125) · [Trackback](https://arxiv.org/trackback/1910.05125)）。
+- **边界效应与 MAUP**：中心到各邻居距离不一致（边邻居 vs 角邻居），各向异性邻域定义会引入方向性偏差；六边形网格在邻域距离均匀性上更优（见 [OSTI DGGS 对比](https://www.osti.gov/servlets/purl/2572460)、[Bousquin 2021, PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC8958999/)）。MAUP 的尺度效应显著：200 m 与 1 km 聚合结果可明显不同（[arXiv:1910.05125](https://arxiv.org/abs/1910.05125) · [Trackback 记录](https://arxiv.org/tb/1910.05125)）。
 - **典型用法**：遥感地物分类、人口/活动栅格化、图像式 GeoFM 输入；栅格单元常与行政单元在 MAUP 标度律研究中作对照（[上海城市功能区标度律研究](https://www.jjdl.com.cn/EN/abstract/article/1000-8462/73481)）。
 
 ## 2. H3 六边形层级网格（Uber H3）
@@ -32,7 +32,7 @@ tags:
 - **语义边界对齐**：低-中。与正方形网格一样是强加边界，但像元形状更接近圆形、各向同性更好。
 - **数据挂接**：非常容易。经纬度→cell 索引即完成空间连接，无需昂贵的 polygon join；Uber 最初为动态定价与出行分析构建（[Uber H3 介绍](https://www.uber.com/blog/h3/)【待核实：官方博客页面】），已被电信、物流、流行病学广泛采用。
 - **边界效应与 MAUP**：邻居距离一致、边缘效应最小（[OSTI](https://www.osti.gov/servlets/purl/2572460)）；但 MAUP 尺度效应仍在，且不同分辨率间面积比 ≈ 7:1（非 2 的幂），跨分辨率面积加权需小心。
-- **典型用法**：网约车/微出行需求聚合（[IROS'23 滑板车路径规划](https://cdcl.umd.edu/papers/iros23b.pdf)）、物流多级决策（[Polytechnique Montréal 2025](https://publications.polymtl.ca/71111/1/2025_AliShiri.pdf)）；社会隔离研究中将 H3 与人口普查区组合构造分析单元（[arXiv:2407.00404](https://arxiv.org/abs/2407.00404v1) · [Trackback](https://arxiv.org/trackback/2407.00404)）。
+- **典型用法**：网约车/微出行需求聚合（[IROS'23 滑板车路径规划](https://cdcl.umd.edu/papers/iros23b.pdf)）、物流多级决策（[Polytechnique Montréal 2025](https://publications.polymtl.ca/71111/1/2025_AliShiri.pdf)）；社会隔离研究中将 H3 与人口普查区组合构造分析单元（[arXiv:2407.00404](https://arxiv.org/abs/2407.00404v1) · [Trackback 记录](https://arxiv.org/tb/2407.00404)）。
 
 ## 3. 地块/街区单元（Parcel / Block）
 
@@ -41,7 +41,7 @@ tags:
 - **语义边界对齐**：高。是城市治理、用地审批、TIA 申报的「原生单元」；T1 出行生成的出行率（trip rate）通常按用地性质挂接到 parcel/development site——香港 TIA 实践即以开发项目地块为单位套用 TPDM 出行率（[HK 运输署 TIA Checklist 2024](https://www.td.gov.hk/filemanager/en/publication/tia checklist for development projects_202410_v3.pdf)）。
 - **数据挂接**：最难。需处理拓扑错误、权属变更、多源地址匹配；「parcels 是行为一致的单元，但数据复杂性长期压制其建模潜力」（Waddell 等，见 [Forecasting with Dynamic Microsimulation](https://escholarship.org/content/qt2x12q5pv/qt2x12q5pv_noSplash_06e38ab269bfea71ebaaa8c96304f948.pdf)）。
 - **边界效应与 MAUP**：单元大小方差极大（微小地块 vs 大机构地块），小单元方差膨胀；zone effect 相对小（边界有语义），但跨城市/跨期比较困难。
-- **典型用法**：UrbanSim parcel 级土地利用-交通一体化微观仿真（[UrbanSim 文档](https://cloud.urbansim.com/docs/general/documentation/urbansim.html)）；CityFM 等以 OSM 对象（道路/地块/POI）为节点的城市基础模型（[CityFM, arXiv:2310.00583](https://arxiv.org/abs/2310.00583v3) · [Trackback](https://arxiv.org/trackback/2310.00583)）。
+- **典型用法**：UrbanSim parcel 级土地利用-交通一体化微观仿真（[UrbanSim 文档](https://cloud.urbansim.com/docs/general/documentation/urbansim.html)）；CityFM 等以 OSM 对象（道路/地块/POI）为节点的城市基础模型（[CityFM, arXiv:2310.00583](https://arxiv.org/abs/2310.00583v3) · [Trackback 记录](https://arxiv.org/tb/2310.00583)）。
 
 ## 4. 对象优先缓冲区（Object-first Buffer）
 
@@ -76,9 +76,9 @@ tags:
 
 ## 主要来源
 
-- H3：[官方分辨率表](https://h3geo.org/docs/core-library/restable/) · [OSTI DGGS 对比](https://www.osti.gov/servlets/purl/2572460) · [Bousquin 2021 (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC8958999/) · [arXiv:2407.00404](https://arxiv.org/abs/2407.00404v1) · [Trackback](https://arxiv.org/trackback/2407.00404)
-- MAUP：[arXiv:1910.05125](https://arxiv.org/abs/1910.05125) · [Trackback](https://arxiv.org/trackback/1910.05125)（尺度/分区效应分解，引 Openshaw 1984）· [GIS Geography MAUP](https://gisgeography.com/maup-modifiable-areal-unit-problem/) · [ScienceDirect 2025 公园可达性 MAUP](https://www.sciencedirect.com/science/article/abs/pii/S1618866725003619)
-- Parcel/Block：[UrbanSim 文档](https://cloud.urbansim.com/docs/general/documentation/urbansim.html) · [Dynamic Microsimulation (Waddell)](https://escholarship.org/content/qt2x12q5pv/qt2x12q5pv_noSplash_06e38ab269bfea71ebaaa8c96304f948.pdf) · [CityFM, arXiv:2310.00583](https://arxiv.org/abs/2310.00583v3) · [Trackback](https://arxiv.org/trackback/2310.00583)
+- H3：[官方分辨率表](https://h3geo.org/docs/core-library/restable/) · [OSTI DGGS 对比](https://www.osti.gov/servlets/purl/2572460) · [Bousquin 2021 (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC8958999/) · [arXiv:2407.00404](https://arxiv.org/abs/2407.00404v1) · [Trackback 记录](https://arxiv.org/tb/2407.00404)
+- MAUP：[arXiv:1910.05125](https://arxiv.org/abs/1910.05125) · [Trackback 记录](https://arxiv.org/tb/1910.05125)（尺度/分区效应分解，引 Openshaw 1984）· [GIS Geography MAUP](https://gisgeography.com/maup-modifiable-areal-unit-problem/) · [ScienceDirect 2025 公园可达性 MAUP](https://www.sciencedirect.com/science/article/abs/pii/S1618866725003619)
+- Parcel/Block：[UrbanSim 文档](https://cloud.urbansim.com/docs/general/documentation/urbansim.html) · [Dynamic Microsimulation (Waddell)](https://escholarship.org/content/qt2x12q5pv/qt2x12q5pv_noSplash_06e38ab269bfea71ebaaa8c96304f948.pdf) · [CityFM, arXiv:2310.00583](https://arxiv.org/abs/2310.00583v3) · [Trackback 记录](https://arxiv.org/tb/2310.00583)
 - Buffer：[UCL TOD 站点域](https://discovery.ucl.ac.uk/10115541/1/Liu_Final Paper 2.pdf) · [MDPI 2025 步行域](https://www.mdpi.com/2220-9964/14/5/205) · [mediaTUM 站点域综述](https://mediatum.ub.tum.de/doc/1546766/1546766.pdf)
 - GeoFM：[GeoFM 概念 (Arribas-Bel)](https://me.darribas.org/2025/09/18/geofm-how-will-geofoundation-models.html) · [UrbanFusion (OpenReview)](https://openreview.net/pdf/95c54db9d05003e696bfa135407d4236a0ee1854.pdf)
 - HK TIA：[运输署 TIA Checklist 2024](https://www.td.gov.hk/filemanager/en/publication/tia checklist for development projects_202410_v3.pdf)

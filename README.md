@@ -72,7 +72,7 @@ npm run check:content
 - 内部知识连接可使用 Obsidian Wikilink。
 - 长期维护或跨工具链接优先使用标准 Markdown 链接。
 - 引用使用 Pandoc citation key，例如 `[@citationKey]`；条目维护在 `bibliography.bib`。
-- arXiv 论文使用双链接：论文标题或编号链接到官方 `/abs/<id>` 摘要页，随后单独给出 `/trackback/<id>`。Trackback 只用于向 arXiv 通知本站讨论，不替代 DOI、正式出版页、citation key 或 arXiv 摘要页。
+- arXiv 论文使用双链接：论文标题或编号链接到官方 `/abs/<id>` 摘要页，随后单独给出可浏览的 `/tb/<id>` Trackback 记录页。`/trackback/<id>` 仅供 Trackback 客户端 POST 提交，不得作为读者链接；Trackback 也不替代 DOI、正式出版页、citation key 或 arXiv 摘要页。
 - 不将私人内容放入公开 `content/`，并保留来源、状态和更新时间信息。
 
 ## 参考

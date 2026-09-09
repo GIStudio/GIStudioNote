@@ -144,16 +144,24 @@ for (const file of markdownFiles) {
       }
 
       const followingText = line.slice((match.index ?? 0) + match[0].length)
-      const trackbackUrl = `https://arxiv.org/trackback/${arxivId}`
-      if (!followingText.includes(`](${trackbackUrl})`)) {
+      const trackbackRecordUrl = `https://arxiv.org/tb/${arxivId}`
+      if (!followingText.includes(`](${trackbackRecordUrl})`)) {
         errors.push(
-          `${relative}:${index + 1}: arXiv ${versionedId} must keep its scientific link and add a following Trackback link (${trackbackUrl})`,
+          `${relative}:${index + 1}: arXiv ${versionedId} must keep its scientific link and add a following Trackback record link (${trackbackRecordUrl})`,
         )
       }
     }
 
     for (const match of line.matchAll(
-      /\[[^\]]*Trackback[^\]]*]\(https:\/\/arxiv\.org\/trackback\/([A-Za-z0-9./-]+)\)/gi,
+      /\[[^\]]+]\(https:\/\/arxiv\.org\/trackback\/([A-Za-z0-9./-]+)\)/gi,
+    )) {
+      errors.push(
+        `${relative}:${index + 1}: arXiv Trackback submission endpoint /trackback/${match[1]} cannot be a reader-facing Markdown link; use /tb/${match[1]}`,
+      )
+    }
+
+    for (const match of line.matchAll(
+      /\[[^\]]+]\(https:\/\/arxiv\.org\/tb\/([A-Za-z0-9./-]+)\)/gi,
     )) {
       const beforeTrackback = line.slice(0, match.index ?? 0)
       const arxivId = match[1]
@@ -164,7 +172,7 @@ for (const file of markdownFiles) {
       ).test(beforeTrackback)
       if (!hasScientificLink) {
         errors.push(
-          `${relative}:${index + 1}: Trackback ${arxivId} cannot replace the preceding arXiv scientific link`,
+          `${relative}:${index + 1}: Trackback record ${arxivId} cannot replace the preceding arXiv scientific link`,
         )
       }
     }

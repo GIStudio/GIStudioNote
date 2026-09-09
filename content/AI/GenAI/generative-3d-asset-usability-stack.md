@@ -35,11 +35,11 @@ verified_at: 2026-07-31
 
 | 论文 | 主要对象 | 能支持的判断 |
 |---|---|---|
-| [Nexus](https://arxiv.org/abs/2607.13563) · [Trackback](https://arxiv.org/trackback/2607.13563) | native mesh generation | 将顶点生成和拓扑生成作为明确建模对象 |
-| [Generative 3D Gaussians with Learned Density Control](https://arxiv.org/abs/2605.16355) · [Trackback](https://arxiv.org/trackback/2605.16355) | variable-count 3D Gaussians | 将 Gaussian 密度与数量控制纳入生成过程 |
+| [Nexus](https://arxiv.org/abs/2607.13563) · [Trackback 记录](https://arxiv.org/tb/2607.13563) | native mesh generation | 将顶点生成和拓扑生成作为明确建模对象 |
+| [Generative 3D Gaussians with Learned Density Control](https://arxiv.org/abs/2605.16355) · [Trackback 记录](https://arxiv.org/tb/2605.16355) | variable-count 3D Gaussians | 将 Gaussian 密度与数量控制纳入生成过程 |
 | [PixTex](https://doi.org/10.1145/3799902.3811120) | pixel-space multi-view texturing | 处理多视角纹理的一致性与细节 |
-| [AniGen](https://arxiv.org/abs/2604.08746) · [Trackback](https://arxiv.org/trackback/2604.08746) | shape、skeleton、skin | 联合表示并生成可动画资产的三个组成部分 |
-| [TopoCap](https://arxiv.org/abs/2606.12153) · [Trackback](https://arxiv.org/trackback/2606.12153) | topology-agnostic motion prior | 从单目视频提取运动并迁移到目标 rig |
+| [AniGen](https://arxiv.org/abs/2604.08746) · [Trackback 记录](https://arxiv.org/tb/2604.08746) | shape、skeleton、skin | 联合表示并生成可动画资产的三个组成部分 |
+| [TopoCap](https://arxiv.org/abs/2606.12153) · [Trackback 记录](https://arxiv.org/tb/2606.12153) | topology-agnostic motion prior | 从单目视频提取运动并迁移到目标 rig |
 
 Mesh 和 3D Gaussian 是并列表示路线，不是固定的前后处理关系；TopoCap
 假设目标 rig 已存在，也不能替代 skeleton 与 skin generation。

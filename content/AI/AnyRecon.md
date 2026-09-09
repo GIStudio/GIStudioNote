@@ -36,7 +36,7 @@ AnyRecon 是由 OpenImagingLab 团队开发的三维重建项目，其核心创�
 > [!note] 版本边界
 > 本页同时整理项目仓库与论文预印本。仓库实现和论文描述可能随版本变化；
 > 运行参数与权重状态应以 [AnyRecon 官方项目](https://yutian10.github.io/AnyRecon/)
-> 和 [arXiv:2604.19747](https://arxiv.org/abs/2604.19747) 为准；[Trackback](https://arxiv.org/trackback/2604.19747) 用于向 arXiv 通知本页讨论。
+> 和 [arXiv:2604.19747](https://arxiv.org/abs/2604.19747) 为准；[Trackback 记录](https://arxiv.org/tb/2604.19747) 用于查询 arXiv 是否已收录本页讨论。
 
 ### 核心思路
 
@@ -232,7 +232,7 @@ AnyRecon 值得尝试。
 ---
 
 **参考资源**：
-- [AnyRecon 论文（预印本）](https://arxiv.org/abs/2604.19747) · [Trackback](https://arxiv.org/trackback/2604.19747)
+- [AnyRecon 论文（预印本）](https://arxiv.org/abs/2604.19747) · [Trackback 记录](https://arxiv.org/tb/2604.19747)
 - [AnyRecon 项目页](https://yutian10.github.io/AnyRecon/)
 - [AnyRecon GitHub 仓库](https://github.com/OpenImagingLab/AnyRecon)
 - [Wan2.1 视频生成模型](https://github.com/Wan-Video/Wan2.1)

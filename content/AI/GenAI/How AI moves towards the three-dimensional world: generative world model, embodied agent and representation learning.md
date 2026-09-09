@@ -204,6 +204,6 @@ RTFM、SIMA、JEPA 和 EBM 代表的不是同一种技术，而是 AI 走向三�
 - [1] [RTFM: A Real-Time Frame Model - World Labs](https://www.worldlabs.ai/blog/rtfm)
 - [2] [SIMA: Generalist AI Agent for 3D Virtual Environments - Google DeepMind](https://deepmind.google/blog/sima-generalist-ai-agent-for-3d-virtual-environments/)
 - [3] [SIMA 2: A Gemini-Powered AI Agent for 3D Virtual Worlds - Google DeepMind](https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/)
-- [4] [I-JEPA: Self-Supervised Learning from Images with a Joint Embedding Predictive Architecture - arXiv](https://arxiv.org/abs/2301.08243) · [Trackback](https://arxiv.org/trackback/2301.08243)
+- [4] [I-JEPA: Self-Supervised Learning from Images with a Joint Embedding Predictive Architecture - arXiv](https://arxiv.org/abs/2301.08243) · [Trackback 记录](https://arxiv.org/tb/2301.08243)
 - [5] [A Path Towards Autonomous Machine Intelligence - Yann LeCun - OpenReview](https://openreview.net/pdf?id=BZ5a1r-kVsf)
 - [6] [A Path Towards Autonomous Machine Intelligence - Yann LeCun - Temple University](https://cis.temple.edu/tagit/presentations/A%20Path%20Towards%20Autonomous%20Machine%20Intelligence.pdf)

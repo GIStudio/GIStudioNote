@@ -44,14 +44,14 @@ for (const file of walk(publicRoot).filter((candidate) => candidate.endsWith(".h
       (match) => normalizeArxivId(match[1]),
     ),
   )
-  const trackbackIds = new Set(
-    [...html.matchAll(/href="https:\/\/arxiv\.org\/trackback\/([A-Za-z0-9./-]+)"/g)].map(
+  const trackbackRecordIds = new Set(
+    [...html.matchAll(/href="https:\/\/arxiv\.org\/tb\/([A-Za-z0-9./-]+)"/g)].map(
       (match) => match[1],
     ),
   )
 
   for (const arxivId of scientificIds) {
-    if (!trackbackIds.has(arxivId)) continue
+    if (!trackbackRecordIds.has(arxivId)) continue
     const key = `${pageUrl}\t${arxivId}`
     tasks.set(key, {
       arxivId,
@@ -83,9 +83,9 @@ for (const task of sortedTasks) {
     `href="https://arxiv\\.org/abs/${task.arxivId}(?:v\\d+)?"`,
     "i",
   ).test(liveHtml)
-  const hasTrackbackLink = liveHtml.includes(`href="https://arxiv.org/trackback/${task.arxivId}"`)
+  const hasTrackbackRecordLink = liveHtml.includes(`href="https://arxiv.org/tb/${task.arxivId}"`)
 
-  if (!liveResponse.ok || !hasScientificLink || !hasTrackbackLink) {
+  if (!liveResponse.ok || !hasScientificLink || !hasTrackbackRecordLink) {
     console.error(
       `SKIP ${task.arxivId}: live page is unavailable or does not contain the paired links (${task.pageUrl})`,
     )
