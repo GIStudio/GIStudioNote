@@ -4,7 +4,7 @@ description: 以 GCN 节点表示为例，比较四种降维方法保留的结�
 type: concept
 status: active
 updated: 2026-09-09
-source_count: 11
+source_count: 12
 source_paths:
   - https://openreview.net/forum?id=SJU4ayYgl
   - https://doi.org/10.1080/14786440109462720
@@ -17,6 +17,7 @@ source_paths:
   - https://www.jmlr.org/papers/v22/20-1061.html
   - https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html
   - https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html
+  - https://www.itl.nist.gov/div898/handbook/pmc/section5/pmc551.htm
 aliases:
   - 降维可视化方法比较
   - t-SNE PCA UMAP PaCMAP
@@ -72,9 +73,68 @@ $$
 
 $x_i$ 表示中心化后的第 $i$ 个样本，$w$ 是单位方向。这个目标寻找投影后方差最大的方向。
 
-考虑四个二维点 $(1,1)$、$(2,2)$、$(-1,-1)$ 和 $(-2,-2)$。它们都落在对角线上。PCA 会选出 $w_1=(1,1)/\sqrt{2}$，把二维点压成一个坐标，同时保留这组数据的全部变化。若数据沿弯曲流形分布，线性方向就可能把原本相近或相远的部分叠到一起。
+考虑四个二维点 $(1,1)$、$(2,2)$、$(-1,-1)$ 和 $(-2,-2)$。它们都落在对角线上。PCA 会选出 $w_1=(1,1)/\sqrt{2}$，把二维点压成一个坐标，同时保留这组数据的全部变化。这个例子接近 PCA 的理想情况，数据的主要变化确实位于一条直线上。
 
-PCA 的坐标轴可以通过载荷解释，方差解释率也能量化保留了多少线性变化。它适合作为快速、稳定的基线，也常用于先压缩特别高维且含噪的数据。[Pearson 1901](https://doi.org/10.1080/14786440109462720)提出了最接近直线和平面的拟合问题，[Hotelling 1933](https://doi.org/10.1037/h0070888)系统发展了主成分表述。现代实现可参考 [scikit-learn PCA](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)。
+PCA 适合作为快速、稳定的线性基线，也常用于先压缩特别高维且含噪的数据。[Pearson 1901](https://doi.org/10.1080/14786440109462720)提出了最接近直线和平面的拟合问题，[Hotelling 1933](https://doi.org/10.1037/h0070888)系统发展了主成分表述。现代实现可参考 [scikit-learn PCA](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)。
+
+#### 载荷把主成分轴翻译回原始变量
+
+PCA 图上的每个点代表一个样本，但解释坐标轴时需要回到原始变量。设第 $k$ 条主成分轴的单位方向为
+
+$$
+w_k=(w_{1k},w_{2k},\ldots,w_{dk})^\top.
+$$
+
+第 $i$ 个样本在这条轴上的坐标称为主成分**得分**。
+
+$$
+t_{ik}=w_k^\top x_i=\sum_{j=1}^{d}w_{jk}x_{ij}.
+$$
+
+$x_{ij}$ 是样本 $i$ 的第 $j$ 个中心化或标准化变量，$w_{jk}$ 是变量 $j$ 构成主成分 $k$ 时的系数。系数绝对值越大，主成分轴越朝向该变量；正负号表示变量沿这条轴变化的相对方向。
+
+“载荷”在不同教材和软件中有两种常见约定，阅读结果时必须先确认采用了哪一种。
+
+| 名称 | 数学对象 | 回答的问题 |
+|---|---|---|
+| 主成分方向或权重 | 特征向量系数 $w_{jk}$ | 第 $k$ 条轴怎样由原始变量线性组合而成 |
+| 相关载荷 | 标准化数据中 $\ell_{jk}=\sqrt{\lambda_k}w_{jk}$ | 原始变量 $j$ 与主成分得分 $t_k$ 的相关程度 |
+| 主成分得分 | 每个样本的 $t_{ik}$ | 样本 $i$ 在第 $k$ 条轴上的位置 |
+
+在机器学习和奇异值分解的语境中，特征向量系数 $w_{jk}$ 经常直接被称为 loading。较严格的多元统计表述则把载荷写成变量与主成分的相关系数。若输入变量已经标准化，主成分 $k$ 的方差就是特征值 $\lambda_k$，两种量通过 $\ell_{jk}=\sqrt{\lambda_k}w_{jk}$ 相连。[NIST 的 PCA 说明](https://www.itl.nist.gov/div898/handbook/pmc/section5/pmc551.htm)将 $V\Lambda^{1/2}$ 称为用于解释变量与主成分关系的 factor structure；scikit-learn 的 `components_` 则返回主成分方向，也就是中心化数据的右奇异向量。
+
+假设三个标准化变量得到下面这条示意性的主成分。
+
+$$
+\operatorname{PC}_1
+=0.67\,\widetilde{x}_{\text{建筑密度}}
++0.63\,\widetilde{x}_{\text{POI 密度}}
+-0.39\,\widetilde{x}_{\text{绿地率}}.
+$$
+
+较高的 $\operatorname{PC}_1$ 得分可以解读为建筑密度和 POI 密度较高、绿地率相对较低的综合方向。它不能证明这些变量具有因果作用，也不能把 $0.67$ 直接解释为“67% 的重要性”。主成分轴的整体符号还可以同时翻转，$w_k$ 与 $-w_k$ 表示同一条轴，因此应比较同一主成分内部的相对大小和符号组合，而不要赋予正负方向固定的自然含义。
+
+特征缩放同样影响解释。若建筑面积使用平方米、比例使用百分数且未标准化，方差较大的量纲可能主导主成分。需要跨变量比较载荷时，应先说明 PCA 基于协方差矩阵还是相关矩阵，以及输入是否经过标准化。
+
+#### 弯曲结构重叠属于线性投影的边界
+
+设保留的 $K$ 条主成分组成正交矩阵 $W_K$，低维坐标为
+
+$$
+y_i=W_K^\top(x_i-\bar{x}).
+$$
+
+正交投影满足
+
+$$
+\|y_i-y_j\|_2\leq \|x_i-x_j\|_2.
+$$
+
+它不会把两个样本的欧氏距离放大，却可能把不同点对的距离压缩到完全不同的程度。若两个样本的差异主要位于被丢弃的方向，它们在低维图中就会靠近甚至重合。
+
+PCA 优化的是所有样本保留下来的总方差，等价地也可理解为最小化线性低秩重构的总体平方误差。这个目标没有承诺保住每一对样本的距离、局部邻域或流形上的路径距离。对于卷曲的“瑞士卷”结构，一张线性平面不能把各层展开，不同卷层可能投影到相近位置。
+
+因此，这类重叠属于 PCA 在面对非线性几何时的预期边界，并非实现故障。数据若接近线性子空间，这种约束能够带来稳定和可解释性；问题若关心弯曲流形上的邻域，则应加入 t-SNE、UMAP 或 PaCMAP 作为补充，同时继续检查这些非线性方法自身的失真。
 
 ### t-SNE 匹配局部邻域概率
 
