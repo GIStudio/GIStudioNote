@@ -49,7 +49,7 @@ $$
 
 人无法直接查看十六维空间。降维方法接收全部节点组成的矩阵 $H\in\mathbb{R}^{N\times16}$，为每个节点生成二维坐标 $y_i\in\mathbb{R}^{2}$。研究者随后按论文类别给散点着色。
 
-[Kipf 与 Welling 的 GCN 论文](https://openreview.net/forum?id=SJU4ayYgl)在 Figure 1 中采用了这种做法。同类节点在 t-SNE 图上形成局部聚集，可以支持一个有限判断。GCN 隐藏表示中存在类别相关的局部邻域。
+Kipf 与 Welling 的 GCN 论文在 Figure 1 中采用了这种做法。[@kipfSemiSupervisedClassification2017] 同类节点在 t-SNE 图上形成局部聚集，可以支持一个有限判断。GCN 隐藏表示中存在类别相关的局部邻域。
 
 这张图没有直接检验下面这些结论。
 
@@ -75,7 +75,7 @@ $x_i$ 表示中心化后的第 $i$ 个样本，$w$ 是单位方向。这个目�
 
 考虑四个二维点 $(1,1)$、$(2,2)$、$(-1,-1)$ 和 $(-2,-2)$。它们都落在对角线上。PCA 会选出 $w_1=(1,1)/\sqrt{2}$，把二维点压成一个坐标，同时保留这组数据的全部变化。这个例子接近 PCA 的理想情况，数据的主要变化确实位于一条直线上。
 
-PCA 适合作为快速、稳定的线性基线，也常用于先压缩特别高维且含噪的数据。[Pearson 1901](https://doi.org/10.1080/14786440109462720)提出了最接近直线和平面的拟合问题，[Hotelling 1933](https://doi.org/10.1037/h0070888)系统发展了主成分表述。现代实现可参考 [scikit-learn PCA](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)。
+PCA 适合作为快速、稳定的线性基线，也常用于先压缩特别高维且含噪的数据。Pearson 提出了最接近直线和平面的拟合问题，Hotelling 随后系统发展了主成分表述。[@pearsonLinesPlanesClosest1901; @hotellingAnalysisComplexStatistical1933] 现代实现可参考 [scikit-learn PCA](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)。
 
 #### 载荷把主成分轴翻译回原始变量
 
@@ -147,13 +147,13 @@ $$
 
 来调整二维坐标。若一对高维近邻有 $p_{ij}=0.10$，投影后却只有 $q_{ij}=0.01$，这一项产生约 $0.10\log 10\approx0.230$ 的损失。算法会强烈推动这对点在图上靠近。低维相似度采用重尾 Student $t$ 分布，从而缓解大量点拥挤在中心的现象。
 
-这个不对称目标更重视保住高维近邻。簇的面积、密度和簇间距离可能明显失真。perplexity 决定高维邻域的有效尺度，初始化、学习率和随机种子也会改变布局。[t-SNE 原始论文](https://www.jmlr.org/papers/v9/vandermaaten08a.html)给出方法，[2022 年的理论研究](https://www.jmlr.org/papers/v23/21-0524.html)进一步分析了它在聚类数据和 early exaggeration 阶段的行为。
+这个不对称目标更重视保住高维近邻。簇的面积、密度和簇间距离可能明显失真。perplexity 决定高维邻域的有效尺度，初始化、学习率和随机种子也会改变布局。t-SNE 原始论文给出方法，2022 年的理论研究进一步分析了它在聚类数据和 early exaggeration 阶段的行为。[@vanderMaatenVisualizingData2008; @caiTheoreticalFoundationsTSNE2022]
 
-原始 t-SNE 的计算和内存开销随样本量平方增长。[Barnes-Hut t-SNE](https://www.jmlr.org/papers/v15/vandermaaten14a.html)用树近似把梯度计算降到约 $O(N\log N)$。这项改进解释了 t-SNE 为什么能够长期留在常用工具箱中。它既有清楚的局部观察目标，也有成熟实现和较大规模近似。
+原始 t-SNE 的计算和内存开销随样本量平方增长。Barnes-Hut t-SNE 用树近似把梯度计算降到约 $O(N\log N)$。[@vanderMaatenAcceleratingTSNE2014] 这项改进解释了 t-SNE 为什么能够长期留在常用工具箱中。它既有清楚的局部观察目标，也有成熟实现和较大规模近似。
 
 ### UMAP 从邻域图构造低维布局
 
-UMAP 先根据距离和近邻关系构造带权邻域图，再优化低维布局，使图中的局部连接关系尽量得到保留。它的理论表述使用模糊拓扑结构，实际结果仍受到距离度量、近邻搜索、初始化和优化过程影响。[UMAP 论文](https://joss.theoj.org/papers/10.21105/joss.00861)将其定位为流形学习与降维方法。
+UMAP 先根据距离和近邻关系构造带权邻域图，再优化低维布局，使图中的局部连接关系尽量得到保留。它的理论表述使用模糊拓扑结构，实际结果仍受到距离度量、近邻搜索、初始化和优化过程影响。UMAP 论文将其定位为流形学习与降维方法。[@mcInnesUMAPUniformManifold2018]
 
 两个参数尤其影响读图方式。`n_neighbors` 较小时，布局强调更小范围的邻居。取值增大后，算法会参考更宽的邻域。`min_dist` 控制低维点能够聚得多紧。较小取值通常产生更紧凑的团块。[UMAP 官方参数说明](https://umap-learn.readthedocs.io/en/latest/parameters.html)展示了这些参数如何改变同一数据的图形。
 
@@ -163,7 +163,7 @@ UMAP 经常给出比 t-SNE 更连贯的宏观布局，但这种经验不能升�
 
 PaCMAP 同时采样近邻点对、中近点对和远点对，并在优化的不同阶段调整三类关系的权重。近邻点对负责局部结构，远点对帮助展开整体布局，中近点对用于连接两个尺度。
 
-[PaCMAP 论文](https://www.jmlr.org/papers/v22/20-1061.html)通过一组实验分析 t-SNE、UMAP、TriMap 与 PaCMAP 的局部和全局权衡。论文作者报告 PaCMAP 在其测试中能够兼顾两类结构。这是方法提出者在特定数据与评价设计下得到的证据，不能推出 PaCMAP 会在任意数据上胜出。
+PaCMAP 论文通过一组实验分析 t-SNE、UMAP、TriMap 与 PaCMAP 的局部和全局权衡。论文作者报告 PaCMAP 在其测试中能够兼顾两类结构。[@wangUnderstandingDimensionReduction2021] 这是方法提出者在特定数据与评价设计下得到的证据，不能推出 PaCMAP 会在任意数据上胜出。
 
 ## 把选择问题放在同一张表里
 
@@ -264,6 +264,13 @@ PaCMAP 同时采样近邻点对、中近点对和远点对，并在优化的不�
 
 ## 参考资料与证据边界
 
-本文的算法机制与历史来自 PCA、t-SNE、UMAP 和 PaCMAP 的原始或正式发表论文。参数行为参考 scikit-learn 与 UMAP 官方文档，核验日期为 2026 年 9 月 9 日。
+本文的算法机制与历史来自 PCA、t-SNE、UMAP 和 PaCMAP 的原始或正式发表论文。正文中的作者年份引用由站点根据 `bibliography.bib` 自动生成，完整论文条目见页面末尾的 References。参数行为参考以下官方文档，核验日期为 2026 年 9 月 9 日。
+
+### 官方文档
+
+- [NIST：Properties of Principal Components](https://www.itl.nist.gov/div898/handbook/pmc/section5/pmc551.htm)
+- [scikit-learn：PCA](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
+- [scikit-learn：t-SNE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html)
+- [UMAP：How to Use UMAP](https://umap-learn.readthedocs.io/en/latest/parameters.html)
 
 PaCMAP 的局部与全局平衡结论主要来自方法提出者的 JMLR 论文。本文没有在统一数据、实现、计算预算和评价指标下重新运行四种方法，因此不给出总体性能排名。GCN 示例只说明怎样解释隐藏表示图，不评价该模型在其他数据或任务上的表现。
