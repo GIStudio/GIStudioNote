@@ -6,7 +6,7 @@
 - [done] Awesome Autonomous GeoAI 已拆分并发布（证据：commit `e2b185b`）
 - [done] 全站知识架构复核（证据：2026-08-27 审计覆盖 120 个公开页面，孤立页、导航缺口、重复候选和未连接关系候选均为 0；人工决策见 `docs/knowledge-architecture/review.md`）
 - [done] arXiv 科学链接与 Trackback 双链接规范（证据：公开页面已改为 `/abs/<id>` + `/tb/<id>`，Pages workflow `34314222372` 发布通过；提交工具继续 POST `/trackback/<id>`；2026-09-09 线上抽检无客户端接口残留，且未重复提交此前 16 条记录）
-- [done] 发布并修订降维可视化方法笔记（范围：PCA、t-SNE、UMAP 与 PaCMAP；证据：载荷、主成分方向和样本得分已经区分，PCA 的线性投影边界已经展开；公开边界与中文表达检查通过；131 个 Markdown 文件审计及 Quartz 5 全量构建通过；Pages workflow `34335807881` 成功；2026-09-09 线上页面返回 HTTP 200，KaTeX 公式、载荷说明与瑞士卷示例可见）
+- [done] 发布并修订降维可视化方法笔记（范围：PCA、t-SNE、UMAP 与 PaCMAP；证据：载荷、主成分方向和样本得分已经区分，PCA 的线性投影边界已经展开；8 条论文记录通过 citation key 自动生成 References，4 个官方文档单独列出；131 个 Markdown 文件审计及 Quartz 5 全量构建通过；Pages workflow `34336834059` 成功；2026-09-09 线上抽检确认参考文献表、论文链接与 KaTeX 公式可见）
 - [plan] 定期复查时效性内容（触发：季度维护或上游更新；下一动作：运行内容审计并检查 `verified_at`）
 
 ## 公开页面的最小元数据
