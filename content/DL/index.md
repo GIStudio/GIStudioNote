@@ -1,6 +1,6 @@
 ---
 title: 深度学习
-description: 深度学习基础、自然语言处理和命名实体识别笔记导航。
+description: 深度学习基础、表示分析、自然语言处理和命名实体识别笔记导航。
 tags:
   - 深度学习
   - 机器学习
@@ -9,6 +9,7 @@ tags:
 
 - [[Deep Learning|深度学习概览]]
 - [[likelihood-nll-and-cross-entropy|似然、负对数似然与交叉熵]]
+- [[dimensionality-reduction-visualization|t-SNE、PCA、UMAP 与 PaCMAP 怎样阅读和选择降维图]]
 - [[NER|命名实体识别（NER）]]
 
 本目录优先保存可复用的概念与方法；具体项目放入其应用主题目录。
