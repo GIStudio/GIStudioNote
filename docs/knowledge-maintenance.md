@@ -7,6 +7,7 @@
 - [done] 全站知识架构复核（证据：2026-08-27 审计覆盖 120 个公开页面，孤立页、导航缺口、重复候选和未连接关系候选均为 0；人工决策见 `docs/knowledge-architecture/review.md`）
 - [done] arXiv 科学链接与 Trackback 双链接规范（证据：公开页面已改为 `/abs/<id>` + `/tb/<id>`，Pages workflow `34314222372` 发布通过；提交工具继续 POST `/trackback/<id>`；2026-09-09 线上抽检无客户端接口残留，且未重复提交此前 16 条记录）
 - [done] 发布并修订降维可视化方法笔记（范围：PCA、t-SNE、UMAP 与 PaCMAP；证据：载荷、主成分方向和样本得分已经区分，PCA 的线性投影边界已经展开；8 条论文记录通过 citation key 自动生成 References，4 个官方文档单独列出；131 个 Markdown 文件审计及 Quartz 5 全量构建通过；Pages workflow `34336834059` 成功；2026-09-09 线上抽检确认参考文献表、论文链接与 KaTeX 公式可见）
+- [done] 发布 Riemannian Metric Matching 结构化精读（范围：条件 CDC、低秩实现、实验边界、与降维方法的关系及 arXiv v1 符号校读；证据：公开内容审计与中文学术行文检查无问题，132 个 Markdown 文件与 15 个资源通过 Quartz 5 全量构建；Pages workflow `34489559830` 成功；2026-09-10 线上抽检返回 HTTP 200，标题、KaTeX 公式、arXiv 双链接与自动生成的 References 可见；针对 arXiv:2606.14334 的单篇 Trackback 提交返回错误码 0，已进入 arXiv 审核流程，不等同于已公开展示）
 - [plan] 定期复查时效性内容（触发：季度维护或上游更新；下一动作：运行内容审计并检查 `verified_at`）
 
 ## 公开页面的最小元数据
