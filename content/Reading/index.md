@@ -12,6 +12,7 @@ aliases:
 - [[../Glossary/development-status-classifications|联合国发展状态分类]]
 - [[GBDT|梯度提升决策树]]
 - [[peters-2025-good-research-questions|Peters（2025）好研究问题结构化精读]]
+- [[riemannian-metric-matching|Riemannian Metric Matching 如何用去噪学习数据的局部几何]]
 - [[using-stanford-encyclopedia-of-philosophy|如何把 SEP 用作研究工具]]
 - [[../Anywriting/spatial-gen-1|《空间的生产》阅读笔记]]
 - [[../Glossary/index|GIStudio Notes 术语表]]
