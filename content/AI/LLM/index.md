@@ -14,6 +14,10 @@ tags:
 
 - [[qwen3-8-flash-next-n-gram-embedding|Qwen3.8-Flash-Next 采用的 N-gram Embedding 是什么？]]
 
+## 机械可解释性
+
+- [[scaling-monosemanticity-sparse-autoencoders|Scaling Monosemanticity 如何用稀疏自编码器拆解大模型特征]]
+
 ## 目录边界
 
 本目录保存大语言模型的架构、训练、推理和评测知识。通用神经网络基础仍放在深度学习目录，具体 GeoAI 模型与智能体系统放在对应应用主题下。
