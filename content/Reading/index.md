@@ -17,6 +17,12 @@ aliases:
 - [[../Anywriting/spatial-gen-1|《空间的生产》阅读笔记]]
 - [[../Glossary/index|GIStudio Notes 术语表]]
 
+## 每周推书
+
+这里推荐值得进入城市科学、空间研究与研究方法书架的书。推荐页回答“为什么现在读、带着什么问题读、先读哪些部分”，不把尚未完成的阅读写成全书精读。
+
+- [[scenescapes-how-qualities-of-place-shape-social-life|第 01 期：《场景——空间品质如何塑造社会生活》]]：从设施清单走向地方的文化风格与社会意义。
+
 ## 延伸书目
 
 - 数学与软件基础读物 [@oreganMathematicalFoundationsSoftware2023]
