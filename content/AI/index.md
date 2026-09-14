@@ -14,6 +14,7 @@ tags:
 - [[LLM/index|大语言模型]]
 - [[AnyRecon|AnyRecon 三维重建]]
 - [[OpenManus|OpenManus]]
+- [[agentero-open-source-research-workbench|Agentero 开源论文阅读工作台]]
 - [[ABM|智能体与社会模拟]]
 
 ## 基础与方法
