@@ -9,6 +9,8 @@
 - [done] 发布并修订降维可视化方法笔记（范围：PCA、t-SNE、UMAP 与 PaCMAP；证据：载荷、主成分方向和样本得分已经区分，PCA 的线性投影边界已经展开；8 条论文记录通过 citation key 自动生成 References，4 个官方文档单独列出；131 个 Markdown 文件审计及 Quartz 5 全量构建通过；Pages workflow `34336834059` 成功；2026-09-09 线上抽检确认参考文献表、论文链接与 KaTeX 公式可见）
 - [done] 发布 Riemannian Metric Matching 结构化精读（范围：条件 CDC、低秩实现、实验边界、与降维方法的关系及 arXiv v1 符号校读；证据：公开内容审计与中文学术行文检查无问题，132 个 Markdown 文件与 15 个资源通过 Quartz 5 全量构建；Pages workflow `34489559830` 成功；2026-09-10 线上抽检返回 HTTP 200，标题、KaTeX 公式、arXiv 双链接与自动生成的 References 可见；针对 arXiv:2606.14334 的单篇 Trackback 提交返回错误码 0，已进入 arXiv 审核流程，不等同于已公开展示）
 - [done] 发布 XPlant 1.0 项目解析（范围：Rhino 中的 Grasshopper 组件插件定位、61 个组件分类、参数化种植流程、GIS 与 HEC-RAS 分工、邻近工具及当前开发状态；证据：公开内容严格审计和中文学术行文检查无问题，133 个 Markdown 文件与 15 个资源通过 Quartz 5 全量构建；内容提交 `33e2f3a`，Pages workflow `34759117217` 成功；2026-09-13 线上抽检返回 HTTP 200，标题、“61 个组件”和 Grasshopper 平台关系可见）
+- [done] 发布 Gander 全模态交互智能体技术解读（范围：小脑与大脑的分层架构、一秒流式 chunk、交互数据、8% 抢话率的准确含义、任务准确率和音视频理解回退；证据：公开内容严格审计与中文学术行文检查无问题，134 个 Markdown 文件与 15 个资源通过 Quartz 5 全量构建；内容提交 `a79db4c`，Pages workflow `34811625788` 成功；2026-09-14 线上抽检返回 HTTP 200，标题、指标解释、数据集尚未开放说明、arXiv 双链接与自动参考文献可见）
+- [blocked] 核实 Gander 的 arXiv Trackback 提交状态（原因：单篇客户端提交先遇到连接超时，随后一次系统 HTTP 请求没有返回可验证的响应；为避免重复提交，未继续重试；解阻条件：arXiv 返回明确客户端响应，或 Trackback 记录页出现该条目；下一动作：先检查 `/tb/2609.08977`，确认需要重试后使用单篇筛选参数）
 - [plan] 定期复查时效性内容（触发：季度维护或上游更新；下一动作：运行内容审计并检查 `verified_at`）
 
 ## 公开页面的最小元数据
@@ -61,6 +63,15 @@ npm run trackback:arxiv -- --send
 ```
 
 第二条命令会先确认正式站点仍包含对应的科学链接和 Trackback 记录页链接，再向 `/trackback/<id>` POST 提交。成功响应只表示进入 arXiv 的审核流程，不表示 Trackback 已经公开显示；不要因未立即显示而重复提交。
+
+新页面只提交对应的单篇记录，避免重复发送其他已处理条目：
+
+```bash
+npm run trackback:arxiv -- --arxiv-id ARXIV_ID
+npm run trackback:arxiv -- --send --arxiv-id ARXIV_ID
+```
+
+第一条命令应只列出预期页面与编号。编号不存在或页面未形成双链接时，命令会退出并阻止发送。
 
 ## 维护命令
 
