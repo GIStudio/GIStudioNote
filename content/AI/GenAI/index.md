@@ -16,6 +16,7 @@ tags:
 - [[生成式AI|生成式 AI 概览]]：先认识文本、图像、视频与三维内容生成。
 - [[How AI moves towards the three-dimensional world: generative world model, embodied agent and representation learning|AI 如何走向三维世界]]：比较生成世界、在世界中行动与表征学习三条路线。
 - [[generative-3d-asset-usability-stack|生成式 3D 资产可用性栈]]：判断生成结果能否真正进入编辑、渲染与工程流程。
+- [[benchcad-programmatic-cad-benchmark|BenchCAD 参数化 CAD 基准]]：检验模型能否从多视图生成可执行、可编辑的 CadQuery 程序。
 
 ## 相邻主题
 
