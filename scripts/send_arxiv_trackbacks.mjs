@@ -6,6 +6,22 @@ import path from "node:path"
 const publicRoot = path.resolve("public")
 const shouldSend = process.argv.includes("--send")
 const siteOrigin = new URL(process.env.SITE_URL ?? "https://notes.gistudio.xyz").origin
+const requestedArxivIds = new Set()
+
+for (let index = 2; index < process.argv.length; index += 1) {
+  const argument = process.argv[index]
+  if (argument === "--arxiv-id") {
+    const value = process.argv[index + 1]
+    if (!value || value.startsWith("--")) {
+      console.error("Missing value after --arxiv-id")
+      process.exit(2)
+    }
+    requestedArxivIds.add(value.replace(/v\d+$/i, ""))
+    index += 1
+  } else if (argument.startsWith("--arxiv-id=")) {
+    requestedArxivIds.add(argument.slice("--arxiv-id=".length).replace(/v\d+$/i, ""))
+  }
+}
 
 if (!fs.existsSync(publicRoot)) {
   console.error("Missing public/. Run npm run build:site before listing arXiv Trackbacks.")
@@ -25,6 +41,16 @@ const decodeHtml = (value) =>
     .replaceAll("&#39;", "'")
     .replaceAll("&lt;", "<")
     .replaceAll("&gt;", ">")
+
+const request = async (url, options, label) => {
+  try {
+    return await fetch(url, options)
+  } catch (error) {
+    const reason = error?.cause?.code ?? error?.message ?? "request failed"
+    console.error(`ERROR ${label}: ${reason}`)
+    return null
+  }
+}
 
 const textFromMeta = (html, property) => {
   const match = html.match(new RegExp(`<meta property="${property}" content="([^"]*)"`))
@@ -62,10 +88,21 @@ for (const file of walk(publicRoot).filter((candidate) => candidate.endsWith(".h
   }
 }
 
-const sortedTasks = [...tasks.values()].sort(
-  (left, right) =>
-    left.pageUrl.localeCompare(right.pageUrl) || left.arxivId.localeCompare(right.arxivId),
-)
+const sortedTasks = [...tasks.values()]
+  .filter((task) => requestedArxivIds.size === 0 || requestedArxivIds.has(task.arxivId))
+  .sort(
+    (left, right) =>
+      left.pageUrl.localeCompare(right.pageUrl) || left.arxivId.localeCompare(right.arxivId),
+  )
+
+if (requestedArxivIds.size > 0) {
+  const matchedIds = new Set(sortedTasks.map((task) => task.arxivId))
+  const missingIds = [...requestedArxivIds].filter((arxivId) => !matchedIds.has(arxivId))
+  if (missingIds.length > 0) {
+    console.error(`No paired live-page candidate found for: ${missingIds.join(", ")}`)
+    process.exit(2)
+  }
+}
 
 console.log(`Found ${sortedTasks.length} paired arXiv Trackback target(s).`)
 for (const task of sortedTasks) console.log(`${task.arxivId}\t${task.pageUrl}`)
@@ -77,7 +114,15 @@ if (!shouldSend) {
 
 let failures = 0
 for (const task of sortedTasks) {
-  const liveResponse = await fetch(task.pageUrl, { redirect: "follow" })
+  const liveResponse = await request(
+    task.pageUrl,
+    { redirect: "follow" },
+    `${task.arxivId} live page`,
+  )
+  if (!liveResponse) {
+    failures += 1
+    continue
+  }
   const liveHtml = await liveResponse.text()
   const hasScientificLink = new RegExp(
     `href="https://arxiv\\.org/abs/${task.arxivId}(?:v\\d+)?"`,
@@ -99,15 +144,23 @@ for (const task of sortedTasks) {
     blog_name: "GIStudio Notes",
     excerpt: task.excerpt,
   })
-  const response = await fetch(`https://arxiv.org/trackback/${task.arxivId}`, {
-    method: "POST",
-    headers: {
-      "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-      "user-agent": "GIStudioNotes-Trackback/1.0 (+https://notes.gistudio.xyz/)",
+  const response = await request(
+    `https://arxiv.org/trackback/${task.arxivId}`,
+    {
+      method: "POST",
+      headers: {
+        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "user-agent": "GIStudioNotes-Trackback/1.0 (+https://notes.gistudio.xyz/)",
+      },
+      body,
+      redirect: "follow",
     },
-    body,
-    redirect: "follow",
-  })
+    `${task.arxivId} submission`,
+  )
+  if (!response) {
+    failures += 1
+    continue
+  }
   const responseText = await response.text()
   const errorCode = responseText.match(/<error>(\d+)<\/error>/i)?.[1]
   const message = decodeHtml(responseText.match(/<message>([\s\S]*?)<\/message>/i)?.[1] ?? "")
