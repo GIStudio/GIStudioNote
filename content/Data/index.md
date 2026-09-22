@@ -10,6 +10,7 @@ tags:
 
 ## 空间分析
 
+- [[maup-and-gerrymandering|MAUP 与杰利蝾螈]]
 - [[spatial_units_report|四种空间单元划分策略对比]]
 - [[taz-traffic-analysis-zone|TAZ 交通分析区与各国同类分区体系]]
 - [[four-step-model|四阶段模型]]
