@@ -11,6 +11,7 @@ tags:
 ## 环境与工具
 
 - [[../tools/NVM|NVM 与 Node.js 版本管理]]
+- [[terminal-startup-slowdown|终端启动慢与标题闪动的排查]]
 - [[uv-setup|uv 配置]]
 - [[conda|conda 环境管理]]
 - [[git-github-setup|Git 与 GitHub]]

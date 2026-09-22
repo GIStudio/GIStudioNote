@@ -238,3 +238,9 @@ npm -v
 2. `~/.zshrc` 文件中与 `nvm` 相关的配置内容。
 3. 是否有其他工具（如 `brew` 或 `fnm`）可能干扰了 `nvm` 的行为。
 
+---
+
+### 相关：默认版本解析不出结果会怎样
+
+如果 `default` 指向的版本恰好没有安装，`nvm version default` 会一直返回 `N/A`，而挂在 `precmd` 上的自动切换逻辑会因此每次出提示符都重跑一遍，把终端拖慢。排查方法见 [[../Dev/terminal-startup-slowdown|终端启动慢与标题闪动的排查]]。
+
