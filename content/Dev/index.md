@@ -17,6 +17,7 @@ tags:
 - [[git-github-setup|Git 与 GitHub]]
 - [[fonts|Matplotlib 中文字体排查]]
 - [[cloud-studio|Cloud Studio 在线开发环境]]
+- [[windows-developer-config|Windows Developer Config：把开发机初始化变成可重复、可验证的流程]]
 
 ## 开发工作流
 
