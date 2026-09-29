@@ -88,6 +88,10 @@ GPU 是 Graphics Processing Unit 的简称，中文为图形处理器。它擅�
 
 API 是 Application Programming Interface 的简称，中文为应用程序编程接口。它规定一个软件组件可以怎样被其他程序调用，包括可用操作、输入、输出和错误约定。网页开发中的 API 可能表现为方法、事件或 URL。更通用的定义可参考 [MDN API 词条](https://developer.mozilla.org/en-US/docs/Glossary/API)。
 
+### 端到端 E2E
+
+端到端描述从明确起点到明确终点的覆盖范围，例如从原始输入到任务输出、从发送方终端到接收方终端，或从用户操作到最终结果。它强调围绕最终结果联合优化或承担完整责任，不等于系统内部没有模块。不同语境中的判断方法见[[end-to-end|端到端（End-to-End）：先问清楚是哪两端]]。
+
 ### DOI
 
 DOI 是 Digital Object Identifier 的简称，中文为数字对象标识符。它为论文、数据集和其他对象提供持久标识，并可通过 `https://doi.org/` 解析到当前登记位置。DOI 指向的位置可以更新，标识本身保持稳定。详细说明见 [DOI Foundation](https://www.doi.org/the-identifier/what-is-a-doi)。
