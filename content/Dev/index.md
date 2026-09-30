@@ -28,6 +28,7 @@ tags:
 ## Skill 与自动化设计
 
 - [[skills/context|个人品牌管理 Skill 设计]]
+- [[dsh-plugin-python|DSH 插件能不能用 Python 写]]
 
 ## 服务器
 
