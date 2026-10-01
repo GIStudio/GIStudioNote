@@ -21,21 +21,6 @@ const redirects = [
     to: "/dev/dsh/dsh-plugin-python",
     title: "DSH 插件能不能用 Python 写",
   },
-  {
-    from: "dsh/index.html",
-    to: "/dev/dsh/",
-    title: "DSH 专题",
-  },
-  {
-    from: "dsh/dsh-plugin-python.html",
-    to: "/dev/dsh/dsh-plugin-python",
-    title: "DSH 插件能不能用 Python 写",
-  },
-  {
-    from: "dsh/dsh-plugin-publishing-pitfalls.html",
-    to: "/dev/dsh/dsh-plugin-publishing-pitfalls",
-    title: "第一次发布 DSH 插件，我踩了这五个坑",
-  },
 ]
 
 function redirectHtml(title, target) {
