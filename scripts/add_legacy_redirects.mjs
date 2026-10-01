@@ -15,7 +15,9 @@ const redirects = [
     title: "DL/NER",
   },
   {
-    from: "Dev/dsh-plugin-python.html",
+    // 部署构建在 Linux（大小写敏感 FS）上进行：Quartz 真实页面在小写路径，
+    // 重定向必须写到小写路径，否则 /dev/dsh-plugin-python 会 404。
+    from: "dev/dsh-plugin-python.html",
     to: "/dsh/dsh-plugin-python",
     title: "DSH 插件能不能用 Python 写",
   },
