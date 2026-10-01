@@ -26,6 +26,7 @@ tags:
 | 强化学习 | [[RL/index]] |
 | 图学习与城市计算 | [[Graph/index]] |
 | 开发与工程实践 | [[Dev/index]] |
+| DSH 插件与 Agent 工具链 | [[DSH/index]] |
 | 写作与科研表达 | [[Writing/index]] |
 | 工具与工作流 | [[tools/index]] |
 | 阅读与基础概念 | [[Reading/index]] |

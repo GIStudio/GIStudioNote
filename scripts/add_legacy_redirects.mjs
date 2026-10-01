@@ -14,6 +14,11 @@ const redirects = [
     to: "/dl/ner",
     title: "DL/NER",
   },
+  {
+    from: "Dev/dsh-plugin-python.html",
+    to: "/dsh/dsh-plugin-python",
+    title: "DSH 插件能不能用 Python 写",
+  },
 ]
 
 function redirectHtml(title, target) {
