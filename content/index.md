@@ -24,6 +24,7 @@ tags:
 | 可持续发展 | [[Sustainability/index]] |
 | 深度学习 | [[DL/index]] |
 | 强化学习 | [[RL/index]] |
+| 数学基础 | [[Math/index]] |
 | 图学习与城市计算 | [[Graph/index]] |
 | 开发与工程实践 | [[Dev/index]] |
 | DSH 插件与 Agent 工具链 | [[Dev/dsh/index]] |
