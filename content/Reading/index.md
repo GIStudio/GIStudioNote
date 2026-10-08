@@ -13,6 +13,7 @@ aliases:
 - [[GBDT|梯度提升决策树]]
 - [[discrete-mathematics|离散数学专题]]
 - [[peters-2025-good-research-questions|Peters（2025）好研究问题结构化精读]]
+- [[spj-how-to-write-a-great-research-paper|Simon Peyton Jones 写好研究论文七条建议讲座笔记]]
 - [[riemannian-metric-matching|Riemannian Metric Matching 如何用去噪学习数据的局部几何]]
 - [[using-stanford-encyclopedia-of-philosophy|如何把 SEP 用作研究工具]]
 - [[../Anywriting/spatial-gen-1|《空间的生产》阅读笔记]]
