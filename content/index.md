@@ -29,6 +29,7 @@ tags:
 | 开发与工程实践 | [[Dev/index]] |
 | DSH 插件与 Agent 工具链 | [[Dev/dsh/index]] |
 | 写作与科研表达 | [[Writing/index]] |
+| 科研基金与申请能力 | [[nsfc/index]] |
 | 工具与工作流 | [[tools/index]] |
 | 阅读与基础概念 | [[Reading/index]] |
 | 术语表 | [[Glossary/index]] |

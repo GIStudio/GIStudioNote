@@ -22,3 +22,9 @@ tags:
 
 - [[how2write|AI 科普写作]]
 - [[../tools/LLM Prompts|写作提示词]]
+
+## 科研基金
+
+- [[../nsfc/index|科研基金专题 · NSFC 与申请能力]]
+- [[../nsfc/research-question|从研究方向到可资助的科学问题]]
+- [[../nsfc/proposal-writing|NSFC 申请书的论证与写作]]
