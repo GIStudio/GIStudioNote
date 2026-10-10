@@ -19,6 +19,12 @@ aliases:
 - [[../Anywriting/spatial-gen-1|《空间的生产》阅读笔记]]
 - [[../Glossary/index|GIStudio Notes 术语表]]
 
+## Best Paper 精读
+
+逐篇精读顶会最佳论文：拆解 Introduction 的必要性论证、Method 的问题推导与 Experiments 的证据链，学习可复用的研究叙事，并保留每期的适用范围与弱点。
+
+- [[generative-image-dynamics|Day 01：Generative Image Dynamics（CVPR 2024）]]：把预测对象从 RGB 视频换成低维 Fourier 频谱体，用 Diffusion 学习单图条件下的运动分布。
+
 ## 每周推书
 
 这里推荐值得进入城市科学、空间研究与研究方法书架的书。推荐页回答“为什么现在读、带着什么问题读、先读哪些部分”，不把尚未完成的阅读写成全书精读。
