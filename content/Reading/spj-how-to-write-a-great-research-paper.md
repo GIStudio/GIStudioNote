@@ -146,6 +146,7 @@ Simon Peyton Jones 把写研究论文从“研究完成后的报告工序”重�
 
 - 本讲座回答“如何写出论文”，[[peters-2025-good-research-questions|Peters（2025）好研究问题精读]]回答“写什么（研究问题从哪里来）”，两者衔接：先用 Peters 的四阶段流程形成问题，再用 SPJ 的七条建议把想法写成论文。
 - 写作实操层面可对照 [[../Writing/paper-knitting-guide|从选题到投稿的学术写作方法]] 与 [[../Writing/good-research-question-development|从好奇到可检验问题：四阶段研究问题形成方法]]。
+- 本讲座的篇幅表格是经验估计；更细的量化规格（各部分页数预算、摘要逐句角色、引言三段、标题句式）见 [[../Writing/paper-writing-craft-specs|论文的篇幅、摘要句法与标题句式]]。
 
 ## 来源
 
