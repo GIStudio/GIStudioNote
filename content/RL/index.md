@@ -11,6 +11,7 @@ tags:
 - [[concepts/MDP|马尔可夫决策过程]]
 - [[DRL|深度强化学习]]
 - [[MORL|多目标强化学习]]
+- [[masks-in-rl|强化学习里的 mask 是如何实现的？]]
 - [[Stable Baseline 3|Stable Baselines3]]
 - [[reinforceyourRL|reinforceyourRL 项目笔记]]
 
