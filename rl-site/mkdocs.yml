@@ -22,5 +22,6 @@ nav:
   - 强化学习总纲: Reinforcement Learning.md
   - 马尔可夫决策过程: concepts/MDP.md
   - 深度强化学习: DRL.md
+  - 多目标强化学习: MORL.md
   - Stable Baselines3: Stable Baseline 3.md
   - 项目笔记: reinforceyourRL.md

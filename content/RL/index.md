@@ -10,6 +10,7 @@ tags:
 - [[Reinforcement Learning|强化学习总纲]]
 - [[concepts/MDP|马尔可夫决策过程]]
 - [[DRL|深度强化学习]]
+- [[MORL|多目标强化学习]]
 - [[Stable Baseline 3|Stable Baselines3]]
 - [[reinforceyourRL|reinforceyourRL 项目笔记]]
 
