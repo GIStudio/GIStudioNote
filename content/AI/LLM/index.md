@@ -10,6 +10,10 @@ tags:
   - 预训练模型
 ---
 
+## 分词与输入表示
+
+- [[tokenizer-is-not-encryption|Tokenizer 是一种加密吗？]]
+
 ## 模型架构
 
 - [[qwen3-8-flash-next-n-gram-embedding|Qwen3.8-Flash-Next 采用的 N-gram Embedding 是什么？]]
