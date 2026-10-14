@@ -11,6 +11,7 @@ aliases:
 
 - [[NVM|NVM 教程]]
 - [[MinerU|MinerU 文档解析]]
+- [[Solara|Solara 纯 Python 数据应用框架]]
 - [[LLM Prompts|LLM 提示词]]
 - [[Design Better|设计资源]]
 - [[Quick Start|工具快速开始]]
