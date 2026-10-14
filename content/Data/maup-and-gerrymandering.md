@@ -78,7 +78,7 @@ MAUP 说的事情很朴素：空间数据常以点（人、票、建筑、事件
 - 报告方法时，把**分区方案本身**当作方法的一部分写出来：谁划的、按什么规则、对什么敏感。
 - 记住权力维度：**谁有权改边界，谁就持有 MAUP 的杠杆**。这句话对选区成立，对 TAZ、统计区、服务半径同样成立（参见 [[four-step-model|四阶段模型]] 的分区依赖问题）。
 
-## 7. 当前进展（核验于 2026-09-22）
+## 7. 当前进展（核验于 2026-10-14）
 
 - **检测方法**：效率差距 2015 年提出后进入联邦诉讼（Whitford v. Gill）；如今更主流的是 ensemble/MCMC 方法——生成数以千计满足法律约束的合法地图作为「中立基线」，检验实际地图是否为统计离群值，其数学基础见 Duchin（2024）综述。
 - **法律与制度**：Rucho v. Common Cause（2019）之后，联邦法院不再审查党派杰利蝾螈，战场转移到州宪法与州法院（[Wikipedia: Rucho v. Common Cause](https://en.wikipedia.org/wiki/Rucho_v._Common_Cause)）。2026 年 4 月的 Louisiana v. Callais 判决改变了「种族在划区中的使用」的审查标准，随后引发多州连锁重划（[Ballotpedia: Redistricting ahead of the 2026 elections](https://ballotpedia.org/Redistricting_ahead_of_the_2026_elections)）。
@@ -89,4 +89,4 @@ MAUP 说的事情很朴素：空间数据常以点（人、票、建筑、事件
 - **一手来源**：[Openshaw, *The Modifiable Areal Unit Problem*（CATMOG 38）原文 PDF](https://www.uio.no/studier/emner/sv/iss/SGO9010/openshaw1983.pdf)；[GIS&T Body of Knowledge：聚合与立法选区划分](https://gistbok-ltb.ucgis.org/page/current/concept/GS-02-020)；[Duchin 2024, *Discrete Geometry for Electoral Geography*](https://www.sciencedirect.com/science/article/pii/S0962629823002184)。
 - **转述与综述**：[Wikipedia: Modifiable areal unit problem](https://en.wikipedia.org/wiki/Modifiable_areal_unit_problem)、[Wikipedia: Gerrymandering](https://en.wikipedia.org/wiki/Gerrymandering)、[Wikipedia: Efficiency gap](https://en.wikipedia.org/wiki/Efficiency_gap)、[Andresen 2021（犯罪分析视角的 MAUP 综述）](https://www.crimrxiv.com/pub/g4bdjwld)、[Ballotpedia 2026 重划跟踪页](https://ballotpedia.org/Redistricting_ahead_of_the_2026_elections)。
 - **本页自构内容**：第 3 节的 50 人算例是为演示构造的；第 4 节「武器化」的表述是综合理解。爱荷华实验「−0.99 到 +0.99」的极值以二手转述为准，未逐图核对 1979 年原文。
-- 动态事实（2026 年选区诉讼与重划进展）核验于 2026-09-22，此后会过时。
+- 动态事实（2026 年选区诉讼与重划进展）核验于 2026-10-14（Ballotpedia 页面自身更新至 2026-09），此后会过时。
