@@ -90,7 +90,7 @@ Harness² 用冻结模型周围的可执行框架作为修改对象，先在当�
 | U1 | B | 获取指定原 PDF | done，arXiv 下载结果与上列页数、标题、大小和哈希 |
 | U2 | B | 深度解读 | done，上述八部分及公开文稿对应的机制、数据、边界与证据定位 |
 | U3 | B | 与 RSI 比较 | done，概念包含关系与 STOP、DGM、Hyperagents 机制表；无全量综述或统一性能排名声明 |
-| U4 | B | 发布到 GIStudio Notes | doing，待内容审计、构建、限定提交、推送与在线核验 |
+| U4 | B | 发布到 GIStudio Notes | done，内容提交 `4b73453` 已推送；Pages `39228480249` 成功，正式页面与 LLM 索引 HTTP 200 |
 | scansci-pdf:R1 | B | 下载前验证标识 | done，arXiv 标题、作者、v1 与时间一致 |
 | scansci-pdf:R2 | B | 经声明来源交付文件 | done，下载来源 arXiv，PDF 存于既定 PaperAssets；未请求 Zotero 写入或附件 |
 | scansci-pdf:R3 | A | 不可访问项有界诊断 | n/a，原论文首次下载成功；主页已从工具失败恢复至直接读取成功 |
@@ -101,10 +101,10 @@ Harness² 用冻结模型周围的可执行框架作为修改对象，先在当�
 | metis-router:R1 | B | 按最早未完成阶段执行 | done，获取到精读再到公开发布 |
 | metis-router:R2 | B | 每阶段至多两项支持 | done，分析支持 pdf，发布支持 human-writing；公共执行和行文检查另计 |
 | metis-router:R3 | B | 不混用产物 profile | done，公开解释使用 zh-popular，无独立数值图件或演示文稿 |
-| metis-router:R4 | B | 各阶段有实际产物 | doing，PDF 和分析已完成，公开页待验收 |
+| metis-router:R4 | B | 各阶段有实际产物 | done，原 PDF、八部分分析、公开页面与对应部署均已核对 |
 | metis-router:R5 | A | 成组审计修复采用冻结问题集 | n/a，本次不是文稿或代码库的成组审计修复 |
-| metis-router:R6 | B | 遵守有界停止条件 | doing，源文与草稿核对后只修具体问题，通过必需发布检查即交付 |
-| metis-router:R7 | B | 覆盖用户与技能要求 | doing，沿用本表，U4 验证后收口 |
+| metis-router:R6 | B | 遵守有界停止条件 | done，源文、草稿、构建和线上检查通过，达到本次交付标准 |
+| metis-router:R7 | B | 覆盖用户与技能要求 | done，用户四项要求及适用技能要求均有对应产物或证据 |
 | metis-router:R8 | B | 批量生产分配有边界 | n/a，单篇紧密依赖任务，无批量独立代理生产 |
 | metis-router:R9 | B | 并发浏览生产结果可用 | n/a，用户未要求持续生产工作台；最终交付为已发布网页 |
 
@@ -116,6 +116,9 @@ Harness² 用冻结模型周围的可执行框架作为修改对象，先在当�
 - 生成页标题与正文已核对；含 4 条自动参考文献、4 组 arXiv 摘要与 Trackback 记录页双链接、2 个展示公式与 31 个总数学片段。
 - 4 张表的行数和正文单元格数分别为 9/24、3/6、5/16、4/12，未出现未解析的 Wikilink 或引用键；LLM 目录入口已生成。
 - Trackback 单篇预览只列出 `2610.14224` 对应的新页面；没有向 arXiv 发起提交。
-- 当前未完成项仅为限定提交、推送、对应 Pages workflow 与正式网页核验。
+- 内容提交为 `4b734538898fcfb08cc32eb7e0f7a66ca39ddf69`，已加入每日推送队列，且因本次明确要求发布而实际推送至 `origin/v5`。
+- 对应 [Pages workflow 39228480249](https://github.com/GIStudio/GIStudioNote/actions/runs/39228480249) 为 success，HEAD 与远端 `refs/heads/v5` 已核对一致。
+- [正式页面](https://notes.gistudio.xyz/ai/llm/harness2-recursive-agent-harnessing-and-rsi) 和 [LLM 索引](https://notes.gistudio.xyz/ai/llm/) 返回 HTTP 200；线上已核对标题、RSI 包含关系、公开代码评估隔离段落、源码版本、4 条自动参考文献、4 组双链接、2 个展示公式和 4 张表。
+- 原有 `.gitignore`、站点首页引言及未跟踪 `.zcodeignore` 未纳入提交。远端另提示 4 条依赖安全告警（2 high、2 moderate）；本次仅发布内容，没有修改依赖或声称完成安全审计。
 
-当前没有需要用户补充的输入，不将阅读完成当作发布完成。
+停止条件为已达到本次获取、精读、比较与正式发布标准。未完成的用户要求为无；基准复现、技能自改和向 arXiv 提交通知不属于本次完成声明。

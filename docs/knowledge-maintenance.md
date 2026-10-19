@@ -25,7 +25,7 @@
 
 ## Harness² 论文解读
 
-- [doing] 发布 Harness² 深度解读与 RSI 比较（2026-10-19；依据 arXiv `2610.14224v1` 全文 37 页、官方项目主页及源码提交 `1cfe254e8d25b15f37048c3730134686abe60335`；分析与范围见 `docs/readings/harness2-2026-evidence.md`；公开稿、LLM 索引及四条参考文献已完成，公开内容严格扫描与中文教学行文检查通过，171 个 Markdown 文件和 21 个资源通过 Quartz 5 全量检查；生成页的 4 条自动参考文献、4 组 arXiv 双链接、2 个展示公式及 4 张表已核对；下一动作：限定提交、推送与线上发布验证）
+- [done] 发布 Harness² 深度解读与 RSI 比较（2026-10-19；依据 arXiv `2610.14224v1` 全文 37 页、官方项目主页及源码提交 `1cfe254e8d25b15f37048c3730134686abe60335`；分析与核验见 `docs/readings/harness2-2026-evidence.md`；公开内容严格扫描与中文教学行文检查通过，171 个 Markdown 文件和 21 个资源通过 Quartz 5 全量检查；内容提交 `4b73453` 已推送至 `origin/v5`，对应 Pages workflow `39228480249` 成功；正式页面 `/ai/llm/harness2-recursive-agent-harnessing-and-rsi` 与 LLM 索引返回 HTTP 200，标题、正文、4 条自动参考文献、4 组 arXiv 双链接、2 个展示公式和 4 张表已在线核对；没有重跑基准或提交通知到 arXiv，原有三项工作树改动保持原状）
 
 ## 公开页面的最小元数据
 
