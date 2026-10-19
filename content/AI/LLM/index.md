@@ -26,6 +26,10 @@ tags:
 
 - [[gander-omni-interaction-agent|Gander 怎样让全模态智能体边说边执行任务]]
 
+## 执行框架与自我改进
+
+- [[harness2-recursive-agent-harnessing-and-rsi|Harness² 深度解读及其与 RSI 的关系]]
+
 ## 目录边界
 
 本目录保存大语言模型的架构、训练、推理、评测和通用智能体系统知识。通用神经网络基础仍放在深度学习目录，具体 GeoAI 模型与领域智能体放在对应应用主题下。
