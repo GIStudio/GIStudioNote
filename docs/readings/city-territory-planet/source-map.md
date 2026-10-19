@@ -27,7 +27,7 @@
 | R3 来源、解释、缺口与冲突保持区分 | done | 未获取全书正文；出版页数以出版社为准；后续论文和研究应用单独说明 |
 | R4 接受要求与 R1–R5 均登记 | done | 本表；发布状态在唯一维护入口更新 |
 | R5 实质修订披露 | n/a | 新建导读，非修订既有文章 |
-| 推送与线上发布 | blocked | 内容完成后执行全量检查、限定提交、推送及匹配版本上线核验 |
+| 推送与线上发布 | done | 内容提交 `ce098fcbfd52ecaed38d18b6dd4db57906667f39` 已推送，匹配部署 `39234568516` 成功；正式页与两个导航均返回 HTTP 200 |
 
 ## 已执行检查
 
@@ -35,5 +35,10 @@
 - 中文教学行文检查通过，正文汉字计数 2112；检查器不替代事实核验。
 - Node.js 22.16.0 下 `npm run check:content` 通过，审计 172 个 Markdown 文件和 21 个资源，生成 781 个文件及 3 个旧路径跳转。
 - 生成 HTML 中标题、未逐章核读说明、书目表格、6 条引用和两个导航入口可见；译者采用“李志刚等”的简写，避免当前解析器把 BibTeX 的 `others` 当作真实人名输出。主要译者姓名仍保留在正文书目表中。
+- 内容提交已登记每日推送队列并实际推送至 `origin/v5`；[对应 Pages 部署](https://github.com/GIStudio/GIStudioNote/actions/runs/39234568516) 的 commit 与内容提交一致，结论为 success。
+- [正式页](https://notes.gistudio.xyz/reading/city-territory-planet-critical-urban-theory)、[阅读索引](https://notes.gistudio.xyz/reading/)及[哲学索引](https://notes.gistudio.xyz/philosophy/)返回 HTTP 200；标题、独有正文、书目表、译者简写、6 条参考文献及新增导航均已在线核对。
+- 原有 `.gitignore`、`content/index.md` 和 `.zcodeignore` 三项改动保持原状，未进入本次内容提交。
 
 停止条件：公开页、两个导航及六条书目通过检查，限定提交已推送，匹配 Pages 部署成功，正式页面返回 HTTP 200 且标题、正文和参考文献可见。未完成全书精读不属于本次资料导读的缺口补写授权。
+
+停止条件已满足；本次无剩余资料整理或发布缺口。
