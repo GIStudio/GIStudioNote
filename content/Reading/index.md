@@ -16,6 +16,7 @@ aliases:
 - [[spj-how-to-write-a-great-research-paper|Simon Peyton Jones 写好研究论文七条建议讲座笔记]]
 - [[riemannian-metric-matching|Riemannian Metric Matching 如何用去噪学习数据的局部几何]]
 - [[using-stanford-encyclopedia-of-philosophy|如何把 SEP 用作研究工具]]
+- [[urban-theory-lab|Urban Theory Lab（UTL）：研究方向、组织关系与成员]]
 - [[../Anywriting/spatial-gen-1|《空间的生产》阅读笔记]]
 - [[../Glossary/index|GIStudio Notes 术语表]]
 

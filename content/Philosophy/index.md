@@ -61,6 +61,7 @@ verified_at: 2026-08-05
 ## 城市理论延伸阅读
 
 - [[../Reading/city-territory-planet-critical-urban-theory|《城市，地域，星球》导读]]：用尺度政治、制度重组与星球城市化，进一步追问城市的边界、权力关系和研究单元。
+- [[../Reading/urban-theory-lab|Urban Theory Lab（UTL）实验室介绍]]：了解批判城市理论的研究网络，以及理论、空间数据、设计与环境研究的合作方式。
 
 ## 来源原则
 
