@@ -31,7 +31,7 @@
 | R5 从聊天调研转成网站笔记的实质调整 | done | 更新 Ghosh 身份和两类人数；去除聊天指代，补双向内链与公开资料入口 |
 | 双向关联书目导读及专题导航 | done | 生成 HTML 中新页与导读互链，阅读与哲学索引包含新入口 |
 | 公开边界、行文、全量构建 | done | 新页、导读与哲学索引严格公开扫描无问题；新页中文教学行文检查通过；Node 22.16.0 下全量检查通过 |
-| 限定提交、推送与线上发布 | blocked | 待验证内容后执行 |
+| 限定提交、推送与线上发布 | done | 内容提交 `ec84dc435c071a6352292f0a078e5edb6923c8db` 已推送，匹配 Pages 部署 `39255242006` 成功；正式页、导读及两个索引返回 HTTP 200 |
 
 ## 检查依据
 
@@ -39,5 +39,10 @@
 - 生成页中的三张表格、11＋12 条成员记录、3 条自动参考文献与引用锚点均已读取核对；Ghosh 仅出现在芝加哥博士后分类中。
 - 公开内容严格扫描覆盖新页、导读与哲学索引，结果为 0 错误、0 警告；阅读索引仅新增一个已验证内部链接，其既有书目键含 `Foundations`，对应此前已人工核对的 `NDA` 子串假阳性，不修改无关书目。
 - 中文教学行文检查通过，汉字计数 2532，无失败或提醒；这项模式检查不代替来源核验。
+- 内容提交已登记既有每日推送队列并实际推送至 `origin/v5`；[匹配 Pages 部署](https://github.com/GIStudio/GIStudioNote/actions/runs/39255242006) 的 head SHA 与内容提交一致，结论为 success。
+- [正式页](https://notes.gistudio.xyz/reading/urban-theory-lab)、[导读页](https://notes.gistudio.xyz/reading/city-territory-planet-critical-urban-theory)、[阅读索引](https://notes.gistudio.xyz/reading/)与[哲学索引](https://notes.gistudio.xyz/philosophy/)均返回 HTTP 200。核对范围限定在实际正文中，包括成员表 11＋12 行、三张表、3 条参考文献、Ghosh 博士后身份及页面互链，不只检查侧栏链接。
+- 原有 `.gitignore`、`content/index.md` 与 `.zcodeignore` 三项改动保持原状，未进入本次提交。GitHub 推送回执另提示 5 项依赖安全告警（3 high、2 moderate），属于独立依赖维护事项，本次没有调整依赖或将其解释为内容构建失败。
 
 停止条件：新页与书目导读互链、两个索引入口和三条参考文献生成正常；公开边界与全量构建检查通过；限定提交已推送、对应 Pages 部署成功，正式页面返回 HTTP 200 且成员人数、表格与互链可见。原有三项无关改动不进入提交。
+
+停止条件已满足，本次无剩余发布缺口。
