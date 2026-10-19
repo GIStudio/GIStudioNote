@@ -33,4 +33,5 @@ aliases:
 
 ## 延伸书目
 
+- [[city-territory-planet-critical-urban-theory|《城市，地域，星球》导读]]：从尺度政治、国家空间重组与新自由主义化，进入星球城市化和腹地问题。
 - 数学与软件基础读物 [@oreganMathematicalFoundationsSoftware2023]
