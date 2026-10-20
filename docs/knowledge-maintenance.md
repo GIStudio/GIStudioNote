@@ -39,6 +39,10 @@
 
 - [done] 发布命令与控制政策、财政政策的概念比较（2026-10-20；范围：标准类型、碳税、补贴、教学算例、排放交易边界及政策组合；交付页 `content/Sustainability/energy-policy-instruments.md`，关联可持续发展、SDG 7 与 SDG 13；六项官方来源与验收表见 `docs/readings/energy-policy-instruments/source-map.md`；四页公开边界扫描与新页中文教学行文检查通过，174 个 Markdown 文件和 21 个资源通过全量检查；内容提交 `a503d36` 已推送至 `origin/v5`，匹配 Pages 工作流 `39386479677` 成功；正式笔记及三处索引均返回 HTTP 200，实际正文中的 2 张表、5 条自动参考文献、13 处引用、SPM 官方链接与三处导航已在线核对；原有三项无关工作树改动保持原状）
 
+## 轨迹数据乒乓效应
+
+- [doing] 解释并发布轨迹数据的乒乓效应（2026-10-20；范围：小区振荡、教学算例、表观速度、城市出行指标影响、真实往返与 GPS 漂移边界、识别和清洗；交付页 `content/Data/trajectory-ping-pong-effect.md`，关联数据索引与四阶段模型；五项来源及验收见 `docs/readings/trajectory-ping-pong-effect/source-map.md`；三页公开边界与新页中文教学行文检查通过，175 个 Markdown 文件和 21 个资源通过全量检查；生成页的 2 张表、5 条教学记录、1 个展示公式、3 条自动参考文献及两处导航入口已核对；待限定推送与线上发布核验；原有三项无关改动保持原状）
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：

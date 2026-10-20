@@ -15,6 +15,7 @@ tags:
 - [[taz-traffic-analysis-zone|TAZ 交通分析区与各国同类分区体系]]
 - [[four-step-model|四阶段模型]]
 - [[traffic-impact-assessment|交通影响评估（TIA）]]
+- [[trajectory-ping-pong-effect|轨迹数据的乒乓效应：虚假往返与识别边界]]
 
 ## 香港数据
 
