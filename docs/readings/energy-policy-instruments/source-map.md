@@ -38,7 +38,7 @@
 | R5 用户要求的两类工具均完整保留 | done | 两类独立解释、案例、对照表及组合政策 |
 | R6 不重开来源也能理解与使用 | done | 定义、算例、比较与五项阅读政策的问题 |
 | 公开边界、行文、全量构建 | done | 四页公开扫描无错误或警告；2624 汉字的教学行文检查通过；全量构建通过 |
-| 限定提交、推送、部署及正式页 | 待验 | 匹配工作流成功、正式 URL 正文与导航在线可见 |
+| 限定提交、推送、部署及正式页 | done | 内容提交 `a503d3623a3e7b149e1bb999431bb601ee38bb2a` 已推送，匹配 Pages 工作流 `39386479677` 成功；四个正式页面 HTTP 200，正文与导航已核对 |
 
 初始工作树中 `.gitignore`、`content/index.md` 和 `.zcodeignore` 属于本次任务之外的改动，保持原状。
 
@@ -49,3 +49,13 @@
 - 当前引用插件使用带 citation id 的文本 span；验证已按引用键匹配对应 bibliography id，不将其误报为可点击的引用跳转。SPM 使用官方直链，避免同年机构作者多条记录时正文与文末的消歧不一致。
 - 供暖算例为生成的教学数据，已核对 100 × 50 = 5000，80 × 50 + 800 = 4800，80 × 50 + 1600 = 5600；没有进行真实政策效果估计。
 - 公开扫描覆盖新页及三处导航，结果为 0 错误、0 警告；行文模式检查通过不等于因果证据核验。
+
+## 发布核验
+
+- 内容提交 `a503d3623a3e7b149e1bb999431bb601ee38bb2a` 已登记既有每日推送队列，并因本次明确的发布请求实际推送至 `origin/v5`；仓库默认分支仍为 `v5`。
+- [匹配 Pages 工作流](https://github.com/GIStudio/GIStudioNote/actions/runs/39386479677) 的 head SHA 与上述提交一致，构建和部署均成功。
+- [正式笔记](https://notes.gistudio.xyz/sustainability/energy-policy-instruments)返回 HTTP 200；实际 article 正文包含年度化成本、4800 与 5600 元算例、公共投入、总量型 ETS 的解释、2 张表、5 条自动参考文献、13 处渲染引用和 SPM 官方链接。
+- [可持续发展](https://notes.gistudio.xyz/sustainability/)、[SDG 7](https://notes.gistudio.xyz/sustainability/sdg/sdg07-clean-energy/)和[SDG 13](https://notes.gistudio.xyz/sustainability/sdg/sdg13-climate-action/)均返回 HTTP 200，三页实际 article 中的新笔记链接已核对，不只检查侧栏。部署完成前的首次探测曾命中旧导航，完成后已复核通过。
+- `.gitignore`、`content/index.md`、`.zcodeignore` 三项原有改动未进入内容提交。推送回执另提示仓库既有 5 项依赖安全告警（3 high、2 moderate）；本次未调整依赖，不将告警与已成功的内容检查混为一谈。
+
+停止条件已满足，本次无剩余内容或发布缺口。
