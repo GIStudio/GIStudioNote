@@ -14,6 +14,7 @@ tags:
 
 - [[SDG/index|联合国可持续发展目标]]
 - [[SDG/sdg11-sustainable-cities/index|SDG 11 可持续城市和社区]]
+- [[energy-policy-instruments|能源政策工具：命令与控制政策和财政政策]]
 - [[eco-efficiency-netherlands-japan|生态效率的两条路径：荷兰与日本]]
 
 使用目标和指标时，应核对指标定义、统计年份、空间尺度和数据来源。全球目标提供共同语言，具体研究仍需说明本地问题与评价口径。

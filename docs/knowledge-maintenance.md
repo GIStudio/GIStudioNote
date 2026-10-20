@@ -35,6 +35,10 @@
 
 - [done] 发布 UTL 实验室介绍（2026-10-19；范围：实验室定位、组织关系、11 位芝加哥大学研究人员与 12 位外部研究伙伴、代表项目和学习入口；已按当前官网将 Swarnabh Ghosh 更新为芝加哥博士后，来源与时效边界见 `docs/readings/urban-theory-lab/source-map.md`；公开边界与中文教学行文检查通过，173 个 Markdown 文件和 21 个资源通过 Node 22.16.0 下的全量构建；内容提交 `ec84dc4` 已推送至 `origin/v5`，匹配 Pages workflow `39255242006` 成功；正式页 `/reading/urban-theory-lab`、书目导读及阅读与哲学索引均返回 HTTP 200，实际正文中的三张表、23 位成员、Ghosh 博士后身份、3 条参考文献与双向链接已在线核对；原有三项无关工作树改动保持原状）
 
+## 能源政策工具概念笔记
+
+- [doing] 整理并发布命令与控制政策、财政政策的概念比较（2026-10-20；范围：标准类型、碳税、补贴、教学算例、排放交易边界及政策组合；交付页 `content/Sustainability/energy-policy-instruments.md`，关联可持续发展、SDG 7 与 SDG 13；来源和验收表见 `docs/readings/energy-policy-instruments/source-map.md`；四页公开边界扫描与新页中文教学行文检查通过，174 个 Markdown 文件和 21 个资源通过全量检查，生成页的 2 张表、5 条自动参考文献、13 处引用和三处导航已核对；待限定提交推送及线上发布核对；原有三项无关工作树改动不进入提交）
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：
