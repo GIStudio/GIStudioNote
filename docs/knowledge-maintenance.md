@@ -49,7 +49,7 @@
 
 ## Transformer 位置编码
 
-- [doing] 整理并发布位置编码笔记（2026-10-22；范围：置换等变、正余弦与可学习绝对编码、Shaw、T5、ALiBi、RoPE、注入流程及外推边界；8 篇论文及官方实现的来源、数值检查与验收见 `docs/readings/transformer-positional-encoding/source-map.md`；公开、中文、数学、生成 HTML 与桌面抽检通过，183 个 Markdown 与 21 个资源通过全量检查，新页含 8 条参考文献、10 处引用、3 张表和 11 个展示公式；下一动作：限定提交、推送并验证匹配的 Pages 工作流与 3 个正式页面；保留原有三项无关改动）
+- [done] 发布 Transformer 位置编码笔记（2026-10-22；范围：置换等变、正余弦与可学习绝对编码、Shaw、T5、ALiBi、RoPE、注入流程及外推边界；8 篇论文及官方实现的来源、数值检查与验收见 `docs/readings/transformer-positional-encoding/source-map.md`；公开、中文、数学、生成 HTML 与桌面抽检通过，183 个 Markdown 与 21 个资源通过全量检查；内容提交 `c2b1d60` 已推送，匹配 Pages 工作流 `39740661751` 成功；正式正文、LLM 索引及词向量专题均返回 HTTP 200，实际正文中的 8 条自动参考文献、10 处引用、3 张表、11 个展示公式、两组 arXiv 双链接与专题互链已在线核对；此前待同步的 SGNS 验收记录 `5e1bd40` 已同步，原有三项无关改动保持原状）
 
 ## 公开页面的最小元数据
 
