@@ -59,6 +59,7 @@ verified_at: 2026-10-22
 - [[DL/dimensionality-reduction-visualization|PCA、t-SNE、UMAP 与 PaCMAP]]，观察表示时区分二维图像与模型效果。
 - [[Graph/index|图学习与城市计算]]，继续学习邻域、图结构与图神经网络。
 - [[AI/LLM/index|大语言模型]]，区分词向量表、上下文编码器和完整语言模型。
+- [[AI/LLM/transformer-positional-encoding|Transformer 位置编码]]，区分 token 内容表示与序列中的位置关系。
 
 本专题的数值例子为教学设定；方法解释依据原始论文，不给出未在统一条件下检验的总体优劣结论。
 

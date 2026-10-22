@@ -17,6 +17,7 @@ tags:
 
 ## 模型架构
 
+- [[transformer-positional-encoding|Transformer 位置编码：绝对位置、相对偏置与 RoPE]]
 - [[qwen3-8-flash-next-n-gram-embedding|Qwen3.8-Flash-Next 采用的 N-gram Embedding 是什么？]]
 
 ## 机械可解释性

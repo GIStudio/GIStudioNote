@@ -47,6 +47,10 @@
 
 - [done] 发布 7 页词向量专题（2026-10-22；范围：阅读导航、SGNS、负采样与 NCE、PMI 与矩阵分解、GloVe、fastText、图随机游走嵌入；接入 DL、Graph 与 LLM 索引；10 篇原始论文与验收见 `docs/readings/sgns-and-embeddings/source-map.md`；公开边界、中文教学行文、数值计算和桌面抽检通过，182 个 Markdown 与 21 个资源通过全量检查；内容提交 `e478b03` 已推送，匹配 Pages 工作流 `39707312881` 成功；7 个新页及 3 个索引均返回 HTTP 200，实际正文中的 13 条自动文献条目、22 处引用、9 张表、19 个展示公式、CPC 双链接与专题导航已在线核对；原有三项无关改动保持原状）
 
+## Transformer 位置编码
+
+- [doing] 整理并发布位置编码笔记（2026-10-22；范围：置换等变、正余弦与可学习绝对编码、Shaw、T5、ALiBi、RoPE、注入流程及外推边界；8 篇论文及官方实现的来源、数值检查与验收见 `docs/readings/transformer-positional-encoding/source-map.md`；公开、中文、数学、生成 HTML 与桌面抽检通过，183 个 Markdown 与 21 个资源通过全量检查，新页含 8 条参考文献、10 处引用、3 张表和 11 个展示公式；下一动作：限定提交、推送并验证匹配的 Pages 工作流与 3 个正式页面；保留原有三项无关改动）
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：
