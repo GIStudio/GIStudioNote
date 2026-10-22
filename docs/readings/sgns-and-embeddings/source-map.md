@@ -46,7 +46,7 @@
 | R6 不重开论文也能沿知识路径学习 | done | 每页有定义、例子、符号及结果解释；主文到拓展页、拓展页回专题均有有效路径，且关联既有 NLL、降维、图基础与轨迹质量页 |
 | 7 页内容与相关导航 | done | 验证全部新页正文链接均落在实际生成路由；专题表中 6 个入口、6 个返回链接及 DL、Graph、LLM 三处新增导航目标正确 |
 | 公开检查、数学、行文与排版 | done | 10 个候选页面严格扫描零错误零警告；7 页 zh-popular 行文检查通过；182 个 Markdown、21 个资源全量检查通过；生成 9 张表、19 个展示公式，无 KaTeX 错误或未解析 wikilink；详见下方排版检查 |
-| 限定提交、推送、部署及正式页面 | 待验 | 匹配内容提交、Pages 工作流与线上正文 |
+| 限定提交、推送、部署及正式页面 | done | 内容提交 `e478b03f3f9a7b725d9ab2b7868a3eee59fb2f7d` 已推送至 `origin/v5`；匹配 Pages 工作流 `39707312881` 成功；7 个新页与 3 个索引的正式 URL 均返回 HTTP 200，并核对标题、独有正文、公式、表格、参考文献数量及专题互链 |
 
 初始 `.gitignore`、`content/index.md`、`.zcodeignore` 三项无关改动不进入本次提交。
 
@@ -57,3 +57,11 @@
 桌面浏览器实际抽检专题首页、SGNS 的损失表及目标公式、PMI 推导，视口为工具提供的 1280×720。检查后删除新页正文与 Quartz 自动标题重复的 H1，补齐可从目录跳转的“参考文献”标题；列表仍由 citation key 与 BibTeX 自动生成。修复专题表中未转义 wikilink 管道导致的单元格截断，并将存在歧义的 index 链接改为明确的专题路径。正文公式与表格在上述桌面视口可读；没有据此声称完成多设备测试。
 
 全量构建后的 HTML 断言逐页确认单一 H1、参考文献标题、各页预期文献数量、零数学渲染错误、零未解析引用／wikilink，以及每条正文内部链接的实际目标。7 页中文检查只有词对连接号和数值范围的标点提醒，人工确认均有含义，未为消除提醒改变技术表达。
+
+## 发布证据
+
+- 内容提交：[`e478b03`](https://github.com/GIStudio/GIStudioNote/commit/e478b03f3f9a7b725d9ab2b7868a3eee59fb2f7d)，只含本任务 13 个文件；已进入既有每日推送队列，并按本次请求实际推送。
+- 对应部署：[Pages 工作流 39707312881](https://github.com/GIStudio/GIStudioNote/actions/runs/39707312881) 成功，构建和部署均通过。
+- 2026-10-22 在线核验：[专题](https://notes.gistudio.xyz/dl/embeddings/)、[SGNS](https://notes.gistudio.xyz/dl/embeddings/sgns-pretraining)、[负采样](https://notes.gistudio.xyz/dl/embeddings/negative-sampling-and-nce)、[PMI](https://notes.gistudio.xyz/dl/embeddings/pmi-matrix-factorization)、[GloVe](https://notes.gistudio.xyz/dl/embeddings/glove)、[fastText](https://notes.gistudio.xyz/dl/embeddings/fasttext)、[图嵌入](https://notes.gistudio.xyz/dl/embeddings/graph-random-walk-embeddings)，以及 [DL](https://notes.gistudio.xyz/dl/)、[Graph](https://notes.gistudio.xyz/graph/)、[LLM](https://notes.gistudio.xyz/ai/llm/) 三个索引，10 个正式页面全部返回 HTTP 200。
+- 在线检查以实际 article 正文为范围，确认各页标题及独有内容；7 页合计 13 条文献条目、22 处引用、9 张表、19 个展示公式，数量与本地验收一致；专题的 6 个入口、6 个返回链接、三处索引和 CPC 双链接有效。未提交 arXiv Trackback，也未训练或评价实际模型。
+- 原有 `.gitignore`、`content/index.md`、`.zcodeignore` 三项无关改动未纳入。推送时 GitHub 继续报告既有 5 项依赖安全告警（3 high、2 moderate），本次未更改依赖；CI 的 Node 运行器迁移提示不影响此次构建与部署成功。
