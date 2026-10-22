@@ -13,6 +13,7 @@ tags:
 ## 分词与输入表示
 
 - [[tokenizer-is-not-encryption|Tokenizer 是一种加密吗？]]
+- [[DL/Embeddings/index|词向量与表示学习：SGNS、GloVe 与 fastText 的基础及边界]]
 
 ## 模型架构
 
