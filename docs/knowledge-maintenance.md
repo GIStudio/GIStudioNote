@@ -51,6 +51,10 @@
 
 - [done] 发布 Transformer 位置编码笔记（2026-10-22；范围：置换等变、正余弦与可学习绝对编码、Shaw、T5、ALiBi、RoPE、注入流程及外推边界；8 篇论文及官方实现的来源、数值检查与验收见 `docs/readings/transformer-positional-encoding/source-map.md`；公开、中文、数学、生成 HTML 与桌面抽检通过，183 个 Markdown 与 21 个资源通过全量检查；内容提交 `c2b1d60` 已推送，匹配 Pages 工作流 `39740661751` 成功；正式正文、LLM 索引及词向量专题均返回 HTTP 200，实际正文中的 8 条自动参考文献、10 处引用、3 张表、11 个展示公式、两组 arXiv 双链接与专题互链已在线核对；此前待同步的 SGNS 验收记录 `5e1bd40` 已同步，原有三项无关改动保持原状）
 
+## Slurm 资源与作业管理
+
+- [doing] 调研并发布 Slurm 渐进学习笔记（2026-10-23；范围：架构、分配与执行、CPU 资源形状、批处理、交互式作业、排队排错、GPU 与数组；来源与验收见 `docs/readings/slurm-workload-manager/source-map.md`；不访问私人集群或提交真实作业，原有三项无关改动保留）
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：

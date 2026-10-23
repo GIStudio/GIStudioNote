@@ -32,7 +32,8 @@ tags:
 - [[dsh/dsh-plugin-python|DSH 插件能不能用 Python 写]]
 - [[dsh/dsh-plugin-publishing-pitfalls|第一次发布 DSH 插件，我踩了这五个坑]]
 
-## 服务器
+## 服务器与集群
 
 - [[SSH_Tunnel_Technical_Guide|SSH 隧道]]
+- [[slurm-workload-manager|Slurm 入门：共享集群如何分配资源、排队和运行作业]]
 - [[server/fix|Ubuntu kmod 漏洞缓解]]
