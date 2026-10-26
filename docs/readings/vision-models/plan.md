@@ -16,9 +16,9 @@
 | 04 | detection-segmentation-and-prompts.md | 分类、检测、分割、提示分割如何改变输出与监督 | doing：成稿 1883 字、2 图，待专题整体验收 |
 | 05 | vision-transformers.md | ViT、DeiT、Swin 怎样组织空间关系与训练成本 | doing：成稿 1728 字、2 图，待专题整体验收 |
 | 06 | patches-resolution-and-tokens.md | patch、裁块、动态分辨率、打包、合并各改变哪一段 | doing：成稿 1818 字、2 图，待专题整体验收 |
-| 07 | clip-siglip-and-alignment.md | 图文对齐、负样本、SigLIP 与 SigLIP 2 的训练目标 | plan |
-| 08 | self-supervised-visual-learning.md | 对比、自蒸馏、MAE、DINOv3 怎样学可迁移表示 | plan |
-| 09 | vision-towers-and-connectors.md | 视觉塔、投影器、查询重采样、交叉注意力、DeepStack 的接口差异 | plan |
+| 07 | clip-siglip-and-alignment.md | 图文对齐、负样本、SigLIP 与 SigLIP 2 的训练目标 | doing：成稿 1713 字、2 图，待专题整体验收 |
+| 08 | self-supervised-visual-learning.md | 对比、自蒸馏、MAE、DINOv3 怎样学可迁移表示 | doing：成稿 1942 字、2 图，待专题整体验收 |
+| 09 | vision-towers-and-connectors.md | 视觉塔、投影器、查询重采样、交叉注意力、DeepStack 的接口差异 | doing：成稿 2062 字、2 图，待专题整体验收 |
 | 10 | video-memory-and-world-models.md | 空间 token 怎样扩展到时间、记忆与动作预测 | plan |
 | 11 | visual-systems-and-evaluation.md | 输入处理、检索、问答、OCR、坐标与工具执行怎样形成可验证系统 | plan |
 | 12 | frontier-models-and-open-problems.md | 截至核验日的公开新模型及其证据、实现与未知项 | plan |
@@ -34,7 +34,8 @@
 - 前三篇已形成独立长文，6 幅 SVG 及本地 PNG 预览完成实际查看；段落与来源、五件以上具体材料、原创教学算术分别核对。公开扫描零错误零警告；中文教学检查无硬失败，非必要的翻案句已作局部修订。
 - Node 22.16.0 下全量检查通过：187 个 Markdown、27 个资源；三篇仍标为 draft，构建确实将其排除，不能把该检查说成三篇公开渲染或发布已验收。
 - 第 4–6 篇及 6 幅新图已完成局部验收。当前共 6/12 篇、12 幅图；Node 22.16.0 下全量检查覆盖 190 个 Markdown、33 个资源并通过，6 篇均为 draft、被构建过滤。图件的 PNG 预览已实际查看；新增算术断言核对 IoU、patch/序列/头维数、注意力平方增长、编码后合并及打包空位数。
-- 下一步：核读第 7–9 篇所需原始论文，完成 CLIP/SigLIP、自监督学习、视觉塔与连接器；随后继续第 10–12 篇，不发布残缺的专题导航。
+- 第 7–9 篇及 6 幅新图已完成局部内容与证据检查。当前共 9/12 篇、18 幅原创图，全部仍为 draft。新增原始材料、独立教学计算和 Qwen3-VL 实现核读见来源表。公开扫描覆盖 9 篇，零错误零警告；行文检查无硬失败，术语“对齐”与英文原题连接号的提醒按上下文保留。
+- 下一步：完成第 10–12 篇与 6 幅图；视频篇以时空注意力、VideoMAE、SAM 记忆、V-JEPA 2 为机制主线，系统篇讲完整输入/输出与验证，近期模型篇核验 2026 年公开新材料及实际开放状态。随后建立首页、接入现有索引、移除全部 draft，检查全部渲染页后统一发布。
 
 ## 完成所需证据
 

@@ -246,6 +246,101 @@ function cup(x, y, fill = C.light, stroke = C.teal) {
   figures.set("patch-packing", canvas("NaViT 的打包：复用容器，不混合样本", "三组教学序列由三个容器压至两个，配套块对角的样本注意力示意。", body))
 }
 
+{
+  let body = text(42, 105, "3 组原始配对 → 9 个图文组合", 26, C.muted)
+  ;["文本 T₁", "文本 T₂", "文本 T₃"].forEach((s, i) => { body += text(330 + i * 150, 151, s, 25, C.ink, "middle") })
+  for (let r = 0; r < 3; r++) {
+    body += text(160, 219 + r * 90, `图像 I${r + 1}`, 25, C.ink, "middle")
+    for (let c = 0; c < 3; c++) body += rect(260 + c * 150, 170 + r * 90, 140, 78, r === c ? C.light : C.pale, r === c ? C.teal : C.line, 4) + text(330 + c * 150, 219 + r * 90, r === c ? "原配对 +" : "负例 −", 25, r === c ? C.teal : C.muted, "middle")
+  }
+  body += text(770, 237, ["3 个正例", "6 个负例", "标签由配对生成"], 22, C.muted)
+  body += rect(40, 475, 440, 90, C.pale) + text(65, 510, ["CLIP：分别沿行、列做竞争", "匹配分数进入双向 Softmax"], 23)
+  body += rect(520, 475, 440, 90, C.light) + text(545, 510, ["SigLIP：各组合做二分类", "仍保留非配对的负例"], 23)
+  body += text(42, 601, "配对标签不等于完整语义真值；非对角组合也可能语义相容。", 22, C.muted)
+  figures.set("clip-pairs", canvas("训练时：图与文字怎样相互比较", "三乘三配对矩阵，三个对角正例、六个非对角负例，比较 Softmax 与 Sigmoid 的归一化。", body))
+}
+
+{
+  let body = text(42, 105, "同一图像；A 的分数始终为 2", 26, C.muted)
+  body += rect(40, 135, 440, 330) + rect(520, 135, 440, 330)
+  body += text(65, 176, "三个候选：分数 2、1、0", 25, C.blue, "start", 600) + text(545, 176, "加入 D：其分数为 3", 25, C.teal, "start", 600)
+  const softmax = a => a.map(x => Math.exp(x) / a.reduce((s, y) => s + Math.exp(y), 0))
+  const labels = ["A", "B", "C", "D"]
+  ;[[65, [2, 1, 0]], [545, [2, 1, 0, 3]]].forEach(([x, scores]) => {
+    softmax(scores).forEach((p, i) => {
+      const y = 210 + i * 55, fill = i === 0 ? C.orange : i === 3 ? C.teal : C.blue
+      body += text(x, y + 23, labels[i], 24) + rect(x + 40, y, 255, 30, "#e9edef", "none", 0) + rect(x + 40, y, 255 * p, 30, fill, "none", 0) + text(x + 312, y + 23, p.toFixed(3), 23, fill)
+    })
+  })
+  body += text(42, 517, ["A：0.665 → 0.237；变化来自候选集的 Softmax 分母。", "候选内的概率，不是对全部现实类别的正确率保证。"], 25)
+  body += text(42, 598, "教学 logits 与精确计算后四舍五入的概率，不是 CLIP 实测。", 23, C.muted)
+  figures.set("clip-candidates", canvas("候选改变，归一化概率就会改变", "三个候选与四个候选的两组概率条形图，强调同一候选的分数未变而归一化值改变。", body))
+}
+
+{
+  let body = text(42, 105, "教学例子：16 块中仅 4 块可见", 26, C.muted)
+  const visible = new Set([1, 6, 10, 13])
+  for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) {
+    const k = r * 4 + c
+    body += rect(45 + c * 43, 145 + r * 43, 43, 43, visible.has(k) ? C.teal : "#e1e6eb", C.white, 0)
+  }
+  body += text(45, 350, "12 块被移除", 23, C.muted)
+  body += line(235, 230, 315, 230) + rect(335, 160, 255, 140, C.pale) + text(462, 204, ["较重的编码器", "只处理 4 个可见块", "不加入 mask token"], 24, C.ink, "middle")
+  body += line(607, 230, 678, 230) + text(705, 203, ["4 份编码结果", "+ 12 个 mask token", "+ 完整位置次序"], 25, C.teal)
+  body += `<path d="M820,303 L820,370 L600,370 L600,415" fill="none" stroke="${C.teal}" stroke-width="3" marker-end="url(#arrow)"/>`
+  body += rect(400, 430, 310, 100, C.light) + text(555, 470, ["较轻的解码器", "恢复全部 16 个位置"], 25, C.ink, "middle")
+  body += line(385, 480, 275, 480) + text(45, 465, ["预测隐藏像素", "只在隐藏位置算损失"], 23, C.orange)
+  body += text(42, 594, "预训练的遮挡策略；部署编码器时可使用完整图像。", 24, C.muted)
+  figures.set("ssl-masked-encoding", canvas("MAE 的非对称计算：先少量编码，再完整解码", "四乘四网格显示可见和移除块，重编码器只接收可见块，轻解码器恢复次序并预测隐藏像素。", body))
+}
+
+{
+  let body = text(42, 105, "三个归一化二维特征；只比较它们的点积关系", 25, C.muted)
+  const axis = (x, y, rotated = false) => {
+    let b = line(x - 10, y, x + 170, y, C.line) + line(x, y + 10, x, y - 145, C.line)
+    const pts = rotated ? [[0, -105], [0, -105], [-105, 0]] : [[105, 0], [105, 0], [0, -105]]
+    pts.forEach(([dx, dy], i) => { b += line(x, y, x + dx, y + dy, i < 2 ? C.teal : C.orange, false, false) + circle(x + dx, y + dy, i === 0 ? 10 : 6, i < 2 ? C.teal : C.orange) })
+    return b
+  }
+  body += axis(165, 320) + text(55, 385, ["x₁ = x₂ = (1, 0)", "x₃ = (0, 1)"], 24)
+  body += axis(510, 320, true) + text(385, 385, ["一起旋转 90°", "坐标变了，点积不变"], 24)
+  body += line(330, 220, 385, 220) + text(353, 181, "旋转", 23, C.muted, "middle")
+  body += text(755, 164, "相同的 Gram 矩阵", 24, C.ink, "middle", 600)
+  body += matrix(676, 196, [[1, 1, 0], [1, 1, 0], [0, 0, 1]], 67, "output")
+  body += rect(40, 474, 920, 100, C.light) + text(62, 513, ["Gram anchoring 对齐关系表，不要求特征逐坐标复制。", "G = X Xᵀ；每行一个 patch，每项是一对特征的相似度。"], 24)
+  body += text(42, 603, "原创教学向量；不是 DINOv3 推理特征或论文实验图。", 22, C.muted)
+  figures.set("ssl-gram-relations", canvas("保留关系，可以不固定特征坐标", "三个二维向量在一起旋转前后具有同一个三乘三 Gram 矩阵，说明关系约束的自由度。", body))
+}
+
+{
+  const rows = [
+    ["逐位置投影", "N × dV", "共享线性层 / MLP", "N × dL", "拼入语言序列", C.pale],
+    ["查询瓶颈", "N × dV", "K 个查询读取特征", "K × dL", "K 可固定，小于 N", C.light],
+    ["交叉注意力", "视觉特征", "单独保留视觉条件", "文本层读取", "不全变成输入前缀", C.sand],
+  ]
+  let body = text(42, 103, "比较的是数据流；三行不代表互斥的完整模型名单。", 24, C.muted)
+  rows.forEach(([name, input, operation, output, meaning, fill], i) => {
+    const y = 136 + i * 140
+    body += `<g id="interface-${i}">${rect(40, y, 920, 120, fill)}${text(60, y + 36, name, 25, C.ink, "start", 600)}${text(60, y + 82, input, 25, C.muted)}${line(220, y + 68, 288, y + 68)}${text(310, y + 69, operation, 24)}${line(568, y + 68, 625, y + 68)}${text(650, y + 45, output, 25, C.ink, "start", 600)}${text(650, y + 87, meaning, 22, C.muted)}</g>`
+  })
+  body += text(42, 603, "N：入口位置数；K：查询输出数；dV / dL：视觉 / 语言通道数。", 22, C.muted)
+  figures.set("tower-interface-paths", canvas("连接器要回答：长度怎样变，信息怎样读", "三行数据流对比逐位置投影、固定查询瓶颈和外置视觉交叉注意力，不构造性能排名。", body))
+}
+
+{
+  let body = text(42, 104, "Qwen3-VL：三个视觉深度 → 前三个语言层", 25, C.muted)
+  body += text(145, 151, "视觉编码器", 26, C.teal, "middle", 600) + text(815, 151, "语言模型", 26, C.blue, "middle", 600)
+  for (let i = 0; i < 3; i++) {
+    const y = 185 + i * 108
+    body += rect(50, y, 190, 65, C.light) + text(145, y + 41, `视觉深度 ${i + 1}`, 25, C.teal, "middle")
+    body += line(255, y + 33, 360, y + 33, C.teal) + rect(380, y, 240, 65, C.sand) + text(500, y + 41, "专用 merger", 25, C.orange, "middle")
+    body += line(635, y + 33, 715, y + 33, C.orange) + rect(735, y, 210, 65, C.pale) + text(840, y + 41, `语言层 ${i + 1}  +`, 25, C.blue, "middle")
+    if (i < 2) body += line(145, y + 69, 145, y + 101, C.teal) + line(840, y + 69, 840, y + 101, C.blue)
+  }
+  body += rect(40, 525, 920, 67, C.white) + text(60, 553, ["在对应视觉位置相加；不靠额外拼入三组前缀来延长序列。", "主输出的 merger 与更深层未画出；深度间距不按真实层号缩放。"], 21, C.muted)
+  figures.set("tower-deepstack", canvas("多层视觉信息，在语言层继续进入", "简化的三层注入示意，三个视觉深度经专用连接器后加入前三个语言层，主干和最终分支仅作省略示意。", body))
+}
+
 await fs.mkdir(output, { recursive: true })
 await fs.mkdir(preview, { recursive: true })
 for (const [name, svg] of figures) {
