@@ -69,6 +69,8 @@ $$
 
 若关心视频如何接入语言模型，可继续读 [[AI/Vision/vision-towers-and-connectors|视觉塔与连接器]]；若关心动作输出之后怎样判断任务完成，可看 [[AI/Vision/visual-systems-and-evaluation|视觉系统与评价]]。原始入口为 [TimeSformer](https://arxiv.org/abs/2102.05095)（[Trackback](https://arxiv.org/tb/2102.05095)）、[VideoMAE](https://arxiv.org/abs/2203.12602)（[Trackback](https://arxiv.org/tb/2203.12602)）和 [V-JEPA 2](https://arxiv.org/abs/2506.09985)（[Trackback](https://arxiv.org/tb/2506.09985)）。
 
+[SAM 2](https://arxiv.org/abs/2408.00714) · [Trackback](https://arxiv.org/tb/2408.00714)。
+
 [[AI/Vision/index|返回视觉模型专题]]
 
 ## 参考文献

@@ -74,6 +74,8 @@ Qwen3-VL 对 DeepStack 的使用与原方案的多尺度视觉输入不同，不
 
 本页比较的是数据流和训练接口，不对不同论文的异构基准做总体排名。[BLIP-2 原文](https://arxiv.org/abs/2301.12597)（[Trackback 记录](https://arxiv.org/tb/2301.12597)）、[Flamingo 原文](https://arxiv.org/abs/2204.14198)（[Trackback 记录](https://arxiv.org/tb/2204.14198)）和 [Qwen3-VL 报告](https://arxiv.org/abs/2511.21631)（[Trackback 记录](https://arxiv.org/tb/2511.21631)）提供相应机制的原始说明。
 
+[LLaVA](https://arxiv.org/abs/2304.08485) · [Trackback](https://arxiv.org/tb/2304.08485)。
+
 [[AI/Vision/index|返回视觉模型专题]]
 
 ## 参考文献

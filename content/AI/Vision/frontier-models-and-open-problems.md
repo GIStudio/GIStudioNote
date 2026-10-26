@@ -70,6 +70,8 @@ Qwen3-VL 已经通过动态分辨率视觉塔、空间合并和 DeepStack 将多
 
 接下来真正值得追问的，是统一表示是否在同预算下同时保住细节与语义，多目标记忆是否在遮挡和相似实例下稳定，主动取证是否漏掉关键证据。对应的验证方法见 [[AI/Vision/visual-systems-and-evaluation|视觉系统与评价]]。原始入口包括 [OpenVision 3](https://arxiv.org/abs/2601.15369)（[Trackback](https://arxiv.org/tb/2601.15369)）与 [Qwen3.8-Omni](https://arxiv.org/abs/2609.25611)（[Trackback](https://arxiv.org/tb/2609.25611)）。
 
+[SigLIP 2](https://arxiv.org/abs/2502.14786) · [Trackback](https://arxiv.org/tb/2502.14786)；[DINOv3](https://arxiv.org/abs/2508.10104) · [Trackback](https://arxiv.org/tb/2508.10104)；[Qwen3-VL](https://arxiv.org/abs/2511.21631) · [Trackback](https://arxiv.org/tb/2511.21631)。
+
 [[AI/Vision/index|返回视觉模型专题]]
 
 ## 参考文献

@@ -86,6 +86,8 @@ $S$、$G$ 表示学生与 Gram 教师，$\|\cdot\|_F^2$ 为矩阵各项平方之
 
 接下来可以比较 [[AI/Vision/clip-siglip-and-alignment|图文监督]]，或看 [[AI/Vision/vision-towers-and-connectors|视觉表示怎样送入语言模型]]。本页仅解释论文机制与教学计算，不声称已重跑预训练或得到跨论文统一排名。[MAE 原文](https://arxiv.org/abs/2111.06377)（[Trackback 记录](https://arxiv.org/tb/2111.06377)）、[DINO 原文](https://arxiv.org/abs/2104.14294)（[Trackback 记录](https://arxiv.org/tb/2104.14294)）、[DINOv3 原文](https://arxiv.org/abs/2508.10104)（[Trackback 记录](https://arxiv.org/tb/2508.10104)）可作为继续阅读入口。
 
+[SimCLR](https://arxiv.org/abs/2002.05709) · [Trackback](https://arxiv.org/tb/2002.05709)；[DINOv2](https://arxiv.org/abs/2304.07193) · [Trackback](https://arxiv.org/tb/2304.07193)。
+
 [[AI/Vision/index|返回视觉模型专题]]
 
 ## 参考文献

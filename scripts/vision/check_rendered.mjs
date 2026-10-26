@@ -14,6 +14,8 @@ const all = (n, p) => [...(p(n) ? [n] : []), ...(n.children || []).flatMap(c => 
 const txt = n => n.value ?? (n.children || []).map(txt).join("")
 const has = (n, c) => (n.properties?.className || []).includes(c)
 const files = fs.readdirSync(source).filter(f => f.endsWith(".md"))
+const bibliography = fs.readFileSync(path.join(root, "bibliography.bib"), "utf8")
+const arxivByKey = new Map([...bibliography.matchAll(/@\w+\{([^,]+),([\s\S]*?)(?=\n@|$)/g)].map(m => [m[1], m[2].match(/url\s*=\s*\{https:\/\/arxiv.org\/abs\/([\d.]+)/)?.[1]]))
 assert.equal(files.length, 13, "12 篇正文和 1 个首页")
 const exists = pathname => {
   const p = path.join(root, "public", decodeURIComponent(pathname))
@@ -58,6 +60,11 @@ for (const file of files) {
     imagesToCheck.add(url.pathname)
   }
   const links = all(article, n => n.tagName === "a" && n.properties?.href)
+  for (const key of keys) {
+    const id = arxivByKey.get(key)
+    if (!id) continue
+    for (const kind of ["abs", "tb"]) assert(links.some(a => a.properties.href === `https://arxiv.org/${kind}/${id}`), `${slug} 缺少 ${key} 的 ${kind} 入口`)
+  }
   for (const a of links) {
     const url = new URL(a.properties.href, base)
     if (url.origin !== site || a.properties.href.startsWith("#")) continue

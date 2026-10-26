@@ -15,6 +15,7 @@ const expected = [
 const partial = process.argv.includes("--partial")
 const bibliography = fs.readFileSync(path.join(root, "bibliography.bib"), "utf8")
 const keys = new Set([...bibliography.matchAll(/@\w+\{([^,]+),/g)].map(m => m[1]))
+const arxivByKey = new Map([...bibliography.matchAll(/@\w+\{([^,]+),([\s\S]*?)(?=\n@|$)/g)].map(m => [m[1], m[2].match(/url\s*=\s*\{https:\/\/arxiv.org\/abs\/([\d.]+)/)?.[1]]))
 const reports = []
 for (const slug of expected) {
   const file = path.join(directory, `${slug}.md`)
@@ -40,6 +41,10 @@ for (const slug of expected) {
   const citations = [...markdown.matchAll(/\[@([^\]]+)\]/g)].flatMap(m => m[1].split(/;\s*@/).map(x => x.trim()))
   assert(citations.length >= 3, `${slug} 需要就近来源`)
   for (const key of citations) assert(keys.has(key), `${slug} 缺少文献：${key}`)
+  for (const key of citations) {
+    const id = arxivByKey.get(key)
+    if (id) assert(markdown.includes(`https://arxiv.org/abs/${id}`) && markdown.includes(`https://arxiv.org/tb/${id}`), `${slug} 文献 ${key} 缺少公开原文与 Trackback 双入口`)
+  }
   const arxiv = [...markdown.matchAll(/https:\/\/arxiv\.org\/abs\/([\d.]+)/g)].map(m => m[1])
   for (const id of arxiv) assert(markdown.includes(`https://arxiv.org/tb/${id}`), `${slug} 缺少 arXiv 双链接：${id}`)
   if (!partial) assert(!/^draft:\s*true$/m.test(markdown), `${slug} 尚未转为公开正文`)

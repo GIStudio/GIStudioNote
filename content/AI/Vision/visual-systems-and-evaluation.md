@@ -74,6 +74,8 @@ MMMU 跨学科的图文问题拓宽了知识与推理评价，却仍是一套特
 
 选择视觉系统时，可以先问输出要交给谁：向量交给检索器，框交给几何接口，文字交给读者，动作交给执行器。然后再选择相应的模型与验证。模型路线可回看 [[AI/Vision/vision-towers-and-connectors|视觉塔]]，近期组合方式见 [[AI/Vision/frontier-models-and-open-problems|近期模型与开放问题]]。[DocVQA](https://arxiv.org/abs/2007.00398)（[Trackback](https://arxiv.org/tb/2007.00398)）、[POPE](https://arxiv.org/abs/2305.10355)（[Trackback](https://arxiv.org/tb/2305.10355)）和 [OSWorld](https://arxiv.org/abs/2404.07972)（[Trackback](https://arxiv.org/tb/2404.07972)）提供原始评价说明。
 
+[MMMU](https://arxiv.org/abs/2311.16502) · [Trackback](https://arxiv.org/tb/2311.16502)。
+
 [[AI/Vision/index|返回视觉模型专题]]
 
 ## 参考文献
