@@ -13,9 +13,9 @@
 | 01 | history-and-theories.md | 从场景重建到可迁移表示，哪些理论被保留、哪些假设失去主导地位 | doing：成稿 2240 字、2 图，待专题整体验收 |
 | 02 | classical-features-and-geometry.md | 边缘、SIFT、HOG、几何验证怎样把像素变成证据 | doing：成稿 1951 字、2 图，待专题整体验收 |
 | 03 | convolutional-networks.md | 卷积、监督学习、残差与现代 ConvNet 分别解决什么 | doing：成稿 1904 字、2 图，待专题整体验收 |
-| 04 | detection-segmentation-and-prompts.md | 分类、检测、分割、提示分割如何改变输出与监督 | plan |
-| 05 | vision-transformers.md | ViT、DeiT、Swin 怎样组织空间关系与训练成本 | plan |
-| 06 | patches-resolution-and-tokens.md | patch、裁块、动态分辨率、打包、合并各改变哪一段 | plan |
+| 04 | detection-segmentation-and-prompts.md | 分类、检测、分割、提示分割如何改变输出与监督 | doing：成稿 1883 字、2 图，待专题整体验收 |
+| 05 | vision-transformers.md | ViT、DeiT、Swin 怎样组织空间关系与训练成本 | doing：成稿 1728 字、2 图，待专题整体验收 |
+| 06 | patches-resolution-and-tokens.md | patch、裁块、动态分辨率、打包、合并各改变哪一段 | doing：成稿 1818 字、2 图，待专题整体验收 |
 | 07 | clip-siglip-and-alignment.md | 图文对齐、负样本、SigLIP 与 SigLIP 2 的训练目标 | plan |
 | 08 | self-supervised-visual-learning.md | 对比、自蒸馏、MAE、DINOv3 怎样学可迁移表示 | plan |
 | 09 | vision-towers-and-connectors.md | 视觉塔、投影器、查询重采样、交叉注意力、DeepStack 的接口差异 | plan |
@@ -33,7 +33,8 @@
 - 初步检索找到 2026 年 OpenVision 3、Qwen3.5/3.6 与 Qwen3.8 的公开原始材料，以及 SAM 3 官方仓库。检索命中不等于机制已核读，逐项核读后才进入正文。
 - 前三篇已形成独立长文，6 幅 SVG 及本地 PNG 预览完成实际查看；段落与来源、五件以上具体材料、原创教学算术分别核对。公开扫描零错误零警告；中文教学检查无硬失败，非必要的翻案句已作局部修订。
 - Node 22.16.0 下全量检查通过：187 个 Markdown、27 个资源；三篇仍标为 draft，构建确实将其排除，不能把该检查说成三篇公开渲染或发布已验收。
-- 下一步：核读第 4–6 篇的原始论文，完成检测/分割、ViT、patch 与分辨率篇章及其图件；随后继续第 7–12 篇，不发布残缺的专题导航。
+- 第 4–6 篇及 6 幅新图已完成局部验收。当前共 6/12 篇、12 幅图；Node 22.16.0 下全量检查覆盖 190 个 Markdown、33 个资源并通过，6 篇均为 draft、被构建过滤。图件的 PNG 预览已实际查看；新增算术断言核对 IoU、patch/序列/头维数、注意力平方增长、编码后合并及打包空位数。
+- 下一步：核读第 7–9 篇所需原始论文，完成 CLIP/SigLIP、自监督学习、视觉塔与连接器；随后继续第 10–12 篇，不发布残缺的专题导航。
 
 ## 完成所需证据
 
