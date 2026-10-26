@@ -7,7 +7,6 @@ tags:
   - 科学史
   - 表示学习
 verified_at: 2026-10-26
-draft: true
 ---
 
 **计算机视觉研究怎样从图像和视频中获得关于对象、结构及事件的信息。** 同一张桌面照片，可以用来判断有没有杯子、寻找杯子的边界、恢复桌面的朝向，也可以让机器人决定从哪里抓取。它们共享像素输入，要求的答案却不同。
@@ -78,5 +77,7 @@ ViT 把图像切成 patch，将局部像素投影为 token，再用 Transformer 
 本文的 Marr 部分依据出版社对原著框架的说明，并未逐章核读全书。历史节点用于解释问题与方法的变化，不构成所有视觉研究的完整编年史。
 
 原文入口：[ViT](https://arxiv.org/abs/2010.11929) · [Trackback 记录](https://arxiv.org/tb/2010.11929)，[ResNet](https://arxiv.org/abs/1512.03385) · [Trackback 记录](https://arxiv.org/tb/1512.03385)，[ConvNeXt](https://arxiv.org/abs/2201.03545) · [Trackback 记录](https://arxiv.org/tb/2201.03545)。正式发表信息见下方文献条目。
+
+[[AI/Vision/index|返回视觉模型专题]]
 
 ## 参考文献

@@ -8,7 +8,6 @@ tags:
   - MAE
   - DINO
 verified_at: 2026-10-26
-draft: true
 ---
 
 **自监督视觉学习从图像本身构造训练任务，用这些任务学出可迁移的表示。** 人可以不逐张标注“猫”“车”或像素边界，但模型仍有明确目标、损失和数据处理规则。“没有人工类别标签”不会自动等于“没有监督”“没有数据选择”或“什么任务都已经会做”。
@@ -86,5 +85,7 @@ $S$、$G$ 表示学生与 Gram 教师，$\|\cdot\|_F^2$ 为矩阵各项平方之
 线性探测固定编码器，只训练线性头；完整微调则允许编码器一起变化。报告二者时要区分训练标签、数据划分和调整预算。漂亮的特征投影图只提供辅助观察，可对照 [[DL/dimensionality-reduction-visualization|降维可视化]] 理解证据范围。
 
 接下来可以比较 [[AI/Vision/clip-siglip-and-alignment|图文监督]]，或看 [[AI/Vision/vision-towers-and-connectors|视觉表示怎样送入语言模型]]。本页仅解释论文机制与教学计算，不声称已重跑预训练或得到跨论文统一排名。[MAE 原文](https://arxiv.org/abs/2111.06377)（[Trackback 记录](https://arxiv.org/tb/2111.06377)）、[DINO 原文](https://arxiv.org/abs/2104.14294)（[Trackback 记录](https://arxiv.org/tb/2104.14294)）、[DINOv3 原文](https://arxiv.org/abs/2508.10104)（[Trackback 记录](https://arxiv.org/tb/2508.10104)）可作为继续阅读入口。
+
+[[AI/Vision/index|返回视觉模型专题]]
 
 ## 参考文献

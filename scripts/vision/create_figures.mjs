@@ -341,6 +341,90 @@ function cup(x, y, fill = C.light, stroke = C.teal) {
   figures.set("tower-deepstack", canvas("多层视觉信息，在语言层继续进入", "简化的三层注入示意，三个视觉深度经专用连接器后加入前三个语言层，主干和最终分支仅作省略示意。", body))
 }
 
+{
+  let body = text(42, 102, "教学网格：4 帧 × 4 个空间位置；忽略 class token", 25, C.muted)
+  const grids = [[110, "先沿时间方向", C.orange], [610, "再沿帧内空间", C.teal]]
+  grids.forEach(([x, label, color], panel) => {
+    body += text(x + 100, 151, label, 26, color, "middle", 600)
+    for (let t = 0; t < 4; t++) body += text(x + 25 + t * 55, 193, `t${t + 1}`, 22, C.muted, "middle")
+    for (let p = 0; p < 4; p++) {
+      body += text(x - 25, 239 + p * 55, `p${p + 1}`, 22, C.muted, "middle")
+      for (let t = 0; t < 4; t++) body += rect(x + t * 55, 210 + p * 55, 50, 50, (panel === 0 ? p === 1 : t === 2) ? color : C.pale, C.white, 2)
+    }
+    body += text(x - 30, 478, panel === 0 ? "同一位置跨帧通信" : "同一帧内跨位置通信", 24, color)
+  })
+  body += line(405, 320, 530, 320)
+  body += text(42, 548, ["联合：16² = 256 对；拆分：4 × 4² + 4 × 4² = 128 对", "仅计注意力位置对，不是完整计算量或实测加速比。"], 24)
+  figures.set("video-factorized-attention", canvas("时空拆分：让不同方向分步通信", "两个四乘四时间空间网格分别突出同位跨帧和同帧跨位置的注意力，附简化的比较计数。", body))
+}
+
+{
+  let body = text(42, 104, "当前观察与状态 → 比较预测 → 只执行第一步", 25, C.muted)
+  body += rect(40, 155, 220, 150, C.light) + text(150, 201, ["当前图像 x(t)", "状态与历史 h(t)", "编码为视觉特征"], 25, C.ink, "middle")
+  body += line(275, 230, 345, 230)
+  const choices = [["A", "1.2", C.blue], ["B", "0.4", C.teal], ["C", "0.8", C.orange]]
+  choices.forEach(([name, distance, color], i) => {
+    const y = 142 + i * 94
+    body += rect(365, y, 305, 77, name === "B" ? C.light : C.white, name === "B" ? C.teal : C.line) + text(387, y + 32, `候选动作序列 ${name}`, 24, color, "start", 600) + text(387, y + 62, `预测终点到目标距离 ${distance}`, 21, C.muted)
+  })
+  body += line(685, 275, 740, 275, C.teal) + rect(760, 208, 200, 135, C.sand) + text(860, 252, ["选择 B", "执行第一步", "重新拍摄观察"], 24, C.ink, "middle")
+  body += `<path d="M860,355 L860,455 L150,455 L150,319" fill="none" stroke="${C.teal}" stroke-width="3" marker-end="url(#arrow)"/>`
+  body += text(500, 493, "环境的新状态，成为下一轮规划的输入", 25, C.teal, "middle")
+  body += text(42, 563, ["距离为任意单位的教学设定；预测不是实际执行结果。", "可执行动作范围与安全条件，还需独立约束。"], 23, C.muted)
+  figures.set("video-receding-horizon", canvas("滚动规划：预测以后，仍需重新观察", "三条候选动作的教学距离分别为一点二、零点四、零点八，选择最小者但仅执行第一步，再循环观察。", body))
+}
+
+{
+  let body = text(42, 103, "从模型画布回到原图，要逐步撤销入口变换。", 24, C.muted)
+  body += rect(45, 160, 400, 225, C.pale, C.blue, 0) + text(45, 145, "原图 1600 × 900", 25, C.blue, "start", 600)
+  body += rect(145, 185, 200, 100, C.light, C.teal, 0) + circle(295, 210, 7, C.orange)
+  body += text(148, 318, ["裁块偏移 (400, 100)", "裁块大小 800 × 400"], 22, C.teal)
+  body += line(465, 263, 545, 263)
+  body += rect(580, 160, 240, 240, "#e1e6eb", C.blue, 0) + rect(580, 220, 240, 120, C.light, C.teal, 0) + circle(760, 250, 7, C.orange)
+  body += text(570, 145, "模型画布 400 × 400", 25, C.blue, "start", 600) + text(838, 215, ["上补边", "100"], 22, C.muted)
+  body += text(580, 433, "预测点 (300, 150)", 24, C.orange)
+  body += rect(40, 480, 920, 110, C.white) + text(62, 516, ["先减补边：(300, 50) → 除缩放 0.5：(600, 100)", "再加裁块偏移：(400, 100) → 原图点：(1000, 200)"], 25)
+  figures.set("system-coordinate-transform", canvas("模型认对目标，也可能因坐标变换点错", "按比例绘制原图、裁块及等比缩放和补边画布，同一橙点通过逆变换回到原图的一千、二百位置。", body))
+}
+
+{
+  let body = text(42, 103, "执行循环与结果验收，承担不同的证明责任。", 25, C.muted)
+  const blocks = [[45, "观察", ["当前截图", "或结构信息"], C.light], [365, "决策", ["模型结合任务", "提出受限动作"], C.pale], [685, "执行", ["工具改变环境", "返回调用结果"], C.sand]]
+  blocks.forEach(([x, title, lines, fill], i) => { body += rect(x, 158, 270, 145, fill) + text(x + 135, 201, title, 28, C.ink, "middle", 600) + text(x + 135, 245, lines, 24, C.ink, "middle"); if (i < 2) body += line(x + 277, 230, x + 310, 230) })
+  body += `<path d="M820,312 L820,375 L180,375 L180,315" fill="none" stroke="${C.teal}" stroke-width="3" marker-end="url(#arrow)"/>` + text(500, 412, "重新观察实际变化，继续或停止", 25, C.teal, "middle")
+  body += rect(45, 452, 910, 125, C.white) + text(70, 489, "独立验收", 27, C.orange, "start", 600) + text(275, 489, ["文件是否存在；公式和数值是否正确；目标状态是否成立", "模型声称完成、工具返回成功，都不能单独代替任务检查。"], 23)
+  figures.set("system-observation-and-verification", canvas("从截图到动作，再到可检查的结果", "观察决策执行形成反馈环，底部独立验收框列出实际文件与状态检查，区分调用成功和任务成功。", body))
+}
+
+{
+  let body = text(42, 104, "OpenVision 3：共享编码表示，保留不同训练分支", 25, C.muted)
+  const stages = [[40, "图像", "256 × 256", C.light], [360, "冻结 VAE", "32 × 32 latent", C.pale], [680, "ViT（patch = 2）", "16 × 16 个位置", C.sand]]
+  stages.forEach(([x, name, dim, fill], i) => { body += rect(x, 145, 280, 115, fill) + text(x + 140, 187, [name, dim], 25, C.ink, "middle"); if (i < 2) body += line(x + 290, 203, x + 310, 203) })
+  body += `<path d="M820,275 L820,310 L270,310 L270,355" fill="none" stroke="${C.teal}" stroke-width="3" marker-end="url(#arrow)"/>` + line(820, 275, 820, 355, C.orange)
+  body += rect(45, 370, 450, 140, C.light) + text(270, 409, ["理解分支", "图文对比 + 描述生成", "保留可迁移语义"], 25, C.ink, "middle")
+  body += rect(535, 370, 425, 140, C.sand) + text(747, 409, ["重建分支", "ViT 解码 + VAE 解码", "恢复 latent 与图像细节"], 25, C.ink, "middle")
+  body += text(42, 563, ["每轴 8 × 2 = 16 倍压缩；256 个位置是教学输入计数。", "同一中间表示，不等于两条训练分支具有同一个解码器。"], 23, C.muted)
+  figures.set("frontier-unified-representation", canvas("统一表示，同时接受两类学习要求", "二百五十六方形图像经过八倍 VAE 和二倍 latent patch 处理形成共享网格，分向理解与重建两个训练分支。", body))
+}
+
+{
+  let body = text(42, 103, "8 个教学目标；示意容量每组 4 个（非实际模型配置）", 24, C.muted)
+  body += text(55, 151, "按目标独立处理", 26, C.blue, "start", 600) + text(565, 151, "分组联合处理", 26, C.teal, "start", 600)
+  for (let i = 0; i < 8; i++) {
+    const x = 55 + (i % 2) * 190, y = 180 + Math.floor(i / 2) * 70
+    body += circle(x + 23, y + 24, 20, i < 4 ? C.teal : C.orange) + text(x + 23, y + 32, i + 1, 23, C.white, "middle") + line(x + 49, y + 24, x + 85, y + 24, C.muted) + rect(x + 100, y + 3, 65, 43, C.pale, C.line, 3)
+  }
+  for (let g = 0; g < 2; g++) {
+    const y = 195 + g * 143
+    body += rect(560, y, 400, 112, g ? C.sand : C.light)
+    for (let i = 0; i < 4; i++) body += circle(602 + i * 82, y + 35, 21, g ? C.orange : C.teal) + text(602 + i * 82, y + 43, g * 4 + i + 1, 23, C.white, "middle")
+    body += text(760, y + 88, "共享记忆与组内处理", 24, C.ink, "middle")
+  }
+  body += line(435, 310, 520, 310)
+  body += text(42, 548, ["减少重复处理路径；仍有图像编码、组内计算与后处理。", "8 条路径变 2 组，不能直接推导 4 倍实际加速。"], 24)
+  figures.set("frontier-object-multiplex", canvas("SAM 3.1 的效率线索：怎样共同处理对象", "八个目标从逐目标独立路径变为两个共享处理组，以教学容量说明多路复用而非真实吞吐测量。", body))
+}
+
 await fs.mkdir(output, { recursive: true })
 await fs.mkdir(preview, { recursive: true })
 for (const [name, svg] of figures) {

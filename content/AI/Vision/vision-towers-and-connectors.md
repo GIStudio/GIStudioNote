@@ -8,7 +8,6 @@ tags:
   - 多模态
   - 视觉塔
 verified_at: 2026-10-26
-draft: true
 ---
 
 **视觉塔是系统中负责把图像转换成视觉特征的编码模块，连接器再把这些特征变成语言模型能使用的条件。** “塔”是结构称呼，不代表一种固定算法。它可以基于 ViT，也可以基于卷积网络。完整的视觉语言模型还包括文本处理、语言模型、训练任务及输出规则，不能把其中一座视觉塔直接叫作整个多模态系统。
@@ -74,5 +73,7 @@ Qwen3-VL 对 DeepStack 的使用与原方案的多尺度视觉输入不同，不
 例如一张长图被拆成四块后，即使每块都能被识别，跨块的左右关系也需要额外位置或排列规则。再强的连接器也不能恢复入口已经裁掉的文字。可先结合 [[AI/Vision/patches-resolution-and-tokens|patch 与分辨率]] 阅读，随后再区分生成答案与真正调用工具执行动作的系统边界。
 
 本页比较的是数据流和训练接口，不对不同论文的异构基准做总体排名。[BLIP-2 原文](https://arxiv.org/abs/2301.12597)（[Trackback 记录](https://arxiv.org/tb/2301.12597)）、[Flamingo 原文](https://arxiv.org/abs/2204.14198)（[Trackback 记录](https://arxiv.org/tb/2204.14198)）和 [Qwen3-VL 报告](https://arxiv.org/abs/2511.21631)（[Trackback 记录](https://arxiv.org/tb/2511.21631)）提供相应机制的原始说明。
+
+[[AI/Vision/index|返回视觉模型专题]]
 
 ## 参考文献

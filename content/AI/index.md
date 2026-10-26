@@ -12,6 +12,7 @@ tags:
 - [[GeoAI/index|GeoAI 与自主地理智能]]
 - [[GenAI/index|生成式 AI、世界模型与三维生成]]
 - [[LLM/index|大语言模型]]
+- [[AI/Vision/index|视觉模型的发展与系统接入：十二篇图文长文]]
 - [[AnyRecon|AnyRecon 三维重建]]
 - [[OpenManus|OpenManus]]
 - [[agentero-open-source-research-workbench|Agentero 开源论文阅读工作台]]

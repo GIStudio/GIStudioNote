@@ -8,7 +8,6 @@ tags:
   - SigLIP
   - 表示学习
 verified_at: 2026-10-26
-draft: true
 ---
 
 **CLIP 学习图像与文字的可比较表示。** 给它一张图和若干段文字，它能给出匹配分数；原始 CLIP 本身不负责逐字生成答案。其英文全称是 Contrastive Language–Image Pre-training，即对比式语言图像预训练。这里的“对齐”指训练两种编码器，让配对样本在共同空间中有较高相似度，不是把图像位置与句子位置逐项对应。[@radfordClip2021]
@@ -67,5 +66,7 @@ $$
 如果任务是文本检索图片，先评估相似度排序、候选覆盖和领域偏差。若要读懂文档并生成回答，还需要视觉特征与语言模型的连接和相应训练，见 [[AI/Vision/vision-towers-and-connectors|视觉塔与连接器]]。若希望不依赖配文学习视觉结构，则可继续读 [[AI/Vision/self-supervised-visual-learning|自监督视觉学习]]。
 
 本文讲解公开论文的机制，不给出跨数据、算力和下游训练条件的总体性能排名。原始材料入口包括 [SigLIP](https://arxiv.org/abs/2303.15343)（[Trackback 记录](https://arxiv.org/tb/2303.15343)）与 [SigLIP 2](https://arxiv.org/abs/2502.14786)（[Trackback 记录](https://arxiv.org/tb/2502.14786)）。
+
+[[AI/Vision/index|返回视觉模型专题]]
 
 ## 参考文献

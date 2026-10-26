@@ -7,7 +7,6 @@ tags:
   - Transformer
   - 注意力机制
 verified_at: 2026-10-26
-draft: true
 ---
 
 **Vision Transformer（ViT）把图像组织为局部块的向量序列，再通过注意力交换这些位置的信息。** 图像并没有在数学上变成语言：视觉 token 是一块像素的表示，不是天然对应一个单词，也不保证恰好覆盖一个物体。
@@ -84,5 +83,7 @@ Swin 在局部窗口内计算注意力，并在相邻块之间移动窗口边界
 | Swin | 窗口、跨窗联系与层次表示 | 窗口尺寸、合并位置及空间输出 |
 
 本页算例只核对形状与计算规模，不评价三者的总体性能。原文：[ViT](https://arxiv.org/abs/2010.11929) · [Trackback](https://arxiv.org/tb/2010.11929)、[Swin](https://arxiv.org/abs/2103.14030) · [Trackback](https://arxiv.org/tb/2103.14030)。
+
+[[AI/Vision/index|返回视觉模型专题]]
 
 ## 参考文献

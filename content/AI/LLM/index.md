@@ -26,6 +26,8 @@ tags:
 
 ## 全模态交互智能体
 
+- [[AI/Vision/index|视觉模型专题：从图像编码到多模态系统]]
+- [[AI/Vision/vision-towers-and-connectors|视觉塔与连接器：图像怎样进入语言模型]]
 - [[gander-omni-interaction-agent|Gander 怎样让全模态智能体边说边执行任务]]
 
 ## 执行框架与自我改进

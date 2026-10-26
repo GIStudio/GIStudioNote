@@ -7,7 +7,6 @@ tags:
   - 多模态
   - 视觉Token
 verified_at: 2026-10-26
-draft: true
 ---
 
 **视觉 token 是图像经过局部切分与编码后，供模型继续处理的向量表示。** 原图像素多、视觉塔看到的 patch 多、语言模型收到的 token 多，是三个相关但不同的数量。高分辨率方案的主要差别，就藏在这三者之间。
@@ -76,5 +75,7 @@ NaViT、NaFlex 和多裁块都可能保留更多长宽结构，但侧重点不�
 这些记录也帮助定位错误。小字在缩放时已经消失，增加语言模型的生成长度不会恢复原始证据；视觉塔有信息而连接器压缩过强，则应检查合并阶段；不同图像意外互相影响，则要查样本 mask 与批次组织。先找到信息在哪一步改变，才有条件讨论“换一个更大模型”是否有用。
 
 本页只进行教学长度计算，不测模型速度或识别精度。原文：[NaViT](https://arxiv.org/abs/2307.06304) · [Trackback](https://arxiv.org/tb/2307.06304)、[Qwen2-VL](https://arxiv.org/abs/2409.12191) · [Trackback](https://arxiv.org/tb/2409.12191)、[SigLIP 2](https://arxiv.org/abs/2502.14786) · [Trackback](https://arxiv.org/tb/2502.14786)。
+
+[[AI/Vision/index|返回视觉模型专题]]
 
 ## 参考文献

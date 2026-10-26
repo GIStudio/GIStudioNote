@@ -7,7 +7,6 @@ tags:
   - 图像分割
   - SAM
 verified_at: 2026-10-26
-draft: true
 ---
 
 **检测回答对象在哪里，分割进一步回答哪些像素属于目标。** 图中有两个杯子时，分类可以只判断“存在杯子”；检测要输出两个位置；语义分割给杯子像素相同的类别；实例分割还要区分第一个杯子与第二个杯子。
@@ -76,5 +75,7 @@ SAM 2 将图像提示扩展到视频：当前帧表示结合目标记忆，再�
 实际系统中，检测器输出框，再交给提示分割器，是一种可组合方案。它的失败也会沿流程传播：上游漏掉的目标，通常不会仅靠精细化已有框自动补回。判断进步时，应分别检查找到目标、确认类别、分开实例和保持跨帧身份这几个环节。
 
 本文未运行这些模型，不提供跨版本性能排名。论文原文：[Faster R-CNN](https://arxiv.org/abs/1506.01497) · [Trackback](https://arxiv.org/tb/1506.01497)、[YOLO](https://arxiv.org/abs/1506.02640) · [Trackback](https://arxiv.org/tb/1506.02640)、[DETR](https://arxiv.org/abs/2005.12872) · [Trackback](https://arxiv.org/tb/2005.12872)、[Mask R-CNN](https://arxiv.org/abs/1703.06870) · [Trackback](https://arxiv.org/tb/1703.06870)、[SAM](https://arxiv.org/abs/2304.02643) · [Trackback](https://arxiv.org/tb/2304.02643)、[SAM 2](https://arxiv.org/abs/2408.00714) · [Trackback](https://arxiv.org/tb/2408.00714)。
+
+[[AI/Vision/index|返回视觉模型专题]]
 
 ## 参考文献
