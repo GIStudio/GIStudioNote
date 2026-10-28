@@ -11,6 +11,5 @@ tags:
   - UI设计
 ---
 ## 图标工具
-- https://www.flaticon.com/ 
-	- 有限使用
-- 
+
+- [Flaticon](https://www.flaticon.com/)：图标资源，使用前请核对所选资源的授权条件。

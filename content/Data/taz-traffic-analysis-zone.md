@@ -15,7 +15,7 @@ tags:
 
 ## 1. TAZ 是什么
 
-- **定义与角色**：TAZ 是常规交通规划模型中最常用的地理单元（[Wikipedia: Traffic analysis zone](https://en.wikipedia.org/wiki/Traffic_analysis_zone)），研究区被划分为互不重叠的分区，每个分区挂接社会经济数据（家庭收入、机动车保有、就业等），四阶段模型的**出行生成**与**出行分布**两步都以「分区→分区」的 OD 对为计算单位。
+- **定义与角色**：TAZ 是常规交通规划模型中常用的地理单元（[Wikipedia: Traffic analysis zone](https://en.wikipedia.org/wiki/Traffic_analysis_zone)）。研究区被划分为互不重叠的分区，每区挂接家庭收入、机动车保有量、就业等数据。四阶段模型先按区估计出行发生量和吸引量，再将它们配对为「起点区→终点区」的 OD 矩阵。
 - **规模指导**：都市级模型中单区人口常在 3,000 人以下；空间上中心商务区可细到街区甚至建筑，郊区/外缘则很大（Wikipedia 综述）。分区越多计算负担越大，实践中常合并小区以降规模。
 - **构词来源**：TAZ 通常由人口普查的 block/block group/tract 聚合而成（[EASI Demographics](https://www.easidemographics.com/trshelp/html/traffic_analysis_zone.htm)）——即先有统计单元，再套交通边界。
 - **已知问题**：区内出行（intrazonal trips）的内部距离被忽略、跨区出行被截断（trip crossing），分区方式本身就是 MAUP 的来源（MAUP 的机制与杰利蝾螈这一极端案例见 [[maup-and-gerrymandering|MAUP 与杰利蝾螈]]）；划定质量直接影响需求预测合理性（[Transport Policy 2022](https://ideas.repec.org/a/eee/trapol/v127y2022icp1-14.html)）。改进方向包括多源数据自动划区（[MDPI Applied Sciences 2024](https://www.mdpi.com/2076-3417/14/13/5964)、[Journal of Transport Geography 2025](https://www.sciencedirect.com/science/article/pii/S0966692325002157)）、以及以个体/活动为基础的模型绕开集计分区。
@@ -74,13 +74,13 @@ tags:
 
 ## 4. 邮编与 TAZ 的关系
 
-你的直觉在英国是对的——**英国的单位邮编是整个统计区金字塔的砖石**：普查以 households 为单位采集，地址带单位邮编（平均约 15 户），单位邮编聚类成 OA，OA 聚成 LSOA → MSOA。因此「邮编 → OA → LSOA → MSOA」构成严格的下级→上级链条，ONS 邮编目录（ONSPD）就是这份对照表（[ONSPD](https://geoportal.statistics.gov.uk/datasets/b54177d3d7264cd6ad89e74dd9c1391d)、[Nomis 邮编-统计区对照](https://www.nomisweb.co.uk/census/2011/postcode_headcounts_and_household_estimates)）。由于英国的「TAZ」角色由 MSOA/LSOA 承担，**英国邮编与 TAZ 是严格嵌套的父子关系**——给定一个邮编就能唯一确定它所属的 TAZ，这也是英国把邮编级商业/健康数据挂接到交通分析区的成本极低的原因。
+英国的单位邮编可通过 ONS 邮编目录等对照资料关联统计区；普查地址带单位邮编，OA、LSOA 和 MSOA 则构成统计地理层级（[ONSPD](https://geoportal.statistics.gov.uk/datasets/b54177d3d7264cd6ad89e74dd9c1391d)、[Nomis 邮编-统计区对照](https://www.nomisweb.co.uk/census/2011/postcode_headcounts_and_household_estimates)）。使用邮编挂接统计区时，应核对所用对照表的年份和分配方法，以及它与具体交通模型分区的关系。
 
 其他国家则基本没有这种整洁关系：
 
 | 国家/地区 | 邮编体系 | 与 TAZ 的关系 |
 |---|---|---|
-| 英国 | unit postcode（约 15 户） | **严格嵌套**：邮编 ⊂ OA ⊂ LSOA ⊂ MSOA，ONSPD 提供官方对照 |
+| 英国 | unit postcode（约 15 户） | ONSPD 提供邮编与统计区的对照；使用时核对年份和分配方法 |
 | 美国 | ZIP / ZCTA | **互不嵌套**：TAZ 由 census block 聚合，ZIP 是邮政投递路线，两者边界互相穿插，只能做面积加权叠合 |
 | 德国 | PLZ | 独立于 Verkehrszellen，无官方层级关系 |
 | 日本 | 郵便番号（7 位） | 独立体系；PT 分区以町丁目/街区为基础构建，与邮编不重合 |

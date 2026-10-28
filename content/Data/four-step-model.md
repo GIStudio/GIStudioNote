@@ -14,12 +14,12 @@ tags:
 
 ## 1. 模型结构与各步骤
 
-四阶段模型的每一步输出是下一步的输入，空间骨架是 [[taz-traffic-analysis-zone|TAZ 交通分析区]]——前两步完全以「分区→分区」的 OD 对为单位。
+四阶段模型的每一步输出是下一步的输入，空间骨架是 [[taz-traffic-analysis-zone|TAZ 交通分析区]]。出行生成先估算各区的发生量和吸引量，出行分布再将这些总量配对为「起点区→终点区」的 OD 矩阵。
 
 1. **出行生成（trip generation）**：按 TAZ 估算出行发生量（production）与吸引量（attraction），通常以用地面积/岗位数/家庭特征为自变量的回归模型或出行率法（如美国 ITE Trip Generation 手册、香港运输署 Traffic Generation Survey）。
 2. **出行分布（trip distribution）**：把各区的发生/吸引量配对成 OD 矩阵，经典方法是重力模型（gravity model，流量与活动规模成正比、与阻抗成反比）或增长系数法。
 3. **方式划分（modal split）**：把 OD 对之间的出行分摊到小汽车/公交/步行等方式，常用 Logit 类离散选择模型。
-4. **交通分配（traffic assignment）**：把方式划分后的出行分配到具体路网路径，经典算法有全有全无法（All-or-Nothing）、用户均衡（User Equilibrium / Wardrop 第一原理）与随机用户均衡（SUE）。
+4. **交通分配（traffic assignment）**：把方式划分后的出行分配到具体路网路径，经典算法有全有全无分配（All-or-Nothing）、用户均衡（User Equilibrium / Wardrop 第一原理）与随机用户均衡（SUE）。
 
 教材级综述见 [UTA Pressbooks 运输建模导论](https://uta.pressbooks.pub/oertransportlanduse/chapter/chapter-9-introduction-to-transportation-modeling-travel-demand-modeling-and-data-collection/)。
 

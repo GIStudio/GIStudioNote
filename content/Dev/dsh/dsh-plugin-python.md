@@ -38,7 +38,7 @@ tags:
 
 ## 三个真实插件的做法
 
-以下结论均来自 npm 上已发布包的实际源码（2026-10-01 核验），不是推测。
+以下内容依据 npm 已发布包的源码整理，核验日期为 2026 年 10 月 1 日。
 
 **dsh-memoria**（[npm](https://www.npmjs.com/package/dsh-memoria)）：维护**一个长驻 Python 子进程**。它的 `lib/index.js` 直接 `spawn(python, ['-m', 'memoria.plugin_server'], { stdio: ['pipe', 'pipe', 'pipe'] })`，用换行分隔的 JSON（NDJSON）在 stdio 上和这个进程通信，让所有记忆读写共享同一个内存实例。Python 解释器路径做成可配置项，默认取 PATH 上的 `python`/`python3`。
 

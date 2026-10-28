@@ -97,7 +97,7 @@ Stable-Baselines3 VecEnv API 与 Gym/Gymnasium API 的技术差异
     
     - 回合结束（terminated 或 truncated 为 True）后，环境状态保持不变，需手动调用 reset()。
         
-    - 不提供最后一帧观察值。
+    - 结束该回合的 `step()` 返回最后一帧观察值；调用 `reset()` 后则开始新回合。
         
 - SB3 VecEnv：
     

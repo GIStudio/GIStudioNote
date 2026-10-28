@@ -11,7 +11,7 @@ tags:
   - Linux
   - troubleshooting
 ---
-上述错误表明 `matplotlib` 无法找到你指定的中文字体（如 `WenQuanYi Micro Hei`）。这通常是由于字体未正确安装、字体名称不匹配或 `matplotlib` 的字体缓存问题导致的。以下是详细的排查和解决方法：
+当 Matplotlib 提示找不到指定的中文字体时，可以依次检查字体安装、字体名称和字体缓存。以下以 Linux 上的 `WenQuanYi Micro Hei` 为例。
 
 ---
 
@@ -65,10 +65,7 @@ for font in font_manager.findSystemFonts(fontpaths=None, fontext='ttf'):
    ```
    输出可能是类似 `/home/用户名/.cache/matplotlib` 的路径。
 
-2. 删除缓存文件：
-   ```bash
-   rm -rf /home/用户名/.cache/matplotlib/*
-   ```
+2. 确认输出的目录和其中的字体缓存文件后，再按需清理对应的字体缓存；不要删除其他应用或项目的数据。重新运行绘图程序，让 Matplotlib 重建缓存。
 
 ---
 

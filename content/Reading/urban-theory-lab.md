@@ -14,7 +14,7 @@ verified_at: 2026-10-19
 
 Urban Theory Lab（UTL，城市理论实验室）是尼尔·博任纳（Neil Brenner）创立的跨学科研究实验室，目前依托芝加哥大学，研究城市化及其社会、政治和环境关系。它将批判城市理论、地理空间数据、实验制图和设计研究结合起来。[实验室官网](https://urbantheorylab.net/)介绍了这条工作路线。
 
-一个具体例子是 Data-Spheres 项目。研究者没有只画城市建成区，而是把集聚、流通、生产和废弃物等全球数据组织成球体地图与动画，呈现城市生活与远方地域的联系。这使理论中的“城市依赖腹地”转成了可以观察和讨论的空间对象。[Data-Spheres 项目](https://urbantheorylab.net/projects/data-spheres-of-planetary-urbanization/)
+一个具体例子是 Data-Spheres 项目。研究者把集聚、流通、生产和废弃物等全球数据组织成球体地图与动画，呈现城市生活与远方地域的联系。这使理论中的“城市依赖腹地”转成了可以观察和讨论的空间对象。[Data-Spheres 项目](https://urbantheorylab.net/projects/data-spheres-of-planetary-urbanization/)
 
 若从[[city-territory-planet-critical-urban-theory|《城市，地域，星球》导读]]进入，UTL 提供了一条继续阅读的路线：看书中的城市理论问题，如何在后续研究中连接能源、基础设施、气候与社区经验。
 

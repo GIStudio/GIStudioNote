@@ -11,7 +11,7 @@ tags:
   - cheat-sheet
   - environment-management
 ---
-以下是一个关于 `conda` 的快速使用速查指南，涵盖了安装、创建环境、激活环境以及设置终端默认激活等内容。内容以清晰的步骤和说明为主，便于快速上手。
+本页介绍 Conda 的安装、环境和包管理，以及终端默认激活的设置。
 
 ---
 
@@ -183,8 +183,3 @@ conda env export > environment.yml
 ```bash
 conda env create -f environment.yml
 ```
-
----
-
-### **总结**
-以上内容涵盖了 Conda 的安装、环境管理、包管理以及终端默认激活等常见操作。你可以根据需要复制粘贴相关命令进行快速操作。如果有其他问题，欢迎进一步提问！

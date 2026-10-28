@@ -12,7 +12,7 @@ tags:
 
 [Solara](https://solara.dev) 是一个用纯 Python 写交互式数据应用（data app）的开源框架，MIT 协议，由 Widgetti 团队开发和维护（仓库 2022 年建立；2026 年 10 月版本 1.64.0，要求 Python ≥ 3.8）。它的核心承诺是"一次编写，处处运行"：同一份组件代码，在 Jupyter notebook 里是交互式输出，交给 `solara run` 就是独立的多用户 Web 应用——不写 JavaScript，不碰 Node 构建工具。
 
-如果你在 Jupyter 里做过分析原型，大概撞到过同一个转折点：notebook 自己看很好，要交给不会跑 notebook 的人用，就得变成网页。Solara 就是冲着这个转折点来的。
+Solara 适合把 Jupyter 中的交互式分析组织成供他人使用的网页应用。
 
 ## 它解决什么问题
 
@@ -35,7 +35,7 @@ Solara 的答案是给 ipywidgets 换一个 React 式的编程模型，下面看
 3. **Reacton**：用 Python 实现的 React。组件、props、Hooks、虚拟 DOM diff 都在，只是语言换成了 Python。这一层决定了执行模型：状态变化时只重新执行受影响的组件函数，而不是重跑整个脚本——与 Streamlit 的根本区别就在这里。
 4. **Solara 本体**：在 Reacton 之上提供约 40 个开箱即用组件（数据表格、文件浏览、Markdown 渲染等）、路由和独立服务器。服务器为每个用户会话维护独立内核。
 
-生态位是这个架构的直接副产品：任何 ipywidgets 库——ipyleaflet 地图、bqplot 图表、ipyvista 三维、以及 matplotlib/plotly/altair——都能原样进页面。在我看来，如果工作流里有地图或三维可视化，Solara 几乎是唯一不用换技术栈的路。
+Solara 可以接入 ipyleaflet 地图、bqplot 图表等 ipywidgets 生态组件，也提供 matplotlib、plotly 等可视化集成。对已有 Jupyter 组件的工作流，这提供了一条复用现有代码的路径。
 
 ## 五分钟上手
 
@@ -81,7 +81,7 @@ class GlobalStore:
 
 ## 与 Streamlit/Dash 怎么选
 
-不给唯一答案，给条件。
+选择取决于现有组件、部署方式和交互需求。
 
 选 Solara 的理由集中在三点：要复用 Jupyter/ipywidgets 资产（ipyleaflet、bqplot 可以原样进页面）；要多用户部署但不想维护 Node 工具链；交互频繁的应用里"只重渲染受影响组件"比"重跑整个脚本"省心。
 

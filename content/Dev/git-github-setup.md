@@ -215,6 +215,8 @@ git commit --amend
 ```
 
 ### Q: 如何撤销更改？
+
+先运行 `git status`，确认要处理的文件和已有提交。下面的工作区撤销与 `reset --hard` 会丢弃相应未提交修改；`reset --hard HEAD^` 还会将当前分支移回上一提交。共享或已推送的提交优先考虑 `git revert`，不要在未确认影响时执行回退命令。
 ```bash
 # 撤销工作区的更改（未 add）
 git checkout -- 文件名

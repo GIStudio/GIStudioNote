@@ -33,7 +33,7 @@ verified_at: 2026-09-29
 
 [Windows Developer Config](https://github.com/microsoft/WindowsDeveloperConfig) 是 Microsoft 开源的一组 Windows 开发环境配置。它把安装工具、修改系统设置、配置 WSL 和验证语言工具链这些容易散落在个人清单里的操作，变成可以重复执行、检查结果并接受版本控制的流程。项目采用 [MIT License](https://github.com/microsoft/WindowsDeveloperConfig/blob/06200f0819136c528e09533e3c8afac7e5f46ed7/LICENSE)。
 
-这个仓库容易被名字误导。它并不是一个包罗所有需求的“万能配置文件”，而是给三类任务准备了三条不同的入口。
+仓库为三类任务提供了不同的入口。
 
 | 想完成的任务 | 对应入口 | 实现方式 |
 |---|---|---|
@@ -41,7 +41,7 @@ verified_at: 2026-09-29
 | 整理 Windows 与 WSL 中的命令行体验 | WSL Comfort | Windows 侧安装脚本加 Linux 侧 Shell bootstrap |
 | 只安装 Python、TypeScript、Rust 等单项工具链 | Workloads | `configuration.winget` 描述目标状态，`install.ps1` 负责调用和刷新当前会话 |
 
-真正值得借鉴的地方不只是“一条命令装完”。这个项目把开发机也当成一种需要维护的工程对象：配置应该能读、能重跑、能判断是否已经满足要求，还要有测试证明工具链确实可用。
+这些入口把配置、重复执行、状态检查和工具链测试组织在同一套工程流程中。
 
 ## 单语言 Workload 如何工作
 
@@ -63,9 +63,9 @@ CI 编译并运行 hello world，核对标准输出
 
 这里的“幂等”是指重复运行时，系统会先检查当前状态，已经满足的资源不需要再安装。它减少了“脚本跑第二次就坏掉”的问题，但不等于每次都会得到字节级相同的环境。项目明确说明，部分软件使用 WinGet 当前发布的版本，两台机器在不同日期执行仍可能得到不同的小版本。
 
-## 整机配置为什么没有强行写成一份 YAML
+## 整机配置如何组织执行流程
 
-完整的 Windows Dev Config 需要处理管理员权限、PowerShell 版本、系统设置、Windows Terminal、WSL 可选功能以及重启后的自动续跑。这些过程包含明显的顺序和交互，仓库因此使用 PowerShell 原生流程，而不是把它们硬塞进一个声明式文件。[整机配置说明](https://github.com/microsoft/WindowsDeveloperConfig/blob/06200f0819136c528e09533e3c8afac7e5f46ed7/src/windows-dev-config/README.md)
+完整的 Windows Dev Config 使用 PowerShell 流程处理管理员权限、PowerShell 版本、系统设置、Windows Terminal、WSL 可选功能以及重启后的自动续跑。[整机配置说明](https://github.com/microsoft/WindowsDeveloperConfig/blob/06200f0819136c528e09533e3c8afac7e5f46ed7/src/windows-dev-config/README.md)
 
 每个步骤都按同一套逻辑运行。
 
@@ -129,9 +129,9 @@ winget configure test -f .\Workloads\python\configuration.winget
 
 正式执行前还应备份 Windows Terminal 设置，并用 `wsl --export` 备份重要发行版。若准备运行整机流程，先逐项阅读 Full 或 Standard 的修改清单，而不是只看“一条命令”和预计耗时。
 
-## 这个项目真正提供了什么
+## 项目的适用位置
 
-Windows Developer Config 没有替代 WinGet、PowerShell 或 DSC。它把这些底层能力组合成一组有观点的公开方案，并增加签名分发、重启续跑、状态验证、故障日志和端到端工具链测试。没有它，用户仍可手工安装软件，或为自己的团队编写 `.winget` 配置；代价是需要自行维护包清单、依赖、系统设置、测试和升级路径。
+Windows Developer Config 将 WinGet、PowerShell 和 DSC 组合成公开方案，并增加签名分发、重启续跑、状态验证、故障日志和端到端工具链测试。用户也可手工安装软件，或为团队编写 `.winget` 配置，但需要自行维护包清单、依赖、系统设置、测试和升级路径。
 
 它最适合用作两种东西：一套可以直接采用的 Windows 11 开发机起点，或者一份研究“配置即代码”应该怎样做检查、签名、验证与 CI 的公开范例。它不适合被当作任何 Windows 机器都能无条件执行的标准答案。
 

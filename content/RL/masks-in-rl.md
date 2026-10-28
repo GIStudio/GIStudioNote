@@ -35,7 +35,7 @@ RLHF / PPO / GRPO 里，Policy、Reference、Critic 前向时都传 tokenizer �
 logits = policy(input_ids, attention_mask=attention_mask).logits
 ```
 
-这样 `<PAD>` 不参与 Attention，也不会污染 hidden states。如果是 left padding，还要正确构造 `position_ids`，否则 pad 会占位置、导致位置编码错乱：
+这样模型在注意力计算中可以屏蔽 padding 的键位置；padding 位置本身的 hidden state 仍可能有数值，因此后续损失还需用 mask 排除。若实现使用 left padding，还要按照模型的位置编码约定处理 `position_ids`，例如：
 
 ```python
 position_ids = attention_mask.cumsum(-1) - 1
@@ -101,22 +101,27 @@ logits[4] 预测 pad
 
 ### Reward 和 GAE 也靠 mask
 
-序列级 reward 通常只给最后一个有效 response token：
+以下示例假设每个序列至少有一个有效 response token，reward 模型返回各位置分数，并取最后一个有效 token 对应的分数。用位置索引寻找最后一个有效 token，左右 padding 均可适用：
 
 ```python
-last_idx = attention_mask.sum(-1) - 1
-seq_reward = reward_model(...)[torch.arange(B), last_idx]
+positions = torch.arange(input_ids.shape[1], device=input_ids.device)
+last_idx = positions.expand_as(attention_mask).masked_fill(attention_mask == 0, -1).max(-1).values
+seq_reward = reward_model(...)[torch.arange(B, device=input_ids.device), last_idx]
 ```
 
-KL 作为逐 token penalty 加到 reward 上，GAE 递推时用 mask 截断：mask 为 0 的位置直接重置，避免 pad 或 prompt 的 value 污染 advantage。
+下面假设逐 token reward 已含 KL 项，序列结束处没有 bootstrap 值，`loss_mask` 与 `token_reward`、`value` 在时间维上对齐。GAE 使用下一位置的有效性控制递推，并把当前无效位置的 advantage 置零：
 
 ```python
+gae = torch.zeros_like(value[:, 0])
+next_value = torch.zeros_like(gae)
+next_active = torch.zeros_like(gae)
 for t in reversed(range(response_len)):
     active = loss_mask[:, t]
-    delta = token_reward[:, t] + gamma * next_value * active - value[:, t]
-    gae = delta + gamma * lam * gae * active
+    delta = token_reward[:, t] + gamma * next_value * next_active - value[:, t]
+    gae = (delta + gamma * lam * gae * next_active) * active
     advantage[:, t] = gae
     next_value = value[:, t]
+    next_active = active
 ```
 
 多轮对话里还要区分 role，通常只对 assistant 生成的 token 算 loss：`loss_mask = (role_ids == ASSISTANT) & attention_mask`。做 sequence packing 时还需要 block-diagonal attention 或 `cu_seqlens`，防止不同样本互相注意。
@@ -133,8 +138,8 @@ for t in reversed(range(response_len)):
 valid_actions = [True, False, True, True]  # 比如“下”会撞墙
 logits = policy(state)                     # shape [B, 4]
 
-mask = torch.tensor(valid_actions)         # 1 合法，0 非法
-masked_logits = logits.masked_fill(~mask, -1e9)
+mask = torch.tensor(valid_actions, device=logits.device)  # True 合法
+masked_logits = logits.masked_fill(~mask, -torch.inf)
 
 dist = Categorical(logits=masked_logits)
 action = dist.sample()
@@ -153,7 +158,7 @@ z_a, & m_a = 1 \\
 \pi(a|s) = \mathrm{softmax}(\tilde z)
 $$
 
-非法动作概率为 0，采样永远选不到，策略梯度也不会流向非法动作。
+每个状态至少需要一个合法动作。在这个前提下，将非法动作 logits 设为负无穷后，其采样概率为 0。实际实现使用有限负数时，其概率可能接近 0，但不应在数学上直接当作精确的 0。
 
 如果策略是 LLM、动作是 token，可以把动作定义成特殊 token（如 `<UP>`、`<DOWN>`），每步根据环境状态构造词表级 mask，只允许合法动作 token 通过：
 

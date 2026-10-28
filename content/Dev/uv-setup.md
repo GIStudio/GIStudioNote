@@ -14,7 +14,7 @@ tags:
 
 ## 什么是 uv
 
-uv 是由 Astral 开发的极速 Python 包管理器，用 Rust 编写，比 pip 快 10-100 倍。支持 Python 版本管理、虚拟环境管理、包安装等功能。
+uv 是由 Astral 开发、使用 Rust 编写的 Python 工具，支持 Python 版本管理、虚拟环境管理和包安装等功能。实际安装速度取决于依赖、缓存和网络环境。
 
 ## 安装 uv
 
@@ -91,7 +91,7 @@ uv python pin 3.13
 
 ### 解决方案
 
-#### 方案一：使用 `uvx` 代替 `uv run`
+#### 方案一：为 `uv run` 指定 Python 版本
 Git Bash 中使用 `uv run` 时，建议显式指定 Python：
 ```bash
 uv run --python 3.13 python script.py

@@ -11,8 +11,4 @@ tags:
   - 多智能体
   - AgentSociety
 ---
-不错的项目：
-
-- [@TsinghuafiblabAgentsocietyAgentSociety]项目非常有意思，实现了 LLM在地理环境中的互动。
-  - 但是这个项目非常的繁复,个人认为太重了.
-- 
+AgentSociety 支持基于大语言模型的智能体在地理环境中互动。其系统组成较多，使用前需要评估部署与维护成本。[@TsinghuafiblabAgentsocietyAgentSociety]
