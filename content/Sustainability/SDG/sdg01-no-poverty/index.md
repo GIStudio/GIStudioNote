@@ -6,6 +6,7 @@ tags:
   - SDG01
   - 无贫穷
   - 贫困
+verified_at: 2026-10-28
 aliases:
   - Writing/experts/sdg/sdg01-no-poverty
 ---
@@ -16,7 +17,7 @@ aliases:
 
 ## 核心下游任务
 
-### 官方监测任务
+### 相关监测问题
 
 - 贫困发生率测算
 - 多维贫困指数(MPI)评估
@@ -34,14 +35,16 @@ aliases:
 
 | 数据集名称 | 覆盖范围 | 核心数据维度 | 获取链接 |
 | ---------- | -------- | ------------ | -------- |
-| SustainBench 贫困预测数据集 | 全球23个低收入/中等收入国家，80830个样本 | 卫星影像+DHS调查的资产财富指数、贫困率标签 | [SustainBench SDG1](https://sustainbench.org/) |
-| 世界银行 PovcalNet 全球贫困监测库 | 全球190+国家，1981年至今 | 贫困发生率、贫困缺口、收入/消费分布、多维贫困数据 | [PovcalNet](https://iresearch.worldbank.org/PovcalNet/info.aspx) |
-| UNDP 全球多维贫困指数(MPI)数据集 | 全球110+发展中国家 | 健康、教育、生活水平3维度10个指标的MPI得分、贫困人口规模 | [UNDP MPI](https://hdr.undp.org/content/2021-global-multidimensional-poverty-index-mpi) |
+| SustainBench DHS 财富预测 | 按国家划分训练、验证与测试；覆盖范围以具体版本为准 | 由 DHS 调查资产构建的调查簇平均财富指数，可结合卫星或街景影像预测；不等同于直接观测的货币贫困率 | [SustainBench DHS](https://sustainlab-group.github.io/sustainbench/docs/datasets/dhs.html) |
+| 世界银行贫困与不平等平台（PIP） | 平台于 2026 年列出 172 个经济体，数据年份因调查而异 | 全球、区域和各经济体的贫困与不平等估计；PIP 于 2022 年取代 PovcalNet | [PIP 方法与引用](https://pip.worldbank.org/about)；[平台替代说明](https://openknowledge.worldbank.org/bitstream/handle/10986/37739/PSPR22-ch1annex.pdf) |
+| UNDP 全球多维贫困指数（MPI） | 2026 年版覆盖 108 国；各国使用的调查年份不同 | 健康、教育和生活水平三个维度共十项剥夺指标，以及 MPI 和贫困人口估计 | [UNDP MPI 2026](https://hdr.undp.org/content/2026-global-multidimensional-poverty-index) |
 
 ## 具体目标
 
-1. **消除极端贫困**：到 2030 年，在全球所有人口中消除极端贫困，目前衡量标准为每人每日生活费不足 2.15 美元。
+1. **消除极端贫困**：到 2030 年，在全球所有人口中消除极端贫困。目标 1.1 的原始文本保留了制定时每日 1.25 美元的历史口径；世界银行于 2025 年将国际极端贫困线更新为每人每日 **3.00 国际美元（2021 年购买力平价，PPP）**，此前口径为 2.15 国际美元（2017 年 PPP）。不同口径的序列不能未经换算和方法核对直接比较。[目标原文](https://sdgs.un.org/goals/goal1)；[世界银行 2025 年更新说明](https://www.worldbank.org/en/news/factsheet/2025/06/05/june-2025-update-to-global-poverty-lines)
 2. **减少半数贫困**：到 2030 年，按各国标准界定的陷入各种形式贫困的各年龄段男女和儿童至少减半。
 3. **实施社会保障体系**：建立适合本国国情的全民社会保障体系和措施，包括最低标准，到 2030 年使穷人和弱者实现覆盖。
 4. **保障平等获得资源**：确保所有男女，特别是穷人和弱者，享有平等获取经济资源的权利。
 5. **增强抵御灾害能力**：增强穷人和弱势群体的抵御灾害能力，降低其遭受气候相关极端事件和其他经济、社会、环境冲击和灾害的风险和脆弱性。
+
+上述列举是部分目标摘要；完整目标及对应监测指标见[联合国 SDG 1 页面](https://sdgs.un.org/goals/goal1)。全球 MPI 与货币贫困线衡量不同的贫困维度；目标 1.2.2 使用的是各国对多维贫困的定义，不能直接等同于全球 MPI。使用影像预测时，还应核对调查年份、空间尺度、标签定义和隐私约束。

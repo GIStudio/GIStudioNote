@@ -7,6 +7,7 @@ tags:
   - 产业
   - 创新
   - 基础设施
+verified_at: 2026-10-28
 aliases:
   - Writing/experts/sdg/sdg09-industry-innovation
 ---
@@ -17,7 +18,7 @@ aliases:
 
 ## 核心下游任务
 
-### 官方监测任务
+### 相关监测问题
 
 - 制造业增加值占比统计
 - 研发投入占GDP比重测算
@@ -35,8 +36,8 @@ aliases:
 
 | 数据集名称 | 覆盖范围 | 核心数据维度 | 获取链接 |
 | ---------- | -------- | ------------ | -------- |
-| UNESCO 统计研究所研发与创新数据库 | 全球200+国家和地区，1990年至今 | 研发支出、研发人员数量、专利申请量、科技出版物数量 | [UIS STI Data](https://uis.unesco.org/) |
-| 世界银行全球基础设施数据库 | 全球200+国家，1960年至今 | 交通、能源、通信、水利基础设施的存量、覆盖率、投资数据 | [World Bank Infrastructure](https://data.worldbank.org/topic/infrastructure) |
+| UNESCO 统计研究所科学、技术与创新数据 | 不同指标的国家和年份覆盖不同 | 包括研发支出和研发人员的国际可比统计 | [UIS STI Data](https://uis.unesco.org/) |
+| 世界银行发展指标的基础设施专题 | 不同指标的国家和年份覆盖不同 | 交通、能源和通信等基础设施相关指标 | [World Bank Infrastructure](https://data.worldbank.org/topic/infrastructure) |
 
 ## 具体目标
 
@@ -46,3 +47,5 @@ aliases:
 4. **升级基础设施和产业**：到 2030 年，升级基础设施和改造产业，使其具有可持续性。
 5. **促进科学研究**：提升科学研究能力，鼓励创新，大幅增加研发人员数量。
 6. **支持发展中国家技术发展**：向非洲国家、最不发达国家等提供技术支持。
+
+以上为部分目标摘要，完整目标与指标见[联合国 SDG 9 页面](https://sdgs.un.org/goals/goal9)。数据覆盖、统计口径与可比性须按具体指标和年份核查。

@@ -1,86 +1,71 @@
 ---
-title: 四种空间单元划分策略对比
-description: 比较规则网格、H3、地块街区和对象优先缓冲区的空间语义、MAUP 与数据挂接成本。
+title: 城市空间分析中的四类空间单元
+description: 比较规则网格、H3、地块街区和对象缓冲区的定义、数据挂接与尺度效应。
 tags:
   - GIS
   - 空间单元
   - MAUP
   - 城市分析
   - 研究报告
----
-# 四种空间单元划分策略对比调研
-
-> 组会用 · 2026-07-24 · 供 GeoFM 空间单元设计与 Urban Sandbox / TIA 工作流选型参考
-
-**一句话定位**：四种策略是从「几何规则性」到「语义真实性」的谱系——正方形网格最规则、object-first buffer 最贴对象语义；选型本质是 MAUP、数据挂接成本与语义对齐三者之间的权衡。
-
+verified_at: 2026-10-28
 ---
 
-## 1. 规则正方形网格（Regular Square Grid）
+# 城市空间分析中的四类空间单元
 
-- **定义与几何**：按固定边长（如 250 m / 500 m / 1 km）在投影坐标系下平铺正方形像元；与栅格影像、遥感产品天然同构。
-- **粒度与层级**：可四叉树式聚合（4 合一），但无统一全球编码标准，跨研究难以复现；不同投影下像元面积不一致（高纬度畸变）。
-- **语义边界对齐**：低。边界任意切割地块、道路与社区，是典型的「强加边界」（imposed boundary）。
-- **数据挂接**：最容易。重采样/面积加权即可接入遥感、人口栅格（WorldPop 类）、POI 计数；与 CNN/ViT 等图像式模型输入天然匹配。
-- **边界效应与 MAUP**：中心到各邻居距离不一致（边邻居 vs 角邻居），各向异性邻域定义会引入方向性偏差；六边形网格在邻域距离均匀性上更优（见 [OSTI DGGS 对比](https://www.osti.gov/servlets/purl/2572460)、[Bousquin 2021, PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC8958999/)）。MAUP 的尺度效应显著：200 m 与 1 km 聚合结果可明显不同（[arXiv:1910.05125](https://arxiv.org/abs/1910.05125) · [Trackback 记录](https://arxiv.org/tb/1910.05125)）。
-- **典型用法**：遥感地物分类、人口/活动栅格化、图像式 GeoFM 输入；栅格单元常与行政单元在 MAUP 标度律研究中作对照（[上海城市功能区标度律研究](https://www.jjdl.com.cn/EN/abstract/article/1000-8462/73481)）。
+人口、交通和土地利用数据需要落到空间单元上才能统计或比较。常见选择包括正方形网格、H3 全球网格、地块或街区，以及围绕站点等对象建立的缓冲区。它们回答的问题不同：网格适合统一组织空间数据，地块可关联土地使用与权属，缓冲区则用于表达一个对象周围的研究范围。
 
-## 2. H3 六边形层级网格（Uber H3）
+选型前先明确研究对象、数据原始尺度、希望表达的空间关系，以及结果要服务的决策。单元边界和尺度改变时，同一数据的统计结果也可能发生变化，参见 [[maup-and-gerrymandering|MAUP 与杰利蝾螈]]。
 
-- **定义与几何**：离散全球网格系统（DGGS），以正二十面体投影划分全球六边形像元，16 级分辨率（res 0–15）；res 7 ≈ 5.16 km²、res 9 ≈ 0.11 km²、res 10 ≈ 0.015 km²（[H3 官方分辨率表](https://h3geo.org/docs/core-library/restable/)）。
-- **粒度与层级**：强。层级嵌套编码（子像元索引包含父像元），跨尺度聚合/上卷（rollup）为 O(1) 索引操作；全球统一、可复现。
-- **语义边界对齐**：低-中。与正方形网格一样是强加边界，但像元形状更接近圆形、各向同性更好。
-- **数据挂接**：非常容易。经纬度→cell 索引即完成空间连接，无需昂贵的 polygon join；Uber 最初为动态定价与出行分析构建（[Uber H3 介绍](https://www.uber.com/blog/h3/)【待核实：官方博客页面】），已被电信、物流、流行病学广泛采用。
-- **边界效应与 MAUP**：邻居距离一致、边缘效应最小（[OSTI](https://www.osti.gov/servlets/purl/2572460)）；但 MAUP 尺度效应仍在，且不同分辨率间面积比 ≈ 7:1（非 2 的幂），跨分辨率面积加权需小心。
-- **典型用法**：网约车/微出行需求聚合（[IROS'23 滑板车路径规划](https://cdcl.umd.edu/papers/iros23b.pdf)）、物流多级决策（[Polytechnique Montréal 2025](https://publications.polymtl.ca/71111/1/2025_AliShiri.pdf)）；社会隔离研究中将 H3 与人口普查区组合构造分析单元（[arXiv:2407.00404](https://arxiv.org/abs/2407.00404v1) · [Trackback 记录](https://arxiv.org/tb/2407.00404)）。
+## 四种单元各自适合什么问题
 
-## 3. 地块/街区单元（Parcel / Block）
+| 方式 | 定义和用途 | 需要核查 |
+|---|---|---|
+| 正方形网格 | 在选定坐标系中按固定边长划分；便于与栅格影像及规则数组结合。 | 投影和单位、格网原点、边长；不同边界可能切分地块或社区。 |
+| H3 网格 | 用全球层级索引组织位置与单元，便于关联同一分辨率的点、探索邻域与多尺度汇总。 | 单元面积随位置变化；层级索引与实际多边形包含关系并不完全一致。 |
+| 地块或街区 | 地块通常按土地权属或管理定义，街区通常与道路等边界有关；适合分析土地和建成环境。 | 两者并非同一概念，边界跨期变化、多源数据匹配和跨区分配需处理。 |
+| 对象缓冲区 | 围绕车站、道路或设施定义欧氏距离、路网距离或时间范围；适合研究特定设施的服务范围。 | 范围可能重叠或留有空隙，并非一定构成无重叠分区；需处理重复计数。 |
 
-- **定义与几何**：以地籍地块（parcel）或道路围合街区（block）为单元；形状、大小不一，贴合产权、用地与建成环境真实边界。香港语境下可对应地段（lot）/街块及统计用的 Tertiary Planning Unit (TPU) 体系【待核实：HK 规划署 TPU 层级细节】。
-- **粒度与层级**：中。可向上聚合到街区→社区→行政区，但非严格嵌套（边界常跨越上级单元），聚合需面积加权。
-- **语义边界对齐**：高。是城市治理、用地审批、TIA 申报的「原生单元」；T1 出行生成的出行率（trip rate）通常按用地性质挂接到 parcel/development site——香港 TIA 实践即以开发项目地块为单位套用 TPDM 出行率（[HK 运输署 TIA Checklist 2024](https://www.td.gov.hk/filemanager/en/publication/tia checklist for development projects_202410_v3.pdf)）。
-- **数据挂接**：最难。需处理拓扑错误、权属变更、多源地址匹配；「parcels 是行为一致的单元，但数据复杂性长期压制其建模潜力」（Waddell 等，见 [Forecasting with Dynamic Microsimulation](https://escholarship.org/content/qt2x12q5pv/qt2x12q5pv_noSplash_06e38ab269bfea71ebaaa8c96304f948.pdf)）。
-- **边界效应与 MAUP**：单元大小方差极大（微小地块 vs 大机构地块），小单元方差膨胀；zone effect 相对小（边界有语义），但跨城市/跨期比较困难。
-- **典型用法**：UrbanSim parcel 级土地利用-交通一体化微观仿真（[UrbanSim 文档](https://cloud.urbansim.com/docs/general/documentation/urbansim.html)）；CityFM 等以 OSM 对象（道路/地块/POI）为节点的城市基础模型（[CityFM, arXiv:2310.00583](https://arxiv.org/abs/2310.00583v3) · [Trackback 记录](https://arxiv.org/tb/2310.00583)）。
+## 正方形网格与 H3
 
-## 4. 对象优先缓冲区（Object-first Buffer）
+正方形网格的边长在其投影坐标系中定义。比较面积时，要检查投影对研究区的面积和距离造成的影响。面积加权、点落区或栅格重采样都可用于数据挂接，但每种做法有自己的分配假设。
 
-- **定义与几何**：以道路、轨道站点、POI 等地理对象为中心建立缓冲区/影响域。两类实现：欧氏圆缓冲（计算简单但系统性高估可达覆盖）与**路网缓冲/等时圈**（network buffer / walkshed，更贴近步行体验，见 [UCL 纽约 TOD 研究](https://discovery.ucl.ac.uk/10115541/1/Liu_Final Paper 2.pdf)、[MDPI 2025 站点步行域研究](https://www.mdpi.com/2220-9964/14/5/205)）。
-- **粒度与层级**：弱。缓冲半径本身是超参数（TOD 常用 400/800 m 站点域，[mediaTUM 综述](https://mediatum.ub.tum.de/doc/1546766/1546766.pdf)）；缓冲区互相重叠，不构成空间的严格划分（partition），聚合需去重/归属规则。
-- **语义边界对齐**：最高（围绕真实对象与出行行为建模），但覆盖不完整——对象间空隙无单元归属。
-- **数据挂接**：中。缓冲区内 POI/人口/用地混合度易统计（area-ratio 法），但重叠区重复计数、面积加权分摊需显式处理（[Southampton 论文综述](https://eprints.soton.ac.uk/413813/1/FINAL_e_thesis_for_e_prints_SHI_26416735.pdf)）。
-- **边界效应与 MAUP**：传统 MAUP 框架不完全适用（非划分而是重叠覆盖）；主要偏差来源是缓冲类型（欧氏 vs 路网，丘陵城市两者覆盖面积差约 10%，[ResearchGate/Coimbra 研究](https://www.researchgate.net/publication/254609189_Using_GIS_for_Measuring_Transit_Stop_Accessibility_Considering_Actual_Pedestrian_Road_Network)）与半径选择。
-- **典型用法**：TOD 类型学与站点域评估、2SFCA 可达性（其空间单元选择直接关联 MAUP 偏差，[ScienceDirect 2025 南京研究](https://www.sciencedirect.com/science/article/abs/pii/S1618866725003619)）；GeoFM 中「以对象为中心」的场景图/上下文窗口构造（如 UrbanFusion 多模态区域表征，[OpenReview](https://openreview.net/pdf/95c54db9d05003e696bfa135407d4236a0ee1854.pdf)）。
+H3 提供 0–15 共 16 级分辨率。每个分辨率都有 12 个五边形单元，其余主要是六边形；同级六边形面积也随位置变化。[H3 单元统计](https://h3geo.org/docs/core-library/restable/)
 
----
+| 分辨率 | 平均六边形面积 |
+|---|---:|
+| 7 | 约 5.161 km² |
+| 9 | 约 0.105 km² |
+| 10 | 约 0.015 km² |
 
-## 5. 四列对比总表
+这些是全球平均值，并非每个单元的面积。例如 100 m 边长的正方形面积为 0.01 km²，与 H3 9 级平均面积并不匹配。
 
-| 维度 | 正方形网格 | H3 六边形网格 | 地块/街区 | Object-first Buffer |
-|---|---|---|---|---|
-| 几何规则性 | 高（但邻居距离不一致） | 高（各向同性最优） | 不规则 | 不规则、可重叠 |
-| 层级可聚合性 | 四叉树，无统一编码 | ★ 16 级嵌套编码，全球统一 | 近似嵌套，需面积加权 | 无层级，半径为超参数 |
-| 语义边界对齐 | 低 | 低-中 | 高 | 最高（但覆盖不完整） |
-| 数据挂接便利性 | ★ 最易 | 极易（索引即连接） | 最难（数据/拓扑成本） | 中（重叠需归属规则） |
-| 主要偏差来源 | MAUP 尺度+分区效应、各向异性 | MAUP 尺度效应 | 小单元方差膨胀 | 缓冲类型/半径、重复计数 |
-| 与 GeoFM/TIA 契合点 | 图像式输入、栅格数据 | 多分辨率 token、需求聚合 | T1 出行生成原生单元、UrbanSim | 站点域/TOD、对象级上下文 |
-| 代表工作 | WorldPop 类栅格、标度律研究 | Uber 定价、IROS'23 路径规划 | UrbanSim、CityFM | 2SFCA、TOD 类型学、UrbanFusion |
+H3 的父子索引关系是精确的逻辑层级，但子单元多边形不一定完全落在其逻辑父单元几何边界内。按子索引向上汇总，与直接把原始坐标编码到较粗分辨率，在边界附近可能给出不同归属；需要精确面域归属时应检查实际几何。[H3 层级说明](https://h3geo.org/docs/highlights/indexing/)
 
-## 6. 对双轨评估框架的意义
+六边形和正方形的邻接关系不同，但无法仅凭形状断定哪个方案对所有任务的误差更小。点位可以直接编码为 H3 单元；面状数据、跨分辨率数据及多源口径仍需要空间叠加或明确分配方法。
 
-- **受控保真性对比轨**（同一数据、尽量匹配单元面积，比较单元方案）：可将正方形网格与 H3 作为对照，并报告面积、位置和邻接关系的差异。H3 res 9 的平均单元面积约为 0.11 km²；100 m 边长正方形网格的面积为 0.01 km²，两者不能直接视为面积匹配。即使匹配平均面积，单元位置和边界等因素仍可能影响结果，性能差异不能直接全部归因于几何形状。地块与 buffer 还会引入语义与重叠因素，宜结合实际条件分析。
-- **原生单元可用性轨**（使用下游任务本身的原生单元）：TIA 的原生单元是**开发地块/站点域**（HK TIA 以项目地块套 TPDM 出行率），需求建模原生单元是 TAZ/H3；该轨回答「模型能否在真实数据挂接约束下工作」。buffer 在 T4 长期情景评估中适合表达站点/走廊的影响域情景，但需先定义重叠归属规则才能产出可比的区域指标。
-- **选型建议（供讨论）**：GeoFM 预训练单元用 H3（可复现、多尺度、挂接成本最低）；受控对比实验以「正方形 vs H3」隔离几何效应、以「网格 vs parcel」隔离语义效应；TIA 落地层保留 parcel/block 作为原生输出单元，内部计算可用 H3 聚合。
+## 地块、街区、TPU 与交通分析区
 
-MAUP 本身的机制、以及它在选区划分中被策略性利用的极端案例（杰利蝾螈），见 [[maup-and-gerrymandering|MAUP 与杰利蝾螈]]。
+地块反映具体土地管理或产权边界；街区和道路网络有关。香港规划署的规划统计单元采用小规划统计区（TPU）：2021 年普查下分单元区，2001–2016 年资料则分别使用街段区或村落统计区。这些统计和规划单元与地籍地块是不同对象。[规划署边界数据规范](https://www.pland.gov.hk/open_data/tpu_sb_vc/Boundary_of_TPU_and_Subunit_Data_Specification_v1.0.pdf)
 
----
+交通分析区（TAZ）用于组织出行起讫及模型数据，可以参考统计区、用地和道路边界划定，但不等同于地块或 TPU。实际关系要按模型、边界版本和数据说明核查。详见 [[taz-traffic-analysis-zone|TAZ 与各地交通分析分区]]。
 
-## 主要来源
+## 缓冲区与覆盖范围
 
-- H3：[官方分辨率表](https://h3geo.org/docs/core-library/restable/) · [OSTI DGGS 对比](https://www.osti.gov/servlets/purl/2572460) · [Bousquin 2021 (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC8958999/) · [arXiv:2407.00404](https://arxiv.org/abs/2407.00404v1) · [Trackback 记录](https://arxiv.org/tb/2407.00404)
-- MAUP：[arXiv:1910.05125](https://arxiv.org/abs/1910.05125) · [Trackback 记录](https://arxiv.org/tb/1910.05125)（尺度/分区效应分解，引 Openshaw 1984）· [GIS Geography MAUP](https://gisgeography.com/maup-modifiable-areal-unit-problem/) · [ScienceDirect 2025 公园可达性 MAUP](https://www.sciencedirect.com/science/article/abs/pii/S1618866725003619)
-- Parcel/Block：[UrbanSim 文档](https://cloud.urbansim.com/docs/general/documentation/urbansim.html) · [Dynamic Microsimulation (Waddell)](https://escholarship.org/content/qt2x12q5pv/qt2x12q5pv_noSplash_06e38ab269bfea71ebaaa8c96304f948.pdf) · [CityFM, arXiv:2310.00583](https://arxiv.org/abs/2310.00583v3) · [Trackback 记录](https://arxiv.org/tb/2310.00583)
-- Buffer：[UCL TOD 站点域](https://discovery.ucl.ac.uk/10115541/1/Liu_Final Paper 2.pdf) · [MDPI 2025 步行域](https://www.mdpi.com/2220-9964/14/5/205) · [mediaTUM 站点域综述](https://mediatum.ub.tum.de/doc/1546766/1546766.pdf)
-- GeoFM：[GeoFM 概念 (Arribas-Bel)](https://me.darribas.org/2025/09/18/geofm-how-will-geofoundation-models.html) · [UrbanFusion (OpenReview)](https://openreview.net/pdf/95c54db9d05003e696bfa135407d4236a0ee1854.pdf)
-- HK TIA：[运输署 TIA Checklist 2024](https://www.td.gov.hk/filemanager/en/publication/tia checklist for development projects_202410_v3.pdf)
+站点 800 米欧氏缓冲表示到站点的直线距离范围；路网步行范围由路网连通性、入口和通行条件决定，等时圈还依赖速度和时间假设。两者关注不同问题：前者便于快速定义研究范围，后者可用于更贴近具体路径的可达性分析。比较时应报告网络来源、出入口、范围定义及阻隔因素。[步行域研究](https://www.mdpi.com/2220-9964/14/5/205)
+
+多个站点范围重叠时，应事先说明对象是否允许被多个站点计数，或如何分配到单一站点；有些对象也可能不落入任何缓冲区。
+
+## 怎样做可比较的分析
+
+1. **对齐研究任务与数据**：明确观察单位、边界年份、坐标系和每个变量的生成方式。
+2. **控制尺度**：比较网格方案时报告单元面积分布；匹配平均面积仍不能消除单元位置、邻接关系和边界差异。
+3. **检验稳健性**：改变网格原点、分辨率或缓冲距离，观察结论是否变化；对地块和统计区记录边界版本与分配假设。
+4. **说明不确定性**：小区域估计可能受样本量和保密处理影响；面积加权也依赖区内分布假设。
+
+方法选择取决于问题和数据，不能只根据网格形状或一个案例认定某一方案普遍最优。
+
+## 参考资料
+
+- [H3 分辨率与单元面积](https://h3geo.org/docs/core-library/restable/)、[H3 层级索引](https://h3geo.org/docs/highlights/indexing/)。
+- [香港规划署 TPU、单元区及历史街段／村落统计区数据规范](https://www.pland.gov.hk/open_data/tpu_sb_vc/Boundary_of_TPU_and_Subunit_Data_Specification_v1.0.pdf)。
+- [MAUP 尺度与分区研究](https://arxiv.org/abs/1910.05125) · [Trackback 接口](https://arxiv.org/tb/1910.05125)；[UrbanSim 文档](https://cloud.urbansim.com/docs/general/documentation/urbansim.html)。

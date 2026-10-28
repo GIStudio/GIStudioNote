@@ -6,6 +6,7 @@ tags:
   - SDG04
   - 教育
   - 终身学习
+verified_at: 2026-10-28
 aliases:
   - Writing/experts/sdg/sdg04-quality-education
 ---
@@ -16,7 +17,7 @@ aliases:
 
 ## 核心下游任务
 
-### 官方监测任务
+### 相关监测问题
 
 - 各学段入学率/完成率统计
 - 教育性别平等评估
@@ -36,8 +37,8 @@ aliases:
 
 | 数据集名称 | 覆盖范围 | 核心数据维度 | 获取链接 |
 | ---------- | -------- | ------------ | -------- |
-| UNESCO 统计研究所 (UIS) 全球教育数据库 | 全球200+国家和地区，1970年至今 | SDG4全部11个官方指标，含入学率、完成率、识字率、教育支出、教师与学校设施数据 | [UIS Education Data](https://uis.unesco.org/) |
-| SustainBench 女性教育程度预测数据集 | 非洲24个国家，117362个样本 | 卫星影像+DHS调查的女性教育年限标签，用于教育程度空间预测 | [SustainBench DHS](https://sustainbench.org/) |
+| UNESCO 统计研究所（UIS）教育数据库 | 国家和时间覆盖依指标而异 | 入学、完成率、识字率、教师与教育设施等可比统计 | [UIS 数据](https://uis.unesco.org/) |
+| SustainBench 女性教育程度预测 | 多国 DHS 调查，按国家划分训练与测试 | 调查簇级女性教育程度标签，可与卫星或街景影像结合；具体样本量依任务和模态而异 | [SustainBench DHS](https://sustainlab-group.github.io/sustainbench/docs/datasets/dhs.html) |
 
 ## 具体目标
 
@@ -48,3 +49,5 @@ aliases:
 5. **消除教育不平等**：到 2030 年，消除教育中的性别差距，确保弱势群体平等获得教育。
 6. **提高读写能力**：到 2030 年，确保所有青年和大部分成年人具备读写和计算能力。
 7. **促进可持续发展教育**：确保所有学习者获得促进可持续发展所需的知识和技能。
+
+上述内容是部分目标摘要；指标定义与完整目标见[联合国 SDG 4 页面](https://sdgs.un.org/goals/goal4)。模型对区域或调查簇的预测不等同于对个人教育结果的可靠判断。

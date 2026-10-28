@@ -5,6 +5,7 @@ tags:
   - SDG
   - 可持续发展
   - 联合国
+verified_at: 2026-10-28
 aliases:
   - Writing/experts/sdg
 ---
@@ -39,9 +40,13 @@ aliases:
 
 | 数据集名称 | 覆盖范围 | 核心数据维度 | 获取链接 |
 | ---------- | -------- | ------------ | -------- |
-| 联合国SDG全球指标数据库 | 全球193个国家，2000年至今 | 17个SDG全部231个官方指标的时序数据，SDG监测权威基准 | [UN SDG Data Portal](https://unstats.un.org/sdgs/dataportal) |
-| OSDG 社区文本分类数据集 | 覆盖16个SDG，10万+条标注文本 | 用于SDG文本分类、政策文本匹配、ESG报告分析等NLP任务 | [OSDG on Zenodo](https://zenodo.org/records/8397907) |
-| 可持续发展报告(SDR)国家得分数据集 | 193个国家，2000-2023年 | 每个国家17个SDG的综合得分、分指标进展、全球排名 | [SDR Data](https://www.sdgindex.org/) |
+| 联合国 SDG 全球指标数据库 | 全球及各国、地区；可用年份和覆盖因指标而异 | 各目标的官方监测数据与元数据 | [UN SDG Data Portal](https://unstats.un.org/sdgs/dataportal) |
+| OSDG 社区文本分类数据集 | 2023.10 版含 42,065 段文本及 303,643 次标签判断 | 志愿者对文本和指定 SDG 标签的相关性判断，可用于文本分类研究 | [OSDG 2023.10 on Zenodo](https://zenodo.org/records/8397907) |
+| 可持续发展报告（SDR）国家得分数据集 | 2026 版为 193 个联合国会员国提供资料，其中 169 国纳入排名 | SDSN 的综合得分、分目标表现与排名，是官方 SDG 指标的补充 | [SDR 2026 数据与方法](https://dashboards.sdgindex.org/chapters/part-2-the-sdg-index-and-dashboards/) |
+
+截至 2026 年 10 月 28 日核验，联合国官方清单已包含 2025 年综合审查及 2026 年年度调整，框架共有 **234 个不重复指标**，按目标逐项列出为 251 条，因为部分指标用于多个目标。框架包含指标不代表每个国家和年份都有相应观测值；取数时应检查指标元数据、年份、缺失值和估算方法。[联合国官方指标框架](https://unstats.un.org/sdgs/indicators/indicators-list/)
+
+OSDG 一段文本通常由多位志愿者判断，因此判断次数不等于文本条数。SDR 由可持续发展解决方案网络（SDSN）编制，采用自身指标和综合方法，不能直接等同于联合国官方数据库；不同年度排名也会受到指标与数据修订影响。
 
 ## 相关链接
 

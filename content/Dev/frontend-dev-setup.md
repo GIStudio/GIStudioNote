@@ -1,543 +1,166 @@
 ---
-title: 现代化前端项目配置指南
-description: 现代化前端项目配置指南的环境配置、操作步骤与常见问题指南。
+title: 前端项目配置与测试：从可运行示例到 CI
+description: 用完整的 Vite 示例串起版本锁定、单元测试、HTTP 冒烟、服务清理、构建和 CI，区分浏览器与业务验证范围。
 tags:
   - Dev
   - 前端开发
   - Node.js
   - NVM
   - 教程
+verified_at: 2026-10-28
 ---
-# 现代化前端项目配置指南
+# 前端项目配置与测试：从可运行示例到 CI
 
-本文档介绍如何从零配置前端开发环境，包括 Node.js 版本管理、npm 使用，以及常见前端测试方法。
+一个可维护的前端项目需要把运行时、依赖、启动命令和测试接在一起。本页先提供一个完整的 Vite 小项目，再说明单元、集成和端到端测试各自验证什么。
 
-## Node.js 版本管理 - nvm
+示例源码位于 [GIStudioNote 的 examples/frontend-testing](https://github.com/GIStudio/GIStudioNote/tree/v5/examples/frontend-testing)。它使用静态 HTML 和一个 JavaScript 函数，便于核对测试链路；React、Vue 等应用可在此基础上增加组件和业务测试。
 
-nvm 用于在同一台机器上隔离不同项目需要的 Node.js 版本。安装、切换、默认
-版本与常见故障统一维护在 [[../tools/NVM|NVM 教程]]，本文只规定前端项目应：
+## 固定运行环境与依赖
 
-1. 在 `.nvmrc` 或 `.node-version` 固定版本；
-2. 在 `package.json` 的 `engines.node` 声明兼容范围；
-3. 在本地和 CI 中使用同一主版本；
-4. 先切换 Node，再运行 `npm ci` 或 `npm install`。
+本例核验使用 Node 22.16.0、npm 10.9.2、Vite 8.3.5 和 Vitest 5.0.5。所选工具要求 Node 至少达到各自的 `engines` 条件；本例限定 Node 22.12 及以上的 22.x。本地与 CI 使用相同版本，并保留 `package-lock.json`。[Vite 入门](https://vite.dev/guide/) · [Vitest 入门](https://vitest.dev/guide/)
 
-GIStudioNote 当前固定使用 Node `22.16.0`。
-
-## npm 使用指南
-
-### npm 基础
-
-npm（Node Package Manager）是 Node.js 的默认包管理器。
+在已经取得仓库代码的机器上：
 
 ```bash
-# 查看 npm 版本
-npm --version
-
-# 查看 Node 版本
-node --version
-
-# 升级 npm
-npm install -g npm@latest
+cd examples/frontend-testing
+npm ci
+npm test
+npm run build
 ```
 
-### 初始化项目
+首次为自己的项目新增依赖时用 `npm install --save-dev --save-exact 包名@版本`，审查生成的锁文件；已有锁文件的安装和 CI 使用 `npm ci`。安装可能执行依赖提供的脚本，应审查来源，并在可信或隔离的开发环境中操作。不要把全局升级 npm 当成项目初始化的必要步骤。[npm ci](https://docs.npmjs.com/cli/v11/commands/npm-ci)
 
-```bash
-# 在当前目录创建 package.json
-npm init
+Node 版本管理见 [[../tools/NVM|NVM 教程]]。版本升级另开明确变更，核对工具兼容和安全公告后重跑测试。
 
-# 快速创建（使用默认配置）
-npm init -y
+## 项目结构与脚本
 
-# 创建 scoped 包
-npm init --scope=@myorg
+```text
+examples/frontend-testing/
+├── package.json
+├── package-lock.json
+├── index.html
+├── src/sum.js
+└── tests/
+    ├── unit/sum.test.js
+    └── smoke.test.js
 ```
 
-### 安装依赖
-
-```bash
-# 安装项目依赖
-npm install
-
-# 安装特定包
-npm install <package-name>
-
-# 安装开发依赖
-npm install --save-dev <package-name>
-
-# 安装全局包
-npm install -g <package-name>
-
-# 安装特定版本
-npm install <package-name>@1.2.3
-
-# 使用别名安装
-npm install <package-name>@latest
-```
-
-### package.json 字段说明
+`package.json` 中的脚本都对应实际文件或已声明依赖：
 
 ```json
 {
-  "name": "my-project",
-  "version": "1.0.0",
-  "description": "项目描述",
-  "main": "index.js",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 127.0.0.1",
     "build": "vite build",
-    "test": "vitest",
-    "lint": "eslint ."
-  },
-  "dependencies": {
-    "react": "^18.2.0"
-  },
-  "devDependencies": {
-    "vite": "^5.0.0"
+    "test:unit": "vitest run tests/unit",
+    "test:smoke": "node --test tests/smoke.test.js",
+    "test": "npm run test:unit && npm run test:smoke"
   }
 }
 ```
 
-### scripts 约定
+`npm run dev` 只绑定本机回环地址；需要局域网访问时再评估鉴权、防火墙和绑定范围。开发服务器不应直接作为公网生产服务。
 
-| 脚本名 | 约定用途 |
-|--------|----------|
-| `start` / `dev` | 开发服务器 |
-| `build` | 生产构建 |
-| `test` | 运行测试 |
-| `lint` | 代码检查 |
-| `format` | 代码格式化 |
-| `prepare` | git hook 安装 |
+`src/` 按实际职责继续拆分即可；测试目录、框架和状态管理不必在项目一开始全部搭齐。源码、配置和锁文件纳入版本控制，`node_modules/` 与构建输出不提交。
 
-### 管理依赖版本
+## 单元测试验证函数行为
 
-```bash
-# 更新依赖到最新兼容版本
-npm update
+示例函数：
 
-# 查看过时依赖
-npm outdated
-
-# 详细查看依赖树
-npm ls
-
-# 清理缓存
-npm cache clean --force
+```javascript
+// src/sum.js
+export function sum(a, b) {
+  return a + b
+}
 ```
 
-### package-lock.json
+对应测试：
 
-- 自动生成，记录精确版本
-- **必须提交到仓库**
-- 确保团队成员安装相同版本
+```javascript
+// tests/unit/sum.test.js
+import { expect, test } from "vitest"
+import { sum } from "../../src/sum.js"
 
-## 现代化前端项目结构
-
-### 推荐的目录结构
-
-```
-my-project/
-├── .git/
-├── .gitignore
-├── package.json
-├── package-lock.json
-├── vite.config.ts          # Vite 配置
-├── tsconfig.json          # TypeScript 配置
-├── .eslintrc.cjs          # ESLint 配置
-├── .prettierrc           # Prettier 配置
-├── src/
-│   ├── assets/           # 静态资源
-│   ├── components/       # 组件
-│   ├── pages/            # 页面
-│   ├── hooks/            # 自定义 Hooks
-│   ├── utils/            # 工具函数
-│   ├── services/         # API 服务
-│   ├── stores/           # 状态管理
-│   ├── types/            # TypeScript 类型
-│   ├── App.tsx
-│   └── main.tsx
-├── public/               # 公共静态资源
-├── tests/                # 测试文件
-│   ├── unit/
-│   ├── integration/
-│   └── e2e/
-└── README.md
+test("adds two numbers", () => {
+  expect(sum(2, 3)).toBe(5)
+})
 ```
 
-### 常用构建工具
+使用 `npm run test:unit` 单次执行。真实项目还需按业务测试边界输入、错误处理和必要的组合；这一例只验证所写的加法行为。[Vitest 测试接口](https://vitest.dev/api/)
 
-| 工具 | 特点 |
-|------|------|
-| Vite | 快、现代、适合 React/Vue |
-| Webpack | 功能全面、配置灵活 |
-| esbuild | 极速打包 |
-| Rollup | 库打包 |
+## HTTP 冒烟测试管理自己的服务
 
-### 常用框架
+Node 中的 `fetch` 需要明确的 URL。测试必须先启动目标服务，使用实际监听地址，并在成功或失败后清理服务。示例采用 Vite 的 JavaScript API：
 
-| 框架 | 适用场景 |
-|------|----------|
-| React | 灵活组件化 |
-| Vue | 上手简单、中文友好 |
-| Svelte | 编译时优化、轻量 |
-| Solid | 响应式、轻量 |
+```javascript
+// tests/smoke.test.js
+import assert from "node:assert/strict"
+import { test } from "node:test"
+import { fileURLToPath } from "node:url"
+import { createServer } from "vite"
 
-## 前端测试体系
-
-### 测试金字塔
-
-```
-        /\
-       /  \
-      / E2E \        <- 少量、慢、贵
-     /--------\
-    / 集成测试  \     <- 中等
-   /------------\
-  /   单元测试    \   <- 大量、快速、便宜
- /----------------\
-```
-
-### 单元测试
-
-测试独立的函数、组件、模块。
-
-#### 常用框架
-
-| 框架 | 特点 |
-|------|------|
-| Vitest | 快、兼容 Jest API、支持 Vite |
-| Jest | 生态完善、社区广泛 |
-| Mocha + Chai | 灵活、传统 |
-| Testing Library | 以用户视角测试 |
-
-#### Vitest 示例
-
-安装：
-```bash
-npm install -D vitest @testing-library/react jsdom
-```
-
-配置 `vite.config.ts`：
-```typescript
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-export default defineConfig({
-  plugins: [react()],
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './tests/setup.ts'
+test("serves the example homepage", async () => {
+  const server = await createServer({
+    configFile: false,
+    root: fileURLToPath(new URL("../", import.meta.url)),
+    server: { host: "127.0.0.1", port: 0, strictPort: true },
+  })
+  try {
+    await server.listen()
+    const address = server.httpServer.address()
+    assert.ok(address && typeof address === "object")
+    const response = await fetch(`http://127.0.0.1:${address.port}/`, {
+      signal: AbortSignal.timeout(5000),
+    })
+    assert.equal(response.status, 200)
+    assert.match(await response.text(), /<h1>GIStudio 测试示例<\/h1>/)
+  } finally {
+    await server.close()
   }
 })
 ```
 
-编写测试 `src/utils/format.test.ts`：
-```typescript
-import { describe, it, expect } from 'vitest'
-import { formatDate } from '../utils/format'
+端口 0 让操作系统分配空闲端口。它检查首页 HTTP 响应和独有内容，验证范围止于服务器返回的 HTML；浏览器渲染、登录和后端 API 需要各自的实现与测试。接口测试应使用测试账号与隔离数据。[Vite JavaScript API](https://vite.dev/guide/api-javascript) · [Node 测试运行器](https://nodejs.org/api/test.html)
 
-describe('formatDate', () => {
-  it('格式化为 YYYY-MM-DD', () => {
-    const date = new Date('2024-01-15')
-    expect(formatDate(date)).toBe('2024-01-15')
-  })
+## 集成测试与端到端测试怎样扩展
 
-  it('处理个位数月份和日期', () => {
-    const date = new Date('2024-03-05')
-    expect(formatDate(date)).toBe('2024-03-05')
-  })
-})
-```
+| 测试层次 | 适合验证 | 环境要求 |
+| --- | --- | --- |
+| 单元 | 独立函数、模块或组件行为 | 提供明确输入，隔离不相关依赖 |
+| 集成 | 组件、接口客户端与服务之间的交互 | 提供实现、依赖和受控服务；模拟结果与真实服务结果分别标注 |
+| 端到端 | 用户操作到可观察结果的流程 | 启动真实测试应用，准备测试数据与浏览器，执行清理 |
 
-组件测试 `src/components/Button.test.tsx`：
-```typescript
-import { render, screen, fireEvent } from '@testing-library/react'
-import { describe, it, expect } from 'vitest'
-import Button from './Button'
+React 应用可使用 Testing Library 检查组件可观察行为，并提供匹配的 DOM 环境；测试引用的组件、初始化文件和辅助函数必须存在。[Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
-describe('Button', () => {
-  it('渲染文本内容', () => {
-    render(<Button>点击我</Button>)
-    expect(screen.getByText('点击我')).toBeDefined()
-  })
+浏览器流程可使用 Playwright。其 `webServer` 配置能在测试前启动应用，`baseURL` 用于解析测试中的相对路径；端口、命令和预期页面应与应用一致。需要多个服务时分别声明前端、后端及准备数据的方式。[Playwright 服务启动](https://playwright.dev/docs/test-webserver)
 
-  it('点击时调用回调', async () => {
-    const handleClick = vi.fn()
-    render(<Button onClick={handleClick}>点击</Button>)
-    fireEvent.click(screen.getByText('点击'))
-    expect(handleClick).toHaveBeenCalledOnce()
-  })
-})
-```
+## 把本地检查接入 CI
 
-运行测试：
-```bash
-npm test           # 监视模式
-npm test -- --run  # 单次运行
-npm test -- --coverage  # 覆盖率
-```
-
-### 冒烟测试
-
-快速验证核心功能是否正常，通常在 CI/CD 流程的早期执行。
-
-#### 特点
-- 测试数量少
-- 执行速度快（秒级）
-- 验证核心路径
-
-#### 示例
-
-```typescript
-// tests/smoke/homepage.test.ts
-import { describe, it, expect } from 'vitest'
-
-describe('Homepage 冒烟测试', () => {
-  it('页面能正常加载', async () => {
-    const response = await fetch('/')
-    expect(response.ok).toBe(true)
-  })
-
-  it('主要 API 返回数据', async () => {
-    const response = await fetch('/api/users')
-    expect(response.status).toBe(200)
-    const data = await response.json()
-    expect(Array.isArray(data)).toBe(true)
-  })
-
-  it('关键组件能渲染', () => {
-    // 使用 Playwright 或 Puppeteer
-  })
-})
-```
-
-#### 在 CI 中配置
+下面的工作流针对本仓库的 `examples/frontend-testing` 子目录，安装依赖、运行上述两类测试，再构建。若将示例迁入其他仓库，应同时调整 `working-directory` 和 `cache-dependency-path`；项目位于仓库根目录时，分别使用 `.` 和 `package-lock.json`。
 
 ```yaml
-# .github/workflows/smoke.yml
-name: Smoke Tests
+name: Frontend example
 on: [push, pull_request]
-jobs:
-  smoke:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - run: npm ci
-      - run: npm run test:smoke
-```
-
-### 集成测试
-
-测试多个模块协同工作的场景。
-
-```typescript
-// tests/integration/auth.test.ts
-import { describe, it, expect, beforeAll, afterAll } from 'vitest'
-import { setupServer } from 'msw/node'
-import { http, HttpResponse } from 'msw'
-
-const server = setupServer(
-  http.get('/api/user', () => {
-    return HttpResponse.json({ id: 1, name: 'Test User' })
-  })
-)
-
-beforeAll(() => server.listen())
-afterAll(() => server.close())
-
-describe('用户认证流程', () => {
-  it('登录后获取用户信息', async () => {
-    await login('test@example.com', 'password')
-    const user = await getCurrentUser()
-    expect(user.name).toBe('Test User')
-  })
-})
-```
-
-### E2E 测试（端到端测试）
-
-模拟真实用户操作，测试整个应用流程。
-
-#### 常用工具
-
-| 工具 | 特点 |
-|------|------|
-| Playwright | 微软出品、支持多浏览器、功能强 |
-| Cypress | API 友好、调试方便 |
-| Puppeteer | Google 出品、只支持 Chrome |
-| Nightwatch | 配置简单 |
-
-#### Playwright 示例
-
-安装：
-```bash
-npm install -D @playwright/test
-npx playwright install chromium
-```
-
-配置 `playwright.config.ts`：
-```typescript
-import { defineConfig, devices } from '@playwright/test'
-
-export default defineConfig({
-  testDir: './tests/e2e',
-  fullyParallel: true,
-  forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
-  use: {
-    baseURL: 'http://localhost:3000',
-    trace: 'on-first-retry',
-  },
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-  ],
-  webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.CI,
-  },
-})
-```
-
-编写测试 `tests/e2e/login.spec.ts`：
-```typescript
-import { test, expect } from '@playwright/test'
-
-test.describe('登录功能', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('/login')
-  })
-
-  test('使用正确凭据登录成功', async ({ page }) => {
-    await page.getByLabel('邮箱').fill('test@example.com')
-    await page.getByLabel('密码').fill('password123')
-    await page.getByRole('button', { name: '登录' }).click()
-
-    await expect(page).toHaveURL('/dashboard')
-    await expect(page.getByText('欢迎回来')).toBeVisible()
-  })
-
-  test('使用错误凭据显示错误', async ({ page }) => {
-    await page.getByLabel('邮箱').fill('wrong@example.com')
-    await page.getByLabel('密码').fill('wrongpass')
-    await page.getByRole('button', { name: '登录' }).click()
-
-    await expect(page.getByText('邮箱或密码错误')).toBeVisible()
-  })
-
-  test('登出功能正常', async ({ page }) => {
-    // 先登录
-    await page.getByLabel('邮箱').fill('test@example.com')
-    await page.getByLabel('密码').fill('password123')
-    await page.getByRole('button', { name: '登录' }).click()
-
-    // 登出
-    await page.getByRole('button', { name: '登出' }).click()
-    await expect(page).toHaveURL('/login')
-  })
-})
-```
-
-运行 E2E 测试：
-```bash
-npx playwright test                    # 运行所有测试
-npx playwright test --project=chromium  # 指定项目
-npx playwright test login.spec.ts      # 运行特定文件
-npx playwright show-report            # 查看报告
-```
-
-## 测试命令速查
-
-```bash
-# Vitest (单元测试)
-npm test              # 监视模式
-npm run test:unit     # 单元测试
-npm run test:smoke    # 冒烟测试
-npm run test:coverage # 覆盖率报告
-
-# Playwright (E2E)
-npx playwright test              # 运行 E2E
-npx playwright test --ui         # UI 模式
-npx playwright show-report       # 查看报告
-```
-
-## CI/CD 集成
-
-### GitHub Actions 示例
-
-```yaml
-name: Tests
-on: [push, pull_request]
-
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18, 20, 22]
-
+    defaults:
+      run:
+        working-directory: examples/frontend-testing
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run linter
-        run: npm run lint
-
-      - name: Run unit tests
-        run: npm run test:unit -- --coverage
-
-      - name: Run E2E tests
-        run: npx playwright test
+          node-version: "22.16.0"
+          cache: npm
+          cache-dependency-path: examples/frontend-testing/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
 ```
 
-## 最佳实践
+为业务项目加入 linter、覆盖率或浏览器测试时，同时安装所需依赖、声明脚本和准备环境，再让 CI 调用。
 
-1. **测试文件位置**
-   - 单元测试：与源码同目录，如 `utils.test.ts`
-   - E2E 测试：单独目录 `tests/e2e/`
+## 核验范围
 
-2. **测试命名**
-   - 使用描述性名称：`it('当输入为空时显示错误提示')`
-   - 测试文件以 `.test.ts` 或 `.spec.ts` 结尾
-
-3. **测试原则**
-   - 每个测试只验证一个行为
-   - 测试之间相互独立
-   - 避免测试实现细节
-   - 优先测试关键路径
-
-4. **Mock 和 Stub**
-   ```typescript
-   import { vi } from 'vitest'
-
-   // Mock 函数
-   const fetchUser = vi.fn().mockResolvedValue({ id: 1, name: 'Test' })
-
-   // Mock 模块
-   vi.mock('./api', () => ({
-     getUser: vi.fn()
-   }))
-   ```
-
-## 参考资源
-
-- [Vitest 文档](https://vitest.dev/)
-- [Playwright 文档](https://playwright.dev/)
-- [Testing Library](https://testing-library.com/)
-- [nvm 文档](https://github.com/nvm-sh/nvm)
+2026 年 10 月 28 日，在上述版本下执行 `npm ci`、`npm test` 和 `npm run build`：1 项单元测试、1 项 HTTP 冒烟测试及构建通过。测试服务绑定本机回环地址，并在测试结束后关闭。浏览器渲染、组件、业务功能和生产部署仍需按真实应用另行验证；上面的 CI 配置是可复制示例，本次验证在本地完成。

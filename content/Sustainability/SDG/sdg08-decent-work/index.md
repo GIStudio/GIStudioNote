@@ -7,6 +7,7 @@ tags:
   - 经济增长
   - 就业
   - 劳动
+verified_at: 2026-10-28
 aliases:
   - Writing/experts/sdg/sdg08-decent-work
 ---
@@ -17,7 +18,7 @@ aliases:
 
 ## 核心下游任务
 
-### 官方监测任务
+### 相关监测问题
 
 - GDP增长率统计
 - 失业率测算
@@ -36,9 +37,9 @@ aliases:
 
 | 数据集名称 | 覆盖范围 | 核心数据维度 | 获取链接 |
 | ---------- | -------- | ------------ | -------- |
-| 世界银行世界发展指标 (WDI) 数据库 | 全球217个国家和地区，1960年至今 | SDG8全部12个官方指标，含GDP、失业率、劳动生产率、童工、工资水平数据 | [WDI Database](https://databank.worldbank.org/source/world-development-indicators) |
-| ILO 全球劳工统计数据库 (ILOSTAT) | 全球200+国家和地区，1945年至今 | 就业、失业、劳动时间、工资、社会保障、童工、职业安全数据 | [ILOSTAT](https://ilostat.ilo.org/) |
-| DMSP-OLS/VIIRS 全球夜间灯光数据集 | 全球，1992年至今 | 夜间灯光辐射值，用于经济活动强度、GDP预测、城市化水平评估 | [NOAA EOG](https://eogdata.mines.edu/products/dmsp/) |
+| 世界银行世界发展指标（WDI） | 国家与年份覆盖依数据系列而异 | GDP、就业及相关发展统计；具体口径见各指标元数据 | [WDI Database](https://databank.worldbank.org/source/world-development-indicators) |
+| ILO 劳工统计数据库（ILOSTAT） | 国家与年份覆盖依指标和来源而异 | 就业、失业、工资及劳动条件等统计；区分报告值与模型估计值 | [ILOSTAT 数据](https://ilostat.ilo.org/data/) |
+| DMSP-OLS 与 VIIRS 夜间灯光 | 全球产品；两套传感器、年份和数据处理不同 | 夜间灯光可作为经济活动研究中的代理变量，跨传感器比较需要处理口径差异 | [DMSP-OLS](https://eogdata.mines.edu/products/dmsp/)；[VIIRS](https://eogdata.mines.edu/products/vnl/) |
 
 ## 具体目标
 
@@ -50,3 +51,5 @@ aliases:
 6. **促进青年就业**：到 2020 年，大幅减少未就业、未受教育或未接受培训的青年比例。
 7. **根除强迫劳动**：采取即时有效措施，消除强迫劳动，终结现代奴役和人口贩运。
 8. **保护劳工权利**：保护劳工权利，促进安全和有保障的工作环境。
+
+以上为部分目标摘要，完整目标与指标见[联合国 SDG 8 页面](https://sdgs.un.org/goals/goal8)。其中目标 8.6 的 2020 年是原议程文本设定的期限，不代表目标已经实现；夜间灯光也不能直接等同于 GDP 或体面就业。

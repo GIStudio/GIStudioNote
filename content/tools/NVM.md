@@ -10,7 +10,7 @@ tags:
   - 教程
 ---
 
-`nvm`（Node Version Manager）是一个非常强大的工具，用于管理多个 Node.js 版本。以下是检查当前安装的 Node.js 版本并切换版本的具体操作步骤：
+`nvm`（Node Version Manager）用于在用户环境中安装和切换多个 Node.js 版本。下文以本仓库固定使用的 22.16.0 为命令示例；为其他项目选择版本时，应另外核对支持周期和安全更新。[nvm 官方说明](https://github.com/nvm-sh/nvm)
 
 ---
 
@@ -32,7 +32,7 @@ nvm current
 ```bash
 nvm list
 ```
-输出示例：
+历史输出示例，仅用于解释箭头和别名；其中的版本号不是当前安装建议：
 ```
 ->     v14.18.1
        v20.9.0
@@ -51,7 +51,7 @@ stable -> 20.9 (-> v20.9.0) (default)
 ### 3. 切换到特定版本
 如果需要切换到其他已安装的版本，可以使用以下命令：
 ```bash
-nvm use <version>
+nvm use 22.16.0
 ```
 例如，切换到 Node.js 20.9.0：
 ```bash
@@ -65,7 +65,7 @@ nvm use 20.9.0
 ### 4. 设置默认版本
 如果您希望在每次打开终端时自动使用某个版本，可以将其设置为默认版本：
 ```bash
-nvm alias default <version>
+nvm alias default 22.16.0
 ```
 例如，将 Node.js 20 设置为默认版本：
 ```bash
@@ -86,7 +86,7 @@ default -> 20 (-> v20.9.0)
 ### 5. 安装新版本（如果需要）
 如果目标版本尚未安装，可以通过以下命令安装：
 ```bash
-nvm install <version>
+nvm install 22.16.0
 ```
 例如，安装 Node.js 22：
 ```bash
@@ -124,11 +124,15 @@ source ~/.bashrc  # 或者 ~/.zshrc
 ```
 
 #### 问题 2: 切换版本后仍使用旧版本
-如果切换版本后仍然显示旧版本，请检查是否有系统级别的 Node.js 安装覆盖了 `nvm` 的版本。可以通过以下命令确认：
+如果切换版本后仍然显示旧版本，先核对当前 shell 实际使用的命令和 nvm 状态：
 ```bash
-which node
+command -v nvm
+command -v node
+which -a node
+nvm current
+nvm version default
 ```
-如果输出路径不是 `$NVM_DIR/versions/node/<version>/bin/node`，说明系统级别的 Node.js 可能干扰了 `nvm`。建议卸载系统级别的 Node.js 或调整环境变量优先级。
+`nvm` 通常是 shell 函数，适合用 `command -v nvm` 检查。若 `node` 路径与预期不符，检查当前 shell 是否加载 nvm、PATH 顺序及项目是否使用 `.nvmrc`。系统 Node.js 可能被其他工具依赖；先确认来源和用途，再决定是否调整，避免直接卸载。
 
 ---
 
@@ -136,5 +140,11 @@ which node
 
 ### 相关：默认版本解析不出结果会怎样
 
-如果 `default` 指向的版本恰好没有安装，`nvm version default` 会一直返回 `N/A`，而挂在 `precmd` 上的自动切换逻辑会因此每次出提示符都重跑一遍，把终端拖慢。排查方法见 [[../Dev/terminal-startup-slowdown|终端启动慢与标题闪动的排查]]。
+如果 `default` 指向尚未安装的版本，`nvm version default` 可能返回 `N/A`。如果自定义的 `precmd` 自动切换逻辑在解析失败后每次都重试，可能拖慢终端；是否发生取决于具体配置。排查方法见 [[../Dev/terminal-startup-slowdown|终端启动慢与标题闪动的排查]]。
+
+### 安全与项目配置
+
+使用可信的 Node.js 下载源，并在运行 `nvm use` 前检查陌生项目的 `.nvmrc`。nvm 官方 [GHSA-8grh-q73j-ffrc](https://github.com/nvm-sh/nvm/security/advisories/GHSA-8grh-q73j-ffrc) 指出，至 0.40.7 的版本可能因恶意 `.nvmrc` 路径穿越而读取本地文件，0.40.8 修复了该问题。另一项 [GHSA-3c52-35h2-gfmm](https://github.com/nvm-sh/nvm/security/advisories/GHSA-3c52-35h2-gfmm) 涉及恶意镜像，修复版本为 0.40.5。请按自己的安装方式核对当前版本及[官方安全公告](https://github.com/nvm-sh/nvm/security/advisories)，选择包含相关修复的受支持版本；这些公告不能保证不存在其他问题。
+
+安装与更新说明见 [nvm 官方仓库](https://github.com/nvm-sh/nvm#installing-and-updating)。以上安全公告核验于 2026 年 10 月 28 日。
 

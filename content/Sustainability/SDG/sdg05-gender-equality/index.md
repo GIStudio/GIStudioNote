@@ -6,6 +6,7 @@ tags:
   - SDG05
   - 性别平等
   - 妇女权益
+verified_at: 2026-10-28
 aliases:
   - Writing/experts/sdg/sdg05-gender-equality
 ---
@@ -16,7 +17,7 @@ aliases:
 
 ## 核心下游任务
 
-### 官方监测任务
+### 相关监测问题
 
 - 性别薪酬差距统计
 - 女性政治参与度测算
@@ -35,8 +36,8 @@ aliases:
 
 | 数据集名称 | 覆盖范围 | 核心数据维度 | 获取链接 |
 | ---------- | -------- | ------------ | -------- |
-| UN Women 全球性别平等数据库 | 全球200+国家和地区，1990年至今 | SDG5全部14个官方指标，含教育、就业、政治参与、法律权利、性别暴力、经济赋权数据 | [UN Women Data](https://data.unwomen.org/) |
-| 世界经济论坛全球性别差距报告数据集 | 146个国家，2006年至今 | 经济参与、教育程度、健康生存、政治赋权4维度的性别差距指数 | [Global Gender Gap Report](https://www.weforum.org/reports/global-gender-gap-report-2024/) |
+| UN Women 性别数据门户 | 各指标的国家和年份覆盖不同 | 与 SDG 相关的性别数据，包括政治参与、暴力与妇女经济权利等主题 | [UN Women Data](https://data.unwomen.org/) |
+| 世界经济论坛全球性别差距报告 | 2024 版覆盖 146 个经济体；2006 年起连续纳入每版的子集为 101 国 | 经济参与、教育、健康及政治赋权四个维度；属于独立综合指数 | [Global Gender Gap Report 2024](https://www.weforum.org/publications/global-gender-gap-report-2024/) |
 
 ## 具体目标
 
@@ -47,3 +48,5 @@ aliases:
 5. **确保参与决策**：确保妇女充分有效参与各级政治、经济和公共生活。
 6. **保障生殖健康权利**：确保普遍享有生殖健康和生殖权利。
 7. **促进平等的经济权利**：进行改革以赋予妇女平等获取经济资源的权利。
+
+以上为部分目标摘要，完整目标与指标见[联合国 SDG 5 页面](https://sdgs.un.org/goals/goal5)。涉及性别暴力等敏感资料时，应遵守同意、保密和数据保护要求；模型结果不能替代幸存者支持、专业判断或干预程序。

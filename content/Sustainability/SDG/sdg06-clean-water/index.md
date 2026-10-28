@@ -7,6 +7,7 @@ tags:
   - 饮水
   - 卫生
   - 水资源
+verified_at: 2026-10-28
 aliases:
   - Writing/experts/sdg/sdg06-clean-water
 ---
@@ -17,7 +18,7 @@ aliases:
 
 ## 核心下游任务
 
-### 官方监测任务
+### 相关监测问题
 
 - 安全饮用水普及率统计
 - 卫生设施覆盖率测算
@@ -37,9 +38,9 @@ aliases:
 
 | 数据集名称 | 覆盖范围 | 核心数据维度 | 获取链接 |
 | ---------- | -------- | ------------ | -------- |
-| UN-Water SDG6 数据门户 | 全球190+国家，2000年至今 | SDG6全部10个官方指标，含饮用水、卫生设施、水资源管理、废水处理、水质数据 | [SDG6 Data Portal](https://sdg6data.org/) |
-| NASA GRACE 全球地下水数据集 | 全球，2002年至今 | 陆地水储量变化、地下水储量时空变化、干旱监测数据 | [GRACE Data](https://grace.jpl.nasa.gov/) |
-| SustainBench 饮用水与卫生设施数据集 | 非洲24个国家，超8万样本 | 卫星影像+DHS调查的家庭饮用水/卫生设施可及性标签 | [SustainBench DHS](https://sustainbench.org/) |
+| UN-Water SDG 6 数据门户 | 全球、区域与国家层面；可用年份和覆盖依指标而异 | 饮用水、卫生设施、水资源管理、废水与水质相关数据 | [SDG 6 Data Portal](https://sdg6data.org/en/) |
+| NASA GRACE 与 GRACE-FO | GRACE 为 2002–2017 年，后继 GRACE-FO 于 2018 年发射；具体产品有时间和空间限制 | 遥感地球重力场变化以估计陆地总水储量变化；地下水分量需要结合其他数据或模型推断 | [NASA 任务与水储量说明](https://grace.jpl.nasa.gov/resources/42/grace-and-grace-fo-track-californias-land-water-changes/) |
+| SustainBench 饮水与卫生设施任务 | 多国 DHS 调查，按国家划分训练与测试 | 聚合到调查簇的饮水与卫生设施指标，可与影像结合预测 | [SustainBench DHS](https://sustainlab-group.github.io/sustainbench/docs/datasets/dhs.html) |
 
 ## 具体目标
 
@@ -50,3 +51,5 @@ aliases:
 5. **实施水资源综合管理**：到 2030 年，在所有层面实施水资源综合管理。
 6. **保护和恢复水相关生态系统**：到 2020 年，保护和恢复与水有关的生态系统。
 7. **促进国际合作**：到 2030 年，加强国际合作，支持发展中国家提高水相关能力。
+
+以上为部分目标摘要，完整目标与指标见[联合国 SDG 6 页面](https://sdgs.un.org/goals/goal6)。其中目标 6.6 的 2020 年截止时间是原议程文本的时间，不能理解为该目标在 2020 年已经实现。

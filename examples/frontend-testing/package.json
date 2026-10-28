@@ -1,0 +1,17 @@
+{
+  "name": "gistudio-frontend-testing-example",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.12.0 <23" },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test:unit": "vitest run tests/unit",
+    "test:smoke": "node --test tests/smoke.test.js",
+    "test": "npm run test:unit && npm run test:smoke"
+  },
+  "devDependencies": {
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}

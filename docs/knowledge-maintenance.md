@@ -61,7 +61,7 @@
 
 ## 全站写作审读
 
-- [doing] 2026-10-28 审读既有 197 页中的 188 页；按用户要求，Awesome GeoAI 的 9 页上游快照保持原样。77 页已完成本地修订，覆盖、修改与待核验清单见 [写作审读汇总](writing-audit/2026-10-28-summary.md)。部分事实、旧数据、代码安全和公开状态仍需专项核验，不能认定所有问题均已解决；本批未发布。Urban Dictionary 单篇调研已独立发布。
+- [done] 2026-10-28 全站审读及剩余问题专项修复：原 197 页中审读 188 页，Awesome GeoAI 的 9 页按用户要求保持原样；首轮 77 页、本轮进一步核验和修订 40 页，合计 109 个不同页面。SDG 全部 18 页、开发安全、空间数据、AI 与阅读写作的依据及测试见 [审读汇总](writing-audit/2026-10-28-summary.md)和其中的专项记录。Node 22.16.0 下 `npm run check:content` 通过，覆盖当前 198 个 Markdown 和 45 个资源；有限测试与未取得全文等证据边界已分别记录。用户已授权本批推送发布，部署版本与结果由对应 [Pages 工作流](https://github.com/GIStudio/GIStudioNote/actions/workflows/deploy.yml)及线上正文核验确认。Urban Dictionary 为先前独立交付，用户原有三项改动不纳入本批。
 
 ## 公开页面的最小元数据
 

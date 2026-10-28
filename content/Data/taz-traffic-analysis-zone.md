@@ -1,105 +1,60 @@
 ---
-title: TAZ 交通分析区与各国同类分区体系
-description: 交通分析区（TAZ）的定义、四阶段模型中的角色、划定原则，以及美国、英国、德国、日本、中国内地与香港的类似实现对比。
+title: TAZ 交通分析区与各地分区实践
+description: 介绍交通分析区在出行需求模型中的作用，以及不同地区的分区与统计地理关系。
 tags:
   - GIS
   - 空间单元
   - 交通规划
   - 城市分析
----
-# TAZ 交通分析区与各国同类分区体系
-
-**一句话定位**：TAZ（traffic/transportation analysis zone）是传统交通需求模型中最基本的地理单元——研究区被划分为互不重叠的分区，出行的发生与吸引、OD 矩阵都以分区为单位汇总；各国的「同类实现」差别不在概念，而在**由谁划定（交通部门 vs 统计部门）与层级结构**。
-
+verified_at: 2026-10-28
 ---
 
-## 1. TAZ 是什么
+# TAZ 交通分析区与各地分区实践
 
-- **定义与角色**：TAZ 是常规交通规划模型中常用的地理单元（[Wikipedia: Traffic analysis zone](https://en.wikipedia.org/wiki/Traffic_analysis_zone)）。研究区被划分为互不重叠的分区，每区挂接家庭收入、机动车保有量、就业等数据。四阶段模型先按区估计出行发生量和吸引量，再将它们配对为「起点区→终点区」的 OD 矩阵。
-- **规模指导**：都市级模型中单区人口常在 3,000 人以下；空间上中心商务区可细到街区甚至建筑，郊区/外缘则很大（Wikipedia 综述）。分区越多计算负担越大，实践中常合并小区以降规模。
-- **构词来源**：TAZ 通常由人口普查的 block/block group/tract 聚合而成（[EASI Demographics](https://www.easidemographics.com/trshelp/html/traffic_analysis_zone.htm)）——即先有统计单元，再套交通边界。
-- **已知问题**：区内出行（intrazonal trips）的内部距离被忽略、跨区出行被截断（trip crossing），分区方式本身就是 MAUP 的来源（MAUP 的机制与杰利蝾螈这一极端案例见 [[maup-and-gerrymandering|MAUP 与杰利蝾螈]]）；划定质量直接影响需求预测合理性（[Transport Policy 2022](https://ideas.repec.org/a/eee/trapol/v127y2022icp1-14.html)）。改进方向包括多源数据自动划区（[MDPI Applied Sciences 2024](https://www.mdpi.com/2076-3417/14/13/5964)、[Journal of Transport Geography 2025](https://www.sciencedirect.com/science/article/pii/S0966692325002157)）、以及以个体/活动为基础的模型绕开集计分区。
+交通分析区（Traffic Analysis Zone，TAZ）是交通需求分析中组织人口、就业和出行数据的地理单元。模型用起点区和终点区描述出行，形成区域之间的 OD 矩阵；不同城市会根据道路网络、调查和预测用途设计分区。
 
-## 2. 各国（地区）的类似实现
+TAZ 与行政区、人口统计区、地块可以相互关联，但它们的边界、目的和年份不必一致。
 
-### 美国：TAZ / TAD（普查官方地理实体）
-- 普查局将 TAZ 列为**官方普查地理实体**，由州 DOT / MPO 划定并提交，经 TIGER/Line 发布边界（[2010 TAZ 边界文件](https://www2.census.gov/geo/tiger/TIGER2010/TAZ/2010/)）；TAD（traffic analysis district）是 TAZ 的上一级聚合，提供更粗的分析地理（[data.gov TAD 说明](http://catalog.data.gov/dataset/tiger-line-shapefile-2011-2010-nation-u-s-2010-census-traffic-analysis-district-tad-nation)）。
-- 数据通道是 **CTPP**（Census Transportation Planning Products，FHWA 与 AASHTO 联合支持），按 TAZ 汇总通勤 OD 等数据（[TRB Census Committee: TAZ delineation for CTPP](http://www.trbcensus.com/newsltr/sr0111.pdf)）。
-- 区域实践示例：[普吉特湾区域委员会](https://www.psrc.org/faq/what-traffic-analysis-zone-taz)以 TAZ 作为区域出行需求模型的运行与结果汇报单元。
+## TAZ 如何进入交通模型
 
-### 英国：OA → LSOA → MSOA（统计区承担交通分析职能）
-- 英国没有专门的「交通分析区」，交通分析与通勤 OD 普遍借用普查统计区层级：OA → LSOA（约 1,500 人/650 户）→ MSOA（约 5,000–15,000 人，由 4–5 个 LSOA 组成）（[ONS Census 2021 geographies](https://www.ons.gov.uk/methodology/geography/ukgeographies/censusgeographies/census2021geographies)、[OCSI 入门指南](https://ocsi.uk/2019/03/18/lsoas-leps-and-lookups-a-beginner-guide-to-statistical-geographies/)）。
-- 苏格兰对应物是 **Data Zone / intermediate zone**，北爱尔兰用 SOA（[UK Data Service 指南 PDF](https://ukdataservice.ac.uk/app/uploads/censusgeography2022-10-18.pdf)）。注意苏格兰 Data Zone 的设计人口是 **500–1,000 人**，比 LSOA（约 1,500 人）更细，intermediate zone 为 2,500–6,000 人（[苏格兰政府小面积统计页](https://www.gov.scot/collections/small-area-statistics/)）——说它是「LSOA 等价物」只对层级位置成立，粒度上其实低半级。普查「通勤出行」数据直接以 MSOA/LSOA 发布（[Census 2021 travel to work 示例](https://www.arcgis.com/home/item.html?id=4cfdf60f110b4d0e9b86d87331b6cb01)）。
+在常见的四阶段模型中，研究者先估计各区的出行产生与吸引，再估计区与区之间的出行分布，接着分析方式选择及交通分配。模型细节和步骤的实施顺序因项目而异，参见 [[four-step-model|四阶段模型]]。
 
-### 德国：Verkehrszellen（交通小区）
-- 需求模型以 **Verkehrszellen**（交通小区）为 OD 计算单元；柏林官方划分为 323 个交通小区，并有更细的 **Teilverkehrszellen**（部分交通小区），由市统计部门发布、广泛用于出行报告（[地址级区内距离计算](https://www.researchgate.net/publication/354312525_Address-based_computation_of_intra-cell_distances_for_travel_demand_models)）。
-- 州级宏观模型同样以交通小区为骨架，如巴伐利亚州模型约 6,500 个小区（[ResearchGate](https://www.researchgate.net/publication/337620173_Transport_demand_model_for_the_Free_State_of_Bavaria_-_basis_for_local_transport_planning)）；经典需求模型如德累斯顿 EVA（[TRID](https://trid.trb.org/View/943081)）、四阶段模型综述见 [Friedrich (ISV Stuttgart)](https://www.isv.uni-stuttgart.de/vuv/publikationen/downloads/2011_Friedrich_Nachfragemodelle_Heureka2011_mit_Deckblatt.pdf)。
+模型往往用区域中心点或其他连接方式表示区域与道路网络的关系。这需要对区内出行、区内距离和接入位置作近似；并非所有模型都把区内出行忽略。区划越细，空间差异可能表达得更充分，OD 表也更稀疏，调查、标定和计算需求可能增加。
 
-### 日本：PT 调查的多级ゾーニング（分区）体系
-- 日本都市圈「パーソントリップ调查」（person trip survey）自 1960 年代起持续开展，出行起讫点通过**ゾーニング**编码到多级分区体系：典型为 小ゾーン → 計画基本ゾーン（规划基本区），并保持与既往调查的分区连续性（[东京都市圈 PT 数据说明](https://www.tokyo-pt.jp/data/01_01)、[总务省资料 PDF](https://www.soumu.go.jp/main_content/000588038.pdf)、[京阪神 PT 指南](https://www.kkr.mlit.go.jp/plan/pt/topics/pt_guide-01.html)）。
-- 近年调查设大/中/小三级分区，最细到街区（条町目）级，且与市町村边界对齐以便地方政府分析预测（[道央都市圈 PT 分区设定 PDF](https://www.douou-pt.jp/pdf/1/)）；东京圈已开展五次 PT 调查（1968–2008，[EASTS 论文 PDF](https://easts.info/on-line/proceedings/vol10/pdf/1421.pdf)）。
+选区时需要结合用地与人口分布、道路阻隔、数据可获得性、跨期一致性与预测任务。分区设计本身会影响统计结果，参见 [[maup-and-gerrymandering|MAUP 与杰利蝾螈]]。
+
+## 不同地区的实践
+
+### 美国：TAZ 和 TAD
+
+美国普查局将 TAZ 描述为州和地方交通机构划定的专用统计地理单元，主要服务通勤与工作地点等交通数据；交通分析地区（TAD）在适用时可由 TAZ 聚合。[美国普查局地理说明](https://tigerweb.geo.census.gov/tigerwebmain/TIGERweb_geography_details.html)
+
+普查局提供的 TIGERweb 图层中，TAZ 图层有 2000 和 2010 年版本。下载时应明确所用版本，而不是从网页服务名称推断所有图层均为 2020 年边界。[图层目录](https://tigerweb.geo.census.gov/arcgis/rest/services/Census2020/PUMA_TAD_TAZ_UGA_ZCTA/MapServer)
+
+### 英国：统计区和模型分区
+
+英格兰与威尔士的 2021 普查提供 OA、LSOA 和 MSOA 等统计地理层级。[ONS 2021 地理说明](https://www.ons.gov.uk/methodology/geography/ukgeographies/censusgeographies/census2021geographies)
+
+交通模型也会划定符合自身用途的分区。伦敦交通局指南建议结合行政边界、需求模型和当地出行活动考虑分区；赫特福德郡 COMET 模型则以 MSOA 为基础。这两个例子说明统计边界可以作为模型分区的基础，具体做法由模型决定。[伦敦交通局指南](https://content.tfl.gov.uk/traffic-modelling-guidelines.pdf)；[赫特福德郡模型](https://www.hertfordshire.gov.uk/services/highways-roads-and-pavements/business-and-developer-information/transport-modelling/transport-modelling-in-hertfordshire.aspx)
+
+### 德国：Verkehrszellen
+
+德国使用交通小区（Verkehrszellen）等术语。柏林交通部门发布交通小区及更细分单元的名称、代码与边界说明，版本变化时应核对代码和边界的对应关系。[柏林交通数据](https://www.berlin.de/sen/uvk/mobilitaet-und-verkehr/verkehrsdaten/teilverkehrszellen-und-verkehrszellen/)
+
+### 日本：都市圈 PT 调查分区
+
+日本都市圈的人次出行（Person Trip，PT）调查记录出行目的、时间、方式和起终点。京阪神都市圈调查将地点编码到一定范围的分区，以便汇总与分析。日本国土交通省也说明，全国城市交通特性调查与都市圈 PT 调查的用途和能否估计区间 OD 总量不同，使用数据前应区分调查类型。[京阪神 PT 指南](https://www.kkr.mlit.go.jp/plan/pt/topics/pt_guide-01.html)；[全国调查说明](https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000033.html)
 
 ### 中国内地：交通小区
-- 城市交通规划中的对应概念是**交通小区**，划分常遵循：以行政区划/自然屏障为界、区内用地性质相对一致、规模适中（控制区内出行比例）、与路网和交通设施分布协调（[基于手机 OD 的区域交通需求预测](https://html.rhhz.net/GLJTKJ/1557992972651-592016055.htm)）。
-- 国家标准《国土空间交通规划编制指南》规定交通小区划分不大于区县级单元，并以小区出行产生/吸引量、分方式 OD 为基本分析量（[标准文本](https://kass.sacinfo.org.cn/kfs/token/download/xzdjaieldnkzgxpe)）；居民出行调查与 OD 调查是数据来源（[交通运输部编制指南](https://xxgk.mot.gov.cn/jigou/ysfws/202006/t20200623_3315097.html)）。
-- 针对国内划分多靠定性经验的问题，有基于区内出行比例的小区半径定量计算方法（[长安大学学报 PDF](https://transport.chd.edu.cn/cn/article/pdf/preview/200701015.pdf)）；手机信令等大数据正在改造传统调查（[城市综合交通调查的规范与创新 PDF](https://www.chinautc.com/upload/accessorychinautc/2016419125474562441.pdf)）。
 
-### 香港：TPU 体系
-- 香港的对应物是规划统计区层级：**总规划统计区（TPA）→ 次规划统计区（SPU）→ 小规划统计区（TPU）→ 单元区（VC）**；2021 年普查全港分 9 个 TPA、52 个 SPU、292 个 TPU（[CSDI 数据集](https://portal.csdi.gov.hk/csdi-webpage/dataset/pland_rcd_1637289585582_55577)）。
-- TPU 由规划署划界、统计处用于普查发布（[TPU 基本统计表 PDF](https://www.censtatd.gov.hk/en/data/stat_report/product/B1120024/att/B11200242001XXXXB0400.pdf)），也是交通影响评估（TIA）中常用的基础分析单元；边界可从 [DATA.GOV.HK](https://data.gov.hk/tc-data/dataset/hk-pland-pland1-boundaries-of-tpu-sb-vc) / CSDI 下载。
+交通小区是城市交通规划中组织出行分析的常见单元。具体边界与规模由城市和项目的规划范围、调查与模型要求决定，不宜套用统一人口阈值。交通运输部的城市公共交通规划指南列出基于现状调查进行客流预测和采用四阶段方法的做法。[城市公共交通规划编制指南](https://xxgk.mot.gov.cn/jigou/ysfws/202006/t20200623_3315097.html)
 
-## 3. 人口规模视角
+### 香港：规划统计区与交通模型
 
-各体系「一个分区装多少人」差别很大，直接反映了分区粒度的深浅：
+香港规划署的边界数据采用一级、二级及小规划统计区（PPU、SPU、TPU）编码。2021 年普查的 TPU 下分单元区；2001–2016 年版本使用街段区或村落统计区。TPU 用于规划和统计数据组织，并不自动等同于某个交通模型的 TAZ；分析交通时应核对具体模型、调查或项目所采用的区划和版本。[规划署数据规范](https://www.pland.gov.hk/open_data/tpu_sb_vc/Boundary_of_TPU_and_Subunit_Data_Specification_v1.0.pdf)；[边界数据目录](https://data.gov.hk/tc-data/dataset/hk-pland-pland1-boundaries-of-tpu-sb-vc)
 
-| 国家/地区 | 单元 | 单区人口（来源或估算方式） |
-|---|---|---|
-| 美国 | TAZ | 常见 < 3,000 人（模型软件综述，Wikipedia） |
-| 英国 | 单位邮编（unit postcode） | 约 15 户 / 30–50 人（ONS 邮编目录粒度，估算） |
-| 英国 | OA | 约 125 户 / 300 人（由单位邮编聚类而成，[ONS 统计地理说明](https://www.ons.gov.uk/methodology/geography/ukgeographies/statisticalgeographies)） |
-| 英国 | LSOA | 约 1,500 人 / 650 户（ONS） |
-| 英国 | MSOA | 5,000–15,000 人（ONS） |
-| 苏格兰 | Data Zone | 设计区间 500–1,000 人（下限 375、上限 1,125；2022 版共 7,392 个，[gov.scot](https://www.gov.scot/collections/small-area-statistics/)） |
-| 苏格兰 | Intermediate Zone | 2,500–6,000 人（gov.scot） |
-| 德国（柏林） | Verkehrszelle | 约 1.1 万人/区（按柏林约 360 万人 / 323 区折算，估算） |
-| 中国内地 | 交通小区 | 城市中心区 2 万–4 万人（面积 1–3 km²），边缘区约 3 万人（5–15 km²）（[长安大学学报](https://transport.chd.edu.cn/cn/article/pdf/preview/200701015.pdf)、[北京大学学报](https://xbna.pku.edu.cn/CN/article/downloadArticleFile.do?attachType=PDF&id=2952)引国外调查经验） |
-| 香港 | TPU | 约 2.5 万人/区（按 2021 普查约 741 万人 / 292 个 TPU 折算，估算） |
+## 与邮编、地块和统计区如何关联
 
-几个值得注意的模式：
+邮政编码面向投递，统计区用于发布统计数据，交通区用于特定交通分析。即使名称相似，也要先确认区域定义和版本，再选择地址匹配、点落区或面叠加等方法。跨界对象的分配方法需要明示；面积加权会引入区内均匀分布等假设，不能保证还原个人出行。
 
-- ** Anglo 统计区体系粒度远细于中式交通小区**：英美单区人口在 10³ 量级（LSOA 约 1,500 人、TAZ < 3,000 人），中国内地与香港的单区人口在 10⁴ 量级（2 万–4 万）。前者的分区首先服务于普查统计发布，后者首先服务于出行需求建模——统计发布需要小单元保护隐私的同时保证抽样稳定性，而需求模型只需区分到「OD 分布有意义」的粒度，过细的分区反而让 OD 矩阵稀疏、模型噪声增大。
-- **分区内人口与面积随区位递变**：中心区小而密、外围大而疏（美国 TAZ 在 CBD 可细到街区、外缘很大；中国经验值中心区 1–3 km²、边缘 5–15 km²），说明单区人口不是唯一控制量——控制的是「单区出行量/区内出行比例」这类行为变量，人口只是它的代理。
-- **规模-成本权衡**：分区数越多，OD 矩阵按分区数平方增长，标定与计算成本随之上升；中国内地按 2 万–4 万人/区划分，一个千万级人口都市圈通常落在数百到一两千个交通小区，与柏林 323 区、香港 292 个 TPU 的量级一致（此句为量级推断）。
-- **人口折算的局限**：表中德国与香港的数值是「总人口/分区数」的均值折算，未反映区内人口方差——中心区 TPU/交通小区的实际人口通常远低于均值，CBD 分区可能只有数千人甚至以岗位为主，因此跨体系比较时应视为量级而非精确值。
-
-## 4. 邮编与 TAZ 的关系
-
-英国的单位邮编可通过 ONS 邮编目录等对照资料关联统计区；普查地址带单位邮编，OA、LSOA 和 MSOA 则构成统计地理层级（[ONSPD](https://geoportal.statistics.gov.uk/datasets/b54177d3d7264cd6ad89e74dd9c1391d)、[Nomis 邮编-统计区对照](https://www.nomisweb.co.uk/census/2011/postcode_headcounts_and_household_estimates)）。使用邮编挂接统计区时，应核对所用对照表的年份和分配方法，以及它与具体交通模型分区的关系。
-
-其他国家则基本没有这种整洁关系：
-
-| 国家/地区 | 邮编体系 | 与 TAZ 的关系 |
-|---|---|---|
-| 英国 | unit postcode（约 15 户） | ONSPD 提供邮编与统计区的对照；使用时核对年份和分配方法 |
-| 美国 | ZIP / ZCTA | **互不嵌套**：TAZ 由 census block 聚合，ZIP 是邮政投递路线，两者边界互相穿插，只能做面积加权叠合 |
-| 德国 | PLZ | 独立于 Verkehrszellen，无官方层级关系 |
-| 日本 | 郵便番号（7 位） | 独立体系；PT 分区以町丁目/街区为基础构建，与邮编不重合 |
-| 中国内地 | 邮编（6 位） | 粒度粗（到投递区/街道级），与交通小区无对应关系，规划中几乎不用邮编做分析单元 |
-| 香港 | 基本无公开邮编体系 | 不适用；地址以「区+街道+门牌」组织，统计单元靠 TPU |
-
-值得注意的英国例外之外，**美国 ZIP 与 ZCTA 的关系本身也是一个坑**：ZIP 是 USPS 的服务路线而非面单元，ZCTA（ZIP Code Tabulation Area）是普查局用 block 近似出来的面版本，即便在美国内部，ZIP ↔ ZCTA ↔ block ↔ TAZ 也只在 block 层面可严格对照。这解释了为什么「用邮编聚合出行数据」在英国是常规操作，而在美国/中国必须先经过地址地理编码落到 block 或网格。
-
-## 5. 横向对比
-
-| 国家/地区 | 单元名称 | 划定主体 | 与普查关系 | 层级 |
-|---|---|---|---|---|
-| 美国 | TAZ / TAD | MPO、州 DOT | 普查官方实体，CTPP 按区发布通勤 OD | TAD ⊃ TAZ ⊃ block |
-| 英国 | LSOA / MSOA（苏格兰 Data Zone） | 统计机构（ONS 等） | 本身就是普查统计区 | OA → LSOA → MSOA |
-| 德国 | Verkehrszelle | 交通规划机构/市统计部门 | 多数独立于普查小区 | 州模型约 6,500 区；柏林 323 区+细分 |
-| 日本 | 交通ゾーン（小ゾーン/計画基本ゾーン） | 都市圈交通计划协议会 | PT 调查自有体系，强调跨期连续 | 多级（大/中/小/细目） |
-| 中国内地 | 交通小区 | 规划编制单位 | 独立划定，不大于区县 | 交通大区 → 小区 |
-| 香港 | TPU | 规划署 | 普查统计发布单元 | TPA → SPU → TPU → VC |
-
-共同点是所有体系都在回答同一组权衡：**分区粒度（计算成本 vs 空间精度）、边界语义（行政/统计对齐 vs 用地/出行同质）、跨期可比性**。美国与日本由交通部门主导、另建交通专用边界；英国与香港直接复用统计区，省去数据对接但牺牲用地同质性；德国介于两者之间。
-
-与网格/H3/地块等四种划分策略的关系见 [[spatial_units_report|四种空间单元划分策略对比]]——TAZ 属于其中的「语义边界对齐较高、数据挂接较难」一端，且是唯一以「出行 OD 建模」为原生目的的分区体系。TAZ 服务的模型内核是 [[four-step-model|四阶段模型]]；其在项目尺度上的应用见 [[traffic-impact-assessment|交通影响评估（TIA）]]。
+其他空间单元的尺度、挂接与 MAUP 问题，参见 [[spatial_units_report|城市空间分析中的四类空间单元]]；项目尺度的分析见 [[traffic-impact-assessment|交通影响评估]]。

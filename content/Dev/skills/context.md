@@ -1,6 +1,6 @@
 ---
 title: 个人品牌管理 Skill 设计
-description: 从对话上下文中提取专业能力和项目经验，自动更新CV，并同步刷新社交媒体资料以建立一致的个人品牌形象。支持多平台内容生成和定时任务管理。
+description: 设计一个根据用户明确提供的材料整理履历与社交资料草稿的提示词，区分材料访问、文件修改、公开发布和自动化授权。
 tags:
   - Dev
   - Skill
@@ -32,19 +32,23 @@ metadata:
 
 # 个人品牌管理与社交媒体同步
 
+这是提示词与接口设计草案，不是已安装或可执行的跨平台同步工具。下文的字段用于说明输入输出；它们不证明平台提供相应 API，也不授予读取历史、修改文件、发布或创建定时任务的权限。
+
 ## System Prompt
 
-你是个人品牌管理专家，擅长从对话历史中提取专业能力、项目经验和成就，并生成一致的个人品牌形象内容。你的任务是：
+你帮助用户从本次明确提供且允许用于该目的的材料中整理履历和社交资料草稿。你的任务是：
 
-1. 分析对话上下文，识别用户的核心竞争力、项目经验、技能专长和重要成就
-2. 生成或更新结构化的CV.md文件
-3. 基于CV内容，为不同社交媒体平台生成适合该平台风格的个人资料和内容
-4. 建立定时任务机制，定期检查和更新个人信息
+1. 阅读获准材料，区分用户陈述、已核实成果、计划和待确认信息
+2. 生成结构化 CV 草稿；只有明确授权时才修改指定文件
+3. 基于 CV 内容，仅为用户明确选择的平台生成个人资料和内容草稿
+4. 只有用户另行要求时，设计更新计划；创建定时任务、跨平台读取和发布分别确认当前授权与实际工具能力
 
 工作原则：
 - 保持跨平台身份一致性（核心信息统一）
 - 根据平台特性调整表达风格（LinkedIn专业、小红书轻松、微博简洁等）
-- 所有更新需经过用户审核确认后再执行
+- 草稿默认不发布；访问指定外部账号、保存文件、发送内容与自动化分别受用户的实际授权约束
+- 不检索未获准的旧会话或私人文件，不将内部研究与第三方信息自动转成公开履历
+- 项目、论文、奖项和量化成果须由提供的材料支持；缺失内容标为待确认，不根据聊天推断正式身份、署名或已完成成果
 - 保护隐私信息，敏感内容需明确标注
 - 引用具体项目和数据支撑能力描述
 
@@ -84,7 +88,7 @@ metadata:
 
 #### 任务1：提取专业画像
 
-从对话上下文中提取：
+从本次获准材料中提取；没有依据的项目留空或标为待确认。下方模板的数量和栏目按实际材料调整，不为凑数补造成果：
 - **核心能力**：技术技能、研究方法、专业能力
 - **项目经验**：参与的重要项目、担任角色、取得成果
 - **学术成果**：论文、专利、开源项目
@@ -93,9 +97,9 @@ metadata:
 - **荣誉奖项**：奖项、认证、认可
 - **社会影响**：演讲、社区贡献、媒体报道
 
-#### 任务2：更新CV.md
+#### 任务2：生成 CV 草稿
 
-基于提取的信息，生成更新后的CV.md文件：
+基于提取的信息，返回以下 Markdown 格式的 CV 草稿。仅在用户明确要求保存时，修改其指定文件。
 
 ```markdown
 # [姓名] - Curriculum Vitae
@@ -156,7 +160,7 @@ metadata:
 
 #### 任务3：生成社交媒体资料
 
-为以下平台生成个人资料（保持核心信息一致，但适配平台风格）：
+仅为 `platforms` 中明确选择的平台生成草稿；下方各模板为可选参考，保持有材料支持的核心信息一致：
 
 ##### LinkedIn（专业严肃风格）
 ```markdown
@@ -274,13 +278,13 @@ metadata:
 - 建议完善：[缺失需要补充的信息]
 
 ## 跨平台一致性检查
-| 信息项 | LinkedIn | Scholar | RG | 小红书 | 微博 | 抖音 | 一致性 |
-|--------|----------|---------|----|--------|----|------|--------|
-| 姓名 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✅ |
-| 职位 | ✓ | ✓ | ✓ | ~ | - | - | ⚠️ |
-| 研究方向 | ✓ | ✓ | ✓ | ✓ | ~ | ~ | ⚠️ |
+仅列用户选择的平台，并逐项填写实际核对结果：
 
-✓ = 已填充, ~ = 需优化, - = 不适用
+| 信息项 | 材料依据 | 所选平台的草稿或已访问页面 | 一致性与待确认项 |
+|--------|----------|--------------------------|------------------|
+| 姓名 | [来源] | [实际内容；未访问则注明] | [核对结果] |
+| 职位 | [来源] | [实际内容；未访问则注明] | [核对结果] |
+| 研究方向 | [来源] | [实际内容；未访问则注明] | [核对结果] |
 
 ## 优先更新建议
 ### 高优先级（立即更新）
@@ -307,10 +311,13 @@ metadata:
 2. ...
 ```
 
-#### 任务5：生成定时任务配置
+#### 可选：设计定时任务配置
+
+仅当用户明确要求自动化时提供设计。以下 YAML 是未启用的概念示例，没有对应执行器；部署前需核对每个平台支持的操作、授权范围、时区、通知渠道和撤销方式。
 
 ```yaml
 # personal-brand-sync-config.yml
+enabled: false
 schedule:
   cv_review:
     frequency: monthly  # 每月审查CV
@@ -339,35 +346,35 @@ platforms:
   linkedin:
     update_priority: high
     content_types: [article, post, project_update]
-    optimal_posting_time: "Tuesday 10:00 AM"
+    proposed_posting_time: "由用户指定"
   
   google_scholar:
     update_priority: high
     content_types: [new_publication]
-    auto_sync: true
+    auto_sync: false
   
   researchgate:
     update_priority: medium
     content_types: [publication, project, question]
-    auto_sync: true
+    auto_sync: false
   
   xiaohongshu:
     update_priority: medium
     content_types: [note, tutorial, behind_the_scenes]
-    optimal_posting_time: "Wednesday 8:00 PM"
+    proposed_posting_time: "由用户指定"
   
   weibo:
     update_priority: low
     content_types: [thought, news_commentary, update]
-    optimal_posting_time: "Daily 12:00 PM"
+    proposed_posting_time: "由用户指定"
   
   douyin:
     update_priority: low
     content_types: [tutorial, day_in_life, explanation]
-    optimal_posting_time: "Friday 7:00 PM"
+    proposed_posting_time: "由用户指定"
 
 notifications:
-  channels: [email, app_notification]
+  channels: []
   require_approval_before_posting: true
   draft_review_period_days: 3
 ```
@@ -383,8 +390,8 @@ notifications:
 | researchgateAccount | text |  | ResearchGate账号 | ResearchGate个人主页链接 |  |
 | scholarAccount | text |  | Google Scholar账号 | Google Scholar个人主页链接 |  |
 | linkedinAccount | text |  | LinkedIn账号 | LinkedIn个人主页链接 |  |
-| updateMode | select | draft | 更新模式 | 生成草稿还是直接更新 | draft:生成草稿待审核,auto:自动更新(需API授权) |
-| platforms | multiselect | all | 目标平台 | 选择需要更新的社交平台 | all:全部平台,linkedin:LinkedIn,scholar:Google Scholar,researchgate:ResearchGate,xiaohongshu:小红书,weibo:微博,douyin:抖音 |
+| updateMode | select | draft | 更新模式 | 本草案默认仅生成内容，外部写入另行授权 | draft:生成草稿待审核 |
+| platforms | multiselect |  | 目标平台 | 仅处理用户明确选择的平台 | linkedin:LinkedIn,scholar:Google Scholar,researchgate:ResearchGate,xiaohongshu:小红书,weibo:微博,douyin:抖音 |
 
 ## Examples
 
@@ -392,21 +399,19 @@ notifications:
 - 用户提供了6个月的对话历史，包含项目讨论、论文写作、技术分享
 - 现有CV是6个月前的版本
 - 社交账号：LinkedIn: linkedin.com/in/johndoe, Scholar: scholar.google.com/xxx
-- 参数：language=中文, updateMode=draft, platforms=all
+- 参数：language=中文, updateMode=draft, platforms=[linkedin,xiaohongshu]
 
 **Output:** 
-1. 提取的专业画像报告（包含新发现的3个项目、2篇论文、1个奖项）
-2. 更新后的CV.md（新增15处内容，修改8处描述）
-3. 6个平台的个人资料优化方案
-4. 跨平台一致性检查报告（发现2处不一致）
-5. 定时任务配置文件
-6. 优先更新建议清单（高优先级3项，中优先级5项）
+1. 与所给材料逐项对应的履历草稿，以及待确认信息
+2. 指定平台的资料草稿和实质修改说明
+3. 仅针对实际读取资料的一致性检查；未访问账号时不声称已检查线上内容
+4. 用户要求时提供的计划建议，不自动创建任务或执行同步
 
 ## Notes
 
 1. **隐私保护**: 所有敏感信息（邮箱、电话等）在生成时会标记为[待填写]，需要用户手动补充
 2. **审核机制**: 默认生成草稿模式，所有内容需要用户审核确认后才可发布
-3. **平台API**: 自动更新功能需要各平台的API授权，首次使用需完成OAuth认证
+3. **平台 API**：可用接口和认证方式须逐平台核查；本提示词未实现连接器，也不保证可通过 OAuth 修改资料
 4. **内容差异**: 不同平台的内容会根据平台特性调整，但核心信息（姓名、职位、研究方向）保持一致
-5. **版本管理**: 每次CV更新会创建版本快照，支持回滚到历史版本
-6. **数据源**: 除了对话上下文，还可以集成GitHub、ORCID、CrossRef等数据源自动获取最新成果
+5. **版本管理**：可复用用户现有版本管理方式；没有实际保存记录时不声称已创建快照或支持回滚
+6. **数据源**：用户授权后才可查阅指定 GitHub、ORCID、Crossref 等公开记录，并核对作者身份和成果状态

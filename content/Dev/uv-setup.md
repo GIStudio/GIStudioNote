@@ -7,6 +7,7 @@ tags:
   - uv
   - 环境管理
   - 教程
+verified_at: 2026-10-28
 ---
 # uv 配置指南
 
@@ -54,17 +55,11 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-#### 方法二：使用包管理器
-```bash
-# Debian/Ubuntu
-apt install uv
+#### 方法二：使用发行版包管理器
 
-# Fedora
-dnf install uv
+包名、可用版本及安装命令取决于发行版和软件源。请先查阅当前发行版或 [uv 安装文档](https://docs.astral.sh/uv/getting-started/installation/)，并核对包来源。
 
-# Arch Linux
-pacman -S uv
-```
+上面的安装脚本会在本机执行从网络下载的代码。执行前应确认来源和内容；在受管理机器上遵循所在组织的安装策略。
 
 ## 配置 Python 3.13
 
@@ -110,9 +105,8 @@ cd myproject
 ```
 
 ### Windows Git Bash 注意事项
-- 使用双引号而非单引号传递参数
-- 路径使用 `/d/path/to/project` 格式
-- 避免在路径中使用空格
+- Git Bash 使用类 Unix 的 shell 语法；包含空格的路径应加引号。
+- 传给 Windows 程序的路径可能需要按程序要求转换；遇到路径问题时检查实际程序的参数格式。
 
 ## 创建项目
 
@@ -156,7 +150,7 @@ uv add "requests>=2.28"
 # 从 pyproject.toml 安装
 uv sync
 
-# 安装所有依赖（包括开发依赖）
+# 同步默认依赖及 dev 组；其他可选组按需指定
 uv sync --dev
 ```
 
@@ -166,10 +160,14 @@ uv remove requests
 ```
 
 ### 升级依赖
+在项目目录中，以下命令在 `pyproject.toml` 的版本约束内更新 `uv.lock`，然后根据锁文件同步环境。升级会改变依赖版本，先审查锁文件差异并运行测试。
+
 ```bash
-uv pip compile pyproject.toml  # 生成锁文件
-uv sync
+uv lock --upgrade
+uv sync --locked
 ```
+
+`uv pip compile` 是另一套 pip 兼容接口，默认将解析结果输出到终端；需要生成 requirements 文件时可使用 `uv pip compile pyproject.toml -o requirements.txt`。它不替代上述 `uv.lock` 更新流程。[官方说明](https://docs.astral.sh/uv/concepts/projects/sync/) · [pip 接口说明](https://docs.astral.sh/uv/pip/compile/)
 
 ## 运行脚本和命令
 
@@ -267,14 +265,17 @@ uv sync
 # 4. 运行测试
 uv run pytest
 
-# 5. 提交更改
-git add .
-git commit -m "描述"
-git push
+# 5. 检查并提交指定文件；其他需要提交的文件按实际情况加入
+git status
+git add pyproject.toml uv.lock
+git diff --cached
+git commit --only -m "描述" -- pyproject.toml uv.lock
 
-# 6. 更新依赖（如有变更）
+# 6. 需要同步环境时
 uv sync
 ```
+
+这里的 `--only` 将提交限定为所列路径，其他路径的既有暂存内容保持原状。它会提交所列文件当前工作区的完整内容；同一文件内若混有其他任务的修改，应先拆分并检查提交范围。[Git commit 文档](https://git-scm.com/docs/git-commit)
 
 ## 常用命令速查
 
@@ -289,7 +290,8 @@ uv sync
 | `uv python install 3.13` | 安装 Python |
 | `uv python list` | 列出可用版本 |
 | `uv venv` | 创建虚拟环境 |
-| `uv pip compile` | 生成锁文件 |
+| `uv lock --upgrade` | 在项目约束内更新 `uv.lock` |
+| `uv pip compile ... -o requirements.txt` | 导出 pip 兼容的锁定依赖列表 |
 
 ## 常见问题
 

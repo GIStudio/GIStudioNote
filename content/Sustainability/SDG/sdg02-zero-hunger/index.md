@@ -6,6 +6,7 @@ tags:
   - SDG02
   - 零饥饿
   - 粮食安全
+verified_at: 2026-10-28
 aliases:
   - Writing/experts/sdg/sdg02-zero-hunger
 ---
@@ -16,7 +17,7 @@ aliases:
 
 ## 核心下游任务
 
-### 官方监测任务
+### 相关监测问题
 
 - 粮食产量统计
 - 作物种植面积监测
@@ -37,9 +38,9 @@ aliases:
 
 | 数据集名称 | 覆盖范围 | 核心数据维度 | 获取链接 |
 | ---------- | -------- | ------------ | -------- |
-| SustainBench 农业系列数据集 | 非洲多国、美国主产区，20万+影像样本 | 作物类型制图、产量预测、农田边界提取、耕地分割标注 | [SustainBench SDG2](https://sustainbench.org/) |
-| FAO FAOSTAT 全球农业统计库 | 全球245个国家和地区，1961年至今 | 作物产量、种植面积、粮食供需、化肥使用、农业碳排放、粮食安全指标 | [FAOSTAT](https://www.fao.org/faostat/en/) |
-| GlobeLand30 全球30m耕地覆盖数据集 | 全球陆地范围，2000/2010/2020三期 | 30m分辨率耕地分布、耕地类型、复种指数 | [GlobeLand30](http://www.globallandcover.com/) |
+| SustainBench 农业系列数据集 | 覆盖范围依任务而异，作物类型任务包括加纳、南苏丹和肯尼亚 | 耕地、作物类型、作物产量和田块边界的机器学习基准 | [SustainBench 任务与数据](https://github.com/sustainlab-group/sustainbench) |
+| FAO FAOSTAT 全球农业统计库 | 覆盖 245 多个国家和地区，部分数据自 1961 年起；具体系列可用年份不同 | 作物产量、种植面积、粮食供需等粮食与农业统计 | [FAOSTAT](https://faostat.fao.org/) |
+| GlobeLand30 全球土地覆盖数据集 | 全球，2000、2010、2020 年；30 米分辨率 | 土地覆盖分类含耕地类；单凭该类别不提供作物品种或复种指数 | [GlobeLand30](http://www.globallandcover.com/)；[土地覆盖类别说明](https://isprs-gis-sdg.readthedocs.io/en/latest/part2/2_1.html) |
 
 ## 具体目标
 
@@ -51,3 +52,5 @@ aliases:
 6. **改善基础设施**：增加投资以加强农村基础设施建设。
 7. **纠正农业贸易限制**：采取措施纠正和防止国际粮食市场的贸易限制和扭曲。
 8. **保障粮食商品市场**：确保粮食商品市场及其衍生品的正常运转。
+
+以上是部分目标摘要，完整目标与指标见[联合国 SDG 2 页面](https://sdgs.un.org/goals/goal2)。农业遥感产品的覆盖范围、分辨率和类别定义与官方统计指标不同，不能直接当作饥饿或营养状况的测量值。
