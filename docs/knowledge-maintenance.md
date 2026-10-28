@@ -63,6 +63,10 @@
 
 - [done] 2026-10-28 全站审读及剩余问题专项修复：原 197 页中审读 188 页，Awesome GeoAI 的 9 页按用户要求保持原样；首轮 77 页、本轮进一步核验和修订 40 页，合计 109 个不同页面。SDG 全部 18 页、开发安全、空间数据、AI 与阅读写作的依据及测试见 [审读汇总](writing-audit/2026-10-28-summary.md)和其中的专项记录。Node 22.16.0 下 `npm run check:content` 通过，覆盖当前 198 个 Markdown 和 45 个资源；有限测试与未取得全文等证据边界已分别记录。用户已授权本批推送发布，部署版本与结果由对应 [Pages 工作流](https://github.com/GIStudio/GIStudioNote/actions/workflows/deploy.yml)及线上正文核验确认。Urban Dictionary 为先前独立交付，用户原有三项改动不纳入本批。
 
+## CartoGuophy 制图作品导览
+
+- [done] 发布 CartoGuophy 作品与知识导览（2026-10-28；五组作品覆盖视觉层级、多变量符号、空间聚合、气候图表、LEGO 地形和轨迹表达；来源与范围见 `docs/readings/cartoguophy/source-map.md`）。两页公开边界检查及中文行文检查通过，Node 22.16.0 下 199 个 Markdown 与 45 个资源通过 `npm run check:content`；内容提交 `b4dfdf4` 已推送，匹配 Pages `40717874270` 成功，正式页 `/data/cartoguophy-cartographic-design` HTTP 200，标题与独有正文已核对。未转载地图文件、复现原作或扩展到其他维护任务，原有三项工作树改动保持原状。
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：
