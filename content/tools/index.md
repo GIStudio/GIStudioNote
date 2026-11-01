@@ -19,5 +19,6 @@ aliases:
 - [[GeoLibre vs SpatialHarness|GeoLibre 对比与 AI 辅助编辑]]
 - [[xplant-1|XPlant 1.0 地形分析与参数化种植]]
 - [[urban-dictionary|Urban Dictionary：网络俚语与众包词义记录]]
+- [[ontology-playground|Ontology Playground：本体学习、可视化建模与 RDF 交换]]
 - [Google Analytics](https://analytics.google.com/analytics/web/?hl=zh-cn#/)
 - [[experiences/习惯点点|习惯点点使用记录]]

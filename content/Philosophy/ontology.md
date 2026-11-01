@@ -45,6 +45,8 @@ order: 1
 
 [[epistemology|认识论]] · [[social-construction|社会建构论]] · [[production-of-space|空间生产]] · [[emergence|涌现]]
 
+展开阅读：[[urban-science-ontology|用本体论分析城市科学]]以建筑用途变化的教学情境说明对象、关系、时间与证据；[[../tools/ontology-playground|Ontology Playground]]提供可视化本体学习与建模入口。
+
 ## 来源
 
 - Thomas Hofweber, [Logic and Ontology](https://plato.stanford.edu/entries/logic-ontology/), *Stanford Encyclopedia of Philosophy*。
