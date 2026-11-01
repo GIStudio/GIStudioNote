@@ -94,4 +94,5 @@ npm run check:content
 - 两篇正文中文科普检查无失败／提醒。公开扫描 4 个文件，0 错误、6 提醒，均为公开标识符中的 `NDA` 词内匹配或编码串误匹配；已按可解码的模型源核对。Node 22.16.0 下全量内容检查通过，201 个 Markdown、50 个资源，过滤 4 个草稿，输出 890 个文件及 3 个兼容重定向。
 - 官方部件设置 `autoungrabify: true`，只读画布允许背景平移、缩放与点选，节点位置编辑在完整 Designer 中进行；已按此修正文案。嵌入模式的剪贴板功能受浏览器权限限制，文件入口可单独使用。
 - 生成产物检查发现 Quartz 会在链接和资源输出时移除 `.html` 后缀；查看器改用可保留后缀的 `.htm` 静态 HTML，iframe 与独立窗口使用本站绝对 URL。下载链接加 `data-router-ignore`，让浏览器处理文件而非进入 Quartz SPA 导航。
-- 发布与线上文件核验结果在完成后补充；不把代码检查当作平移、缩放、点选等浏览器行为验收。
+- 内容提交 `cf27f8b7ff3c0f27d330642933a185450a1d2bf5` 已推送至 `origin/v5`，匹配 [Pages 41283400910](https://github.com/GIStudio/GIStudioNote/actions/runs/41283400910) 成功。两篇正式正文和 5 个静态文件共 7 个 URL 均返回 HTTP 200；文章 iframe 与下载入口已核对，查看器为 `text/html`，JSON 为 `application/json`，两种 RDF 为 `application/rdf+xml`，线上 5 个文件与本地版本逐字节一致。
+- [嵌入图谱的分析文章](https://notes.gistudio.xyz/philosophy/urban-science-ontology) · [独立图谱页](https://notes.gistudio.xyz/assets/urban-ontology/viewer.htm)。代码与 HTTP 检查不等同于平移、缩放、点选等浏览器行为验收；未做该项验收，保留用户手动检查的边界。
