@@ -67,6 +67,10 @@
 
 - [done] 发布 CartoGuophy 作品与知识导览（2026-10-28；五组作品覆盖视觉层级、多变量符号、空间聚合、气候图表、LEGO 地形和轨迹表达；来源与范围见 `docs/readings/cartoguophy/source-map.md`）。两页公开边界检查及中文行文检查通过，Node 22.16.0 下 199 个 Markdown 与 45 个资源通过 `npm run check:content`；内容提交 `b4dfdf4` 已推送，匹配 Pages `40717874270` 成功，正式页 `/data/cartoguophy-cartographic-design` HTTP 200，标题与独有正文已核对。未转载地图文件、复现原作或扩展到其他维护任务，原有三项工作树改动保持原状。
 
+## Ontology Playground 与城市科学本体分析
+
+- [done] 发布工具／知识资源解析及城市科学本体分析两篇笔记（2026-11-01；公开来源与固定上游版本见 `docs/readings/ontology-and-urban-science/source-map.md`）。以虚构的旧校舍转图书馆情境解释对象、关系、制度、时间、边界、观测和八类教学模型；未读取或写入个人研究方向。公开边界与中文行文检查通过，Node 22.16.0 下201个Markdown和45个资源通过全量检查。内容提交 `7ae5851` 已推送，匹配 Pages `41281767281` 成功；两篇正文及三处索引／回链共5个URL均HTTP 200，实际正文中的4张表、1条自动论文条目与来源链接已核对。未安装上游、实测交互、连接外部账户或执行嵌入脚本，原有三项无关改动保留。
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：
