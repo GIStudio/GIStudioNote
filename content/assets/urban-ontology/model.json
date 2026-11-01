@@ -1,0 +1,138 @@
+{
+  "name": "Urban Science Teaching Model",
+  "description": "城市科学本体教学模型：八个节点表示类型及其属性定义，以虚构的旧校舍转作公共图书馆说明对象、用途、组织、事件与观测。模型用于概念设计，未连接实例数据库。",
+  "entityTypes": [
+    {
+      "id": "building",
+      "name": "Building",
+      "description": "建筑：具有持续身份的物理对象。用途改变时，是否保持同一建筑标识需要另行约定；本模型不把建筑与运营机构合并。",
+      "icon": "🏛️",
+      "color": "#1764A0",
+      "properties": [
+        { "name": "buildingId", "type": "string", "isIdentifier": true, "description": "建筑标识的字段定义；不包含任何真实标识值。" },
+        { "name": "name", "type": "string", "description": "建筑名称。" },
+        { "name": "lifecycleStatus", "type": "enum", "values": ["existing", "altered", "demolished", "unknown"], "description": "建筑生命周期状态。" },
+        { "name": "geometryReference", "type": "string", "description": "指向几何表达的引用；当前没有坐标或几何实例。" },
+        { "name": "crs", "type": "string", "description": "几何所用坐标参考系。" }
+      ]
+    },
+    {
+      "id": "organisation",
+      "name": "Organisation",
+      "description": "组织：承担服务运营等职责的组织，与其使用的物理建筑分别识别。",
+      "icon": "🏢",
+      "color": "#087F8C",
+      "properties": [
+        { "name": "organisationId", "type": "string", "isIdentifier": true, "description": "组织标识字段。" },
+        { "name": "name", "type": "string", "description": "组织名称。" },
+        { "name": "organisationType", "type": "string", "description": "组织类型及其判定口径。" }
+      ]
+    },
+    {
+      "id": "service",
+      "name": "Service",
+      "description": "服务：如借阅服务、阅览服务及其安排；与一次具体借阅活动区分。一个服务可在多个地点提供，一个建筑也可承载多项服务。",
+      "icon": "📚",
+      "color": "#28733D",
+      "properties": [
+        { "name": "serviceId", "type": "string", "isIdentifier": true, "description": "服务标识字段。" },
+        { "name": "name", "type": "string", "description": "服务名称。" },
+        { "name": "serviceKind", "type": "string", "description": "服务类别及定义。" },
+        { "name": "openingSchedule", "type": "string", "description": "开放安排，需包括日期与例外说明。" },
+        { "name": "timeZone", "type": "string", "description": "开放安排采用的时区。" },
+        { "name": "accessRule", "type": "string", "description": "服务的使用条件与规则依据。" }
+      ]
+    },
+    {
+      "id": "useAssignment",
+      "name": "UseAssignment",
+      "description": "用途分配：把建筑、用途和有效时段联系起来。结束时间缺省需结合endStatus解释，不自动意味着仍有效。",
+      "icon": "🏷️",
+      "color": "#A36500",
+      "properties": [
+        { "name": "assignmentId", "type": "string", "isIdentifier": true, "description": "用途分配标识字段。" },
+        { "name": "useName", "type": "string", "description": "用途名称；例如校舍或公共图书馆仅是教学情境。" },
+        { "name": "validFrom", "type": "datetime", "description": "用途开始生效的时刻。" },
+        { "name": "validTo", "type": "datetime", "description": "用途结束生效的时刻，可尚未登记。" },
+        { "name": "endStatus", "type": "enum", "values": ["ongoing", "ended", "unknown"], "description": "明确区分持续、已结束与未知。" },
+        { "name": "assertionStatus", "type": "enum", "values": ["reported", "verified", "disputed", "unknown"], "description": "用途判断的证据状态。" }
+      ]
+    },
+    {
+      "id": "event",
+      "name": "Event",
+      "description": "事件：改造、批准、启用或停用等发生项。事件与支持事件判断的文档分别表示。",
+      "icon": "📅",
+      "color": "#B74432",
+      "properties": [
+        { "name": "eventId", "type": "string", "isIdentifier": true, "description": "事件标识字段。" },
+        { "name": "eventType", "type": "string", "description": "事件类型及判定条件。" },
+        { "name": "startsAt", "type": "datetime", "description": "事件开始时刻。" },
+        { "name": "endsAt", "type": "datetime", "description": "事件结束时刻。" },
+        { "name": "description", "type": "string", "description": "事件说明及适用范围。" }
+      ]
+    },
+    {
+      "id": "urbanArea",
+      "name": "UrbanArea",
+      "description": "城市范围：按行政、形态或功能规则确定的空间范围。一个建筑允许关联多套范围；比较统计量时保留定义与边界版本。",
+      "icon": "🗺️",
+      "color": "#7142A8",
+      "properties": [
+        { "name": "areaId", "type": "string", "isIdentifier": true, "description": "空间范围标识字段。" },
+        { "name": "name", "type": "string", "description": "范围名称。" },
+        { "name": "definitionType", "type": "enum", "values": ["administrative", "morphological", "functional"], "description": "行政、形态或功能界定。" },
+        { "name": "definitionMethod", "type": "string", "description": "界定规则及数据来源。" },
+        { "name": "boundaryVersion", "type": "string", "description": "边界版本与时期。" },
+        { "name": "validFrom", "type": "datetime", "description": "该版本的适用起点。" },
+        { "name": "validTo", "type": "datetime", "description": "该版本的适用终点，未知需明确标注。" },
+        { "name": "geometryReference", "type": "string", "description": "边界几何引用；当前没有真实边界数据。" }
+      ]
+    },
+    {
+      "id": "observation",
+      "name": "Observation",
+      "description": "观测：本图限定建筑层级的属性或汇总观测。房间温度需扩展房间类型并指定对象；观测与承载结果的记录分别识别。",
+      "icon": "📏",
+      "color": "#006B91",
+      "properties": [
+        { "name": "observationId", "type": "string", "isIdentifier": true, "description": "观测标识字段。" },
+        { "name": "observedProperty", "type": "string", "description": "被观测属性与统计口径。" },
+        { "name": "procedure", "type": "string", "description": "采集、抽样或计算方法。" },
+        { "name": "resultValue", "type": "string", "description": "结果的文本表示；进行数值计算前还需类型与单位检查。" },
+        { "name": "unit", "type": "string", "description": "结果单位及计数口径。" },
+        { "name": "phenomenonTime", "type": "datetime", "description": "被观测现象的时间。" },
+        { "name": "resultTime", "type": "datetime", "description": "结果形成或登记的时间。" },
+        { "name": "targetScope", "type": "string", "description": "明确对象层级、覆盖与聚合范围。" }
+      ]
+    },
+    {
+      "id": "evidenceRecord",
+      "name": "EvidenceRecord",
+      "description": "证据记录：支持用途、事件或观测判断的文档和来源。记录存在与判断已经证实分别说明。",
+      "icon": "📄",
+      "color": "#5C6470",
+      "properties": [
+        { "name": "recordId", "type": "string", "isIdentifier": true, "description": "记录标识字段。" },
+        { "name": "recordType", "type": "string", "description": "档案、公告或测量记录等类型。" },
+        { "name": "sourceTitle", "type": "string", "description": "来源标题。" },
+        { "name": "sourceURI", "type": "string", "description": "可追溯来源的地址字段；当前不包含真实记录地址。" },
+        { "name": "issuedAt", "type": "datetime", "description": "发布或形成时间。" },
+        { "name": "accessedAt", "type": "datetime", "description": "查阅时间。" },
+        { "name": "status", "type": "enum", "values": ["available", "superseded", "disputed", "unknown"], "description": "记录版本与可用状态。" }
+      ]
+    }
+  ],
+  "relationships": [
+    { "id": "organisation_operates_service", "name": "运营", "from": "organisation", "to": "service", "kind": "association", "cardinality": "many-to-many", "description": "组织在有效时段内运营服务。关系属性validFrom、validTo、endStatus说明时间条件；缺省结束时刻需要解释。", "attributes": [{ "name": "validFrom", "type": "datetime" }, { "name": "validTo", "type": "datetime" }, { "name": "endStatus", "type": "string" }] },
+    { "id": "service_provided_at_building", "name": "提供地点", "from": "service", "to": "building", "kind": "association", "cardinality": "many-to-many", "description": "服务在建筑中提供；允许一项服务有多个地点及一栋建筑提供多项服务。", "attributes": [{ "name": "validFrom", "type": "datetime" }, { "name": "validTo", "type": "datetime" }] },
+    { "id": "use_applies_to_building", "name": "用途对应建筑", "from": "useAssignment", "to": "building", "kind": "association", "cardinality": "many-to-one", "description": "每条用途分配预期针对一个建筑；many-to-one只表达最大数量方向，必填性需另行验证。" },
+    { "id": "use_supported_by_record", "name": "用途证据来源", "from": "useAssignment", "to": "evidenceRecord", "kind": "association", "cardinality": "many-to-many", "description": "将用途分配与支持该判断的证据记录关联。此关系与事件证据关系使用不同标识。" },
+    { "id": "building_located_in_area", "name": "位于范围内", "from": "building", "to": "urbanArea", "kind": "association", "cardinality": "many-to-many", "description": "允许同一建筑对应行政、形态、功能等多套范围。范围的定义、边界版本与适用期由UrbanArea记录。", "attributes": [{ "name": "asOf", "type": "datetime" }] },
+    { "id": "event_affects_building", "name": "事件涉及建筑", "from": "event", "to": "building", "kind": "association", "cardinality": "many-to-many", "description": "事件与其涉及的建筑相联系；这条边不自动表达因果识别结论。" },
+    { "id": "event_establishes_use", "name": "对应用途变更", "from": "event", "to": "useAssignment", "kind": "association", "cardinality": "many-to-many", "description": "在有证据时，将改造或启用事件与相应的用途分配关联。" },
+    { "id": "event_supported_by_record", "name": "事件证据来源", "from": "event", "to": "evidenceRecord", "kind": "association", "cardinality": "many-to-many", "description": "将事件判断与证据记录关联，与用途证据关系分别建模。" },
+    { "id": "observation_observes_building", "name": "观测建筑", "from": "observation", "to": "building", "kind": "association", "cardinality": "many-to-one", "description": "本练习限定一条观测针对一栋建筑的属性或汇总指标；观测时间、方法、结果与单位由Observation记录。" },
+    { "id": "observation_documented_by_record", "name": "观测记录来源", "from": "observation", "to": "evidenceRecord", "kind": "association", "cardinality": "many-to-many", "description": "区分观测过程／结果与承载它们的文档记录；记录数量不等同人数或活动次数。" }
+  ]
+}

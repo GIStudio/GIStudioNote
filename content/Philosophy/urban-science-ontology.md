@@ -94,7 +94,19 @@ SOSA/SSN 将观测、关注对象、被观测属性、方法、结果和时间�
 | `Observation` | 表示针对对象某属性作出的观测 |
 | `EvidenceRecord` | 表示支持用途、事件或规则判断的记录及来源 |
 
-关系可以先写成以下可读形式。它们是类型之间的结构示意，尚未形成可执行的标准本体或实例数据库。
+### 交互图谱
+
+下图使用 Ontology Playground 官方嵌入部件，展示这八类概念及十种关系。节点表示类型，字段规定将来记录具体对象时需要填写什么；模型以虚构的公共设施情境为例。
+
+拖动背景可以平移视图，滚轮用于缩放，点击节点或连线可查看中文解释。图谱下方的“文本模型与字段说明”提供全部字段说明和关系的时间条件。
+
+<iframe src="https://notes.gistudio.xyz/assets/urban-ontology/viewer.htm" title="城市科学本体交互图谱：八类教学模型" width="100%" height="740" style="border:1px solid #c6d2dc;border-radius:8px;" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-downloads"></iframe>
+
+<p><a href="https://notes.gistudio.xyz/assets/urban-ontology/viewer.htm" target="_blank" rel="noopener noreferrer" data-router-ignore>独立窗口打开图谱 ↗</a> · <a href="/assets/urban-ontology/model.json" download data-router-ignore>下载 JSON 模型</a> · <a href="/assets/urban-ontology/model.rdf" download data-router-ignore>下载 Playground RDF/XML</a> · <a href="/assets/urban-ontology/model-standards.rdf" download data-router-ignore>下载 OWL + SHACL 导出</a></p>
+
+需要修改时，打开图谱中的“在 Playground 中编辑”，再选择 **Open Designer**，即可在官方设计器中继续编辑这个模型。JSON 保存类型与关系定义；Playground RDF/XML 保留编辑器元数据；OWL + SHACL 文件按工具支持的标准配置表达模型。嵌入页需联网加载官方脚本，加载受限时仍可阅读文本模型或下载文件。[官方嵌入指南](https://github.com/microsoft/Ontology-Playground/blob/7bf7acb427424ce68f917fa26f484fb06ca42051/docs/embed-guide.md)
+
+以下摘出其中七种关系，便于对照正文阅读：
 
 ```text
 Organisation ── operates [有效时段] ──> Service
@@ -121,7 +133,7 @@ Observation ── observes ──> Building
 
 ## 形式化之后如何检查
 
-可以使用 [[../tools/ontology-playground|Ontology Playground]] 画出小模型、检查关系方向并导出其支持的 RDF/XML。把模型进一步交给标准工具时，需要分别安排三类检查：
+上面的模型使用 [[../tools/ontology-playground|Ontology Playground]] 展示关系方向，并提供两种 RDF/XML 导出。把模型进一步交给标准工具时，需要分别安排三类检查：
 
 1. **表达检查**：类、实例、属性、时间和标识是否按约定组织，交换文件能否正确解析。
 2. **逻辑与数据检查**：OWL 推理用于检查相应公理与推论；SHACL 用于检查指定数据条件。例如，要求每条用途记录有开始时间，需要明确相应数据约束及适用对象。

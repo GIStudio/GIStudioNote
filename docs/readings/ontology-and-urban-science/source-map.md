@@ -60,3 +60,38 @@
 - [用本体论分析城市科学](https://notes.gistudio.xyz/philosophy/urban-science-ontology)
 - 工具目录、哲学目录和原本体论页的导航均核对到正文区域，而非仅检查侧栏出现链接。
 - 保留原有 `.gitignore`、`content/index.md`、`.zcodeignore` 三项工作树改动，不纳入本任务提交。
+
+## 交互图谱扩展（2026-11-01）
+
+本阶段新增用户要求：用 Ontology Playground 制作城市科学教学模型的交互图，嵌入原分析文章并发布，继续排除个人研究方向。上文“未启用嵌入”的记录对应首轮文章交付；本阶段新增以下实现。
+
+- 唯一模型源为 `content/assets/urban-ontology/model.json`：8 类、48 个类属性、10 种关系、6 个关系属性。仅含类型定义和枚举选项，无真实城市实例、数据绑定或私人材料。
+- `viewer.htm` 使用官方 `/embed/ontology-embed.js`，固定 SHA-384 完整性校验；部件需从 Microsoft GitHub Pages 加载。上游脚本变化时，校验将阻止加载，须核对新版本后更新完整性值；文本说明与下载文件保持独立可读。
+- 模型通过 `data-ontology-inline` 传入。该版本按 `JSON.parse(atob(...))` 解码，生成器先将非 ASCII 字符转为 JSON Unicode 转义，再 Base64，避免中文与 emoji 损坏。
+- 官方 `shareCodec.ts` 核对完整模型分享链接；打开分享页后用 **Open Designer** 编辑。分享只包含本教学模型及空 `bindings`，未提交目录 PR 或连接账户。
+- 独立嵌入页避免 Quartz SPA 导航时脚本不重新初始化。文章 iframe 允许脚本与用户打开新窗口，不授予同源权限；页内 CSP 限定脚本地址、内联启动脚本哈希并禁止连接接口，设置 `no-referrer`。这些是代码边界，未宣称完成动态安全认证。
+- 官方 `serializer.ts` 生成 `model.rdf` 与 `model-standards.rdf`。后者含 OWL 和 SHACL 属性形状；关系属性由上游标准配置表达。未运行 OWL 推理或 SHACL 实例验证，不将文件可解析等同于城市模型已验证。
+- 固定来源仍为 `7bf7acb427424ce68f917fa26f484fb06ca42051`。生成器核对四个上游模块的文件哈希，再复用其 schema、Designer 校验、分享解码器和序列化器；未安装或运行上游完整应用及其测试。
+- 语义复核将两条证据边的显示名调整为“用途证据来源”和“事件证据来源”，与指向 `EvidenceRecord` 的箭头一致；保留用途／运营有效期、多个城市范围定义、建筑层级观测及证据不确定性。
+
+### 更新方法
+
+准备上述固定提交的官方源码，在仓库固定 Node 环境中运行：
+
+```bash
+node scripts/build_urban_ontology_embed.mjs --upstream /path/to/Ontology-Playground
+node --test scripts/tests/urban_ontology_embed.test.mjs
+npm run check:content
+```
+
+生成器会更新同目录 HTML、两种 RDF 与 manifest，模型变更只编辑 `model.json`。修改脚本来源、版本或完整性值时，重新核对官方部署部件与接口；不自动接受浮动版本。
+
+### 本阶段核验
+
+- 官方 schema、Designer 校验、官方分享解码及中文／emoji 内联往返通过；分享编码长度 4422 字符，低于官方 32000 限制。
+- 定向测试覆盖类型／关系端点、编码、分享载荷、时间与证据、CSP／加载回退、生成文件及文章 iframe。界面按当前工作约定由用户手动检查，`manifest.json` 保留 `browserChecked: false`。
+- 7 项定向测试通过；两种 RDF 均通过 XML 解析，标准配置生成 11 个 OWL 类（含 3 类关联对象）与 74 个 SHACL 属性形状，Playground 配置保留 8 个类和 10 个对象属性。
+- 两篇正文中文科普检查无失败／提醒。公开扫描 4 个文件，0 错误、6 提醒，均为公开标识符中的 `NDA` 词内匹配或编码串误匹配；已按可解码的模型源核对。Node 22.16.0 下全量内容检查通过，201 个 Markdown、50 个资源，过滤 4 个草稿，输出 890 个文件及 3 个兼容重定向。
+- 官方部件设置 `autoungrabify: true`，只读画布允许背景平移、缩放与点选，节点位置编辑在完整 Designer 中进行；已按此修正文案。嵌入模式的剪贴板功能受浏览器权限限制，文件入口可单独使用。
+- 生成产物检查发现 Quartz 会在链接和资源输出时移除 `.html` 后缀；查看器改用可保留后缀的 `.htm` 静态 HTML，iframe 与独立窗口使用本站绝对 URL。下载链接加 `data-router-ignore`，让浏览器处理文件而非进入 Quartz SPA 导航。
+- 发布与线上文件核验结果在完成后补充；不把代码检查当作平移、缩放、点选等浏览器行为验收。

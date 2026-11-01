@@ -89,7 +89,9 @@ Playground 当前的自建模型提供两种生成导出配置：
 <script src="https://microsoft.github.io/Ontology-Playground/embed/ontology-embed.js"></script>
 ```
 
-这段代码来自[官方嵌入指南](https://github.com/microsoft/Ontology-Playground/blob/7bf7acb427424ce68f917fa26f484fb06ca42051/docs/embed-guide.md)。它会从外部站点加载脚本和模型资源；实际嵌入前应核对内容安全策略、第三方依赖与发布许可。本文未在站内启用该脚本，也未实测浏览器交互。
+这段代码来自[官方嵌入指南](https://github.com/microsoft/Ontology-Playground/blob/7bf7acb427424ce68f917fa26f484fb06ca42051/docs/embed-guide.md)。它会从外部站点加载脚本和模型资源；实际嵌入前应核对内容安全策略、第三方依赖与发布许可。
+
+本站的[[../Philosophy/urban-science-ontology|城市科学本体分析]]提供了一个可交互的八类教学模型：模型定义内联于独立嵌入页，图谱部件从官方站点加载，配有文本说明、JSON、两种 RDF/XML 文件和设计器编辑入口。
 
 ## 继续到城市科学
 
