@@ -80,6 +80,10 @@
 
 - [done] 整理并构建岭回归数学篇与机器学习篇（2026-11-06）：从相关特征的闭式解、谱收缩与 MAP，到偏差—方差、折内标准化选参和 L2 模型对照。两篇互链，接入数学基础与 AI 索引的机器学习小节；依据与算例复算见 `docs/readings/ridge-regression/source-map.md`。两篇中文科普检查和全站构建通过（204 个 Markdown、50 个资源）；发布结果以对应 Pages 工作流及两篇正式页面核验为准。
 
+## GCNII 论文图解
+
+- [done] 整理 GCNII（2026-11-06）：`content/Graph/gcnii-deep-graph-convolution.md`，接入图学习索引；区分传播极限、初始残差和通道恒等项，解释表 3 的深度结果与图 2 消融。正式版 PDF 和两张裁切留作本地阅读；站点收录原创结构图和按表 3 重绘的曲线。来源及可复用图件入口见 `docs/readings/gcnii/source-map.md`。发布结果以该提交对应的 Pages 工作流及[正式正文](https://notes.gistudio.xyz/graph/gcnii-deep-graph-convolution)为准。
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：

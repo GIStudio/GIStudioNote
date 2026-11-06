@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="410" viewBox="0 0 1000 410" role="img" aria-labelledby="title desc">
+  <title id="title">一层 GCNII 的两条输入路径</title>
+  <desc id="desc">上一层表示先经过归一化图传播，与初始表示按比例相加。合并结果在特征通道轴右乘恒等矩阵和可学习矩阵的混合，再经过 ReLU 得到下一层表示。</desc>
+  <defs>
+    <marker id="blue-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#0072B2"/></marker>
+    <marker id="orange-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#D55E00"/></marker>
+    <marker id="ink-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#20334d"/></marker>
+  </defs>
+  <rect x="1" y="1" width="998" height="408" rx="18" fill="#fafcfd" stroke="#ced9e1" stroke-width="2"/>
+  <g font-family="'PingFang SC','Noto Sans CJK SC',Helvetica,Arial,sans-serif" fill="#20334d" text-anchor="middle">
+    <text x="36" y="49" text-anchor="start" font-size="30" font-weight="650">一层 GCNII 的两条输入路径</text>
+    <text x="36" y="83" text-anchor="start" font-size="20" fill="#53667b">先沿节点轴聚合，再沿特征通道轴变换</text>
+    <g id="previous-state">
+      <rect x="34" y="135" width="164" height="86" rx="12" fill="#eaf5fc" stroke="#0072B2" stroke-width="2"/>
+      <text x="116" y="170" font-size="22" font-weight="600">上一层表示</text>
+      <text x="116" y="201" font-size="22">H<tspan baseline-shift="super" font-size="15">(ℓ)</tspan></text>
+    </g>
+    <g id="graph-propagation">
+      <rect x="236" y="135" width="179" height="86" rx="12" fill="#eaf5fc" stroke="#0072B2" stroke-width="2"/>
+      <text x="325.5" y="170" font-size="22" font-weight="600">邻居聚合</text>
+      <text x="325.5" y="201" font-size="22">P̃ H<tspan baseline-shift="super" font-size="15">(ℓ)</tspan></text>
+    </g>
+    <g id="initial-state">
+      <rect x="34" y="281" width="164" height="86" rx="12" fill="#fff2e8" stroke="#D55E00" stroke-width="2"/>
+      <text x="116" y="316" font-size="22" font-weight="600">初始表示</text>
+      <text x="116" y="347" font-size="22">H<tspan baseline-shift="super" font-size="15">(0)</tspan></text>
+    </g>
+    <g id="mixing">
+      <circle cx="516" cy="178" r="23" fill="#ffffff" stroke="#20334d" stroke-width="2"/>
+      <text x="516" y="188" font-size="30">+</text>
+      <g fill="none" stroke="#0072B2" stroke-width="3" marker-end="url(#blue-arrow)">
+        <path d="M198 178H234"/><path d="M415 178H491"/>
+      </g>
+      <path d="M198 324H516V203" fill="none" stroke="#D55E00" stroke-width="3" stroke-dasharray="9 5" marker-end="url(#orange-arrow)"/>
+      <text x="460" y="158" font-size="19" fill="#005988">1 − α<tspan baseline-shift="sub" font-size="13">ℓ</tspan></text>
+      <text x="350" y="302" font-size="21" fill="#9c4300">α<tspan baseline-shift="sub" font-size="14">ℓ</tspan> · 初始残差</text>
+    </g>
+    <g id="identity-mapping">
+      <rect x="581" y="126" width="233" height="104" rx="12" fill="#e7f4ee" stroke="#009E73" stroke-width="2"/>
+      <text x="697.5" y="165" font-size="22" font-weight="600">通道变换 · 右乘</text>
+      <text x="697.5" y="201" font-size="21">(1 − β<tspan baseline-shift="sub" font-size="14">ℓ</tspan>) I + β<tspan baseline-shift="sub" font-size="14">ℓ</tspan> W<tspan baseline-shift="super" font-size="14">(ℓ)</tspan></text>
+      <text x="697.5" y="264" font-size="19" fill="#365b50">恒等映射在这里混入 I</text>
+    </g>
+    <g id="activation-and-output">
+      <rect x="853" y="135" width="112" height="86" rx="12" fill="#ffffff" stroke="#8c9cac" stroke-width="2"/>
+      <text x="909" y="187" font-size="23" font-weight="600">ReLU</text>
+      <g fill="none" stroke="#20334d" stroke-width="3" marker-end="url(#ink-arrow)">
+        <path d="M539 178H579"/><path d="M814 178H851"/><path d="M909 221V274"/>
+      </g>
+      <rect x="838" y="277" width="142" height="88" rx="12" fill="#ffffff" stroke="#8c9cac" stroke-width="2"/>
+      <text x="909" y="313" font-size="21" font-weight="600">下一层表示</text>
+      <text x="909" y="345" font-size="22">H<tspan baseline-shift="super" font-size="15">(ℓ+1)</tspan></text>
+    </g>
+  </g>
+</svg>
