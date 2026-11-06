@@ -76,6 +76,10 @@
 
 - [done] 整理英语语音听辨工具（2026-11-05）：`content/tools/english-accent-coach.md`，接入工具索引，区分听辨成绩、未练材料的迁移与发音自检。依据官方页面、早期 EAC 实验与两篇方法元分析，见 `docs/readings/english-accent-coach/source-map.md`。公开内容与中文科普检查无提醒；Node 22.16.0 下 202 个 Markdown 文件、50 个资源通过全站检查，生成页包含三条研究参考文献与工具导航。发布结果以该内容提交对应的 Pages 工作流及[正式页面](https://notes.gistudio.xyz/tools/english-accent-coach)核验为准。
 
+## 岭回归双篇
+
+- [done] 整理并构建岭回归数学篇与机器学习篇（2026-11-06）：从相关特征的闭式解、谱收缩与 MAP，到偏差—方差、折内标准化选参和 L2 模型对照。两篇互链，接入数学基础与 AI 索引的机器学习小节；依据与算例复算见 `docs/readings/ridge-regression/source-map.md`。两篇中文科普检查和全站构建通过（204 个 Markdown、50 个资源）；发布结果以对应 Pages 工作流及两篇正式页面核验为准。
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：
