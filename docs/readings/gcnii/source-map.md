@@ -9,6 +9,8 @@
 | 两项设计 | [PDF 第 3 页](https://proceedings.mlr.press/v119/chen20v/chen20v.pdf#page=3)，§3 式（5）。$H^{(0)}$ 可由输入投影得到；按同形矩阵加权相加；右乘单位矩阵用 $I_d$ 明确隐藏通道维。作者 [`model.py`](https://github.com/chennnM/GCNII/blob/master/model.py) 核对传播层从 1 起的对数调度。 |
 | 谱滤波表达 | [PDF 第 5 页](https://proceedings.mlr.press/v119/chen20v/chen20v.pdf#page=5)，§4.2 定理 2及补充材料 A.1。把构造理解为表达能力，保留与训练或泛化保证的区别。 |
 | 32/64 层、任务设置和消融 | [PDF 第 7 页](https://proceedings.mlr.press/v119/chen20v/chen20v.pdf#page=7) 表 3 的 GCN 与 GCNII 各 18 个点；同页 §6.2–6.3 区分全监督与 9 层 PPI 归纳任务。[PDF 第 9 页](https://proceedings.mlr.press/v119/chen20v/chen20v.pdf#page=9) 图 1 为度分组准确率，图 2 为消融；两图均非表示平滑度的直接测量。 |
+| Cora 与 Pubmed 的峰值 | [PDF 第 6–7 页](https://proceedings.mlr.press/v119/chen20v/chen20v.pdf#page=6)表 1–3、§6.1：半监督固定划分，不同深度按验证准确率调参。表 2 的 Pubmed 16 层为 100 次运行均值和标准差，表 3 未列逐深度标准差或配对结果。[补充材料 §B，表 6–7](https://proceedings.mlr.press/v119/chen20v/chen20v-supp.pdf#page=2)核对两组代表配置，以及全监督 Pubmed 的 64 层设置。各跳信息收益是待检验解释。 |
+| 过平滑诊断 | 基于 §4.1 的度缩放稳态子空间推导非零表示的相对投影残差 $R_\ell$，按连通分量计算；与类别可分性、跨种子准确率差配合解读。该方案为教学建议，非原论文所做实验。 |
 
 ## 图件
 
@@ -16,6 +18,6 @@
 - `content/Graph/assets/gcnii-layer.svg` 为按式（5）原创的可编辑矢量图。箭头依次表达上一层到邻居聚合、初始表示直达加法节点、混合结果到通道右乘、ReLU 与输出。蓝实线和橙虚线分别区分两路输入。沿用站点卡片底色与中文字体，采用 journal 0.3.0 颜色；以 sharp 渲染为 740 px 预览，已检查箭头、上下标和布局。
 - `content/Graph/assets/gcnii-depth.svg` 为根据表 3 重新绘制的矢量图。重绘入口 `node scripts/graph/create_gcnii_depth_figure.mjs`，脚本保留 36 个原表点，使用 Node 22.16.0。沿用 journal 0.3.0 配色与冗余线型/点型，网页覆盖为 SVG 和较大字级；共享 0–100% 纵轴、倍增层数等距、下置面板名和外置图注，不添加原表没有的误差条。已检查 720 px 彩色与灰度输出。数据为作者报告，未重训。
 
-本地验收：中文科普和公开边界扫描无提醒；两幅 SVG 的 XML 解析、四节点环递推和 36 个原表数据点检查通过。Node 22.16.0 下 `npm run check:content` 通过（205 个 Markdown、52 个资源），生成页的 2 个展示公式、2 条参考文献、两图及图学习入口均已核对。网页插图使用 SVG 原生文本和形状；未要求特定编辑器内的修改回存测试。
+本地验收：正文中文科普及公开边界检查通过；首版已核对两幅 SVG、四节点环递推和 36 个原表数据点。补写时复算 $R_\ell$ 的四节点环数值、非规则度数下的稳态零值、整体缩放不变性和 0.5 个百分点的差。Node 22.16.0 下 `npm run check:content` 通过（205 个 Markdown、52 个资源），生成页的 3 个展示公式、2 条参考文献、两图及图学习入口均已核对。网页插图使用 SVG 原生文本和形状；未要求特定编辑器内的修改回存测试。
 
 停止条件：正式版 PDF、本地两张裁切、含两幅自制图的公开文章齐备，且相应 Pages 工作流和实际正文验证通过。原文件及预览不进入 Git 提交。
