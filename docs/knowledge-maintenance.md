@@ -85,6 +85,10 @@
 - [done] 整理 GCNII（2026-11-06）：`content/Graph/gcnii-deep-graph-convolution.md`，接入图学习索引；区分传播极限、初始残差和通道恒等项，解释表 3 的深度结果与图 2 消融。正式版 PDF 和两张裁切留作本地阅读；站点收录原创结构图和按表 3 重绘的曲线。来源及可复用图件入口见 `docs/readings/gcnii/source-map.md`。发布结果以该提交对应的 Pages 工作流及[正式正文](https://notes.gistudio.xyz/graph/gcnii-deep-graph-convolution)为准。
 - [done] 补充 16/64 层问题（2026-11-06）：对照原文表 1–3、补充表 6–7 与准确率消融，区分峰值观察、可能解释和表示层诊断；新增按度缩放的稳态投影残差示例，未重训模型。图件和文章 URL 保持不变。
 
+## RMSE 与 R²
+
+- [done] 整理回归评价指标笔记（2026-11-08）：`content/AI/rmse-and-r-squared.md`，接入 AI 索引的机器学习小节。复算两组房价算例，并以 scikit-learn 回归指标指南和《Forecasting: Principles and Practice》第三版拟合优度小节核对定义及适用条件；均值基准与恒定目标的实现另链接官方 API 文档。发布结果以对应 Pages 工作流及[正式正文](https://notes.gistudio.xyz/ai/rmse-and-r-squared)核验为准。
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：
