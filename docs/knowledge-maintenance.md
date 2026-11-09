@@ -89,6 +89,10 @@
 
 - [done] 整理回归评价指标笔记（2026-11-08）：`content/AI/rmse-and-r-squared.md`，接入 AI 索引的机器学习小节。复算两组房价算例，并以 scikit-learn 回归指标指南和《Forecasting: Principles and Practice》第三版拟合优度小节核对定义及适用条件；均值基准与恒定目标的实现另链接官方 API 文档。发布结果以对应 Pages 工作流及[正式正文](https://notes.gistudio.xyz/ai/rmse-and-r-squared)核验为准。
 
+## 潜空间的维度、范围与精度
+
+- [done] 发布潜空间科普笔记（2026-11-09）：`content/AI/GenAI/latent-space-dimensions.md`，接入生成式 AI 索引；以 VAE、GAN 与潜空间扩散模型区分维度、数值范围与浮点精度，把 ImageNet 内在维度改为 26–43 的区间估计，并补充 SDXL VAE 的 float16 边界。来源与验收见 `docs/readings/latent-space-dimensions/source-map.md`。公开边界、中文行文与数值复算通过；发布结果以该内容提交对应的 Pages 工作流及[正式页面](https://notes.gistudio.xyz/ai/genai/latent-space-dimensions)核验为准。
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：
