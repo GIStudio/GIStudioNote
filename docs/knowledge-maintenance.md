@@ -97,6 +97,10 @@
 
 - [done] 整理降维方法笔记（2026-11-11）：`content/DL/dimensionality-reduction-methods.md`，按特征选择/特征投影、监督/无监督、线性/非线性组织 Encord 清单中的方法，补入 Isomap、LLE 与 kernel LDA，并修正 Sequential NMF、GDA、GAN 与自编码器等表述；新增 8 张原创 SVG 图与可复现脚本 `scripts/generate_dimred_method_figures.py`，接入深度学习索引并与降维可视化笔记互链。来源、图示设置与复算见 `docs/readings/dimensionality-reduction-methods/source-map.md`。公开边界与内容审计通过，`npm run check:content` 在 208 个 Markdown、68 个资源上通过；内容提交 `df5533c` 已推送至 `v5`，匹配 Pages 工作流 `43043996656` 成功；[正式页](https://notes.gistudio.xyz/dl/dimensionality-reduction-methods)与深度学习索引均返回 HTTP 200，实际正文中的标题、8 张图、28 条自动参考文献与 73 处公式渲染已在线核对，索引与降维可视化笔记的双向链接可见；原有三项无关工作树改动（`.gitignore`、`content/index.md`、`.zcodeignore`）保持原状。
 
+## OpenAQ 空气质量数据
+
+- [done] 整理 OpenAQ 使用笔记（2026-11-11）：`content/Data/openaq-air-quality-data.md`，把它定位为聚合平台而非监测网络或 AQI 来源，按收录标准、location/sensor/measurement 结构、区间结束的时间语义、Explorer/API/S3 三条取数路径、逐站点许可、覆盖与代表性限制组织；在 `content/Data/index.md` 新增「数据源与开放数据」一节。文档类引用改为指向具体文档页的行内链接，自动参考文献只保留两篇传感器评估论文与 2024/2025 两份 OpenAQ 材料。来源、差异与边界见 `docs/readings/openaq-air-quality-data/source-map.md`。公开边界与内容审计通过（209 个 Markdown、68 个资源），`npm run check:content` 通过；内容提交 `c01e91e` 已推送至 `v5`，匹配 Pages 工作流 `43051436455` 成功；[正式页](https://notes.gistudio.xyz/data/openaq-air-quality-data)与数据索引均返回 HTTP 200，实际正文中的 2 张表、1 段 JSON 示例与 4 条自动参考文献已在线核对，无 `n.d.-*` 引用；原有三项无关工作树改动（`.gitignore`、`content/index.md`、`.zcodeignore`）保持原状。
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：
