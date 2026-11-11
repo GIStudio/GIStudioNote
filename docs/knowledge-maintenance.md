@@ -93,6 +93,10 @@
 
 - [done] 发布潜空间科普笔记（2026-11-09）：`content/AI/GenAI/latent-space-dimensions.md`，接入生成式 AI 索引；以 VAE、GAN 与潜空间扩散模型区分维度、数值范围与浮点精度，把 ImageNet 内在维度改为 26–43 的区间估计，并补充 SDXL VAE 的 float16 边界。来源与验收见 `docs/readings/latent-space-dimensions/source-map.md`。公开边界、中文行文与数值复算通过；内容提交 `07158c8` 已推送，匹配 Pages 工作流 `42592556778` 成功；[正式页](https://notes.gistudio.xyz/ai/genai/latent-space-dimensions)与生成式 AI 索引均返回 HTTP 200，实际正文中的 3 张表、14 条自动参考文献、28 处公式渲染、26–43 区间与索引互链已在线核对；原有三项无关改动保持原状。
 
+## 降维方法地图
+
+- [done] 整理降维方法笔记（2026-11-11）：`content/DL/dimensionality-reduction-methods.md`，按特征选择/特征投影、监督/无监督、线性/非线性组织 Encord 清单中的方法，补入 Isomap、LLE 与 kernel LDA，并修正 Sequential NMF、GDA、GAN 与自编码器等表述；新增 8 张原创 SVG 图与可复现脚本 `scripts/generate_dimred_method_figures.py`，接入深度学习索引并与降维可视化笔记互链。来源、图示设置与复算见 `docs/readings/dimensionality-reduction-methods/source-map.md`。公开边界与内容审计通过，`npm run check:content` 在 208 个 Markdown、68 个资源上通过；随本次请求推送至 `v5`，线上核验另记；原有三项无关工作树改动保持原状。
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：
