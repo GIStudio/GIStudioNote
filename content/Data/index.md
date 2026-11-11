@@ -17,6 +17,10 @@ tags:
 - [[traffic-impact-assessment|交通影响评估（TIA）]]
 - [[trajectory-ping-pong-effect|轨迹数据的乒乓效应：虚假往返与识别边界]]
 
+## 数据源与开放数据
+
+- [[openaq-air-quality-data|OpenAQ 空气质量数据：聚合口径、API 接口与使用边界]]
+
 ## 香港数据
 
 - [[hk_pop|香港人口数据概览]]
