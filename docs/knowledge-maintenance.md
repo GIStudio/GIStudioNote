@@ -101,6 +101,10 @@
 
 - [done] 整理 OpenAQ 使用笔记（2026-11-11）：`content/Data/openaq-air-quality-data.md`，把它定位为聚合平台而非监测网络或 AQI 来源，按收录标准、location/sensor/measurement 结构、区间结束的时间语义、Explorer/API/S3 三条取数路径、逐站点许可、覆盖与代表性限制组织；在 `content/Data/index.md` 新增「数据源与开放数据」一节。文档类引用改为指向具体文档页的行内链接，自动参考文献只保留两篇传感器评估论文与 2024/2025 两份 OpenAQ 材料。来源、差异与边界见 `docs/readings/openaq-air-quality-data/source-map.md`。公开边界与内容审计通过（209 个 Markdown、68 个资源），`npm run check:content` 通过；内容提交 `c01e91e` 已推送至 `v5`，匹配 Pages 工作流 `43051436455` 成功；[正式页](https://notes.gistudio.xyz/data/openaq-air-quality-data)与数据索引均返回 HTTP 200，实际正文中的 2 张表、1 段 JSON 示例与 4 条自动参考文献已在线核对，无 `n.d.-*` 引用；原有三项无关工作树改动（`.gitignore`、`content/index.md`、`.zcodeignore`）保持原状。
 
+## 信息熵与可逆变换
+
+- [done] 整理信息论短文（2026-11-12）：`content/Math/information-entropy-and-reversible-transforms.md`，把「无损变换是否等于信息等价」拆成信息量、表征、使用成本三层；用双射熵不变、$H(a\mid b,k)=0$ 与完美保密说明加密，用 RFC 4648 的 24 比特换 4 字符与「不增加熵」说明 Base64，并把「模型学 Base64 潜空间是模糊层」改写为可检验的假设。附 `scripts/check_entropy_invariance.py` 复算零阶经验熵，接入数学索引新增的「信息与编码」小节。来源、复算与边界见 `docs/readings/information-entropy-reversible-transforms/source-map.md`。公开边界与内容审计通过（210 个 Markdown、68 个资源），`npm run check:content` 通过；内容提交 `8844305` 已推送至 `v5`，匹配 Pages 工作流 `43154193422` 成功；[正式页](https://notes.gistudio.xyz/math/information-entropy-and-reversible-transforms)与数学索引均返回 HTTP 200，实际正文中的 3 张表、73 处公式与 3 条自动参考文献已在线核对，无 KaTeX 错误；原有三项无关工作树改动（`.gitignore`、`content/index.md`、`.zcodeignore`）保持原状。
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：
