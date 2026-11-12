@@ -4,6 +4,8 @@
 
 页面：`content/Math/information-entropy-and-reversible-transforms.md`。索引：`content/Math/index.md` 新增「信息与编码」一节。
 
+叙事框架：以一段站点 JSON（30 字节）与它的 Base64（40 字符）并置开场，把三个问题挂在同一次提问上，再按「信息量 → 表征 → 模型」的顺序回答，结尾回到这两行字符串。开头的对话与提问者是这类问题的典型版本，不是逐字记录；示例 JSON 为构造数据，其 Base64 由 `base64` 标准库现算并核对。
+
 ## 主张与来源
 
 | 正文主张 | 来源与核对位置 | 边界 |
