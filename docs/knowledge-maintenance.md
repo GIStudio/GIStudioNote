@@ -105,6 +105,8 @@
 
 - [done] 整理信息论短文（2026-11-12）：`content/Math/information-entropy-and-reversible-transforms.md`，把「无损变换是否等于信息等价」拆成信息量、表征、使用成本三层；用双射熵不变、$H(a\mid b,k)=0$ 与完美保密说明加密，用 RFC 4648 的 24 比特换 4 字符与「不增加熵」说明 Base64，并把「模型学 Base64 潜空间是模糊层」改写为可检验的假设。附 `scripts/check_entropy_invariance.py` 复算零阶经验熵，接入数学索引新增的「信息与编码」小节。来源、复算与边界见 `docs/readings/information-entropy-reversible-transforms/source-map.md`。公开边界与内容审计通过（210 个 Markdown、68 个资源），`npm run check:content` 通过；内容提交 `8844305` 已推送至 `v5`，匹配 Pages 工作流 `43154193422` 成功；[正式页](https://notes.gistudio.xyz/math/information-entropy-and-reversible-transforms)与数学索引均返回 HTTP 200，实际正文中的 3 张表、73 处公式与 3 条自动参考文献已在线核对，无 KaTeX 错误；原有三项无关工作树改动（`.gitignore`、`content/index.md`、`.zcodeignore`）保持原状。
 
+- [done] 改写为故事线开头（2026-11-12）：上面那篇的初版从「换成你的例子」直接跳进加密推导，例子与论证脱节。改写后以一段 30 字节站点 JSON 与它 40 字符的 Base64 并置开场，三个问题挂在同一次提问上，按信息量 → 表征 → 模型的顺序回答，结尾回到同一对字符串；同步更新标题与来源页的叙事说明。改写提交 `f5126ac` 已推送至 `v5`，Pages 工作流 `43192184070` 成功；[正式页](https://notes.gistudio.xyz/math/information-entropy-and-reversible-transforms)返回 HTTP 200，两段代码块、3 张表、3 条参考文献与公式均在线核对通过。
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：
