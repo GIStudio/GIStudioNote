@@ -43,6 +43,10 @@ tags:
 
 - [[ridge-regression|岭回归的数学：闭式解、谱收缩与高斯先验]]：从相关特征的算例看惩罚项怎样改变估计和数值条件。
 
+## 信息与编码
+
+- [[information-entropy-and-reversible-transforms|无损、等价与信息注入：用信息熵看加密和 Base64]]：双射变换为何不改变信息量，以及为什么“换了表示”不等于“加了信息”。
+
 ## 学习路径
 
 - 总览：[[../Reading/discrete-mathematics|离散数学总览]]
