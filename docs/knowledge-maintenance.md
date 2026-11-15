@@ -107,6 +107,10 @@
 
 - [done] 改写为故事线开头（2026-11-12）：上面那篇的初版从「换成你的例子」直接跳进加密推导，例子与论证脱节。改写后以一段 30 字节站点 JSON 与它 40 字符的 Base64 并置开场，三个问题挂在同一次提问上，按信息量 → 表征 → 模型的顺序回答，结尾回到同一对字符串；同步更新标题与来源页的叙事说明。改写提交 `f5126ac` 已推送至 `v5`，Pages 工作流 `43192184070` 成功；[正式页](https://notes.gistudio.xyz/math/information-entropy-and-reversible-transforms)返回 HTTP 200，两段代码块、3 张表、3 条参考文献与公式均在线核对通过。
 
+## XGBoost 与 SHAP
+
+- [done] 整理 XGBoost 可解释性笔记（2026-11-15）：`content/AI/xgboost-and-shap.md`，以「整体重要回答不了这一条为什么」为主线，讲加法树结构、Shapley 三条性质与 Tree SHAP 的多项式算法，给出带可加性自检的最小流程、四类图的用途，并把正负号、绝对值与业务价值拆成三个维度；补充相关特征分摊、概率空间与 log-odds 的区别等参考资料未覆盖的陷阱。附 `scripts/check_shap_xgboost.py` 复算可加性误差、gain 与平均绝对 SHAP 的排序差异、重复特征归因与概率输出限制，接入 AI 索引的机器学习小节。来源、复算与边界见 `docs/readings/xgboost-shap/source-map.md`。公开边界与内容审计通过（211 个 Markdown、68 个资源），`npm run check:content` 通过；内容提交 `85907f5` 已推送至 `v5`，匹配 Pages 工作流 `43729986590` 成功；[正式页](https://notes.gistudio.xyz/ai/xgboost-and-shap)与 AI 索引均返回 HTTP 200，实际正文中的 4 张表、2 段代码与 3 条自动参考文献已在线核对；原有三项无关工作树改动（`.gitignore`、`content/index.md`、`.zcodeignore`）保持原状。
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：
