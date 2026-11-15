@@ -28,6 +28,7 @@ tags:
 
 - [[ridge-regression-machine-learning|岭回归：监督学习中的正则化线性模型]]：偏差—方差取舍、交叉验证选参及其他模型的 L2 惩罚。
 - [[rmse-and-r-squared|RMSE 与 R²：预测差多少，比均值好多少？]]：回归误差的量级、均值基准和模型排序。
+- [[xgboost-and-shap|XGBoost 与 SHAP：整体重要回答不了“这一条为什么”]]：Tree SHAP 的可加归因、四类图的读法，以及正负号与 0 的含义。
 
 ## 阅读方式
 
