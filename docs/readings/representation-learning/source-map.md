@@ -1,0 +1,14 @@
+# 表征学习专题：问题覆盖与来源
+
+核验日期：2026-11-17。目录位于 `content/AI/GenAI/Representation-Learning/`。以渐进学习笔记为主，统一用可复算的教学示例；六篇正文按理解依赖排序，不按问答轮次排版。表中来源是正式出版文本或作者报告；实现条件另查对应项目文档。
+
+| 正文 | 覆盖的问题 | 来源与位置 |
+| --- | --- | --- |
+| `what-is-a-representation` | 表征是过程还是产物？编码器和某条样本的向量如何区分？相同的信息换个编码是否更好读？训练在学什么？ | [Rumelhart 等，1986](https://doi.org/10.1038/323533a0)，pp. 533–535（隐藏单元、误差梯度、教学任务）；[SimCLR](https://proceedings.mlr.press/v119/chen20j/chen20j.pdf)，§2、算法 1 与 §2.3（增强视图、投影头、冻结读出）；两灯坐标与可逆变换为教学推导。 |
+| `tokenization-and-embeddings` | 输入单元从哪里来？像素、图块、子词、离散码的区别？ID 怎样选中浮点向量？直接更新向量还是学习计算向量的函数？向量是否必然靠近？ | [BPE](https://aclanthology.org/P16-1162.pdf)，§3.2/算法 1；[BERT](https://aclanthology.org/N19-1423.pdf)，§3、图 2；[ViT](https://openreview.net/pdf?id=YicbFdNTTy)，§3.1 式 (1)；[权重绑定](https://aclanthology.org/E17-2025.pdf)，§3；[VQ-VAE](https://proceedings.neurips.cc/paper/2017/hash/7a98af17e63a0ac09ce2e96d03992fbc-Abstract.html)，§§3.1–3.3、§4.2 图 2。 |
+| `forward-pass-and-readouts` | 模型和向量分别是什么？每层有没有新表征？反向梯度是什么？最后的概率是一个数还是向量？两个「头」分别如何工作？模型的事实联想如何研究？ | [Transformer](https://proceedings.neurips.cc/paper/7181--attention-is-all-you-need.pdf)，§§3.1–3.5；[GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)，§2 式 (1) 与 §2.3；[Rumelhart 等，1986](https://doi.org/10.1038/323533a0)，pp. 533–534；[ROME](https://proceedings.neurips.cc/paper_files/paper/2022/file/6f1d43d5a82a37e89b0665b33bf3a182-Paper-Conference.pdf)，图 1 与 §2（中间状态干预）。 |
+| `probing-and-fine-tuning` | 换输出头能读到什么？可读是否意味着模型用过？冻结、线性探针、部分和全量微调以及 PEFT 怎样区分？ | [BERT](https://aclanthology.org/N19-1423.pdf)，§3、§5.3；[控制任务](https://aclanthology.org/D19-1275.pdf)，§3；[因果中介分析](https://proceedings.neurips.cc/paper_files/paper/2020/file/92650b2e92217715fe312e6fa7b90d82-Paper.pdf)，§3–4；[LoRA](https://openreview.net/pdf?id=nZeVKeeFYf9)，§4。 |
+| `lora-low-rank-updates` | LoRA 加的是哪块参数、会不会多一层？4096 × 4096 对应单块还是全网？每块如何联合训练？低秩、合并与适配器如何理解？ | [LoRA](https://openreview.net/pdf?id=nZeVKeeFYf9)，§4.1、§4.2 与 §7（初始化、缩放、合并、目标投影与秩）；[GQA](https://aclanthology.org/2023.emnlp-main.298.pdf)，§2–3；[瓶颈适配器](https://proceedings.mlr.press/v97/houlsby19a/houlsby19a.pdf)，§3、图 2；[软提示](https://aclanthology.org/2021.emnlp-main.243.pdf)，§2、图 1；[PEFT 文档](https://huggingface.co/docs/peft/v0.21.0/package_reference/lora)（合并行为）。 |
+| `representations-in-generative-models` | 文本续写为什么要读上下文？图像怎样编码、在潜网格去噪、再解码？生成质量能否说明下游可读性？ | [Transformer](https://proceedings.neurips.cc/paper/7181--attention-is-all-you-need.pdf)，§§3.1、3.4；[GPT-2](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)，§§2、2.3、3.1；[LDM](https://openaccess.thecvf.com/content/CVPR2022/papers/Rombach_High-Resolution_Image_Synthesis_With_Latent_Diffusion_Models_CVPR_2022_paper.pdf)，§§3.1–3.3、图 3、§4.1 图 5，其压缩观察限定在原实验。 |
+
+同词不同上下文的例句、灯的状态、查表和读出数值、LoRA 的小矩阵、潜网格尺寸都用于教学。它们未作为实际模型输出或复现实验。读出任务的样本划分与同架构对照是评价设计示例。LoRA 正式会议题录采用 OpenReview；公式与实验位置核对的是[作者预印本 PDF](https://arxiv.org/pdf/2106.09685v2)。

@@ -13,6 +13,7 @@ tags:
 
 ## 基础概念
 
+- [[AI/GenAI/Representation-Learning/index|表征学习：从输入向量到生成与微调]]：从词元、嵌入和隐藏状态读到输出头、LoRA 与潜空间扩散。
 - [[latent-space-dimensions|潜空间的维度、范围和精度]]：区分「有几个数」「数值范围」和「浮点精度」，说明张量潜空间为什么不能只数通道。
 
 ## 从哪里开始

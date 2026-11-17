@@ -10,6 +10,7 @@ tags:
 - [[Deep Learning|深度学习概览]]
 - [[likelihood-nll-and-cross-entropy|似然、负对数似然与交叉熵]]
 - [[DL/Embeddings/index|词向量与表示学习：从 SGNS 到图嵌入]]
+- [[AI/GenAI/Representation-Learning/index|表征学习：从输入向量到生成与微调]]
 - [[dimensionality-reduction-visualization|t-SNE、PCA、UMAP 与 PaCMAP 怎样阅读和选择降维图]]
 - [[dimensionality-reduction-methods|降维方法地图：特征选择、PCA、ICA、NMF、LDA、流形学习与自编码器]]
 - [[AI/Vision/index|视觉模型专题：CNN、ViT、图文对齐与自监督]]
