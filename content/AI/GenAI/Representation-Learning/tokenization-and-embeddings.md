@@ -75,6 +75,6 @@ VQ-VAE 把「每个位置分配哪一个编号」也纳入学习。它先学编�
 
 哪一步最值得改，取决于正在解决的问题。文本切得太碎时，可以先比较相同输入产生的 token 数；同一个 token 需要区分几种词义时，应检查有上下文的位置表示；图像需要恢复细节时，可以比较不同分块或码本设置下的重建结果。每种检查都对应一项可观察的需求，单看嵌入维度无法替代它们。
 
-接着读 [[AI/GenAI/Representation-Learning/forward-pass-and-readouts|从输入到预测：每一层表示在哪里]]。想回顾「表示」一词的适用范围，可读 [[AI/GenAI/Representation-Learning/what-is-a-representation|什么是表征]]，也可以回到 [[AI/GenAI/Representation-Learning/index|表征学习专题]]。
+接着读[[AI/GenAI/Representation-Learning/index#隐藏状态就是某一层某一位置算出来的一列数|查表之后，隐藏状态怎样形成]]。如果同一张表也给输出词表打分，可进一步算一遍[[AI/GenAI/Representation-Learning/tied-embeddings-and-gradients|权重绑定的两路梯度]]。
 
 ## 参考文献
