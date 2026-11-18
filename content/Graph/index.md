@@ -12,6 +12,7 @@ tags:
 - [[gcnii-deep-graph-convolution|GCNII：怎样在深层图卷积中保留节点差异]]
 - [[DL/Embeddings/graph-random-walk-embeddings|DeepWalk 与 node2vec：图随机游走嵌入]]
 - [[outline|图学习教程与城市计算应用]]
+- [[city2graph|City2Graph：怎样把城市数据变成可以分析的图]]
 - [[knowledge-map|knowledge-map 知识图谱可视化]]
 
 学习顺序建议从图结构和表示开始，再进入消息传递、图神经网络与时空应用。
