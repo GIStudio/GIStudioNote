@@ -121,6 +121,10 @@
 
 - [done] 整理 City2Graph（2026-11-18）：比较街区共边与 15 分钟可达，说明四类构图、元路径、图格式转换及利物浦案例。资料核验见 [来源表](readings/city2graph/source-map.md)，正式文章接入图学习与城市计算板块。
 
+## 术语表补充
+
+- [done] 补充 arm 词条（2026-11-19）：`content/Glossary/arm.md`，区分多臂老虎机中的策略臂与实验设计中的实验组，补上 UCB 的直觉、代码示例、多重比较风险，并把「一次只改一个变量」改写为单因素与因子设计的取舍；接入术语表的人工智能小节。公开边界脚本 0 错误（术语表索引有 2 处既有的 `Foundation` 误报），`npm run check:content` 通过（219 个 Markdown、969 个文件）；提交 `abdafc6c` 已推送至 `v5`，Pages 工作流 `44509578720` 成功；[正式页](https://notes.gistudio.xyz/glossary/arm)与[术语表](https://notes.gistudio.xyz/glossary/)均返回 HTTP 200，2 张表、1 段代码与两条外部链接已在线核对。
+
 ## 公开页面的最小元数据
 
 每个 `content/` 下的公开 Markdown 页面必须包含：
